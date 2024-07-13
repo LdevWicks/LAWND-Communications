@@ -1,0 +1,134 @@
+<mat-card>
+  <mat-grid-list cols="2" rowHeight="2:1"> 
+    <mat-grid-tile>
+      <mat-card class="full">
+        <mat-card-title> <b> <mat-icon>library_music</mat-icon> Entertainment</b> </mat-card-title>
+        <mat-card-content>
+          
+            <br/>
+    <mat-accordion>
+        <mat-expansion-panel >
+          <mat-expansion-panel-header>
+            <mat-panel-title class="mat-title">
+             Soul World Entertainment   
+            </mat-panel-title>
+            <mat-panel-description class="mat-description">
+              Executive Assistant
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>I'm visible becauseijhuuuuuuuuuuuuuuuuuuu</p>
+        </mat-expansion-panel>
+    <br/>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title class="mat-title">
+                Capitol Public Relation 
+            </mat-panel-title>
+            <mat-panel-description class="mat-description2">
+              Executive Assistant
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+        <br/>
+        
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title class="mat-title">
+              LAW || ND Communications
+          </mat-panel-title>
+          <mat-panel-description class="mat-description3">
+            Production Consulting
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>I'm visible because I am open</p>
+      </mat-expansion-panel>
+    
+      </mat-accordion>
+        
+        </mat-card-content>
+        <br/>
+        
+      
+        <br/>
+    </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card class="full">
+        <mat-card-title> <b> <mat-icon>movie</mat-icon>Movies</b> </mat-card-title>
+              <mat-card-content>
+        <br/>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+               Dem Gibson Films  
+              </mat-panel-title>
+              <mat-panel-description>
+                Production Assistant
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <br/>
+        
+        <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Octet Productions 
+                </mat-panel-title>
+                <mat-panel-description>
+                  Public Relations Assistant
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <p>I'm visible because I am open</p>
+            </mat-expansion-panel>
+        <br/>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+               Octet Productions  
+              </mat-panel-title>
+              <mat-panel-description>
+                Assistant Location Manager
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+        <br/>
+              
+              </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-card>
+
+<mat-card class="container">
+ 
+<button class="menu-button" mat-button [matMenuTriggerFor]="menu">Movies <mat-icon>movie</mat-icon>
+</button>
+<mat-menu class="mat-menu-panel" #menu="matMenu">
+<button mat-menu-item>Christmas Lottery</button>
+<button mat-menu-item>Delrhonda Hood: Big Fifty</button>
+</mat-menu>
+
+<button class="menu-button" mat-button [matMenuTriggerFor]="menu2">Series <mat-icon>movie</mat-icon>
+</button>
+<mat-menu #menu2="matMenu">
+<button mat-menu-item>Hush</button>
+<button mat-menu-item>Conspirators</button>
+</mat-menu>
+<br/>
+</mat-card>
+<mat-card>
+        <a href="https://www.imdb.com/name/nm12907760/" target="_blank">Visit my IMDb</a>
+<br/>
+<span>
+<img class="img" src="assets/LAWNDLOGO.png" alt="LAWND Commnications Logo"> &nbsp;
+<img class ="img" src="assets/CPRLogo.webp" alt="Capitol Public Relation Logo"> &nbsp;
+<img class="img" src="assets/OctetLogo.png" alt="Octet Logo"> &nbsp;
+<img class="img" src="assets/SWLogo.webp" alt="Soul World Logo"> &nbsp;
+<img style="background-color: black;" class="img" src="assets/GibsonLogo.webp" alt="Dem Gibsons Logo"> &nbsp;
+</span>
+    
+</mat-card>

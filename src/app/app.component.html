@@ -1,0 +1,49 @@
+<mat-sidenav-container  class="sidenav-container">
+  <!-- Side nav -->
+  <mat-sidenav #sidenav class="body" mode="side">
+    <mat-nav-list>
+      <a mat-list-item class="content" routerLink="/" routerLinkActive="active">
+        <mat-icon class="icon">home</mat-icon> Home
+      </a>
+      <br/>
+      <a mat-list-item class="content" routerLink="/computer-science" routerLinkActive="active">
+        <mat-icon class="icon">laptop</mat-icon> Computer Science
+      </a>
+      <br/>
+      <a mat-list-item class="content" routerLink="/entertainment" routerLinkActive="active">
+        <mat-icon class="icon">movies</mat-icon> Entertainment
+      </a>
+      <br/>
+      <a mat-list-item class="content" routerLink="/nonprofit" routerLinkActive="active">
+        <mat-icon class="icon">volunteer_activism</mat-icon> Nonprofit
+      </a>
+      <br/>
+      <a mat-list-item class="content" routerLink="/entrepreneurship" routerLinkActive="active">
+        <mat-icon class="icon">emoji_events</mat-icon> Entrepreneurship
+      </a>
+      <br/>
+      <a mat-list-item class="content" routerLink="/cybersecurity" routerLinkActive="active">
+        <mat-icon class="icon">security</mat-icon> Cybersecurity
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main content area -->
+  <mat-sidenav-content>
+    <!-- Toggle button for sidenav -->
+     <div class="logo-container">
+    <button class="raised" mat-icon-button (click)="toggleSidenav()">
+      <mat-icon>menu </mat-icon>
+    </button>
+    <div class="logo-container" *ngIf="isComputerSciencePage">
+      <img src="assets/Logo.jpg" alt="McNair Hall">
+    </div>
+    <div *ngIf="isEntertainmentPage">
+      <img class="logox" src="assets/LAWNDLOGO.png" alt="LAWND COMMUNICATIONS LOGO">
+    </div>
+  
+    </div>
+    <!-- Router outlet for dynamic component rendering -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

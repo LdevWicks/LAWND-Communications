@@ -1,0 +1,10 @@
+{
+  "routes": [
+    "/",
+    "/computer-science",
+    "/cybersecurity",
+    "/entertainment",
+    "/entrepreneurship",
+    "/nonprofit"
+  ]
+}

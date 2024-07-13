@@ -1,0 +1,46 @@
+/* src/styles.css or component-specific CSS */
+.full{
+    width: 100%; /* Ensure the card spans the entire width */
+    max-width: 100%; /* Optional: Set maximum width if needed */
+  }
+
+.button{
+    color:rgb(255, 253, 253);
+    background-color: rgb(67, 67, 67);
+}
+
+/* styles.css or your global styles file */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+     /* Full viewport height */
+    width: 100vw;  /* Full viewport width */
+  }
+  
+  mat-horizontal-stepper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mat-form-field, form, .mat-horizontal-stepper-header, .mat-horizontal-stepper-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  

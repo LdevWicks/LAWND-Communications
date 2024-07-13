@@ -1,0 +1,24 @@
+
+<!-- discussion-board.component.html -->
+
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>Discussion Board</mat-card-title>
+      <mat-card-subtitle>Title</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <form #postForm="ngForm" (ngSubmit)="addPost(postForm)">
+            <input name="title" ngModel required>
+            <mat-card-title>Post</mat-card-title>
+            <textarea name="content" ngModel required></textarea> <br/>
+            <button mat-raised label="Post" type="submit">Add Post</button>
+          </form>          
+      <hr>
+      <div *ngFor="let post of posts">
+        <h3 >{{ post.title }}</h3>
+        <p >{{ post.content }}</p>
+        <hr>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  

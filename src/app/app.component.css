@@ -1,0 +1,85 @@
+.body{
+    background-color: #c0bdbd; /* Grey color */
+    margin: 0; /* Optional: Remove default body margin */
+    padding: 0; /* Optional: Remove default body padding */
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+.icon{
+    color: #bc7762
+}
+
+.raised {
+    background-color:rgb(195, 80, 4);
+    padding: 16px;
+    margin-bottom: 16px;
+    max-width: 450px; 
+    margin: 10px;
+    color:white;  
+    outline: rgb(251, 248, 248);
+    border: 2px solid rgba(15, 15, 15, 0.12); /* Change the color and width as needed */
+    border-radius: 2px; /* Adjust the border radius if needed */
+  
+  }
+
+  .mat-sidenav {
+    width: 250px;
+  }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .example-container {
+    height: 100%;
+  }
+    
+  mat-toolbar.mat-primary {
+    background: #c65e02;
+    color: white;
+  }
+  
+  .content {
+    padding: 16px;
+    background-color:rgb(224, 224, 234);
+  }
+  
+  /* Ensure the sidenav container fills the entire viewport */
+.sidenav-container {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    
+}
+
+/* Style for the side nav */
+.sidenav {
+    width: 250px; /* Set your desired width */
+    background-color: #f0f0f0; /* Example background color */
+}
+
+/* Style for the main content area */
+.main-content {
+    flex: 1; /* Take up remaining space */
+    padding: 20px; /* Example padding */
+}
+/* src/app/logo/logo.component.css */
+.logo-container {
+    display: flex;
+    align-items: right;
+    padding: 10px;
+  }
+  
+  .logo-container img {
+    height: 70px; /* Adjust the size as needed */
+    margin-left: 0px; /* Space between the menu button and the logo */
+  }
+
+  
+  .logox{
+    height: 90px; /* Adjust the size as needed */
+    margin-left: 0px; /* Space between the menu button and the logo */
+  }
+  
+  

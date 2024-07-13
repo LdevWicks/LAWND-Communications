@@ -1,0 +1,87 @@
+  html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, sans-serif; /* Ensure Roboto font is loaded for Material Design components */
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    padding: 16px;
+  }
+  
+  .full {
+    width: 100%;
+    max-width: 600px; /* Example max-width to control card width */
+  }
+
+  .img {
+    width: 200px;
+    height: 150px;
+  }
+  
+  .menu-button {
+    background-color: transparent; /* Make button background transparent */
+    border: none; /* Remove default button border */
+    padding: 8px; /* Adjust padding for button size */
+    cursor: pointer; /* Change cursor to pointer on hover */
+  
+    /* Ensure button content is centered vertically and horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .grid {
+    background: lightblue;
+  }
+
+.mat-title {
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: visible; /* Hides any overflow text */
+    text-overflow: ellipsis; /* Adds ellipsis (...) if text overflows */
+}
+
+.mat-description {
+  margin-left: 60px; /* Adjust as needed */
+}
+
+.mat-description2 {
+  margin-left: 80px; /* Adjust as needed */
+}
+
+.mat-description3 {
+  margin-left: 45px; /* Adjust as needed */
+}
+
+
+  
+  .menu-icon {
+    font-size: 24px; /* Adjust icon size as needed */
+    color: #333; /* Set icon color */
+  }
+
+  /* Adjust mat-menu positioning */
+.mat-menu-panel {
+    position: absolute; /* Ensure it's absolutely positioned */
+    top: 100% !important; /* Position it below the button */
+    left: 0 !important; /* Align it with the left edge of the button */
+  }
+
+.expansion-panel-container {
+    width: 100vw;
+    padding: 0; /* Optional: Remove padding if necessary */
+    margin: 0; /* Optional: Remove margin if necessary */
+  }
+  
+  .mat-accordion {
+    width: 100%;
+  }
+  
+  .mat-expansion-panel {
+    width: 100%;
+  }
+  

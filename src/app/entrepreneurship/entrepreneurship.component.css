@@ -1,0 +1,26 @@
+.scrolling-banner {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    margin-top: 20px; /* Adjust margin as needed */
+  }
+  
+  .banner-content {
+    display: inline-block;
+    animation: scroll-left 20s linear infinite;
+  }
+  
+  .banner-item {
+    display: inline-block;
+    margin-right: 20px; /* Adjust spacing between items */
+  }
+  
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  

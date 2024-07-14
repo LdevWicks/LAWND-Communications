@@ -28,7 +28,8 @@
     border: none; /* Remove default button border */
     padding: 8px; /* Adjust padding for button size */
     cursor: pointer; /* Change cursor to pointer on hover */
-  
+    height:50px;
+    width: 80px;
     /* Ensure button content is centered vertically and horizontally */
     display: flex;
     align-items: center;
@@ -84,4 +85,83 @@
   .mat-expansion-panel {
     width: 100%;
   }
+  
+  .banner {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Adjust height as needed */
+    overflow: hidden;
+    background-color: black; /* Background color to fill any space around the image */
+  }
+  
+  .banner {
+    position: relative;
+    width: 100vw; /* Full viewport width */
+    height: 75vh; /* Full viewport height */
+    overflow: hidden;
+  }
+  
+  .banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire banner area */
+    object-position: center; /* Center the image */
+  }
+  
+  .controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+  
+  .controls button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    font-size: 24px;
+    padding: 0 10px;
+  }
+  
+  .controls button:focus {
+    outline: none;
+  }
+  
+  .scrolling-banner {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    margin-top: 20px; /* Adjust margin as needed */
+  }
+  
+  .banner-content {
+    display: inline-block;
+    animation: scroll-left 20s linear infinite;
+  }
+  
+  .banner-item {
+    display: inline-block;
+    margin-right: 20px; /* Adjust spacing between items */
+  }
+  
+  .banner-item img {
+    width: 100px; /* Adjust image size as needed */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure images are block elements */
+    object-fit: cover;
+  }
+  
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
   

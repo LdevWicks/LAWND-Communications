@@ -1,3 +1,11 @@
+<div class="scrolling-banner">
+  <div class="banner-content">
+    <div class="banner-item" *ngFor="let imageUrl of imageUrls">
+      <img [src]="imageUrl" alt="Banner Image">
+    </div>
+  </div>
+</div>
+
 <mat-card>
     Innovative Concepts (logo)
 <p>About Organization</p>

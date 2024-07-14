@@ -18,7 +18,52 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./entertainment.component.css']
 })
 export class EntertainmentComponent {
+
+  images: string[] = [
+    'assets/big50.jpg',
+    'assets/hush.jpg',
+    'assets/WeslyCW.jpg',
+    'assets/CL.png',
+    
+  ];
+
+  imageUrls: string[]=[
+   "assets/LAWNDLOGO.png",
+   "assets/CPRLogo.webp",
+   "assets/OctetLogo.png",
+   "assets/SWLogo.webp"
+  ];
+  
+
+  currentImageIndex = 0;
+  interval: any;
+
+  constructor() {}
+
+  ngOnInit(): void {
+    this.startImageRotation();
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.interval);
+  }
+
+  startImageRotation(): void {
+    this.interval = setInterval(() => {
+      this.nextImage();
+    }, 3000); // Rotate images every 3 seconds (adjust as needed)
+  }
+
+  nextImage(): void {
+    this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
+  }
+
+  prevImage(): void {
+    this.currentImageIndex = (this.currentImageIndex - 1 + this.images.length) % this.images.length;
+  }
+
   panelOpenState = false;
+
   tiles = [
     { cols: 2, rows: 1 },
   ];
@@ -26,5 +71,9 @@ export class EntertainmentComponent {
   drop(event: CdkDragDrop<any[]>): void {
     moveItemInArray(this.tiles, event.previousIndex, event.currentIndex);
   }
-  
+
+  navigateToDetail(image: string): void {
+    // Implement your navigation logic here
+    alert('Navigating to details for image: ' + image);
+  }
 }

@@ -1,0 +1,21 @@
+.cybersecurity-page {
+    padding: 20px;
+  }
+  
+  .index-accordion {
+    width: 100%;
+  }
+  
+  .index-accordion mat-expansion-panel {
+    margin-bottom: 10px;
+  }
+  
+  .index-accordion mat-expansion-panel p {
+    margin: 0;
+  }
+  
+  .index-accordion mat-expansion-panel a {
+    display: block;
+    margin-bottom: 5px;
+  }
+  

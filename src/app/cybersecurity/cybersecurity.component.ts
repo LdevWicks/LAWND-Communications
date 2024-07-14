@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule} from '@angular/material/expansion';
 import { DiscussionBoardComponent } from '../discussion-board/discussion-board.component';
 
 @Component({
   selector: 'app-cybersecurity',
   standalone: true,
-  imports: [MatCardModule,DiscussionBoardComponent],
+  imports: [MatCardModule,DiscussionBoardComponent,MatExpansionModule],
   templateUrl: './cybersecurity.component.html',
   styleUrls: ['./cybersecurity.component.css']
 })

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import { EntertainmentComponent } from "../entertainment/entertainment.component";
@@ -11,6 +12,7 @@ export interface PeriodicElement {
   weight: number;
   symbol: string;
 }
+
 
 const ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
@@ -30,9 +32,16 @@ const ELEMENT_DATA: PeriodicElement[] = [
     standalone: true,
     templateUrl: './nonprofit.component.html',
     styleUrls: ['./nonprofit.component.css'],
-    imports: [MatCardModule, MatListModule, EntertainmentComponent, MatTableModule, DiscussionBoardComponent]
+    imports: [MatCardModule, CommonModule, MatListModule, EntertainmentComponent, MatTableModule, DiscussionBoardComponent]
 })
 export class NonprofitComponent {
+
+  imageUrls: string[] = [
+    'assets/LAWNDLOGO.png',
+    'assets/Logo.jpg',
+    'assets/AggiePride.jpg',
+    // Add more image URLs as needed
+  ];
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;

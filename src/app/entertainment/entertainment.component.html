@@ -1,3 +1,13 @@
+<div class="banner">
+  <img [src]="images[currentImageIndex]" alt="Banner Image" (click)="navigateToDetail(images[currentImageIndex])">
+  <div class="controls">
+    <button (click)="prevImage()"><mat-icon>arrow_back</mat-icon></button>
+    <button (click)="nextImage()"><mat-icon>arrow_forward</mat-icon></button>
+  </div>
+</div>
+
+<br/>
+
 <mat-card>
   <mat-grid-list cols="2" rowHeight="2:1"> 
     <mat-grid-tile>
@@ -101,34 +111,37 @@
         </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
+
+  <button class="menu-button" mat-button [matMenuTriggerFor]="menu">Movies <mat-icon>movie</mat-icon>
+  </button>
+  <mat-menu class="mat-menu-panel" #menu="matMenu">
+  <button mat-menu-item>Christmas Lottery</button>
+  <button mat-menu-item>Delrhonda Hood: Big Fifty</button>
+  </mat-menu>
+  
+  <button class="menu-button" mat-button [matMenuTriggerFor]="menu2">Series <mat-icon>movie</mat-icon>
+  </button>
+  <mat-menu #menu2="matMenu">
+  <button mat-menu-item>Hush</button>
+  <button mat-menu-item>Conspirators</button>
+  </mat-menu>
+
+  <a href="https://www.imdb.com/name/nm12907760/" target="_blank">Visit my IMDb</a>
+
 </mat-card>
 
-<mat-card class="container">
- 
-<button class="menu-button" mat-button [matMenuTriggerFor]="menu">Movies <mat-icon>movie</mat-icon>
-</button>
-<mat-menu class="mat-menu-panel" #menu="matMenu">
-<button mat-menu-item>Christmas Lottery</button>
-<button mat-menu-item>Delrhonda Hood: Big Fifty</button>
-</mat-menu>
 
-<button class="menu-button" mat-button [matMenuTriggerFor]="menu2">Series <mat-icon>movie</mat-icon>
-</button>
-<mat-menu #menu2="matMenu">
-<button mat-menu-item>Hush</button>
-<button mat-menu-item>Conspirators</button>
-</mat-menu>
-<br/>
-</mat-card>
 <mat-card>
-        <a href="https://www.imdb.com/name/nm12907760/" target="_blank">Visit my IMDb</a>
+  
+       
 <br/>
-<span>
-<img class="img" src="assets/LAWNDLOGO.png" alt="LAWND Commnications Logo"> &nbsp;
-<img class ="img" src="assets/CPRLogo.webp" alt="Capitol Public Relation Logo"> &nbsp;
-<img class="img" src="assets/OctetLogo.png" alt="Octet Logo"> &nbsp;
-<img class="img" src="assets/SWLogo.webp" alt="Soul World Logo"> &nbsp;
-<img style="background-color: black;" class="img" src="assets/GibsonLogo.webp" alt="Dem Gibsons Logo"> &nbsp;
-</span>
+<div class="scrolling-banner">
+  <div class="banner-content">
+    <div class="banner-item" *ngFor="let image of imageUrls">
+      <img [src]="image" alt="Banner Image">
+    </div>
+  </div>
+</div>
+
     
 </mat-card>

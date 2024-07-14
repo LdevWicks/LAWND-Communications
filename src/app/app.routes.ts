@@ -7,21 +7,18 @@ import { NonprofitComponent } from './nonprofit/nonprofit.component';
 import { EntrepreneurshipComponent } from './entrepreneurship/entrepreneurship.component';
 import { CybersecurityComponent } from './cybersecurity/cybersecurity.component';
 
-
 export const routes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'computer-science', component: ComputerScienceComponent },
-    { path: 'entertainment', component: EntertainmentComponent },
-    { path: 'nonprofit', component: NonprofitComponent },
-    { path: 'entrepreneurship', component: EntrepreneurshipComponent },
-    { path: 'cybersecurity', component: CybersecurityComponent },
-    { path: '**', redirectTo: '' } // Redirect any other path to home
+  { path: '', component: HomeComponent },
+  { path: 'computer-science', component: ComputerScienceComponent },
+  { path: 'entertainment', component: EntertainmentComponent },
+  { path: 'nonprofit', component: NonprofitComponent },
+  { path: 'entrepreneurship', component: EntrepreneurshipComponent },
+  { path: 'cybersecurity', component: CybersecurityComponent },
+  { path: '**', redirectTo: '' } // Redirect any other path to home
 ];
 
 @NgModule({
-  imports: [RouterModule],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-
 export class AppRoutingModule { }
-

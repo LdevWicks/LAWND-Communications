@@ -6,7 +6,7 @@ import {MatCardModule} from '@angular/material/card'
   standalone: true,
   imports: [MatCardModule],
   templateUrl: './aggie-pride-dialog.component.html',
-  styleUrl: './aggie-pride-dialog.component.css'
+  styleUrls: ['./aggie-pride-dialog.component.css'],
 })
 export class AggiePrideDialogComponent {
 

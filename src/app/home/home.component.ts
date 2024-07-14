@@ -19,7 +19,7 @@ import {MatDividerModule} from '@angular/material/divider';
     selector: 'app-home',
     standalone: true,
     templateUrl: './home.component.html',
-    styleUrl: './home.component.css',
+    styleUrls: ['./home.component.css',],
     imports: [MatCardModule,MatDividerModule,CommonModule,ReactiveFormsModule, MatInputModule, MatSelectModule,MatFormFieldModule,FormsModule, MatStepperModule, MatGridListModule,NonprofitComponent, ComputerScienceComponent,CybersecurityComponent, EntertainmentComponent,EntrepreneurshipComponent]
 })
 export class HomeComponent implements OnInit{

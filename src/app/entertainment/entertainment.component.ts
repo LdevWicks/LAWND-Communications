@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [MatCardModule,CommonModule,DragDropModule,MatMenuModule,MatIconModule,MatExpansionModule,MatGridListModule],
   templateUrl: './entertainment.component.html',
-  styleUrl: './entertainment.component.css'
+  styleUrls: ['./entertainment.component.css']
 })
 export class EntertainmentComponent {
   panelOpenState = false;

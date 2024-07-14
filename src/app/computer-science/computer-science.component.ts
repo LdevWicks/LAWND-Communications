@@ -10,7 +10,7 @@ import {MatTabsModule} from '@angular/material/tabs';
   standalone: true,
   imports: [MatCardModule, MatToolbarModule, MatTabsModule],
   templateUrl: './computer-science.component.html',
-  styleUrl: './computer-science.component.css'
+  styleUrls: ['./computer-science.component.css']
 })
 export class ComputerScienceComponent implements OnInit{
   constructor(private dialog: MatDialog) {}

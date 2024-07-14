@@ -29,7 +29,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     selector: 'app-nonprofit',
     standalone: true,
     templateUrl: './nonprofit.component.html',
-    styleUrl: './nonprofit.component.css',
+    styleUrls: ['./nonprofit.component.css'],
     imports: [MatCardModule, MatListModule, EntertainmentComponent, MatTableModule, DiscussionBoardComponent]
 })
 export class NonprofitComponent {

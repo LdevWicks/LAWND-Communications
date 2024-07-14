@@ -6,7 +6,7 @@ import { MatCardModule } from '@angular/material/card';
   standalone: true,
   imports: [MatCardModule],
   templateUrl: './cybersecurity.component.html',
-  styleUrl: './cybersecurity.component.css'
+  styleUrls: ['./cybersecurity.component.css']
 })
 export class CybersecurityComponent {
 

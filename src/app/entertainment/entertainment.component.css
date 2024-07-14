@@ -164,4 +164,14 @@
     }
   }
   
+  .icon-text {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon {
+    width: 100px; /* Adjust icon size */
+    height: 100px; /* Adjust icon size */
+    margin-right: 8px; /* Space between icon and text */
+  }
   

@@ -7,13 +7,15 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { CommonModule } from '@angular/common';
-
+import { MatDialog } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MovieDialogComponent} from '../movie-dialog/movie-dialog.component';
 
 
 @Component({
   selector: 'app-entertainment',
   standalone: true,
-  imports: [MatCardModule,CommonModule,DragDropModule,MatMenuModule,MatIconModule,MatExpansionModule,MatGridListModule],
+  imports: [MatCardModule, MatDialogModule,CommonModule,DragDropModule,MatMenuModule,MatIconModule,MatExpansionModule,MatGridListModule],
   templateUrl: './entertainment.component.html',
   styleUrls: ['./entertainment.component.css']
 })
@@ -38,7 +40,7 @@ export class EntertainmentComponent {
   currentImageIndex = 0;
   interval: any;
 
-  constructor() {}
+  constructor(private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.startImageRotation();
@@ -76,4 +78,17 @@ export class EntertainmentComponent {
     // Implement your navigation logic here
     alert('Navigating to details for image: ' + image);
   }
+
+  openMovieDialog(): void {
+    const movie = {
+      title: 'Christmas Lottery',
+      description: 'A heartwarming story about family and unexpected fortune.',
+      imdbLink: 'https://www.imdb.com/title/tt13403782/'
+    };
+
+    this.dialog.open(MovieDialogComponent, {
+      data: movie
+    });
+  }
+
 }

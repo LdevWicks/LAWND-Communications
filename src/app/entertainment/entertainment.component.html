@@ -8,7 +8,7 @@
 
 <br/>
 
-<mat-card>
+
   <mat-grid-list cols="2" rowHeight="2:1"> 
     <mat-grid-tile>
       <mat-card class="full">
@@ -26,7 +26,9 @@
               Executive Assistant
             </mat-panel-description>
           </mat-expansion-panel-header>
+         
           <p>I'm visible becauseijhuuuuuuuuuuuuuuuuuuu</p>
+          <img src="assets/SWLogo.webp" alt="Icon" class="icon">
         </mat-expansion-panel>
     <br/>
         <mat-expansion-panel>
@@ -39,6 +41,7 @@
             </mat-panel-description>
           </mat-expansion-panel-header>
           <p>I'm visible because I am open</p>
+          <img src="assets/CPRLogo.webp" alt="Icon" class="icon">
         </mat-expansion-panel>
         <br/>
         
@@ -52,6 +55,7 @@
           </mat-panel-description>
         </mat-expansion-panel-header>
         <p>I'm visible because I am open</p>
+        <img src="assets/LAWNDLOGO.png" alt="Icon" class="icon">
       </mat-expansion-panel>
     
       </mat-accordion>
@@ -79,6 +83,7 @@
               </mat-panel-description>
             </mat-expansion-panel-header>
             <p>I'm visible because I am open</p>
+            <img style="background-color: black;"src="assets/GibsonLogo.webp" alt="Icon" class="icon">
           </mat-expansion-panel>
           <br/>
         
@@ -92,6 +97,7 @@
                 </mat-panel-description>
               </mat-expansion-panel-header>
               <p>I'm visible because I am open</p>
+              <img src="assets/OctetLogo.png" alt="Icon" class="icon">
             </mat-expansion-panel>
         <br/>
         <mat-expansion-panel>
@@ -104,6 +110,7 @@
               </mat-panel-description>
             </mat-expansion-panel-header>
             <p>I'm visible because I am open</p>
+            <img src="assets/OctetLogo.png" alt="Icon" class="icon">
           </mat-expansion-panel>
         <br/>
               
@@ -112,28 +119,32 @@
     </mat-grid-tile>
   </mat-grid-list>
 
+ <mat-card>
+  <mat-card-content>
+<mat-card-title><b>Movies</b></mat-card-title>
   <button class="menu-button" mat-button [matMenuTriggerFor]="menu">Movies <mat-icon>movie</mat-icon>
   </button>
   <mat-menu class="mat-menu-panel" #menu="matMenu">
   <button mat-menu-item>Christmas Lottery</button>
+  <button mat-menu-item (click)="openMovieDialog()">Christmas Lottery</button>
   <button mat-menu-item>Delrhonda Hood: Big Fifty</button>
+  <button mat-menu-item>A Wesley Christmas</button>
+  <button mat-menu-item>A Wesley Christmas Wedding</button>
+  <button mat-menu-item>Kismet Holiday</button>
   </mat-menu>
   
+  <mat-card-title><b>Series</b></mat-card-title>
   <button class="menu-button" mat-button [matMenuTriggerFor]="menu2">Series <mat-icon>movie</mat-icon>
   </button>
   <mat-menu #menu2="matMenu">
   <button mat-menu-item>Hush</button>
   <button mat-menu-item>Conspirators</button>
   </mat-menu>
-
+<mat-card-title><b>IMDb</b></mat-card-title>
   <a href="https://www.imdb.com/name/nm12907760/" target="_blank">Visit my IMDb</a>
-
+  </mat-card-content>
 </mat-card>
 
-
-<mat-card>
-  
-       
 <br/>
 <div class="scrolling-banner">
   <div class="banner-content">
@@ -144,4 +155,3 @@
 </div>
 
     
-</mat-card>

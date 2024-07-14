@@ -13,7 +13,8 @@ import { ComputerScienceComponent } from './computer-science/computer-science.co
 import { NonprofitComponent } from './nonprofit/nonprofit.component';
 import { EntrepreneurshipComponent } from './entrepreneurship/entrepreneurship.component';
 import { CybersecurityComponent } from './cybersecurity/cybersecurity.component';
-
+import { CommonModule } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -32,6 +33,8 @@ export const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    CommonModule,
+    CurrencyPipe,
     BrowserAnimationsModule,
     AngularFirestoreModule,
     RouterModule.forRoot(routes),

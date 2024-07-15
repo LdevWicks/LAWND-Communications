@@ -5,45 +5,74 @@ import {MatListModule} from '@angular/material/list';
 import { EntertainmentComponent } from "../entertainment/entertainment.component";
 import {MatTableModule} from '@angular/material/table';
 import { DiscussionBoardComponent } from '../discussion-board/discussion-board.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatDividerModule} from '@angular/material/divider';
+import { RouterModule, Router } from '@angular/router';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
 
 @Component({
     selector: 'app-nonprofit',
     standalone: true,
     templateUrl: './nonprofit.component.html',
     styleUrls: ['./nonprofit.component.css'],
-    imports: [MatCardModule, CommonModule, MatListModule, EntertainmentComponent, MatTableModule, DiscussionBoardComponent]
+    imports: [MatCardModule,RouterModule, MatDividerModule,MatGridListModule, CommonModule, MatListModule, EntertainmentComponent, MatTableModule, DiscussionBoardComponent]
 })
 export class NonprofitComponent {
 
-  imageUrls: string[] = [
-    'assets/LAWNDLOGO.png',
-    'assets/Logo.jpg',
-    'assets/AggiePride.jpg',
-    // Add more image URLs as needed
+  constructor(private router: Router) {}
+  navigationItems = ['Home', 'About Us', 'Programs', 'Contact'];
+  products = [
+    { name: 'Tea Product 1', image: 'assets/tea1.jpg', description: 'Description 1' },
+    { name: 'Tea Product 2', image: 'assets/tea2.jpg', description: 'Description 2' },
+    // Add more products as needed
   ];
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  images: string[] = [
+    'assets/CWLogo.png',
+    'assets/DifferenceSocietyLogo.webp',
+    'assets/ICLogo2.png',
+    // Add more image URLs as needed
+  ];
+  currentImageIndex = 0;
+  interval: any;
+
+  startImageRotation(): void {
+    this.interval = setInterval(() => {
+      this.nextImage();
+    }, 3000); // Rotate images every 3 seconds
+  }
+
+  nextImage(): void {
+    this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
+  }
+
+  prevImage(): void {
+    this.currentImageIndex = (this.currentImageIndex - 1 + this.images.length) % this.images.length;
+  }
+
+ selectItem(item: string): void {
+    alert('Selected item: ' + item);
+  }
+
+  addToCart(product: any): void {
+    alert('Added to cart: ' + product.name);
+  }
+
+  navigateToDetail(image: string): void {
+    // Implement your navigation logic here
+    alert('Navigating to details for image: ' + image);
+  }
+
+  navigateToInnovative(): void {
+    this.router.navigate(['/innovative-concepts']);
+  }
+
+  navigateToDifference(): void {
+    this.router.navigate(['/difference']);
+  }
+ 
+  navigateToCW(): void {
+    this.router.navigate(['/cw']);
+  }
 
 }

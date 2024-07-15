@@ -7,6 +7,9 @@ import { NonprofitComponent } from './nonprofit/nonprofit.component';
 import { EntrepreneurshipComponent } from './entrepreneurship/entrepreneurship.component';
 import { CybersecurityComponent } from './cybersecurity/cybersecurity.component';
 import { YekizeComponent} from './yekize/yekize.component';
+import { InnovativeComponent} from './innovative/innovative.component';
+import { DifferenceComponent} from './difference/difference.component';
+import { CwComponent} from './cw/cw.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,6 +19,9 @@ export const routes: Routes = [
   { path: 'entrepreneurship', component: EntrepreneurshipComponent },
   { path: 'cybersecurity', component: CybersecurityComponent },
   { path: 'yekize', component: YekizeComponent },
+  { path: 'innovative-concepts', component: InnovativeComponent },
+  { path: 'difference', component: DifferenceComponent },
+  { path: 'cw', component: CwComponent },
   { path: '**', redirectTo: '' } // Redirect any other path to home
 ];
 

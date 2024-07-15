@@ -33,4 +33,126 @@
       transform: translateX(-100%);
     }
   }
+
+  /* nonprofit.component.css */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 20%;
+  background: #333;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.sidebar ul li:hover {
+  background: #555;
+}
+
+.content {
+  width: 80%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.banner {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+}
+
+.controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls button {
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product-item {
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.product-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.product-item:hover {
+  transform: scale(1.05);
+}
+
+.product-info {
+  text-align: center;
+}
+
+.example-card{
+  background-color: #767676; /* Light grey background */
+  border: 1px solid #ccc; /* Light grey border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for raised effect */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for shadow on hover */
+  padding: 20px; /* Inner padding */
+  height: 300px; /* Adjust as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
   
+}
+
+.container{
+  display: flex;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width
+
+}
+
+.example-card-content {
+  overflow: hidden; /* Ensure content does not overflow */
+  text-overflow: ellipsis; /* Optional: Show ellipsis for long text */
+}
+
+.image{
+  width: 150px;
+  height: 150px;
+}

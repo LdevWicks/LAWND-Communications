@@ -81,5 +81,12 @@
     height: 90px; /* Adjust the size as needed */
     margin-left: 0px; /* Space between the menu button and the logo */
   }
+
+  .container{
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; 
+  
+  }
   
   

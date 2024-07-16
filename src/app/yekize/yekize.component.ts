@@ -34,19 +34,33 @@ export class YekizeComponent implements OnInit, OnDestroy {
   addToCart(product: any) {
     this.cartService.addToCart(product);
   }
-  checkout() {
-    if (confirm('Are you sure you want to place this order?')) {
-      // Mock logic to simulate order placement
-      const orderNumber = Math.floor(Math.random() * 1000000);
-      
-      // Clear the cart
-      this.cartService.clearCart();
-      
-      // Display order confirmation message
-      alert(`Your order was placed successfully! Order number: ${orderNumber}`);
-    } else {
-      // Optionally handle cancelation
-      console.log('Order placement canceled.');
-    }
+
+  confirmingCheckout = false; // Flag to control confirmation modal
+
+  
+  getTotal(): number {
+    // Calculate total price of items in cart
+    return this.cartItems.reduce((acc, item) => acc + item.price, 0);
   }
+
+  checkout(): void {
+    // Open confirmation modal
+    this.confirmingCheckout = true;
+  }
+
+  placeOrder(): void {
+    // Logic to place the order (e.g., send data to server, update database, etc.)
+    // Placeholder alert for demonstration
+    alert('Order placed successfully!');
+
+    // Reset cart or perform other actions as needed
+    this.cartItems = []; // Clear cart after placing order
+    this.confirmingCheckout = false; // Close confirmation modal
+  }
+
+  cancelCheckout(): void {
+    // Close confirmation modal without placing order
+    this.confirmingCheckout = false;
+  }
+  
 }

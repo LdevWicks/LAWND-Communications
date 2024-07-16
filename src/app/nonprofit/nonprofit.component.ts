@@ -8,7 +8,8 @@ import { DiscussionBoardComponent } from '../discussion-board/discussion-board.c
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDividerModule} from '@angular/material/divider';
 import { RouterModule, Router } from '@angular/router';
-
+import { Observable } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
     selector: 'app-nonprofit',
@@ -19,13 +20,13 @@ import { RouterModule, Router } from '@angular/router';
 })
 export class NonprofitComponent {
 
-  constructor(private router: Router) {}
-  navigationItems = ['Home', 'About Us', 'Programs', 'Contact'];
-  products = [
-    { name: 'Tea Product 1', image: 'assets/tea1.jpg', description: 'Description 1' },
-    { name: 'Tea Product 2', image: 'assets/tea2.jpg', description: 'Description 2' },
-    // Add more products as needed
-  ];
+  nonprofit$: Observable<any[]> = new Observable<any[]>();
+
+  constructor(private router: Router, private firestore: AngularFirestore,) {}
+  ngOnInit(): void {
+    this.nonprofit$ = this.firestore.collection('nonprofit').valueChanges({ idField: 'id' });
+  }
+ 
 
   images: string[] = [
     'assets/CWLogo.png',
@@ -63,7 +64,7 @@ export class NonprofitComponent {
     alert('Navigating to details for image: ' + image);
   }
 
-  navigateToInnovative(): void {
+  navigateToIC(): void {
     this.router.navigate(['/innovative-concepts']);
   }
 
@@ -74,5 +75,22 @@ export class NonprofitComponent {
   navigateToCW(): void {
     this.router.navigate(['/cw']);
   }
+
+  navigateToPage(productId: string): void {
+    switch (productId) {
+      case 'Difference':
+        this.navigateToDifference();
+        break;
+      case 'Charlottes Web':
+        this.navigateToCW();
+        break;
+      case 'Innovative Concepts':
+        this.navigateToIC();
+        break;
+      default:
+        console.log('Unknown product ID:', productId);
+    }
+  }
+  
 
 }

@@ -1,20 +1,72 @@
-   Journey to Chief Information Security Officer
+<mat-card class="container">
+  <mat-card-title>Journey to Chief Information Security Officer</mat-card-title>
+  <mat-card-subtitle>The best way out is thru </mat-card-subtitle>
+     Journey to Chief Information Security Officer
    Bio about me all certs brief outline of history to thisnow expplore more of my journey
-
+</mat-card>
 
   <mat-divider></mat-divider>
+
+  <div class="dashboard-container">
+    <div class="dashboard-item" (click)="navigateTo('nonprofit')">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>Nonprofit</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="assets/nonprofit.jpg" alt="Nonprofit">
+        <mat-card-actions>
+          <button mat-button color="primary">View Details</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
   
-<mat-card class="container">
-    <mat-card-title>Journey to Chief Information Security Officer</mat-card-title>
-    <mat-card-subtitle>The best way out is thru </mat-card-subtitle>
-    <mat-card-content>
-        <mat-grid-list cols="2" rowHeight="2:1">
-        <mat-grid-tile>Computer Science</mat-grid-tile>
-        <mat-grid-tile><app-entertainment></app-entertainment></mat-grid-tile>
-        <mat-grid-tile></mat-grid-tile>
-        <mat-grid-tile><app-entrepreneurship></app-entrepreneurship></mat-grid-tile>
-        <mat-grid-tile><app-cybersecurity></app-cybersecurity></mat-grid-tile>
-        </mat-grid-list>
-    </mat-card-content>
-    <mat-card-actions></mat-card-actions>
-</mat-card>
+    <div class="dashboard-item" (click)="navigateTo('entertainment')">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>Entertainment</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="assets/entertainment.jpg" alt="Entertainment">
+        <mat-card-actions>
+          <button mat-button color="primary">View Details</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  
+    <div class="dashboard-item" (click)="navigateTo('computer-science')">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>Computer Science</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="assets/computer-science.jpg" alt="Computer Science">
+        <mat-card-actions>
+          <button mat-button color="primary">View Details</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  
+    <div class="dashboard-item" (click)="navigateTo('entrepreneurship')">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>Entrepreneurship</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="assets/entrepreneurship.jpg" alt="Entrepreneurship">
+        <mat-card-actions>
+          <button mat-button color="primary">View Details</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  
+    <div class="dashboard-item" (click)="navigateTo('cybersecurity')">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>Cybersecurity</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="assets/cybersecurity.jpg" alt="Cybersecurity">
+        <mat-card-actions>
+          <button mat-button color="primary">View Details</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  
+  

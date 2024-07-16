@@ -1,21 +1,44 @@
 <!-- yekize.component.html -->
 
-<div *ngFor="let product of teaProducts$ | async">
-    <h3>{{ product.name }}</h3>
-    <p>{{ product.description }}</p>
-    <p>Price: {{ product.price | currency }}</p>
-    <button (click)="addToCart(product)">Add to Cart</button>
+<div class="product-container">
+  <div class="product-item" *ngFor="let product of teaProducts$ | async">
+    <img [src]="product.imageUrl" alt="Product Image" class="product-image">
+    <div class="product-details">
+      <h2>{{ product.name }}</h2>
+      <p>{{ product.description }}</p>
+      <p>Price: {{ product.price | currency }}</p>
+      <button (click)="addToCart(product)">Add to Cart</button>
+      <!-- Add more product details as needed -->
+    </div>
   </div>
-  
-  <!-- Display Cart -->
-  <div *ngIf="cartItems.length > 0">
-    <h4>Shopping Cart</h4>
-    <ul>
-      <li *ngFor="let item of cartItems">{{ item.name }} - {{ item.price | currency }}</li>
-    </ul>
+<!-- Display Cart -->
+<div *ngIf="cartItems.length > 0">
+  <h4>Shopping Cart</h4>
+  <ul>
+    <li *ngFor="let item of cartItems">
+      {{ item.name }} - {{ item.price | currency }}
+    </li>
+  </ul>
+
+  <div>
+    <h4>Total: {{ getTotal() | currency }}</h4>
     <button (click)="checkout()">Checkout</button>
   </div>
-  <div *ngIf="cartItems.length === 0">
-    Your cart is empty
+
+  <!-- Confirmation Modal -->
+  <div class="confirmation-modal" *ngIf="confirmingCheckout">
+    <h4>Confirm Order</h4>
+    <p>Total: {{ getTotal() | currency }}</p>
+    <p>Are you sure you want to place this order?</p>
+    <button (click)="placeOrder()">Place Order</button>
+    <button (click)="cancelCheckout()">Cancel</button>
   </div>
+</div>
+
+<div *ngIf="cartItems.length === 0">
+  Your cart is empty
+</div>
+
+
+  
   

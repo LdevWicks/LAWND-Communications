@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "types": ["jest"],
     "baseUrl": "./src/app/app.component.html",
     "paths": {
       "@app/*": ["app/*"]

@@ -23,4 +23,16 @@
       transform: translateX(-100%);
     }
   }
+
+  .container{
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; 
+  
+  }
+
+  .image{
+    height: 100px;
+    width: 100px;
+  }
   

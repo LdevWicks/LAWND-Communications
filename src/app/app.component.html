@@ -36,12 +36,25 @@
       <mat-icon>menu </mat-icon>
     </button>
     <div class="logo-container" *ngIf="isComputerSciencePage">
-      <img src="assets/Logo.jpg" alt="McNair Hall">
+      <mat-toolbar> Computer Science <img src="assets/Logo.jpg" alt="McNair Hall"></mat-toolbar>
     </div>
-    <div *ngIf="isEntertainmentPage">
-      <img class="logox" src="assets/LAWNDLOGO.png" alt="LAWND COMMUNICATIONS LOGO">
+
+    <div class="logo-container" *ngIf="isEntertainmentPage">
+      <mat-toolbar>Entertainment </mat-toolbar>
     </div>
   
+    <div class="logo-container" *ngIf="isEntrepreneurshipPage">
+      <mat-toolbar>Entrepreneurship</mat-toolbar>
+    </div>
+
+    <div class="logo-container" *ngIf="isNonprofitPage">
+      <mat-toolbar>Nonprofit </mat-toolbar>
+    </div>
+
+    <div class="logo-container" *ngIf="isCybersecurityPage">
+      <mat-toolbar>Cybersecurity </mat-toolbar>
+    </div>
+
     </div>
     <!-- Router outlet for dynamic component rendering -->
     <router-outlet></router-outlet>

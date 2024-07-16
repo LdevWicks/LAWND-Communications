@@ -214,19 +214,14 @@
 }
 
 
-.product-container {
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  height: 100vh; /* Adjust height to fit your needs */
-   /* Optional background color for the page */
-}
+
 
 .page-container {
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   height: 100vh; /* Adjust to your design needs */
- 
+  background-color: transparent;
 }
 
 .product-container {

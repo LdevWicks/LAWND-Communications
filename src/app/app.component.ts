@@ -28,6 +28,9 @@ export class AppComponent implements OnInit {
   title = 'path-to-ciso';
   isComputerSciencePage = false;
   isEntertainmentPage = false;
+  isEntrepreneurshipPage = false;
+  isNonprofitPage = false;
+  isCybersecurityPage = false;
 
   constructor(private router: Router) {}
 
@@ -36,6 +39,9 @@ export class AppComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         this.isComputerSciencePage = event.urlAfterRedirects.includes('/computer-science');
         this.isEntertainmentPage = event.urlAfterRedirects.includes('/entertainment');
+        this.isEntrepreneurshipPage = event.urlAfterRedirects.includes('/entrepreneurship');
+        this.isNonprofitPage = event.urlAfterRedirects.includes('/nonprofit');
+        this.isCybersecurityPage = event.urlAfterRedirects.includes('/cybersecurity');
       }
     });
   }

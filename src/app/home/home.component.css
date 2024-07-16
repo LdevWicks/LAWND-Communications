@@ -43,4 +43,27 @@ html, body {
     align-items: center;
   }
   
+  .dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Gap between items */
+    padding: 20px; /* Padding around the grid */
+    max-width: 1200px; /* Limit maximum width of the dashboard */
+    margin: 0 auto; /* Center the dashboard horizontally */
+  }
+  
+  .dashboard-item {
+    text-align: center; /* Center align text */
+  }
+  
+  .dashboard-card {
+    max-width: 300px; /* Limit card width */
+  }
+  
+  .dashboard-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensure image covers the card */
+  }
+  
   

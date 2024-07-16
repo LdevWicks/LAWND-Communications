@@ -14,6 +14,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatDividerModule} from '@angular/material/divider';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-home',
@@ -29,10 +30,15 @@ export class HomeComponent implements OnInit{
   yearFormGroup!: FormGroup;
   message: string;
 
-  constructor(private formBuilder: FormBuilder) { 
+  constructor(private formBuilder: FormBuilder, private router: Router) { 
      this.categories = ["Computer Science", "Entertainment", "Nonprofit", "Entrepreneurship", "Cybersecurity"];
      this.message = '';
 
+  }
+  
+
+  navigateTo(route: string) {
+    this.router.navigate([route]);
   }
   ngOnInit() {
     this.yearFormGroup = this.formBuilder.group({

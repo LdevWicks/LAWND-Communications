@@ -53,17 +53,40 @@ html, body {
   }
   
   .dashboard-item {
-    text-align: center; /* Center align text */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced box shadow for 3D effect */
+    background: linear-gradient(145deg, #f0f0f0, #dcdcdc); /* Grey gradient */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transform and shadow */
   }
   
-  .dashboard-card {
-    max-width: 300px; /* Limit card width */
+  .dashboard-item:hover {
+    transform: translateY(-4px); /* Lift on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
   }
   
-  .dashboard-card img {
+  .dashboard-item img {
     width: 100%;
-    height: auto;
+    height: 200px; /* Fixed height for consistency */
     object-fit: cover; /* Ensure image covers the card */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
   }
+  
+  .mat-card-header, .mat-card-content, .mat-card-actions {
+    padding: 12px; /* Padding inside card sections */
+  }
+  
+  .mat-card-header {
+    background-color: #f7f7f7; /* Light grey background for header */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .mat-card-content {
+    background-color: #ffffff; /* White background for content */
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  
   
   

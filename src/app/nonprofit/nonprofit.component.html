@@ -18,13 +18,14 @@
   </div-->
 
   
-<div class="product-container">
-  <div class="product-item" *ngFor="let product of nonprofit$ | async">
-    <mat-card>
-      <img (click)="navigateToPage(product.id)" mat-card-image [src]="product.imageUrl" alt="Product Image" class="product-image">
-    </mat-card>
+  <div class="product-container">
+    <div class="product-card" *ngFor="let product of nonprofit$ | async">
+      <mat-card>
+        <img (click)="navigateToPage(product.id)" mat-card-image [src]="product.imageUrl" alt="Product Image" class="product-image">
+      </mat-card>
+    </div>
   </div>
-</div>
+  
 
   
   

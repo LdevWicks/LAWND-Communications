@@ -1,27 +1,37 @@
 
 <!-- discussion-board.component.html -->
 
-<mat-card>
-    <mat-card-header>
+
+    
+      <mat-card class="card">
       <mat-card-title>Discussion Board</mat-card-title>
       <br/>
+      <mat-card-content>
       What advice would you give to someone starting a career in cybersecurity?
       <br/> What skills and certifications are most valuable in the current job market?
-      <mat-card-subtitle>Name</mat-card-subtitle>
-    </mat-card-header>
+     </mat-card-content>
+
+    <br/>
+
     <mat-card-content>
+      <mat-card-subtitle>Name</mat-card-subtitle>
         <form #postForm="ngForm" (ngSubmit)="addPost(postForm)">
             <input name="title" ngModel required>
             <mat-card-subtitle>Post</mat-card-subtitle>
-            <textarea name="content" ngModel required></textarea> <br/>
-            <button mat-raised label="Post" type="submit">Add Post</button>
+            <textarea  name="content" ngModel required></textarea> <br/>
+            <button mat-raised-button label="Post" type="submit" class="button">Add Post</button>
           </form>          
       <hr>
-      <div *ngFor="let post of posts">
-        <h3 >{{ post.title }}</h3>
-        <p >{{ post.content }}</p>
+      <div  *ngFor="let post of posts">
+        <mat-card class="post">
+          <mat-card-content>
+        <mat-card-title>{{ post.title }}</mat-card-title>
+      
+        <mat-card-content><section >{{ post.content }}</section></mat-card-content>
+        </mat-card-content>
+        </mat-card>
         <hr>
       </div>
     </mat-card-content>
-  </mat-card>
   
+  </mat-card>

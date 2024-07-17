@@ -18,5 +18,11 @@
     color:white;
   }
 
+  .text-area {
+    width: 400px; /* Adjust width as needed */
+    height: 70px;; /* Let the height adjust based on content */
+    min-height: 50px; /* Set a minimum height to prevent it from shrinking */
+    resize: none; /* Disable resizing by user */
+  }
   
   

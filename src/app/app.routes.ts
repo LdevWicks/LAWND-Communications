@@ -10,6 +10,7 @@ import { YekizeComponent} from './yekize/yekize.component';
 import { InnovativeComponent} from './innovative/innovative.component';
 import { DifferenceComponent} from './difference/difference.component';
 import { CwComponent} from './cw/cw.component';
+import { LAWNDComponent } from './lawnd/lawnd.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -22,6 +23,7 @@ export const routes: Routes = [
   { path: 'innovative-concepts', component: InnovativeComponent },
   { path: 'difference', component: DifferenceComponent },
   { path: 'cw', component: CwComponent },
+  { path: 'lawnd', component: LAWNDComponent },
   { path: '**', redirectTo: '' } // Redirect any other path to home
 ];
 

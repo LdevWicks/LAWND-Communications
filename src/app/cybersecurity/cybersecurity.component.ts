@@ -5,7 +5,7 @@ import { MatExpansionModule} from '@angular/material/expansion';
 import { DiscussionBoardComponent } from '../discussion-board/discussion-board.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {FormBuilder, FormGroup, Validators, FormsModule} from '@angular/forms';
+import {FormBuilder, FormGroup,  FormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -19,58 +19,33 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 export class CybersecurityComponent implements OnInit {
   
-  categories: string[] = [];
-  categoryFormGroup!: FormGroup;
-  years: number[] = Array.from({ length: 19 }, (_, index) => 2006 + index); // Array of years from 2006 to 2024
-  yearFormGroup!: FormGroup;
-  message: string;
+  searchForm: FormGroup = new FormGroup({}); // Initialize FormGroup
+  resources: any[] = [
+    { title: 'Guide to Cybersecurity', url: 'assets/guide.pdf' },
+    { title: 'Security Best Practices', url: 'assets/best_practices.pdf' },
+    // Add more resources as needed
+  ];
+  filteredResources: any[] = []; // Initialize filteredResources as an empty array
 
-  constructor(private formBuilder: FormBuilder) { 
-     this.categories = ["Computer Science", "Entertainment", "Nonprofit", "Entrepreneurship", "Cybersecurity"];
-     this.message = '';
+  constructor(private formBuilder: FormBuilder) { }
 
-  }
-  ngOnInit() {
-    this.yearFormGroup = this.formBuilder.group({
-      year: ['', Validators.required]
+  ngOnInit(): void {
+    this.searchForm = this.formBuilder.group({
+      searchQuery: [''] // Initialize with an empty search query
     });
 
-    this.categoryFormGroup = this.formBuilder.group({
-      category: ['', Validators.required]
-    });
+    // Initialize filteredResources with all resources
+    this.filteredResources = this.resources;
   }
 
-  onSubmit() {
-    const year = this.yearFormGroup.value.year;
-    const category = this.categoryFormGroup.value.category;
+  searchResources(): void {
+    const searchQuery = this.searchForm.value.searchQuery.toLowerCase();
 
-    this.message = this.getMessage(year, category);
-  }
-
-  getMessage(year: number, category: string): string {
-    if (category === 'Computer Science') {
-      if (year === 2006) {
-        return 'Fact for Computer Science in 2006';
-      } else if (year === 2007) {
-        return 'Fact for Computer Science in 2007';
-      }
-      // Add more years as needed
-    } else if (category === 'Entertainment') {
-      if (year === 2006) {
-        return 'Fact for Entertainment in 2006';
-      } else if (year === 2007) {
-        return 'Fact for Entertainment in 2007';
-      }
-      // Add more years as needed
-    } else if (category === 'Nonprofit') {
-      if (year === 2006) {
-        return 'Fact for Nonprofit in 2006';
-      } else if (year === 2007) {
-        return 'Fact for Nonprofit in 2007';
-      }
-      // Add more years as needed
-    }
-
-    return 'No fact available for the selected year and category.';
+    // Filter resources based on search query
+    this.filteredResources = this.resources.filter(resource =>
+      resource.title.toLowerCase().includes(searchQuery)
+    );
   }
 }
+  
+

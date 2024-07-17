@@ -1,106 +1,106 @@
+<section class="cybersecurity-page">
+  <div class="container">
+    <div class="row">
+      <!-- Career Section -->
+      <div class="col-md-4">
+        <mat-card>
+          <mat-card-title>Career Opportunities</mat-card-title>
+          <div class="job-listings">
+            <!-- Placeholder for Job Listings -->
+          </div>
+          <div class="cta-buttons">
+            <a href="#" class="btn btn-primary">View Openings</a>
+          </div>
+        </mat-card>
 
-<mat-card class="container">
-    <mat-card-title>Career</mat-card-title>
-
-<p>cybersecurity works!</p>
-Revature -Security+ <br/>
-AFS- CISSP, SAFe Scrum Master, Associate Chief Information Security Officer, Cribl <br/>
-ISSO -NIST 800-53, documentation epectations
-linkein
-<div class="container">
-  <mat-horizontal-stepper linear>
-    <mat-step [stepControl]="yearFormGroup">
-      <form [formGroup]="yearFormGroup">
-        <ng-template matStepLabel>Select Year</ng-template>
-        <mat-form-field>
-          <mat-label>Year</mat-label>
-          <mat-select formControlName="year" placeholder="Select year">
-            <mat-option *ngFor="let year of years" [value]="year">{{ year }}</mat-option>
-          </mat-select>
-        </mat-form-field>
-        <div>
-          <button mat-raised-button class="button" matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-
-    <mat-step [stepControl]="categoryFormGroup">
-      <form [formGroup]="categoryFormGroup">
-        <ng-template matStepLabel>Select Category</ng-template>
-        <mat-form-field>
-          <mat-label>Category</mat-label>
-          <mat-select formControlName="category">
-            <mat-option *ngFor="let category of categories" [value]="category">
-              {{ category }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-        <div>
-          <button mat-raised-button class="button" matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-
-    <!-- Additional steps can be added if needed -->
-
-    <mat-step>
-      <ng-template matStepLabel>Fun Fact</ng-template>
-      <p>You selected year: {{ yearFormGroup.value.year }} and category: {{ categoryFormGroup.value.category }}</p>
-      <p>{{ message }}</p>
-      <div>
-        <button mat-raised-button class="button" matStepperPrevious>Back</button> &nbsp;
-        <button mat-raised-button class="button" (click)="onSubmit()">Confirm</button>
+        <!-- Stepper for Certifications -->
+        <mat-card>
+          <mat-card-title>Certifications</mat-card-title>
+          <mat-horizontal-stepper>
+            <mat-step>
+              <ng-template matStepLabel>Security+</ng-template>
+              <p>Details about Security+ certification.</p>
+              <div>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>CISSP</ng-template>
+              <p>Details about CISSP certification.</p>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>SAFe Advanced Scrum Master</ng-template>
+              <p>Details about SAFe Advanced Scrum Master certification.</p>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>Cribl Level 2 Certified Admin</ng-template>
+              <p>Details about Cribl Level 2 Certified Admin certification.</p>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>Associate Certified Chief Information Security Officer</ng-template>
+              <p>Details about Associate Certified Chief Information Security Officer certification.</p>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button>Finish</button>
+              </div>
+            </mat-step>
+          </mat-horizontal-stepper>
+        </mat-card>
       </div>
-    </mat-step>
-  </mat-horizontal-stepper>
-</div>
 
-Goal CISO
-</mat-card>
-<mat-card>
-    Documentation
-    <div class="cybersecurity-page">
-        <h1>Cybersecurity Documentation</h1>
-        <p>Content...</p>
-      
-        <!-- Index documentation section -->
-        <mat-accordion class="index-accordion">
-          <!-- Index panel 1 -->
-          <mat-expansion-panel>
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                Index Section 1
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <p>Content for Index Section 1. Add hyperlinks here.</p>
-            <p>
-              <a href="https://example.com/document1" target="_blank">Document 1</a><br>
-              <a href="https://example.com/document2" target="_blank">Document 2</a><br>
-              <!-- Add more hyperlinks as needed -->
-            </p>
-          </mat-expansion-panel>
-      
-          <!-- Index panel 2 -->
-          <mat-expansion-panel>
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                Index Section 2
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <p>Content for Index Section 2. Add hyperlinks here.</p>
-            <p>
-              <a href="https://example.com/document3" target="_blank">Document 3</a><br>
-              <a href="https://example.com/document4" target="_blank">Document 4</a><br>
-              <!-- Add more hyperlinks as needed -->
-            </p>
-          </mat-expansion-panel>
-        </mat-accordion>
+      <!-- Documentation Section -->
+      <div class="col-md-4">
+        <mat-card>
+          <mat-card-title>Documentation</mat-card-title>
+          <!-- Search Bar -->
+          <form [formGroup]="searchForm" (ngSubmit)="searchResources()">
+            <mat-form-field appearance="fill">
+              <mat-label>Search Documentation</mat-label>
+              <input matInput formControlName="searchQuery">
+              <button mat-button type="submit">Search</button>
+            </mat-form-field>
+          </form>
+
+          <!-- Display Downloadable Resources -->
+          <div *ngIf="filteredResources.length > 0; else noResources">
+            <h3>Downloadable Resources</h3>
+            <ul>
+              <li *ngFor="let resource of filteredResources">
+                <a [href]="resource.url" target="_blank">{{ resource.title }}</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Placeholder for no resources found -->
+          <ng-template #noResources>
+            <p>No resources found.</p>
+          </ng-template>
+        </mat-card>
       </div>
-      
-</mat-card>
 
-<mat-card>
-    Discusion Board/ sign up
-    <app-discussion-board></app-discussion-board>
-</mat-card>
+      <!-- Discussion Board Section -->
+      <div class="col-md-4">
+        <mat-card>
+          <mat-card-title>Discussion Board</mat-card-title>
+          <app-discussion-board></app-discussion-board>
+          <div class="post-new-discussion">
+            <a href="#" class="btn btn-secondary">Start a Discussion</a>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</section>
 

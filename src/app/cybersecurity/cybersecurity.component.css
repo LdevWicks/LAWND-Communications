@@ -25,4 +25,17 @@
     width: 100vw; 
   
   }
+
+  mat-horizontal-stepper {
+    margin: 20px;
+  }
+  
+  mat-step {
+    padding: 20px;
+  }
+  
+  mat-step p {
+    margin: 0;
+  }
+  
   

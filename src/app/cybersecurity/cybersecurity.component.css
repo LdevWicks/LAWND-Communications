@@ -19,15 +19,12 @@
     margin-bottom: 5px;
   }
 
-  .container{
-    display: flex;
-    height: 100vh; /* Full viewport height */
-    width: 100vw; 
-  
-  }
+ 
 
   mat-horizontal-stepper {
     margin: 20px;
+    border-radius: 20px;
+    overflow: hidden;
   }
   
   mat-step {
@@ -36,6 +33,145 @@
   
   mat-step p {
     margin: 0;
+    padding: 20px;
+  }
+
+  .certification-card{
+    background-color: rgb(222, 219, 219);
+  }
+
+  .certifications-card{
+    background-color: rgb(67, 66, 66);
+  }
+
+  .button{
+    background-color: rgb(252, 254, 255);
   }
   
+  .certification-card {
+    background-color: rgb(222, 219, 219);
+    padding: 20px;
+  }
+  
+  .mat-step-header {
+    width: auto !important; /* Ensures full width for step labels */
+  }
+  
+  
+  
+  .mat-step-content {
+    padding: 20px;
+  }
+  
+  
+  
+  
+  .cybersecurity-page {
+    padding: 20px;
+  }
+  
+  .certifications-card {
+    background-color: rgb(67, 66, 66);
+    color: rgb(53, 53, 53);
+    padding: 20px;
+    border-radius: 20px;
+  }
+  
+  .certifications-summary {
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  .mat-step-label {
+    white-space: normal !important; /* Allows label text wrapping */
+    color: white; /* Ensures label text visibility on dark background */
+  }
+  
+  .mat-step-header {
+    width: auto !important; /* Ensures full width for step labels */
+    color: white; /* Ensures label text visibility on dark background */
+  }
+  
+  .mat-step-content {
+    padding: 20px;
+    color: white; /* Ensures content text visibility on dark background */
+  }
+  
+  .mat-horizontal-stepper {
+    margin: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .mat-step {
+    padding: 20px;
+  }
+  
+  .mat-step p {
+    margin: 0;
+  }
+  
+  .button {
+    background-color: rgb(252, 254, 255);
+    color: black; /* Adjust button text color for visibility */
+  }
+  
+  /* Adjust number color on hover */
+  .mat-step-header:hover {
+    color: lightgrey !important;
+  }
+  
+  /* Hide edit icon on number click */
+  .mat-step-header.clicked {
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/pwa5-89c3b.appspot.com/o/YekizeLogo.jpg?alt=media&token=3f0db9df-fbf8-41c7-91a9-58bedbc8e045'); /* Replace with your image path */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: black;
+    cursor: pointer;
+  }
+  
+  
+
+  .documentation-layout {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .side-panel {
+    width: 30%;
+    border-right: 1px solid #ccc;
+    padding-right: 20px;
+  }
+  
+  .side-panel h3 {
+    margin-top: 0;
+  }
+  
+  .side-panel ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .side-panel li {
+    margin-bottom: 10px;
+  }
+  
+  .side-panel a {
+    text-decoration: none;
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  .side-panel a:hover {
+    text-decoration: underline;
+  }
+  
+  .main-content {
+    width: 70%;
+  }
+  
+  .main-content h3 {
+    margin-top: 0;
+  }
   

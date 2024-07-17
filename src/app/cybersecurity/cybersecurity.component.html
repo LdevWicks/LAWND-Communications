@@ -1,94 +1,178 @@
 <section class="cybersecurity-page">
   <div class="container">
     <div class="row">
-      <!-- Career Section -->
+    
       <div class="col-md-4">
-        <mat-card>
-          <mat-card-title>Career Opportunities</mat-card-title>
-          <div class="job-listings">
-            <!-- Placeholder for Job Listings -->
+     
+        <!-- Certifications Card -->
+          
+      
+        <section class="cybersecurity-page">
+          <div class="container">
+            <div class="row">
+              <!-- Certifications Card -->
+              <mat-card class="certifications-card">
+                <mat-card-title>Certifications</mat-card-title>
+                <p class="certifications-summary">
+                  Enhance your cybersecurity career with industry-recognized certifications. Each certification demonstrates expertise in key areas of information security and prepares you for advanced roles in cybersecurity management and leadership.
+                </p>
+        
+                <!-- Stepper for Certifications -->
+                <mat-horizontal-stepper class="certification-card" [linear]="true">
+                  <!-- Security+ Step -->
+                  <mat-step [completed]="true">
+                    <ng-template matStepLabel>
+                      <mat-icon class="step-icon">security</mat-icon> 
+                    </ng-template>
+                    <p>
+                      Security+ certification provides a foundational understanding of network security and risk management. It covers topics such as threat identification, risk mitigation techniques, and network infrastructure security.
+                    </p>
+                    <div>
+                      <button mat-button matStepperNext><mat-icon>arrow_forward</mat-icon></button>
+                    </div>
+                  </mat-step>
+        
+                  <!-- CISSP Step -->
+                  <mat-step [completed]="true">
+                    <ng-template matStepLabel>
+                      <mat-icon class="step-icon">shield</mat-icon> 
+                    </ng-template>
+                    <p>
+                      CISSP (Certified Information Systems Security Professional) certification validates expertise in information security governance, risk management, and access control. It covers domains such as security operations, architecture, and engineering.
+                    </p>
+                    <div>
+                      <button mat-button matStepperPrevious><mat-icon>arrow_back</mat-icon></button>
+                      <button mat-button matStepperNext><mat-icon>arrow_forward</mat-icon></button>
+                    </div>
+                  </mat-step>
+        
+                  <!-- SAFe Advanced Scrum Master Step -->
+                  <mat-step [completed]="true">
+                    <ng-template matStepLabel>
+                      <mat-icon class="step-icon">engineering</mat-icon> 
+                    </ng-template>
+                    <p>
+                      SAFe Advanced Scrum Master certification focuses on scaling Agile practices across multiple teams and large enterprises. It covers advanced Scrum techniques, Agile framework implementation, and leadership skills.
+                    </p>
+                    <div>
+                      <button mat-button matStepperPrevious><mat-icon>arrow_back</mat-icon></button>
+                      <button class="button" mat-raised-button matStepperNext><mat-icon>arrow_forward</mat-icon></button>
+                    </div>
+                  </mat-step>
+        
+                  <!-- Cribl Level 2 Certified Admin Step -->
+                  <mat-step [completed]="true">
+                    <ng-template matStepLabel>
+                      <mat-icon class="step-icon">account_balance_wallet</mat-icon> 
+                    </ng-template>
+                    <p>
+                      Cribl Level 2 Certified Admin certification demonstrates proficiency in managing Cribl LogStream deployments and optimizing data pipeline architectures. It focuses on advanced administration and troubleshooting techniques.
+                    </p>
+                    <div>
+                      <button mat-button matStepperPrevious><mat-icon>arrow_back</mat-icon></button>
+                      <button mat-button matStepperNext><mat-icon>arrow_forward</mat-icon></button>
+                    </div>
+                  </mat-step>
+        
+                  <!-- Associate Certified Chief Information Security Officer Step -->
+                  <mat-step [completed]="true">
+                    <ng-template matStepLabel>
+                      <mat-icon class="step-icon">supervisor_account</mat-icon> 
+                    </ng-template>
+                    <p>
+                      Associate Certified Chief Information Security Officer certification validates leadership skills in cybersecurity management, policy development, and strategic planning. It prepares professionals for executive roles in information security.
+                    </p>
+                    <div>
+                      <button mat-button matStepperPrevious><mat-icon>arrow_back</mat-icon></button>
+                      <button mat-button matStepperNext><mat-icon>arrow_forward</mat-icon></button>
+                    </div>
+                  </mat-step>
+        
+                  <!-- Certified Chief Information Security Officer Step -->
+                  <mat-step>
+                    <ng-template matStepLabel>
+                      <mat-icon class="step-icon">supervisor_account</mat-icon> Certified Chief Information Security Officer
+                    </ng-template>
+                    <p>
+                      Certified Chief Information Security Officer certification validates leadership skills in cybersecurity management, policy development, and strategic planning. It prepares professionals for executive roles in information security.
+                    </p>
+                    <div>
+                      <button mat-button matStepperPrevious><mat-icon>arrow_back</mat-icon></button>
+                    </div>
+                  </mat-step>
+                </mat-horizontal-stepper>
+              </mat-card>
+            </div>
           </div>
-          <div class="cta-buttons">
-            <a href="#" class="btn btn-primary">View Openings</a>
-          </div>
-        </mat-card>
-
-        <!-- Stepper for Certifications -->
-        <mat-card>
-          <mat-card-title>Certifications</mat-card-title>
-          <mat-horizontal-stepper>
-            <mat-step>
-              <ng-template matStepLabel>Security+</ng-template>
-              <p>Details about Security+ certification.</p>
-              <div>
-                <button mat-button matStepperNext>Next</button>
-              </div>
-            </mat-step>
-            <mat-step>
-              <ng-template matStepLabel>CISSP</ng-template>
-              <p>Details about CISSP certification.</p>
-              <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
-              </div>
-            </mat-step>
-            <mat-step>
-              <ng-template matStepLabel>SAFe Advanced Scrum Master</ng-template>
-              <p>Details about SAFe Advanced Scrum Master certification.</p>
-              <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
-              </div>
-            </mat-step>
-            <mat-step>
-              <ng-template matStepLabel>Cribl Level 2 Certified Admin</ng-template>
-              <p>Details about Cribl Level 2 Certified Admin certification.</p>
-              <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
-              </div>
-            </mat-step>
-            <mat-step>
-              <ng-template matStepLabel>Associate Certified Chief Information Security Officer</ng-template>
-              <p>Details about Associate Certified Chief Information Security Officer certification.</p>
-              <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button>Finish</button>
-              </div>
-            </mat-step>
-          </mat-horizontal-stepper>
-        </mat-card>
+        </section>
       </div>
+      
+      <br/>
 
       <!-- Documentation Section -->
-      <div class="col-md-4">
+      <div class="certifications-card">
         <mat-card>
-          <mat-card-title>Documentation</mat-card-title>
-          <!-- Search Bar -->
-          <form [formGroup]="searchForm" (ngSubmit)="searchResources()">
-            <mat-form-field appearance="fill">
-              <mat-label>Search Documentation</mat-label>
-              <input matInput formControlName="searchQuery">
-              <button mat-button type="submit">Search</button>
-            </mat-form-field>
-          </form>
-
-          <!-- Display Downloadable Resources -->
-          <div *ngIf="filteredResources.length > 0; else noResources">
-            <h3>Downloadable Resources</h3>
-            <ul>
-              <li *ngFor="let resource of filteredResources">
-                <a [href]="resource.url" target="_blank">{{ resource.title }}</a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Placeholder for no resources found -->
-          <ng-template #noResources>
-            <p>No resources found.</p>
-          </ng-template>
+          <mat-card-content>
+            <h2>Documentation</h2>
+            <p>This documentation section includes documents I used to prepare for achieving the above certifications.</p>
+      
+            <!-- Search Bar -->
+            <form [formGroup]="searchForm" (ngSubmit)="searchResources()">
+              <mat-form-field appearance="fill">
+                <mat-label>Search Documentation</mat-label>
+                <input matInput formControlName="searchQuery">
+                <button mat-button type="submit">Search</button>
+              </mat-form-field>
+            </form>
+      
+            <!-- Side Panel and Main Content Layout -->
+            <div class="documentation-layout">
+              <!-- Side Panel -->
+              <div class="side-panel">
+                <h3>Documents</h3>
+                <ul>
+                  <li *ngFor="let doc of documents" (click)="selectDocument(doc)">
+                    <a href="javascript:void(0)">{{ doc.title }}</a>
+                  </li>
+                </ul>
+              </div>
+      
+              <!-- Main Content -->
+              <div class="main-content">
+                <h3>{{ selectedDocument?.title }}</h3>
+                <p *ngIf="selectedDocument; else noDocumentSelected">
+                  {{ selectedDocument.content }}
+                </p>
+                <ng-template #noDocumentSelected>
+                  <p>Select a document to view its content.</p>
+                </ng-template>
+              </div>
+            </div>
+      
+            <!-- Display Downloadable Resources -->
+            <div *ngIf="searchPerformed && filteredResources.length > 0" class="search-results">
+              <mat-card-title>Search Results</mat-card-title>
+              <ul>
+                <li *ngFor="let resource of filteredResources">
+                  <a *ngIf="resource.type === 'resource'" [href]="resource.url" target="_blank">{{ resource.title }}</a>
+                  <span *ngIf="resource.type === 'document'" (click)="selectDocument(resource)" style="cursor: pointer;">{{ resource.title }}</span>
+                </li>
+              </ul>
+            </div>
+      
+            <!-- Placeholder for no search results -->
+            <div *ngIf="searchPerformed && filteredResources.length === 0">
+              <p>No resources found.</p>
+            </div>
+          </mat-card-content>
         </mat-card>
       </div>
+      
+      
+      
+      
+
+      <br/>
 
       <!-- Discussion Board Section -->
       <div class="col-md-4">

@@ -1,51 +1,86 @@
-import { Component ,OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
-import {MatStepperModule} from '@angular/material/stepper';
-import { MatExpansionModule} from '@angular/material/expansion';
-import { DiscussionBoardComponent } from '../discussion-board/discussion-board.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {FormBuilder, FormGroup,  FormsModule} from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { MatStepperModule } from '@angular/material/stepper';
+import { DiscussionBoardComponent } from "../discussion-board/discussion-board.component";
 
 @Component({
   selector: 'app-cybersecurity',
   standalone: true,
-  imports: [MatCardModule, CommonModule, ReactiveFormsModule,MatSelectModule, MatInputModule,FormsModule,MatFormFieldModule,MatStepperModule,DiscussionBoardComponent,MatExpansionModule],
+  imports: [
+    MatCardModule,
+    MatIconModule,
+    CommonModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    DiscussionBoardComponent,
+    MatStepperModule
+],
   templateUrl: './cybersecurity.component.html',
   styleUrls: ['./cybersecurity.component.css']
 })
 export class CybersecurityComponent implements OnInit {
-  
   searchForm: FormGroup = new FormGroup({}); // Initialize FormGroup
   resources: any[] = [
-    { title: 'Guide to Cybersecurity', url: 'assets/guide.pdf' },
-    { title: 'Security Best Practices', url: 'assets/best_practices.pdf' },
+    { title: 'Guide to Cybersecurity', url: 'assets/guide.pdf', type: 'resource' },
+    { title: 'Security Best Practices', url: 'assets/best_practices.pdf', type: 'resource' },
     // Add more resources as needed
   ];
-  filteredResources: any[] = []; // Initialize filteredResources as an empty array
 
+  documents: any[] = [
+    { title: 'Security+ Study Guide', content: 'Content of Security+ Study Guide...', type: 'document' },
+    { title: 'CISSP Exam Prep', content: 'Content of CISSP Exam Prep...', type: 'document' },
+    { title: 'SAFe Advanced Scrum Master Notes', content: 'Content of SAFe Advanced Scrum Master Notes...', type: 'document' },
+    { title: 'Cribl Level 2 Admin Guide', content: 'Content of Cribl Level 2 Admin Guide...', type: 'document' },
+    { title: 'Associate CISO Handbook', content: 'Content of Associate CISO Handbook...', type: 'document' }
+  ];
+
+  combinedResources: any[] = [];
+  filteredResources: any[] = [];
+  selectedDocument: any;
+  searchPerformed: boolean = false;
+  
   constructor(private formBuilder: FormBuilder) { }
-
+  
   ngOnInit(): void {
     this.searchForm = this.formBuilder.group({
       searchQuery: [''] // Initialize with an empty search query
     });
 
-    // Initialize filteredResources with all resources
-    this.filteredResources = this.resources;
+    // Combine resources and documents
+    this.combinedResources = [...this.resources, ...this.documents];
+    this.filteredResources = this.combinedResources;
+  }
+
+  selectDocument(doc: any): void {
+    if (doc.type === 'document') {
+      this.selectedDocument = doc;
+    } else {
+      this.selectedDocument = null;
+      window.open(doc.url, '_blank');
+    }
   }
 
   searchResources(): void {
     const searchQuery = this.searchForm.value.searchQuery.toLowerCase();
 
-    // Filter resources based on search query
-    this.filteredResources = this.resources.filter(resource =>
+    // Filter combined resources based on search query
+    this.filteredResources = this.combinedResources.filter(resource =>
       resource.title.toLowerCase().includes(searchQuery)
     );
-  }
-}
-  
 
+    // Set searchPerformed to true to indicate that a search was performed
+    this.searchPerformed = true;
+
+    // Clear selected document if it doesn't match the search query
+    if (this.selectedDocument && !this.filteredResources.includes(this.selectedDocument)) {
+      this.selectedDocument = null;
+    }
+}
+}

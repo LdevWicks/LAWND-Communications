@@ -6,7 +6,7 @@ import {MatListModule} from '@angular/material/list';
   standalone: true,
   imports: [MatListModule],
   templateUrl: './cw.component.html',
-  styleUrl: './cw.component.css'
+  styleUrls: ['./cw.component.css']
 })
 export class CwComponent {
 

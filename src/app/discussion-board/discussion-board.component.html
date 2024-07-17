@@ -18,7 +18,7 @@
         <form #postForm="ngForm" (ngSubmit)="addPost(postForm)">
             <input name="title" ngModel required>
             <mat-card-subtitle>Post</mat-card-subtitle>
-            <textarea  name="content" ngModel required></textarea> <br/>
+            <textarea class="text-area" name="content" ngModel required></textarea> <br/>
             <button mat-raised-button label="Post" type="submit" class="button">Add Post</button>
           </form>          
       <hr>

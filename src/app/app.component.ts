@@ -31,6 +31,8 @@ export class AppComponent implements OnInit {
   isEntrepreneurshipPage = false;
   isNonprofitPage = false;
   isCybersecurityPage = false;
+  isYekizePage = false;
+  isLAWNDPage = false;
 
   constructor(private router: Router) {}
 
@@ -42,6 +44,8 @@ export class AppComponent implements OnInit {
         this.isEntrepreneurshipPage = event.urlAfterRedirects.includes('/entrepreneurship');
         this.isNonprofitPage = event.urlAfterRedirects.includes('/nonprofit');
         this.isCybersecurityPage = event.urlAfterRedirects.includes('/cybersecurity');
+        this.isYekizePage = event.urlAfterRedirects.includes('/yekize');
+        this.isLAWNDPage = event.urlAfterRedirects.includes('/lawnd');
       }
     });
   }

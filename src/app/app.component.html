@@ -55,6 +55,14 @@
       <mat-toolbar>Cybersecurity </mat-toolbar>
     </div>
 
+    <div class="logo-container" *ngIf="isYekizePage">
+      <mat-toolbar>Yekize Essentials  <img src="assets/YekizeLogo.jpg" alt="Yekize Essentials Logo"></mat-toolbar>
+    </div>
+
+    <div class="logo-container" *ngIf="isLAWNDPage">
+      <mat-toolbar>LAW || ND Communications <img src="assets/LAWNDLOGO.png" alt="LAW || ND Communications Logo"></mat-toolbar>
+    </div>
+
     </div>
     <!-- Router outlet for dynamic component rendering -->
     <router-outlet></router-outlet>

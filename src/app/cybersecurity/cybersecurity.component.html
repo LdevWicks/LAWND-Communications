@@ -1,14 +1,16 @@
+<mat-tab-group class ="tabs">
 <section class="cybersecurity-page">
-  <div class="container">
+  <div>
+
     <div class="row">
     
       <div class="col-md-4">
      
         <!-- Certifications Card -->
           
-      
+      <mat-tab label="Certifications">
         <section class="cybersecurity-page">
-          <div class="container">
+          <div>
             <div class="row">
               <!-- Certifications Card -->
               <mat-card class="certifications-card">
@@ -105,12 +107,13 @@
             </div>
           </div>
         </section>
-      </div>
-      
+    
+    </mat-tab>
       <br/>
-
+<mat-tab label="Documentation">
+  <div class="container">
       <!-- Documentation Section -->
-      <div class="certifications-card">
+      <div class ="container">
         <mat-card>
           <mat-card-content>
             <h2>Documentation</h2>
@@ -168,14 +171,14 @@
         </mat-card>
       </div>
       
-      
-      
+    </div>  
+   </mat-tab>   
       
 
       <br/>
-
+<mat-tab  label="Disscusion Board">
       <!-- Discussion Board Section -->
-      <div class="col-md-4">
+      <div class ="container">
         <mat-card>
           <mat-card-title>Discussion Board</mat-card-title>
           <app-discussion-board></app-discussion-board>
@@ -184,7 +187,11 @@
           </div>
         </mat-card>
       </div>
+      </mat-tab>
     </div>
-  </div>
-</section>
 
+  
+  </div>
+</div>
+</section>
+</mat-tab-group>

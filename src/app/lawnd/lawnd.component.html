@@ -1,13 +1,75 @@
 <ng-template mat-tab-label>
     <img src="assets/LAWNDLOGO.png" alt="LAWND Logo" class="tab-icon"> LAWND || Communications
   </ng-template>
-<mat-card-title>Entrepreneurship </mat-card-title>
-<br/>
+
 <mat-card>
-LAWND Comunications entertainment consulting 
+
 <img class="image" src="assets/LAWNDLOGO.png" alt="Icon"><br/>
 LAWND Communication LLC is a consulting firm dedicated to servicing the entertainment and corporate industries. Specializing in film, music, nonprofit, and entertainment sectors, LAWND offers comprehensive marketing and branding services. Their expertise includes graphic design, fundraisers, event management, and more. Established in 2019, LAWND Communication LLC continues to deliver innovative solutions to meet industry demands.
 <br/>
-services
+
+<div class="dashboard-container">
+
+<mat-card class="dashboard-item">
+    <mat-card-header>
+      <mat-card-title>Nonprofit</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="assets/nonprofit.jpg" alt="Nonprofit">
+    <mat-card-content>
+      <p>Learn more about our nonprofit initiatives.</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="primary">View Sample Work</button>
+    </mat-card-actions>
+  </mat-card>
+
+<mat-card> </mat-card>
+
+<mat-card></mat-card>
+
+<mat-card></mat-card>
+
+</div>
+
+mat card dash or services
+but for example of work with pop up module
 example of work
 </mat-card>
+
+<mat-divider></mat-divider>
+
+<div class="contact-us-container">
+    <h2>Contact Us</h2>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="name">Name:</label>
+        <input id="name" formControlName="name" required>
+        <div *ngIf="name?.invalid && (name!.dirty || name!.touched)" class="error">
+          <div *ngIf="name!.errors?.['required']">Name is required.</div>
+        </div>
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input id="email" formControlName="email" type="email" required>
+        <div *ngIf="email?.invalid && (email!.dirty || email!.touched)" class="error">
+          <div *ngIf="email!.errors?.['required']">Email is required.</div>
+          <div *ngIf="email!.errors?.['email']">Email must be a valid email address.</div>
+        </div>
+      </div>
+      <div>
+        <label for="message">Message:</label>
+        <textarea id="message" formControlName="message" required></textarea>
+        <div *ngIf="message?.invalid && (message!.dirty || message!.touched)" class="error">
+          <div *ngIf="message!.errors?.['required']">Message is required.</div>
+        </div>
+      </div>
+      <button type="submit" [disabled]="contactForm.invalid">Submit</button>
+    </form>
+    <div *ngIf="formSubmitted" class="confirmation">
+      <p>Thank you for your inquiry! We will get back to you soon.</p>
+    </div>
+  </div>
+  
+  
+  
+  

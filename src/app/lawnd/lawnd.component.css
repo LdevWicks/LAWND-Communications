@@ -4,3 +4,165 @@
     width: 100px;
   }
   
+  /* src/styles.css or component-specific CSS */
+.full{
+    width: 100%; /* Ensure the card spans the entire width */
+    max-width: 100%; /* Optional: Set maximum width if needed */
+  }
+
+.button{
+    color:rgb(255, 253, 253);
+    background-color: rgb(67, 67, 67);
+}
+
+/* styles.css or your global styles file */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+     /* Full viewport height */
+    width: 100vw;  /* Full viewport width */
+  }
+  
+  mat-horizontal-stepper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mat-form-field, form, .mat-horizontal-stepper-header, .mat-horizontal-stepper-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Gap between items */
+    padding: 20px; /* Padding around the grid */
+    max-width: 1200px; /* Limit maximum width of the dashboard */
+    margin: 0 auto; /* Center the dashboard horizontally */
+  }
+  
+  .dashboard-item {
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced box shadow for 3D effect */
+    background: linear-gradient(145deg, #f0f0f0, #dcdcdc); /* Grey gradient */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transform and shadow */
+  }
+  
+  .dashboard-item:hover {
+    transform: translateY(-4px); /* Lift on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+  }
+  
+  .dashboard-item img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensure image covers the card */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .mat-card-header, .mat-card-content, .mat-card-actions {
+    padding: 12px; /* Padding inside card sections */
+  }
+  
+  .mat-card-header {
+    background-color: #f7f7f7; /* Light grey background for header */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .mat-card-content {
+    background-color: #ffffff; /* White background for content */
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+
+  .contact-us-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .contact-us-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .contact-us-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .contact-us-container form div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-us-container form label {
+    margin-bottom: 5px;
+  }
+  
+  .contact-us-container form input,
+  .contact-us-container form textarea {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .contact-us-container form button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .contact-us-container form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .contact-us-container div p {
+    text-align: center;
+    font-size: 18px;
+    color: green;
+  }
+  
+  .contact-us-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.9em;
+  }
+  
+  .confirmation {
+    margin-top: 20px;
+    color: green;
+    font-size: 1.1em;
+  }
+  
+  

@@ -4,12 +4,14 @@
 <mat-card>
     <mat-card-header>
       <mat-card-title>Discussion Board</mat-card-title>
-      <mat-card-subtitle>Title</mat-card-subtitle>
+      <br/>
+      What advice would you give to someone starting a career in cybersecurity? What skills and certifications are most valuable in the current job market?
+      <mat-card-subtitle>Name</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
         <form #postForm="ngForm" (ngSubmit)="addPost(postForm)">
             <input name="title" ngModel required>
-            <mat-card-title>Post</mat-card-title>
+            <mat-card-subtitle>Post</mat-card-subtitle>
             <textarea name="content" ngModel required></textarea> <br/>
             <button mat-raised label="Post" type="submit">Add Post</button>
           </form>          

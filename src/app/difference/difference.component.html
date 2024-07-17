@@ -1,12 +1,57 @@
 <p>difference works!</p>
 <mat-card-content>
-    <div class="banner">
-      <img [src]="images[currentImageIndex]" alt="Banner Image" (click)="navigateToDetail(images[currentImageIndex])">
-      <div class="controls">
-        <button (click)="prevImage()"><i class="material-icons">arrow_back</i></button>
-        <button (click)="nextImage()"><i class="material-icons">arrow_forward</i></button>
+  <div class="banner">
+    <img [src]="images[currentImageIndex]" alt="Banner Image" (click)="navigateToDetail(images[currentImageIndex])">
+    <div class="controls">
+      <button (click)="prevImage()"><i class="material-icons">arrow_back</i></button>
+      <button (click)="nextImage()"><i class="material-icons">arrow_forward</i></button>
+    </div>
+  </div>
+</mat-card-content>
+
+<div>
+  <mat-horizontal-stepper linear>
+    <mat-step [stepControl]="yearFormGroup">
+      <form [formGroup]="yearFormGroup">
+        <ng-template matStepLabel>Select Year</ng-template>
+        <mat-form-field>
+          <mat-label>Year</mat-label>
+          <mat-select formControlName="year" placeholder="Select year">
+            <mat-option *ngFor="let year of years" [value]="year">{{ year }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div>
+          <button mat-raised-button class="button" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="categoryFormGroup">
+      <form [formGroup]="categoryFormGroup">
+        <ng-template matStepLabel>Select Category</ng-template>
+        <mat-form-field>
+          <mat-label>Category</mat-label>
+          <mat-select formControlName="category">
+            <mat-option *ngFor="let category of categories" [value]="category">
+              {{ category }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div>
+          <button mat-raised-button class="button" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Fun Fact</ng-template>
+      <p>You selected year: {{ yearFormGroup.value.year }} and category: {{ categoryFormGroup.value.category }}</p>
+      <p>{{ message }}</p>
+      <div>
+        <button mat-raised-button class="button" matStepperPrevious>Back</button> &nbsp;
+        <button mat-raised-button class="button" (click)="onSubmit()">Confirm</button>
       </div>
-    
-      </div>
-   
-  </mat-card-content>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>
+

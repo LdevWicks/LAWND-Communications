@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatStepperModule } from '@angular/material/stepper';
 import { DiscussionBoardComponent } from "../discussion-board/discussion-board.component";
 
@@ -16,6 +17,7 @@ import { DiscussionBoardComponent } from "../discussion-board/discussion-board.c
     MatCardModule,
     MatIconModule,
     CommonModule,
+    MatTabsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,

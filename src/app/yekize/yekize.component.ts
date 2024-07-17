@@ -58,6 +58,7 @@ export class YekizeComponent implements OnInit, OnDestroy {
   }
 
   cancelCheckout(): void {
+    this.isCartOpen = false;
     this.confirmingCheckout = false;
   }
 }

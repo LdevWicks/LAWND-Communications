@@ -1,14 +1,15 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { CurrencyPipe } from '@angular/common';
-import { CommonModule } from '@angular/common';
+import { CurrencyPipe, CommonModule } from '@angular/common';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable, Subscription } from 'rxjs';
 import { CartService } from '../cart.service';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-yekize',
-  standalone:true,
-  imports:[CurrencyPipe,CommonModule],
+  standalone: true,
+  imports: [CurrencyPipe, CommonModule, MatIconModule, MatButtonModule],
   templateUrl: './yekize.component.html',
   styleUrls: ['./yekize.component.css']
 })
@@ -16,6 +17,8 @@ export class YekizeComponent implements OnInit, OnDestroy {
   teaProducts$: Observable<any[]> = new Observable<any[]>();
   cartItems: any[] = [];
   private cartSubscription: Subscription;
+  isCartOpen = false; // Flag to control cart panel visibility
+  confirmingCheckout = false; // Flag to control confirmation modal
 
   constructor(private firestore: AngularFirestore, private cartService: CartService) {
     this.cartSubscription = this.cartService.itemsInCart$.subscribe(items => {
@@ -35,32 +38,27 @@ export class YekizeComponent implements OnInit, OnDestroy {
     this.cartService.addToCart(product);
   }
 
-  confirmingCheckout = false; // Flag to control confirmation modal
+  toggleCart(): void {
+    this.isCartOpen = !this.isCartOpen;
+  }
 
-  
   getTotal(): number {
-    // Calculate total price of items in cart
     return this.cartItems.reduce((acc, item) => acc + item.price, 0);
   }
 
   checkout(): void {
-    // Open confirmation modal
     this.confirmingCheckout = true;
   }
 
   placeOrder(): void {
-    // Logic to place the order (e.g., send data to server, update database, etc.)
-    // Placeholder alert for demonstration
     alert('Order placed successfully!');
-
-    // Reset cart or perform other actions as needed
-    this.cartItems = []; // Clear cart after placing order
-    this.confirmingCheckout = false; // Close confirmation modal
+    this.cartItems = [];
+    this.confirmingCheckout = false;
+    this.isCartOpen = false;
   }
 
   cancelCheckout(): void {
-    // Close confirmation modal without placing order
     this.confirmingCheckout = false;
   }
-  
 }
+

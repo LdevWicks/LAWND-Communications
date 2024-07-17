@@ -6,13 +6,14 @@ import { FirestoreService } from '../firestore.service';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, NgForm } from '@angular/forms';
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'app-discussion-board',
   standalone: true,
   templateUrl: './discussion-board.component.html',
   styleUrls: ['./discussion-board.component.css'],
-  imports:[MatCardModule, MatFormFieldModule, CommonModule,FormsModule],
+  imports:[ MatCardModule, MatDividerModule, MatFormFieldModule, CommonModule,FormsModule],
 })
 export class DiscussionBoardComponent implements OnInit {
   posts: any[] = [];

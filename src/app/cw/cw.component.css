@@ -1,0 +1,249 @@
+.container{
+    width:100vw;
+    height:100vh;
+}
+
+
+.scrolling-banner {
+    overflow: hidden; /* Hide the overflow */
+    width: 100vw; /* Full page width */
+    display: flex;
+    align-items: center;
+   /* Needed for absolute positioning of scrolling content */
+    /* Adjust height as needed */
+  }
+  
+  .banner-content {
+    display: flex;
+    white-space: nowrap;
+    animation: scroll-left 20s linear infinite; /* Adjust duration as needed */
+  }
+  
+  .banner-item {
+    display: inline-block;
+    margin-right: 20px; /* Adjust as needed */
+  }
+  
+  .donate-logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .donate-title {
+    margin-right: 10px; /* Adjust spacing as needed */
+  }
+  
+  .banner-image {
+    max-height: 50px; /* Adjust size as needed */
+    display: inline-block;
+  }
+  
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .header-card {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+    background: linear-gradient(145deg, #6db3f2, #1e69de);
+    color: white;
+    border-radius: 12px;
+  }
+  
+  .header-title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .header-subtitle {
+    font-size: 1.2em;
+  }
+  
+  .banner-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 20px 0;
+    background: linear-gradient(145deg, #f0f0f0, #dcdcdc);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .banner-image {
+    width: 50%;
+    object-fit: cover;
+  }
+  
+  .banner-text {
+    width: 50%;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .image-card {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .image-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+  }
+  
+  .image-card.circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+  
+  .image-card.circle img {
+    border-radius: 50%;
+  }
+  
+  .image-card.triangle {
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 173.2px solid #ccc;
+    overflow: visible;
+  }
+  
+  .image-card.triangle img {
+    position: absolute;
+    top: -86.6px;
+    left: -100px;
+    width: 200px;
+    height: 173.2px;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+  
+  .image-card.rectangle {
+    width: 300px;
+    height: 150px;
+    border-radius: 8px;
+  }
+  
+  .image-card.diamond {
+    width: 150px;
+    height: 150px;
+    transform: rotate(45deg);
+  }
+  
+  .image-card.diamond img {
+    transform: rotate(-45deg);
+  }
+  
+  .dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Gap between items */
+    padding: 20px; /* Padding around the grid */
+    max-width: 1200px; /* Limit maximum width of the dashboard */
+    margin: 0 auto; /* Center the dashboard horizontally */
+  }
+  
+  
+  .dashboard-item {
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced box shadow for 3D effect */
+    background: linear-gradient(145deg, #f0f0f0, #dcdcdc); /* Grey gradient */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transform and shadow */
+  }
+  
+  .dashboard{
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced box shadow for 3D effect */
+    background: linear-gradient(145deg, #f0f0f0, #dcdcdc); /* Grey gradient */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transform and shadow */
+    height: 150px;
+    width: 150px;
+}
+
+  .mid-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 97vw;
+    height: 50vh; /* Adjust height as needed */
+    background: linear-gradient(145deg, #d9b9a3, #f87031);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 20px;
+  }
+  
+  .mid-banner-image {
+    flex: 1; /* Take up remaining space */
+    height: 100%; /* Fill the container vertically */
+    object-fit: fill; /* Cover the container without distortion */
+    border-radius: 12px; /* Ensure rounded corners */
+    
+  }
+  
+  
+  
+  .mid-banner-content {
+    width: 50%;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .welcome-card {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(145deg, #6db3f2, #1e69de);
+    color: white;
+    border-radius: 12px;
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .banner-section {
+      flex-direction: column;
+    }
+    
+    .banner-image, .banner-text {
+      width: 100%;
+    }
+    
+    .banner-image {
+      height: 200px;
+    }
+    
+    .mid-banner {
+      flex-direction: column;
+    }
+    
+    .mid-banner-image, .mid-banner-content {
+      width: 100%;
+    }
+    
+    .mid-banner-image {
+      height: 200px;
+    }
+  }
+  

@@ -1,65 +1,126 @@
-<p>cw works!</p>
-Charlotes web proud suporter donate social media and graphics etc
-<mat-list role="list">
-    <mat-list-item role="listitem">Item 1</mat-list-item>
-    <mat-list-item role="listitem">Item 2</mat-list-item>
-    <mat-list-item role="listitem">Item 3</mat-list-item>
-  </mat-list>
 
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charlotte's Web Education Center</title>
-   
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#programs">Programs</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="home">
-        <div class="hero">
-            <h1>Welcome to Charlotte's Web Education Center</h1>
-            <p>Your gateway to educational excellence</p>
+<div class="scrolling-banner">
+    <div class="banner-content">
+      <div class="banner-item" *ngFor="let imageUrl of images">
+        <div class="donate-logo-container">
+          <mat-card-title class="donate-title">DONATE</mat-card-title>
+          <img [src]="imageUrl" alt="Banner Image" class="banner-image">
         </div>
-    </section>
-    <section id="about">
-        <div class="about-section">
-            <h2>About Us</h2>
-            <p>Insert your about content here...</p>
+      </div>
+    </div>
+  </div>
+
+  
+
+<div class="container">
+    <div class="welcome-container">
+    <div class="mid-banner">
+        <div class="mid-banner-content">
+          <h2>Welcome to Charlotte's Web</h2>
+          <p><b>Charlotte's Web Enrichment Center, Inc. is a 501(c)3 non-profit organization.</b> We are established to aid in the care for seniors, provide an outreach, structure and growth to the youth through our boxing and mentoring program.</p>
+          <br/>
+          <p>We believe that our community is responsible for providing the necessary tools to enhance the lives of the youth and seniors. Through our programs, we will prepare our youth to be  productive and positive young adults and we are committed to further improve the quality of life to our seniors.</p>
         </div>
-    </section>
-    <section id="programs">
-        <div class="programs-section">
-            <h2>Our Programs</h2>
-            <p>Insert information about your programs...</p>
+        <img src="assets/BCW.jpg" alt="Mid Banner" class="mid-banner-image">
+      </div>
+
+    
+
+<!-- Welcome Card -->
+<mat-card class="welcome-card">
+    <mat-card-content>
+      <h2>Our Services</h2>
+      <p>Learn more about Charlotte's Web, our history, and our commitment to serving the community. We strive to create a positive impact through our various programs and initiatives.</p>
+      <div class="dashboard-container">
+    
+        <mat-card class="dashboard-item">
+          <mat-card-header>
+            <mat-card-title>Mentoring</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="assets/boxing.jpg" alt="Nonprofit">
+          <mat-card-content>
+            <p>Learn more about our mentoring initiatives.</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary">View Details</button>
+          </mat-card-actions>
+        </mat-card>
+      
+        <mat-card class="dashboard-item">
+          <mat-card-header>
+            <mat-card-title>Furniture Donations</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="assets/furn.jpg" alt="Entertainment">
+          <mat-card-content>
+            <p>Discover the latest in furniture donation.</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary">View Details</button>
+          </mat-card-actions>
+        </mat-card>
+      
+        <mat-card class="dashboard-item">
+          <mat-card-header>
+            <mat-card-title>Community Service</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="assets/Community.jpg" alt="Computer Science">
+          <mat-card-content>
+            <p>Explore advancements in community service.</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary">View Details</button>
+          </mat-card-actions>
+        </mat-card>
+  
+      </div>
+    
+    </mat-card-content>
+  </mat-card>
+      
+        <!-- Banner Section 1 -->
+        <div class="banner-section">
+          <div class="banner-text">
+            <h2>LAWND || Communication x Charlotes web</h2>
+            <p>donated graphics art work etc</p>
+            
+            
+ 
+                <mat-card  class="dashboard">
+                    ygygyguguyhybg
+                    <br/>
+                </mat-card>
+                
+
+          
         </div>
-    </section>
-    <section id="events">
-        <div class="events-section">
-            <h2>Upcoming Events</h2>
-            <p>Include upcoming events and activities...</p>
         </div>
-    </section>
-    <section id="contact">
-        <div class="contact-section">
-            <h2>Contact Us</h2>
-            <p>Insert contact information and form...</p>
+      
+        <!-- Image Gallery -->
+        <div class="image-gallery">
+          <div class="image-card circle">
+            <img src="assets/TeaBags.jpeg" alt="Image 1">
+          </div>
+          <div class="image-card triangle">
+            <img src="assets/OctetLogo.png" alt="Image 2">
+          </div>
+          <div class="image-card rectangle">
+            <img src="assets/big50.jpg" alt="Image 3">
+          </div>
+          <div class="image-card diamond">
+            <img src="assets/CL.png" alt="Image 4">
+          </div>
         </div>
-    </section>
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 Charlotte's Web Education Center. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
-</html>
+      
+        <!-- Mid-Page Banner Section -->
+        
+       <!-- Donate Section -->
+       <mat-card class="header-card">
+        <mat-card-title class="header-title">DONATE NOW</mat-card-title>
+        <mat-card-subtitle class="header-subtitle">Empowering Through Education and Support</mat-card-subtitle>
+      </mat-card>
+
+
+      
+      
+
+</div>

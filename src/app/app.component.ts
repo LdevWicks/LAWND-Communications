@@ -33,6 +33,9 @@ export class AppComponent implements OnInit {
   isCybersecurityPage = false;
   isYekizePage = false;
   isLAWNDPage = false;
+  isDifferencePage= false;
+  isCWPage= false;
+  isInnovativePage= false;
 
   constructor(private router: Router) {}
 
@@ -46,6 +49,9 @@ export class AppComponent implements OnInit {
         this.isCybersecurityPage = event.urlAfterRedirects.includes('/cybersecurity');
         this.isYekizePage = event.urlAfterRedirects.includes('/yekize');
         this.isLAWNDPage = event.urlAfterRedirects.includes('/lawnd');
+        this.isDifferencePage = event.urlAfterRedirects.includes('/difference');
+        this.isCWPage = event.urlAfterRedirects.includes('/cw');
+        this.isInnovativePage = event.urlAfterRedirects.includes('/innovative');
       }
     });
   }

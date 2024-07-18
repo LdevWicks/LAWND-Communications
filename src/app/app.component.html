@@ -63,6 +63,18 @@
       <mat-toolbar>LAW || ND Communications <img src="assets/LAWNDLOGO.png" alt="LAW || ND Communications Logo"></mat-toolbar>
     </div>
 
+    <div class="logo-container" *ngIf="isDifferencePage">
+      <mat-toolbar>The Difference Society <img src="assets/DifferenceSocietyLogo.webp" alt="The Difference Logo"></mat-toolbar>
+    </div>
+
+    <div class="logo-container" *ngIf="isCWPage">
+      <mat-toolbar>Charlotte's Web <img src="assets/LAWNDLOGO.png" alt="Charlotte's Web Logo"></mat-toolbar>
+    </div>
+
+    <div class="logo-container" *ngIf="isInnovativePage">
+      <mat-toolbar>Innovative Concepts<img src="assets/ICLogo.png" alt="Innovative Concepts Logo"></mat-toolbar>
+    </div>
+
     </div>
     <!-- Router outlet for dynamic component rendering -->
     <router-outlet></router-outlet>

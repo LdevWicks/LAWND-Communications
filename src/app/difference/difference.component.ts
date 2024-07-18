@@ -25,9 +25,11 @@ import { MatSelectModule } from '@angular/material/select';
 })
 export class DifferenceComponent implements OnInit {
   images: string[] = [
-    'assets/CWLogo.png',
-    'assets/DifferenceSocietyLogo.webp',
-    'assets/ICLogo2.png',
+    'assets/Diff1.png',
+    'assets/Diff2.png',
+    'assets/Diff3.png',
+    'assets/Diff4.png',
+    
     // Add more image URLs as needed
   ];
 
@@ -55,12 +57,17 @@ export class DifferenceComponent implements OnInit {
 
   categories: string[] = [];
   categoryFormGroup: FormGroup = this.formBuilder.group({ category: ['', Validators.required] });
-  years: number[] = Array.from({ length: 19 }, (_, index) => 2006 + index); // Array of years from 2006 to 2024
+  years: number[] = Array.from({ length: 4 }, (_, index) => 2021 + index); // Array of years from 2006 to 2024
   yearFormGroup: FormGroup = this.formBuilder.group({ year: ['', Validators.required] });
   message: string;
 
+  firstFormGroup: FormGroup = this.formBuilder.group({ category: ['', Validators.required] });
+  secondFormGroup: FormGroup = this.formBuilder.group({ category: ['', Validators.required] });
+  thirdFormGroup: FormGroup = this.formBuilder.group({ category: ['', Validators.required] });
+  fourthFormGroup: FormGroup = this.formBuilder.group({ category: ['', Validators.required] });
+  
   constructor(private formBuilder: FormBuilder) {
-    this.categories = ["Computer Science", "Entertainment", "Nonprofit", "Entrepreneurship", "Cybersecurity"];
+    this.categories = ["Education", "Community Outreach", "Workforce Development & College Prep"];
     this.message = '';
   }
 
@@ -72,6 +79,19 @@ export class DifferenceComponent implements OnInit {
     this.categoryFormGroup = this.formBuilder.group({
       category: ['', Validators.required]
     });
+
+    this.firstFormGroup = this.formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this.formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
+    this.thirdFormGroup = this.formBuilder.group({
+      thirdCtrl: ['', Validators.required]
+    });
+    this.fourthFormGroup = this.formBuilder.group({
+      fourthCtrl: ['', Validators.required]
+    });
   }
 
   onSubmit() {
@@ -82,29 +102,30 @@ export class DifferenceComponent implements OnInit {
   }
 
   getMessage(year: number, category: string): string {
-    if (category === 'Computer Science') {
+    if (category === 'Community Outreach') {
       if (year === 2006) {
         return 'Fact for Computer Science in 2006';
       } else if (year === 2007) {
         return 'Fact for Computer Science in 2007';
       }
       // Add more years as needed
-    } else if (category === 'Entertainment') {
-      if (year === 2006) {
-        return 'Fact for Entertainment in 2006';
-      } else if (year === 2007) {
-        return 'Fact for Entertainment in 2007';
+    } else if (category === 'Workforce & College Prep') {
+      if (year === 2022) {
+        return 'The difference Society created workforce and delopment program';
+      } else if (year === 2023) {
+        return 'The Difference Society held its first carre fair';
       }
       // Add more years as needed
-    } else if (category === 'Nonprofit') {
-      if (year === 2006) {
-        return 'Fact for Nonprofit in 2006';
-      } else if (year === 2007) {
-        return 'Fact for Nonprofit in 2007';
-      }
+    } else if (category === 'Education') {
+      if (year === 2022) {
+        return 'The Difference Society hosted its first after school program with DCPS';
+      } else if (year === 2023) {
+        return 'The Difference Society held it first Career Fair';
+      }  else if (year === 2024) {
+        return 'The Difference Society held its first summer camp with DCPS';
       // Add more years as needed
     }
-
+  }
     return 'No fact available for the selected year and category.';
   }
 }

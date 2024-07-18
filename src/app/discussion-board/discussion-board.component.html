@@ -1,37 +1,50 @@
-
-<!-- discussion-board.component.html -->
-
-
-    
-      <mat-card class="card">
-      <mat-card-title>Discussion Board</mat-card-title>
-      <br/>
-      <mat-card-content>
+<mat-card class="card">
+  <mat-card-title>Discussion Board</mat-card-title>
+  <mat-card-content>
+    <section>
       What advice would you give to someone starting a career in cybersecurity?
       <br/> What skills and certifications are most valuable in the current job market?
-     </mat-card-content>
-
-    <br/>
-
-    <mat-card-content>
-      <mat-card-subtitle>Name</mat-card-subtitle>
-        <form #postForm="ngForm" (ngSubmit)="addPost(postForm)">
-            <input name="title" ngModel required>
-            <mat-card-subtitle>Post</mat-card-subtitle>
-            <textarea class="text-area" name="content" ngModel required></textarea> <br/>
-            <button mat-raised-button label="Post" type="submit" class="button">Add Post</button>
-          </form>          
-      <hr>
-      <div  *ngFor="let post of posts">
-        <mat-card class="post">
-          <mat-card-content>
-        <mat-card-title>{{ post.title }}</mat-card-title>
-      
-        <mat-card-content><section >{{ post.content }}</section></mat-card-content>
+    </section>
+  </mat-card-content>
+  <mat-card-content>
+    <mat-card-subtitle>Name</mat-card-subtitle>
+    <form #postForm="ngForm" (ngSubmit)="addPost(postForm)">
+      <input name="title" ngModel required>
+      <mat-card-subtitle>Post</mat-card-subtitle>
+      <textarea class="text-area" name="content" ngModel required></textarea> <br/>
+      <button mat-raised-button type="submit" class="button">Add Post</button>
+    </form>
+    <hr>
+    <div *ngFor="let post of posts" class="post">
+      <mat-card>
+        <mat-card-content>
+          <mat-card-title>{{ post.title }}</mat-card-title>
+          <section>{{ post.content }}</section>
         </mat-card-content>
-        </mat-card>
-        <hr>
-      </div>
-    </mat-card-content>
-  
-  </mat-card>
+        <mat-card-actions>
+          <mat-icon class="heart-icon" (click)="toggleLike(post)" [ngClass]="{'liked': post.liked}">favorite</mat-icon>
+          <span>{{ post.likes }}</span>
+          &nbsp; &nbsp; &nbsp;<button class="button" mat-raised-button (click)="post.showReplyForm = !post.showReplyForm">Reply</button>
+        </mat-card-actions>
+        <div *ngIf="post.showReplyForm">
+          <form #replyForm="ngForm" (ngSubmit)="addReply(post, replyForm)">
+            <mat-card-subtitle>Reply</mat-card-subtitle>
+            <textarea class="reply-area" name="replyContent" ngModel required></textarea> <br/>
+            <button mat-raised-button label="Reply" type="submit" class="button">Add Reply</button>
+          </form>
+        </div>
+        <div *ngFor="let reply of post.replies" class="reply">
+        
+          <mat-card-content>
+            <mat-card>
+            <mat-card-subtitle>Reply:</mat-card-subtitle>
+            <section>{{ reply }}</section>
+            <br/>
+            </mat-card>
+          </mat-card-content>
+        </div>
+      </mat-card>
+      <hr>
+    </div>
+  </mat-card-content>
+</mat-card>

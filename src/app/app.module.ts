@@ -15,6 +15,7 @@ import { EntrepreneurshipComponent } from './entrepreneurship/entrepreneurship.c
 import { CybersecurityComponent } from './cybersecurity/cybersecurity.component';
 import { CommonModule } from '@angular/common';
 import { CurrencyPipe } from '@angular/common';
+import { InnovativeComponent } from './innovative/innovative.component';
 
 
 
@@ -25,6 +26,7 @@ export const routes: Routes = [
   { path: 'nonprofit', component: NonprofitComponent },
   { path: 'entrepreneurship', component: EntrepreneurshipComponent },
   { path: 'cybersecurity', component: CybersecurityComponent },
+  { path: 'innovative-concepts', component: InnovativeComponent },
   { path: '**', redirectTo: '' } // Redirect any other path to home
 ];
 
@@ -39,7 +41,7 @@ export const routes: Routes = [
     CurrencyPipe,
     BrowserAnimationsModule,
     AngularFirestoreModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { anchorScrolling: 'enabled' }),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AppRoutingModule, // Import AppRoutingModule here
     // Other modules you might need

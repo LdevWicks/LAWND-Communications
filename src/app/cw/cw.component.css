@@ -247,3 +247,49 @@
     }
   }
   
+
+  /* styles.css */
+
+/* cw.component.css */
+
+/* cw.component.css */
+
+/* cw.component.css */
+
+/* Container for the video */
+.video-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+video {
+  width: 40vw; /* Adjust as needed */
+  height: 40vh;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.playlist {
+  width: 30%; /* Adjust as needed */
+}
+
+.playlist ul {
+  list-style: none;
+  padding: 0;
+}
+
+.playlist ul li {
+  margin: 10px 0;
+}
+
+.playlist ul li a {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-weight: bold;
+}
+
+.playlist ul li a:hover {
+  color: #ffffff;
+}

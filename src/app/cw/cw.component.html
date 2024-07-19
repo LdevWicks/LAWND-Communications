@@ -76,6 +76,10 @@
     
     </mat-card-content>
   </mat-card>
+
+  <!-- Existing cw section -->
+<section id="cw-section">
+  <!-- Other content of the cw section -->
       
         <!-- Banner Section 1 -->
         <div class="banner-section">
@@ -112,12 +116,50 @@
         </div>
       
         <!-- Mid-Page Banner Section -->
+     <!-- cw.component.html -->
+     <div class="video-container">
+      <!-- Video Player -->
+      <video #mainVideo controls>
+        <source [attr.src]="selectedVideoUrl" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    
+      <!-- Playlist -->
+      <div class="playlist">
+        <ul>
+          <li *ngFor="let video of videos$ | async">
+            <a (click)="playVideo(video.url)" href="javascript:void(0);">{{ video.title }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+
+  <!-- Other content of the cw section -->
+</section>
         
+<br/>
        <!-- Donate Section -->
        <mat-card class="header-card">
         <mat-card-title class="header-title">DONATE NOW</mat-card-title>
         <mat-card-subtitle class="header-subtitle">Empowering Through Education and Support</mat-card-subtitle>
       </mat-card>
+<!-- cw.component.html -->
+<section id="cw-section">
+  <!-- Other content of the cw section -->
+
+ <!-- cw.component.html -->
+<section id="cw-section">
+  <!-- Other content of the cw section -->
+
+  
+
+  <!-- Other content of the cw section -->
+</section>
+
+
+  <!-- Other content of the cw section -->
+</section>
 
 
       

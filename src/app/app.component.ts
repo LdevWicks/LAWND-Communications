@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, RouterModule, NavigationEnd } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app.routes';
   styleUrls: ['./app.component.css'],
   imports: [
     CommonModule,
+    RouterModule,
     MatCardModule,
     MatIconModule,
     MatListModule,

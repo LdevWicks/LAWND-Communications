@@ -120,27 +120,30 @@
   </mat-grid-list>
 
  <mat-card>
-  <mat-card-content>
+  <mat-card-content class="movie-card">
 <mat-card-title><b>Movies</b></mat-card-title>
-  <button class="menu-button" mat-button [matMenuTriggerFor]="menu">Movies <mat-icon>movie</mat-icon>
-  </button>
-  <mat-menu class="mat-menu-panel" #menu="matMenu">
-  <button mat-menu-item>Christmas Lottery</button>
-  <button mat-menu-item (click)="openMovieDialog()">Christmas Lottery</button>
-  <button mat-menu-item>Delrhonda Hood: Big Fifty</button>
-  <button mat-menu-item>A Wesley Christmas</button>
-  <button mat-menu-item>A Wesley Christmas Wedding</button>
-  <button mat-menu-item>Kismet Holiday</button>
-  </mat-menu>
-  
+<button class="menu-button" mat-button [matMenuTriggerFor]="menu">
+  <mat-icon>movie</mat-icon>
+</button>
+
+<mat-menu class="mat-menu-panel" #menu="matMenu">
+  <button mat-menu-item (click)="openMovieDialog('Christmas Lottery', 'When a family wins the lottery but loses the winning ticket, they must put aside their differences to find the ticket that could change their lives by Christmas Day.', 'https://www.imdb.com/title/tt13403782/','assets/CL.png')">Christmas Lottery</button>
+  <button mat-menu-item (click)="openMovieDialog('Delrhonda Hood: Big Fifty', 'Delrhonda Big Fifty Hood ends up running her own drug empire, becoming one of the wealthiest and most notorious women in Detroit. In the process, with her success, she discovers that money does not fix all of her problems, and she can only depend on herself if she wants to stay one step ahead of the law and stay alive.', 'https://www.imdb.com/title/tt15364098/?ref_=nv_sr_srsg_0_tt_6_nm_2_in_0_q_delrhonda','assets/BigFifty.jpg')">Delrhonda Hood: Big Fifty</button>
+  <button mat-menu-item (click)="openMovieDialog('A Wesley Christmas', 'Sibling adults Chris, Todd, and Cydney Wesley all go to their childhood home in Washington, DC, to celebrate the Christmas vacation with their parents Bryan and Sylvia and the entire Wesley family.', 'https://www.imdb.com/title/tt17500912/?ref_=nv_sr_srsg_0_tt_5_nm_3_in_0_q_a%2520wesly%2520ch','assets/WeslyChristmas.jpg')">A Wesley Christmas</button>
+  <button mat-menu-item (click)="openMovieDialog('A Wesley Christmas Wedding', 'Siblings Chris, Todd, Cydney and Wesley travel to their childhood home in Washington to celebrate Christmas holidays with their parents Bryan and Sylvia. Upon their arrival, all kinds of family drama, a crazy neighbor and conflicts happen.', 'https://www.imdb.com/title/tt23638608/?ref_=nv_sr_srsg_0_tt_2_nm_0_in_0_q_wesly%2520christmas%2520wedd', 'assets/WeslyCW.jpg')">A Wesley Christmas Wedding</button>
+  <button mat-menu-item (click)="openMovieDialog('Kismet Holiday', 'Set against a magical Christmas Eve backdrop, two strangers find love, only to be separated, but when fate reunites them five years later, the question arises if this is a mere coincidence or a sign of destined love.', 'https://www.imdb.com/title/tt25433684/?ref_=fn_al_tt_1', 'assets/kismet.png')">Kismet Holiday</button>
+</mat-menu>
+
+  &nbsp;&nbsp;
   <mat-card-title><b>Series</b></mat-card-title>
-  <button class="menu-button" mat-button [matMenuTriggerFor]="menu2">Series <mat-icon>movie</mat-icon>
+  <button class="menu-button" mat-button [matMenuTriggerFor]="menu2"><mat-icon>movie</mat-icon>
   </button>
   <mat-menu #menu2="matMenu">
-  <button mat-menu-item>Hush</button>
-  <button mat-menu-item>Conspirators</button>
+  <button mat-menu-item (click)="openMovieDialog('Hush', 'Follow relationship fixer Dr. Draya Logan, a renowned marriage and sex therapist who finds herself entangled in a series of lies, sex, and murder that could cost her everything.', 'https://www.imdb.com/title/tt20195430/?ref_=tt_mv_close','https://firebasestorage.googleapis.com/v0/b/pwa5-89c3b.appspot.com/o/hush.jpg?alt=media&token=7d0a9f69-d9c7-4790-a6d6-91198255e356')">Hush</button>
+  <button mat-menu-item (click)="openMovieDialog('Conspirator', 'Coming Soon', '','')">Conspirators</button>
   </mat-menu>
-<mat-card-title><b>IMDb</b></mat-card-title>
+  &nbsp; &nbsp;
+<mat-card-title><b>IMDb</b></mat-card-title> &nbsp;
   <a href="https://www.imdb.com/name/nm12907760/" target="_blank">Visit my IMDb</a>
   </mat-card-content>
 </mat-card>

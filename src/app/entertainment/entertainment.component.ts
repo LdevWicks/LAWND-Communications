@@ -79,15 +79,14 @@ export class EntertainmentComponent {
     alert('Navigating to details for image: ' + image);
   }
 
-  openMovieDialog(): void {
-    const movie = {
-      title: 'Christmas Lottery',
-      description: 'A heartwarming story about family and unexpected fortune.',
-      imdbLink: 'https://www.imdb.com/title/tt13403782/'
-    };
-
+  openMovieDialog(movieTitle: string, movieDescription: string, imdbLink: string, movieCover: string): void {
     this.dialog.open(MovieDialogComponent, {
-      data: movie
+      data: {
+        title: movieTitle,
+        description: movieDescription,
+        imdbLink: imdbLink,
+        image: movieCover,
+      }
     });
   }
 

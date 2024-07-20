@@ -175,3 +175,12 @@
     margin-right: 8px; /* Space between icon and text */
   }
   
+.movie-card{
+  align-items: center;
+  display: inherit;
+  align-content: center;
+  margin-left: 35vw;
+  width:40vw;
+}
+
+

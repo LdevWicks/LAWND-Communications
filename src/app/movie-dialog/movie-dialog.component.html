@@ -1,8 +1,12 @@
-<h2 mat-dialog-title>{{ movie.title }}</h2>
+<h2 mat-dialog-title>{{ data.title }}</h2>
 <mat-dialog-content>
-  <p>{{ movie.description }}</p>
+  <img [src]="data.image" alt="{{ data.title }} cover image" class="movie-cover">
+  <p>{{ data.description }}</p>
 </mat-dialog-content>
+<br/>
+<mat-card-content>
+&nbsp; <button mat-raised-button><a mat-button color="primary" [href]="data.imdbLink" target="_blank">Watch</a></button>
+</mat-card-content>
 <mat-dialog-actions>
   <button mat-button (click)="onClose()">Close</button>
-  <a mat-button color="primary" href="{{ movie.imdbLink }}" target="_blank">Watch on IMDb</a>
 </mat-dialog-actions>

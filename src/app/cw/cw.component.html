@@ -88,61 +88,53 @@
             <p>donated graphics art work etc</p>
             
             
- 
-                <mat-card  class="dashboard">
-                    ygygyguguyhybg
+             <div class=" dashboard-container">
+                <mat-card  class="dashboard-item">
+                  <img mat-card-image src="assets/flyer1.png" alt="Nonprofit">
                     <br/>
                 </mat-card>
-                
 
+                
+                <mat-card  class="dashboard-item">
+                  
+                  <br/>
+              </mat-card>
+
+              
+
+
+            
+
+              </div>
+
+                <br/>
+                <div class="video-container">
+                  <!-- Video Player -->
+                  <video #mainVideo controls>
+                    <source [attr.src]="selectedVideoUrl" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                
+                  <!-- Playlist -->
+                  <div class="playlist">
+                    <ul>
+                      <li *ngFor="let video of videos$ | async">
+                        <a (click)="playVideo(video.url)" href="javascript:void(0);">{{ video.title }}</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
           
         </div>
         </div>
-      
-        <!-- Image Gallery -->
-        <div class="image-gallery">
-          <div class="image-card circle">
-            <img src="assets/TeaBags.jpeg" alt="Image 1">
-          </div>
-          <div class="image-card triangle">
-            <img src="assets/OctetLogo.png" alt="Image 2">
-          </div>
-          <div class="image-card rectangle">
-            <img src="assets/big50.jpg" alt="Image 3">
-          </div>
-          <div class="image-card diamond">
-            <img src="assets/CL.png" alt="Image 4">
-          </div>
-        </div>
-      
-        <!-- Mid-Page Banner Section -->
-     <!-- cw.component.html -->
-     <div class="video-container">
-      <!-- Video Player -->
-      <video #mainVideo controls>
-        <source [attr.src]="selectedVideoUrl" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    
-      <!-- Playlist -->
-      <div class="playlist">
-        <ul>
-          <li *ngFor="let video of videos$ | async">
-            <a (click)="playVideo(video.url)" href="javascript:void(0);">{{ video.title }}</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-
-  <!-- Other content of the cw section -->
 </section>
         
 <br/>
        <!-- Donate Section -->
        <mat-card class="header-card">
-        <mat-card-title class="header-title">DONATE NOW</mat-card-title>
-        <mat-card-subtitle class="header-subtitle">Empowering Through Education and Support</mat-card-subtitle>
+        <br/>
+        <mat-card-title > <b> DONATE NOW </b></mat-card-title>
+        <mat-card-subtitle> <b> Be a thread in our web our support! </b></mat-card-subtitle>
       </mat-card>
 <!-- cw.component.html -->
 <section id="cw-section">

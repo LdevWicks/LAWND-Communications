@@ -1,8 +1,9 @@
 .container {
     display: flex;
     flex-direction: column;
-     /* Full viewport height */
+    /* Full viewport height */
     width: 100vw;  /* Full viewport width */
+    overflow-x: hidden;
   }
  
 .photo-banner {
@@ -15,6 +16,7 @@
   .photo-banner img {
     width: 100%;
     height: 100%;
+    object-position: fixed;
     object-fit: cover; /* This ensures the image covers the entire banner area */
   }
   
@@ -23,3 +25,112 @@
   }
   
   
+.tabs {
+  background-color: #002147; ;
+  color:whitesmoke;
+
+}
+
+.mat-tab-group .mat-tab-label {
+  color:  #FDB813;
+}
+
+.mat-tab-group .mat-tab-label-active {
+  color:  #FDB813;
+  background-color: #002147; ;
+}
+
+.mat-tab-group .mat-tab-labels {
+  background-color: #002147;
+}
+
+.mat-tab-group .mat-tab-label.mat-tab-label-active {
+  color:  #FDB813;
+  background-color: #002147; ;
+}
+
+mat-toolbar {
+  background-color: #002147; ;
+  color: white;
+}
+
+mat-card-title, mat-card-content p {
+  color: #002147; ;
+}
+
+mat-horizontal-stepper {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+mat-step-header {
+  background-color:  #FDB813;;
+  color: #002147; ;
+  font-weight: bold;
+}
+
+.mat-stepper-horizontal-line {
+  border-top-width: 2px;
+  border-color: #002147; ;
+}
+
+.fact-image {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+  border: 3px solid #002147; ;
+  border-radius: 8px;
+}
+
+.dialog-content {
+  text-align: center;
+  padding: 20px;
+}
+
+.dialog-image {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+
+.dialog-text {
+  font-size: 1.2em;
+  color: #002147; ;
+  margin-top: 20px;
+}
+
+.footer {
+  background-color: #002147; ;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+
+.button-primary {
+  background-color: #002147;
+  color: #FDB813;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-primary:hover {
+  background-color: darken( #FDB813, 10%);
+}
+
+.test{
+  color: #002147;
+  background-color: #FDB813;
+}
+
+.fullC{
+  width: 100vw;
+  height: 100wh;
+  overflow: hidden;
+}

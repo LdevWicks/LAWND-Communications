@@ -1,62 +1,48 @@
 <div class="container">
-<div class="photo-banner">
-    <img src="assets/McNairHall.jpg" alt="McNair Hall">
-</div>
-<mat-toolbar>North Carolina A&T State University 2006-2010</mat-toolbar>
-<mat-tab-group>
-    <mat-tab label="Undergrad">
-<mat-tab-group>
-    <mat-tab label="2006">
-        <mat-card>
-            <mat-card-title>Computer Science </mat-card-title>
-            <mat-card-content>
-                <p>
-            The Journey began 2006 at North Carolina Agricultural and Technical State University.
-            A freshman off to McNair Hall College of Engineering Computer Science Department.
-               </p>    
-               <p>Description of expience </p>
-               <p>Description of languages learned, project worked on ect; 
-                1st project Hello World 2006
-                freshman year build lego pick up object program i t to move not using hands
-                 </p>
-                 </mat-card-content>
-        </mat-card>
-    </mat-tab>
-    <mat-tab label="2007">
-        <mat-card>
-           double major in matematic
-        </mat-card>
-    </mat-tab>
-    <mat-tab label="2008">
-        <mat-card>
-    reflect jounrey and languages etc
-        </mat-card>
-    </mat-tab>
-    <mat-tab label="2009">
-        <mat-card>
-            songle major only computer science 
-        </mat-card>
-    </mat-tab>
-    <mat-tab label="2010">
-        <mat-card>
-            senior year project designed tshirt webshirt where you can add logo  teacher hacked presentation 2010
-        </mat-card>
-    </mat-tab>
-</mat-tab-group>
-</mat-tab> 
-<mat-tab label="Alumni">
-    <mat-card>
-        <p>advocate for NC A&T college of Engineering</p>
-    </mat-card>
-</mat-tab>
-<mat-tab label="AFS">
-    <mat-card>
-        <p>advocate for Aggie intern and recent gradte placment with AFS</p>
-    </mat-card>
-</mat-tab>
-</mat-tab-group>
+    <div class="photo-banner">
+      <img src="assets/McNairHall.jpg" alt="McNair Hall">
+    </div>
+  <div>
+    <mat-tab-group class="test" >
+      <mat-tab class="test" label="Undergrad">
+        <mat-toolbar color="primary">North Carolina A&T State University 2006-2010</mat-toolbar>
+      
+  
+        
+        
+            <mat-card-content class="tabs">
+            My journey began in 2006 at North Carolina Agricultural and Technical State University. A freshman off to McNair Hall College of Engineering Computer Science Department.
+          </mat-card-content>
+       <mat-card class="tab">
+            <mat-horizontal-stepper [linear]="false" class="test">
+            <mat-step *ngFor="let fact of facts" [stepControl]="stepControl">
+              <form [formGroup]="stepControl">
+                <ng-template matStepLabel>{{ fact.year }}</ng-template>
+                <p>{{ fact.fact }}</p>
+                <img *ngIf="fact.image" [src]="fact.image" alt="Fact Image for {{ fact.year }}" class="fact-image">
+                <div>
+                  <button class="button-primary" mat-button matStepperPrevious *ngIf="!isFirstStep(fact)">Back</button>
+                  <button class="button-primary" mat-button matStepperNext *ngIf="!isLastStep(fact)">Next</button>
+                </div>
+              </form>
+            </mat-step>
+          </mat-horizontal-stepper>
+          </mat-card>    
+      </mat-tab>
+  
+      <mat-tab label="Alumni" class="tab">
+        
+          <p class="tabs">Advocate for NC A&T College of Engineering</p>
+        jnijio
+      </mat-tab>
+  
+      <mat-tab label="AFS" class="tab">
+        
+          <p>Advocate for Aggie intern and recent graduate placement with AFS</p>
+        
+      </mat-tab>
+    </mat-tab-group>
 
-</div>
-      
-      
-   
+  </div>
+
+  </div>

@@ -1,7 +1,8 @@
 <h2 mat-dialog-title>{{ data.title }}</h2>
-<mat-dialog-content>
+<mat-dialog-content class="dialog-content">
   <img [src]="data.image" alt="{{ data.title }} cover image" class="movie-cover">
   <p>{{ data.description }}</p>
+  <video *ngIf="data.videoUrl" [src]="data.videoUrl" controls class="movie-trailer"></video>
 </mat-dialog-content>
 <br/>
 <mat-card-content>

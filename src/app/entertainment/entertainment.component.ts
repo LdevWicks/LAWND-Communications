@@ -79,13 +79,14 @@ export class EntertainmentComponent {
     alert('Navigating to details for image: ' + image);
   }
 
-  openMovieDialog(movieTitle: string, movieDescription: string, imdbLink: string, movieCover: string): void {
+  openMovieDialog(movieTitle: string, movieDescription: string, imdbLink: string, movieCover: string, videoUrl: string): void {
     this.dialog.open(MovieDialogComponent, {
       data: {
         title: movieTitle,
         description: movieDescription,
         imdbLink: imdbLink,
         image: movieCover,
+        videoUrl: videoUrl
       }
     });
   }

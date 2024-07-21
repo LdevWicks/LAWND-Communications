@@ -15,7 +15,7 @@
       <input name="title" ngModel required>
       <mat-card-subtitle>Post</mat-card-subtitle>
       <textarea class="text-area" name="content" ngModel required></textarea> <br/>
-      <button mat-raised-button type="submit" class="button">Add Post</button>
+      <button mat-raised-button type="submit" class="button">Post</button>
     </form>
     <br/>
     <div *ngFor="let post of posts" class="post">
@@ -35,7 +35,7 @@
           <form  #replyForm="ngForm" (ngSubmit)="addReply(post, replyForm)">
             <mat-card-subtitle><mat-card-content>Reply</mat-card-content></mat-card-subtitle>
             <mat-card-content><textarea class="reply-area" name="replyContent" ngModel required></textarea> <br/>
-            <button mat-raised-button label="Reply" type="submit" class="button">Add Reply</button></mat-card-content>
+            <button mat-raised-button label="Reply" type="submit" class="button">Reply</button></mat-card-content>
           </form>
         </div>
         

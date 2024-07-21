@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 export class MovieDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<MovieDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { title: string; description: string; imdbLink: string; image:string;  videoUrl:string;} // Injecting data using MAT_DIALOG_DATA
+    @Inject(MAT_DIALOG_DATA) public data: { title: string; description: string; imdbLink: string; image:string;  videoUrl:string; credits:string;} // Injecting data using MAT_DIALOG_DATA
   ) {}
 
   onClose(): void {

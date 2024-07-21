@@ -164,5 +164,140 @@ html, body {
     color: green;
     font-size: 1.1em;
   }
+
+  .black{
+color:#292828;
+  }
+
+  .banner {
+    width: 100%;
+    height: 300px; /* Adjust the height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: 
+      repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1) 10px,
+        rgba(0, 0, 0, 0.1) 10px,
+        rgba(0, 0, 0, 0.1) 20px
+      ),
+      linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient colors */
+    background-blend-mode: overlay;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .banner-content {
+    align-items: center;
+    display: flex;
+    z-index: 1;
+  }
+  
+  .banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 94, 0, 0.7), rgba(255, 165, 0, 0.7));
+    z-index: 0;
+  }
   
   
+  .banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 94, 0, 0.7), rgba(255, 165, 0, 0.7));
+    z-index: 0;
+  }
+  
+  
+  .circle-image {
+    width: 150px; /* Adjust the size as needed */
+    height: 150px; /* Adjust the size as needed */
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px; /* Space between image and text */
+  }
+  
+  .circle-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire circle */
+  }
+  
+  .text-content {
+    max-width: 600px; /* Adjust as needed */
+  }
+  
+  .text-content h1 {
+    margin: 0 0 10px 0;
+    color: #333; /* Change to your desired text color */
+  }
+  
+  .text-content p {
+    margin: 0;
+    color: #666; /* Change to your desired text color */
+  }
+  
+  .slideshow-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    background-color: #f4f4f4; /* Background color */
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5); /* Background color for arrows */
+    border-radius: 50%;
+    padding: 10px;
+  }
+  
+  .arrow.left {
+    left: 10px;
+  }
+  
+  .arrow.right {
+    right: 10px;
+  }
+  
+  .image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+  
+  .card{
+    width: 50vw;
+    height:50vh;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    
+  }

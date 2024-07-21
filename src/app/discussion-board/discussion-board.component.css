@@ -2,23 +2,42 @@
 .post {
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced box shadow for 3D effect */
-    background: linear-gradient(145deg, #f0f0f0, #dcdcdc); /* Grey gradient */
+    background-color: linear-gradient(145deg, #f0f0f0, #dcdcdc); /* Grey gradient */
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transform and shadow */
-    width:75%;
+    width:85%;
     height:auto;
+    outline-color: #2e2e2e;
+    outline-width: 5px;;
+    overflow: hidden;
 }
+
+.posts{
+  background-color: #939393;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); 
+}
+
 
   .card {
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0px 10px 12px rgba(1, 1, 1, 0.1); /* Enhanced box shadow for 3D effect */
-    background: linear-gradient(145deg, #939393, #dcdcdc); /* Grey gradient */
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transform and shadow */
+    background-color: linear-gradient(145deg, #939393, #dcdcdc); /* Grey gradient */
     overflow: hidden; 
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 6px 12px rgba(57, 57, 57, 0.1); /* Enhanced box shadow for 3D effect */
+    background: linear-gradient(145deg, #616161, #dcdcdc); /* Grey gradient */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transform and shadow */
+    
 }
 
   .button{
     background-color: #2e2e2e;
     color:white;
+    margin-bottom: -2%;
+  }
+
+  .white{
+    color:whitesmoke;
   }
 
   .text-area {
@@ -32,22 +51,36 @@
     width: 75%;
     height: auto;
     min-height: 50px;
-    resize: none;
+    resize: none;  
+  }
+
+  .likes{
+    margin-bottom: -2%;
   }
   
+  .reply-areas{
+    background:rgb(206, 205, 205);
+  }
   
   .reply {
     margin-left: 20px;
-    background-color: #e9e5e5;
     width: 75%;
     height:auto;
   }
 
   .heart-icon{
     color:red;
+    margin-bottom: -2%;
   }
 
   .postReply{
     width:15px;
     height: 50px;
+  }
+
+  .dashboard-item {
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced box shadow for 3D effect */
+    background: linear-gradient(145deg, #616161, #dcdcdc); /* Grey gradient */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transform and shadow */
   }

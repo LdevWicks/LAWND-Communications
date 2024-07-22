@@ -195,6 +195,9 @@ html, body {
 
   .features {
     padding: 20px; /* Add some padding around the section */
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto; 
   }
   
   .feature-cards {
@@ -212,14 +215,17 @@ html, body {
     color: #fff; /* Text color */
     width: 100%; /* Adjust width to fit the container */
     max-width: 400px; /* Set a maximum width for responsiveness */
+    flex: 1 1 calc(25% - 16px);
   }
   
-  .card-image-wrapper {
-    position: relative; /* Create a context for absolute positioning of the image */
-    height: 200px; /* Adjust height as needed */
-    object-fit: cover;
-    overflow:hidden; /* Hide overflow */
+  .g-card img {
+    width: 100%;        /* Make image fill the card width */
+    height: 200px;      /* Set a fixed height for all images */
+    object-fit: fill;  /* Ensure the image covers the dimensions without distortion */
+    display: block;     /* Remove extra space below the image */
+    border-radius: 8px; 
   }
+  
   
   
   

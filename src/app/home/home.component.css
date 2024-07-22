@@ -91,5 +91,152 @@ html, body {
   
   .fit{
     
-    object-fit: fill;
+    object-fit: cover;
   }
+
+  .hero {
+    height: 100vh;
+    background: url('/assets/CL.png') center center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .features {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .feature-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  mat-card {
+    width: 300px;
+    margin: 20px;
+  }
+  
+  .updates {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .update-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  mat-card {
+    width: 300px;
+    margin: 20px;
+  }
+
+  .testimonials {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .testimonial-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  mat-card {
+    width: 300px;
+    margin: 20px;
+  }
+
+  .footer {
+    background-color: #002147;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .social-media {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .social-media a {
+    color: white;
+    font-size: 24px;
+  }
+
+  .features {
+    padding: 20px; /* Add some padding around the section */
+  }
+  
+  .feature-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* Space between cards */
+  }
+  
+  .g-card {
+    position: relative;
+    overflow: hidden; /* Ensure the content stays within the card */
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow effect */
+    background: linear-gradient(45deg, #242424, #4f4e4e, grey); /* Gradient background */
+    color: #fff; /* Text color */
+    width: 100%; /* Adjust width to fit the container */
+    max-width: 400px; /* Set a maximum width for responsiveness */
+  }
+  
+  .card-image-wrapper {
+    position: relative; /* Create a context for absolute positioning of the image */
+    height: 200px; /* Adjust height as needed */
+    object-fit: cover;
+    overflow:hidden; /* Hide overflow */
+  }
+  
+  
+  
+  .mat-card-header,
+  .mat-card-content,
+  .mat-card-actions {
+    position: relative; /* Ensure these elements are above the image */
+    color: inherit; /* Inherit text color */
+    z-index: 1; /* Ensure content is above the image */
+  }
+  
+  .mat-card-actions {
+    display: flex;
+    justify-content: center; /* Center align the actions */
+  }
+  
+  button.mat-raised-button {
+    margin-top: 16px; /* Space above the button */
+  }
+  

@@ -44,11 +44,11 @@ export class HomeComponent implements OnInit{
   ];
 
   features = [
-    { icon: 'build', title: 'Nonprofit', description: 'Learn more about LAWND || Communication nonprofit work', image: 'assets/npceo.png', route:'/nonprofit' },
-    { icon: 'security', title: 'Computer Science', description: 'NC A&T 2006-2010', image: 'assets/AggiePride.jpg', route:'/computer-science' },
-    { icon: 'update', title: 'Entertainment', description: 'wnt ....', image: 'assets/entceo.png',route:'/entertainment' },
-    { icon: 'update', title: 'Entrepreneurship', description: 'wnt ....', image: 'assets/mylogos.png',route:'/entreprenuership' },
-    { icon: 'update', title: 'Cyber Security', description: 'wnt ....', image: 'assets/certs.png',route:'/cyber-security' },
+    { icon: 'volunteer_activism', title: 'Nonprofit', description: 'Learn more about LAWND || Communication nonprofit work', image: 'assets/npceo.png', route:'/nonprofit' },
+    { icon: 'code', title: 'Computer Science', description: 'NC A&T 2006-2010', image: 'assets/AggiePride.jpg', route:'/computer-science' },
+    { icon: 'theaters', title: 'Entertainment', description: 'wnt ....', image: 'assets/entceo.png',route:'/entertainment' },
+    { icon: 'lightbulb', title: 'Entrepreneurship', description: 'wnt ....', image: 'assets/mylogos.png',route:'/entreprenuership' },
+    { icon: 'security', title: 'Cyber Security', description: 'wnt ....', image: 'assets/certs.png',route:'/cyber-security' },
   ];
 
   constructor(private formBuilder: FormBuilder, private router: Router) { 

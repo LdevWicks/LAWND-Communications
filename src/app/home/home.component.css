@@ -93,44 +93,49 @@ html, body {
     
     object-fit: cover;
   }
-
+  
+  
   .hero {
-    height: 100vh;
-    background: url('/assets/CL.png') center center/cover no-repeat;
+    position: relative;
+    height: 50vh; /* Adjust this to your desired height */
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    color: white;
-    position: relative;
-    overflow: hidden;
+    background: rgba(0, 0, 0, 0.5); /* Optional: dark overlay to make text stand out */
   }
   
-  .hero::before {
-    content: '';
+  .background-video {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 0;
+    object-fit: fill; /* Ensures video covers container without distortion */
+    object-position: center; /* Center the video */
+    transform: translate(-50%, -50%); /* Center the video based on its own dimensions */
   }
+  
   
   .hero-content {
     position: relative;
     z-index: 1;
+    color: white;
+    text-align: center;
   }
+  
   
   .features {
     padding: 60px 20px;
     text-align: center;
+   
   }
   
   .feature-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    
   }
   
   mat-card {

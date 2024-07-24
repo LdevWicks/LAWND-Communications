@@ -7,6 +7,67 @@
   </div>
 </div>
 
+<div class="white-banner">
+  <h1>ent history</h1>
+  <p>Your trusted partner in marketing and branding services.  <mat-card class = full> hghy</mat-card> <br/></p>
+<br/>
+
+</div>
+
+<div class="features">
+  <h2>ALL PROJECTS</h2> 
+  <div class="feature-cards">
+    <mat-card class="g-card"  *ngFor="let feature of movies">
+       
+        <img *ngIf="feature.title== 'CL'"  (click)="openMovieDialog('Christmas Lottery', 'When a family wins the lottery but loses the winning ticket, they must put aside their differences to find the ticket that could change their lives by Christmas Day.', 'https://www.imdb.com/title/tt13403782/','assets/CL.png','','Production Assistant')"[src]="feature.image" alt="{{ feature.title }} image">
+        <img *ngIf="feature.title== 'BF'"   (click)="openMovieDialog('Delrhonda Hood: Big Fifty', 'Delrhonda Big Fifty Hood ends up running her own drug empire, becoming one of the wealthiest and most notorious women in Detroit. In the process, with her success, she discovers that money does not fix all of her problems, and she can only depend on herself if she wants to stay one step ahead of the law and stay alive.', 'https://www.imdb.com/title/tt15364098/?ref_=nv_sr_srsg_0_tt_6_nm_2_in_0_q_delrhonda','assets/BigFifty.jpg', '','Locations Assitant Manager ,Public Relations Assistant')"[src]="feature.image" alt="{{ feature.title }} image">
+          
+        <img *ngIf="feature.title== 'WC'"   (click)="openMovieDialog('A Wesley Christmas', 'Sibling adults Chris, Todd, and Cydney Wesley all go to their childhood home in Washington, DC, to celebrate the Christmas vacation with their parents Bryan and Sylvia and the entire Wesley family.', 'https://www.imdb.com/title/tt17500912/?ref_=nv_sr_srsg_0_tt_5_nm_3_in_0_q_a%2520wesly%2520ch','assets/WeslyChristmas.jpg','','Locations Assistant Manager, Public Relations Assistant')"[src]="feature.image" alt="{{ feature.title }} image">
+            
+        <img *ngIf="feature.title== 'WC2'"  (click)="openMovieDialog('A Wesley Christmas Wedding', 'Siblings Chris, Todd, Cydney and Wesley travel to their childhood home in Washington to celebrate Christmas holidays with their parents Bryan and Sylvia. Upon their arrival, all kinds of family drama, a crazy neighbor and conflicts happen.', 'https://www.imdb.com/title/tt23638608/?ref_=nv_sr_srsg_0_tt_2_nm_0_in_0_q_wesly%2520christmas%2520wedd', 'assets/WeslyCW.jpg','','Locations Assistant Manger, Public Relations Assistant')"[src]="feature.image" alt="{{ feature.title }} image">
+            
+        <img *ngIf="feature.title== 'Hush'"  (click)="openMovieDialog('Hush', 'Follow relationship fixer Dr. Draya Logan, a renowned marriage and sex therapist who finds herself entangled in a series of lies, sex, and murder that could cost her everything.', 'https://www.imdb.com/title/tt20195430/?ref_=tt_mv_close','https://firebasestorage.googleapis.com/v0/b/pwa5-89c3b.appspot.com/o/hush.jpg?alt=media&token=7d0a9f69-d9c7-4790-a6d6-91198255e356','','Locations Assistant Manager, Public Relations Assistant')"[src]="feature.image" alt="{{ feature.title }} image">
+            
+        <img *ngIf="feature.title== 'Kismet'"  (click)="openMovieDialog('Kismet Holiday', 'Set against a magical Christmas Eve backdrop, two strangers find love, only to be separated, but when fate reunites them five years later, the question arises if this is a mere coincidence or a sign of destined love.', 'https://www.imdb.com/title/tt25433684/?ref_=fn_al_tt_1', 'assets/kismet.png','','Locations Assistant Manager, Public Relations Assistant')"[src]="feature.image" alt="{{ feature.title }} image">
+            
+        <img *ngIf="feature.title== 'dc'"  (click)="openMovieDialog('Christmas Lottery', 'When a family wins the lottery but loses the winning ticket, they must put aside their differences to find the ticket that could change their lives by Christmas Day.', 'https://www.imdb.com/title/tt13403782/','assets/CL.png','','Production Assistant')"[src]="feature.image" alt="{{ feature.title }} image">
+    </mat-card>
+    
+  </div>
+</div>
+
+
+<mat-card class="mat-card">
+  <mat-card-content class="movie-card">
+<mat-card-title><b>Movies</b></mat-card-title>
+<button class="menu-button" mat-button [matMenuTriggerFor]="menu">
+  <mat-icon>movie</mat-icon>
+</button>
+
+<mat-menu class="mat-menu-panel" #menu="matMenu">
+  <button mat-menu-item (click)="openMovieDialog('Christmas Lottery', 'When a family wins the lottery but loses the winning ticket, they must put aside their differences to find the ticket that could change their lives by Christmas Day.', 'https://www.imdb.com/title/tt13403782/','assets/CL.png','','Production Assistant')">Christmas Lottery</button>
+  <button mat-menu-item (click)="openMovieDialog('Delrhonda Hood: Big Fifty', 'Delrhonda Big Fifty Hood ends up running her own drug empire, becoming one of the wealthiest and most notorious women in Detroit. In the process, with her success, she discovers that money does not fix all of her problems, and she can only depend on herself if she wants to stay one step ahead of the law and stay alive.', 'https://www.imdb.com/title/tt15364098/?ref_=nv_sr_srsg_0_tt_6_nm_2_in_0_q_delrhonda','assets/BigFifty.jpg', '','Locations Assitant Manager ,Public Relations Assistant')">Delrhonda Hood: Big Fifty</button>
+  <button mat-menu-item (click)="openMovieDialog('A Wesley Christmas', 'Sibling adults Chris, Todd, and Cydney Wesley all go to their childhood home in Washington, DC, to celebrate the Christmas vacation with their parents Bryan and Sylvia and the entire Wesley family.', 'https://www.imdb.com/title/tt17500912/?ref_=nv_sr_srsg_0_tt_5_nm_3_in_0_q_a%2520wesly%2520ch','assets/WeslyChristmas.jpg','','Locations Assistant Manager, Public Relations Assistant')">A Wesley Christmas</button>
+  <button mat-menu-item (click)="openMovieDialog('A Wesley Christmas Wedding', 'Siblings Chris, Todd, Cydney and Wesley travel to their childhood home in Washington to celebrate Christmas holidays with their parents Bryan and Sylvia. Upon their arrival, all kinds of family drama, a crazy neighbor and conflicts happen.', 'https://www.imdb.com/title/tt23638608/?ref_=nv_sr_srsg_0_tt_2_nm_0_in_0_q_wesly%2520christmas%2520wedd', 'assets/WeslyCW.jpg','','Locations Assistant Manger, Public Relations Assistant')">A Wesley Christmas Wedding</button>
+  <button mat-menu-item (click)="openMovieDialog('Kismet Holiday', 'Set against a magical Christmas Eve backdrop, two strangers find love, only to be separated, but when fate reunites them five years later, the question arises if this is a mere coincidence or a sign of destined love.', 'https://www.imdb.com/title/tt25433684/?ref_=fn_al_tt_1', 'assets/kismet.png','','Locations Assistant Manager, Public Relations Assistant')">Kismet Holiday</button>
+</mat-menu>
+
+  &nbsp;&nbsp;
+  <mat-card-title><b>Series</b></mat-card-title>
+  <button class="menu-button" mat-button [matMenuTriggerFor]="menu2"><mat-icon>movie</mat-icon>
+  </button>
+  <mat-menu #menu2="matMenu">
+  <button mat-menu-item (click)="openMovieDialog('Hush', 'Follow relationship fixer Dr. Draya Logan, a renowned marriage and sex therapist who finds herself entangled in a series of lies, sex, and murder that could cost her everything.', 'https://www.imdb.com/title/tt20195430/?ref_=tt_mv_close','https://firebasestorage.googleapis.com/v0/b/pwa5-89c3b.appspot.com/o/hush.jpg?alt=media&token=7d0a9f69-d9c7-4790-a6d6-91198255e356','','Locations Assistant Manager, Public Relations Assistant')">Hush</button>
+  <button mat-menu-item (click)="openMovieDialog('Conspirator', '', '','','https://www.youtube.com/watch?v=qeaP8jWMo74&list=PPSV','Production Consultant')">Conspirators</button>
+  </mat-menu>
+  &nbsp; &nbsp;
+<mat-card-title><b>IMDb</b></mat-card-title> &nbsp;
+
+  <a href="https://www.imdb.com/name/nm12907760/" target="_blank"><mat-icon class="icons">storage</mat-icon></a>
+
+  </mat-card-content>
+</mat-card>
+
 <br/>
 
 
@@ -120,36 +181,9 @@
     </mat-grid-tile>
   </mat-grid-list>
 
- <mat-card class="mat-card">
-  <mat-card-content class="movie-card">
-<mat-card-title><b>Movies</b></mat-card-title>
-<button class="menu-button" mat-button [matMenuTriggerFor]="menu">
-  <mat-icon>movie</mat-icon>
-</button>
 
-<mat-menu class="mat-menu-panel" #menu="matMenu">
-  <button mat-menu-item (click)="openMovieDialog('Christmas Lottery', 'When a family wins the lottery but loses the winning ticket, they must put aside their differences to find the ticket that could change their lives by Christmas Day.', 'https://www.imdb.com/title/tt13403782/','assets/CL.png','','Production Assistant')">Christmas Lottery</button>
-  <button mat-menu-item (click)="openMovieDialog('Delrhonda Hood: Big Fifty', 'Delrhonda Big Fifty Hood ends up running her own drug empire, becoming one of the wealthiest and most notorious women in Detroit. In the process, with her success, she discovers that money does not fix all of her problems, and she can only depend on herself if she wants to stay one step ahead of the law and stay alive.', 'https://www.imdb.com/title/tt15364098/?ref_=nv_sr_srsg_0_tt_6_nm_2_in_0_q_delrhonda','assets/BigFifty.jpg', '','Locations Assitant Manager ,Public Relations Assistant')">Delrhonda Hood: Big Fifty</button>
-  <button mat-menu-item (click)="openMovieDialog('A Wesley Christmas', 'Sibling adults Chris, Todd, and Cydney Wesley all go to their childhood home in Washington, DC, to celebrate the Christmas vacation with their parents Bryan and Sylvia and the entire Wesley family.', 'https://www.imdb.com/title/tt17500912/?ref_=nv_sr_srsg_0_tt_5_nm_3_in_0_q_a%2520wesly%2520ch','assets/WeslyChristmas.jpg','','Locations Assistant Manager, Public Relations Assistant')">A Wesley Christmas</button>
-  <button mat-menu-item (click)="openMovieDialog('A Wesley Christmas Wedding', 'Siblings Chris, Todd, Cydney and Wesley travel to their childhood home in Washington to celebrate Christmas holidays with their parents Bryan and Sylvia. Upon their arrival, all kinds of family drama, a crazy neighbor and conflicts happen.', 'https://www.imdb.com/title/tt23638608/?ref_=nv_sr_srsg_0_tt_2_nm_0_in_0_q_wesly%2520christmas%2520wedd', 'assets/WeslyCW.jpg','','Locations Assistant Manger, Public Relations Assistant')">A Wesley Christmas Wedding</button>
-  <button mat-menu-item (click)="openMovieDialog('Kismet Holiday', 'Set against a magical Christmas Eve backdrop, two strangers find love, only to be separated, but when fate reunites them five years later, the question arises if this is a mere coincidence or a sign of destined love.', 'https://www.imdb.com/title/tt25433684/?ref_=fn_al_tt_1', 'assets/kismet.png','','Locations Assistant Manager, Public Relations Assistant')">Kismet Holiday</button>
-</mat-menu>
 
-  &nbsp;&nbsp;
-  <mat-card-title><b>Series</b></mat-card-title>
-  <button class="menu-button" mat-button [matMenuTriggerFor]="menu2"><mat-icon>movie</mat-icon>
-  </button>
-  <mat-menu #menu2="matMenu">
-  <button mat-menu-item (click)="openMovieDialog('Hush', 'Follow relationship fixer Dr. Draya Logan, a renowned marriage and sex therapist who finds herself entangled in a series of lies, sex, and murder that could cost her everything.', 'https://www.imdb.com/title/tt20195430/?ref_=tt_mv_close','https://firebasestorage.googleapis.com/v0/b/pwa5-89c3b.appspot.com/o/hush.jpg?alt=media&token=7d0a9f69-d9c7-4790-a6d6-91198255e356','','Locations Assistant Manager, Public Relations Assistant')">Hush</button>
-  <button mat-menu-item (click)="openMovieDialog('Conspirator', '', '','','https://www.youtube.com/watch?v=qeaP8jWMo74&list=PPSV','Production Consultant')">Conspirators</button>
-  </mat-menu>
-  &nbsp; &nbsp;
-<mat-card-title><b>IMDb</b></mat-card-title> &nbsp;
 
-  <a href="https://www.imdb.com/name/nm12907760/" target="_blank"><mat-icon class="icons">storage</mat-icon></a>
-
-  </mat-card-content>
-</mat-card>
 
 <br/>
 <div class="scrolling-banner">

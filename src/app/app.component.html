@@ -1,4 +1,4 @@
-<mat-sidenav-container  class="sidenav-container">
+<mat-sidenav-container class="sidenav-container" [ngClass]="{'entertainment-page': isEntertainmentPage}">
   <!-- Side nav -->
   <mat-sidenav #sidenav class="body" mode="side">
     <mat-nav-list>
@@ -31,52 +31,18 @@
   <!-- Main content area -->
   <mat-sidenav-content>
     <!-- Toggle button for sidenav -->
-     <div class="logo-container">
-    <button class="raised" mat-icon-button (click)="toggleSidenav()">
-      <mat-icon>menu </mat-icon>
-    </button>
-    <div class="logo-container" *ngIf="isComputerSciencePage">
-      <mat-toolbar> Computer Science <img src="assets/Logo.jpg" alt="McNair Hall"></mat-toolbar>
+    <div class="logo-container">
+      
+        <mat-icon class="raised" mat-icon-button (click)="toggleSidenav()" [ngClass]="{'entertainment-menu-button': isEntertainmentPage}">menu</mat-icon>
+      
+      <mat-toolbar [ngClass]="{'entertainment-toolbar': isEntertainmentPage, 'default-toolbar': !isEntertainmentPage}">
+        <span class="page-title"> <b>{{ pageTitle }} </b></span>
+        <img *ngIf="isComputerSciencePage" src="assets/Logo.jpg" alt="McNair Hall" class="toolbar-icon">
+      </mat-toolbar>
     </div>
 
-    <div class="logo-container" *ngIf="isEntertainmentPage">
-      <mat-toolbar>Entertainment </mat-toolbar>
-    </div>
-  
-    <div class="logo-container" *ngIf="isEntrepreneurshipPage">
-      <mat-toolbar>Entrepreneurship</mat-toolbar>
-    </div>
-
-    <div class="logo-container" *ngIf="isNonprofitPage">
-      <mat-toolbar>Nonprofit </mat-toolbar>
-    </div>
-
-    <div class="logo-container" *ngIf="isCybersecurityPage">
-      <mat-toolbar>Cybersecurity </mat-toolbar>
-    </div>
-
-    <div class="logo-container" *ngIf="isYekizePage">
-      <mat-toolbar>Yekize Essentials  <img src="assets/YekizeLogo.jpg" alt="Yekize Essentials Logo"></mat-toolbar>
-    </div>
-
-    <div class="logo-container" *ngIf="isLAWNDPage">
-      <mat-toolbar>LAW || ND Communications <img src="assets/LAWNDLOGO.png" alt="LAW || ND Communications Logo"></mat-toolbar>
-    </div>
-
-    <div class="logo-container" *ngIf="isDifferencePage">
-      <mat-toolbar>The Difference Society <img src="assets/DifferenceSocietyLogo.webp" alt="The Difference Logo"></mat-toolbar>
-    </div>
-
-    <div class="logo-container" *ngIf="isCWPage">
-      <mat-toolbar>Charlotte's Web <img src="assets/LAWNDLOGO.png" alt="Charlotte's Web Logo"></mat-toolbar>
-    </div>
-
-    <div class="logo-container" *ngIf="isInnovativePage">
-      <mat-toolbar>Innovative Concepts<img src="assets/ICLogo.png" alt="Innovative Concepts Logo"></mat-toolbar>
-    </div>
-
-    </div>
-    <!-- Router outlet for dynamic component rendering -->
+    <!-- Add other page content here as needed -->
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+

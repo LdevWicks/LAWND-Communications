@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
-import { Router, RouterModule, NavigationEnd } from '@angular/router';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
@@ -15,7 +15,6 @@ import { AppRoutingModule } from './app.routes';
   styleUrls: ['./app.component.css'],
   imports: [
     CommonModule,
-    RouterModule,
     MatCardModule,
     MatIconModule,
     MatListModule,
@@ -38,6 +37,22 @@ export class AppComponent implements OnInit {
   isCWPage= false;
   isInnovativePage= false;
 
+  pageTitle: string = '';
+
+  private readonly pageTitles: { [key: string]: string } = {
+    '/': 'Home',
+    '/computer-science': 'Computer Science',
+    '/entertainment': 'Entertainment',
+    '/nonprofit': 'Nonprofit',
+    '/entrepreneurship': 'Entrepreneurship',
+    '/cybersecurity': 'Cybersecurity',
+    '/yekize': 'Yekize Essentials',
+    '/lawnd': 'LAW || ND Communications',
+    '/difference': 'The Difference Society',
+    '/cw': 'Charlotte\'s Web',
+    '/innovative': 'Innovative Concepts'
+  }
+
   constructor(private router: Router) {}
 
   ngOnInit() {
@@ -53,6 +68,9 @@ export class AppComponent implements OnInit {
         this.isDifferencePage = event.urlAfterRedirects.includes('/difference');
         this.isCWPage = event.urlAfterRedirects.includes('/cw');
         this.isInnovativePage = event.urlAfterRedirects.includes('/innovative');
+        
+        // Update the page title based on the current route
+        this.pageTitle = this.pageTitles[event.urlAfterRedirects] || '';
       }
     });
   }

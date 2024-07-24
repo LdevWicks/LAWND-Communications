@@ -3,7 +3,11 @@
   .full {
     width: 100%;
     max-width: 600px; /* Example max-width to control card width */
-    background: linear-gradient(to bottom, #ff0000, #ff4d4d, #ff9999, #ffffff);
+    background: linear-gradient(
+      295deg, /* Angle of the gradient */
+      rgba(240, 3, 3, 0.6) 10%, /* Starting color */
+      rgba(255, 0, 0, 0.6) 90% /* Ending color */
+    );
     color: #000000; /* Adjust text color to ensure readability */
     padding: 16px;
     border-radius: 8px;
@@ -122,17 +126,7 @@
     }
   }
   
-  .icon-text {
-    display: flex;
-    align-items: center;
-  }
-  
-  .icon {
-    width: 100px; /* Adjust icon size */
-    height: 100px; /* Adjust icon size */
-    margin-right: 8px; /* Space between icon and text */
-  }
-  
+
 .movie-card{
   align-items: center;
   display: inherit;
@@ -141,13 +135,16 @@
   width:40vw;
 }
 
-
 .icons{
   color: rgb(40, 39, 39);
 }
 
 .mat-card {
-  background: linear-gradient(to bottom, #ff0000, #ff4d4d, #ff9999, #ffffff);
+  background: linear-gradient(
+    105deg, /* Angle of the gradient */
+    rgba(240, 3, 3, 0.6) 10%, /* Starting color */
+    rgba(255, 0, 0, 0.6) 90% /* Ending color */
+  );
   color: #000000; /* Adjust text color to ensure readability */
   padding: 16px;
   border-radius: 8px;
@@ -155,27 +152,18 @@
   position:relative;
 }
 
-:host {
-  display: block;
-  background-color: black;
-  color: white;
-  height: 100vh; /* Full viewport height */
-  width: 100vw;
-  padding: 20px; /* Optional: Add padding */
-  box-sizing: border-box; /* Include padding in the element's total width and height */
-}
 
 .features {
   padding: 60px 20px;
   text-align: center;
- 
+  justify-content: space-around;
 }
 
 .feature-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  
+  gap: 16px; /* Space between cards */
+  justify-content: space-evenly;
 }
 
 .g-card {
@@ -205,3 +193,65 @@
   background-color: #fff;
   width:100vw;
 }
+
+
+.mat-card-header {
+  display: flex;
+  align-items: center;
+}
+
+
+.ent-card {
+  position: relative;
+  background-color: #000000;
+  border: 2px solid ; /* White outline */
+  border-radius: 15px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3), -10px 10px 10px rgba(240, 3, 3, 0.6);
+  margin: 16px; /* Adjust spacing between cards */
+  overflow: hidden; /* Ensure content does not overflow */
+  padding-top: 80px; /* Provide space for the icon to hang above */
+  flex: 1 1 calc(33.33% - 16px); /* Each card should take up 33.33% of the container width minus the gap */
+  max-width: calc(33.33% - 16px);   
+}
+
+.icon-container {
+  position: absolute;
+  top:0px; /* Move icon further left */
+  left:0px;
+  width: 55%; /* Increase size as needed */
+  height: 50%; /* Increase size as needed */
+  background-color: white; /* Background color for contrast */
+  border-radius: 8px 0px; /* Non-circular */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* 3D effect */
+  z-index: 10; /* Ensure it appears above card content */
+  overflow: visible; /* Allow the icon to extend outside the card */
+}
+
+.icon {
+  width: 100%; /* Fit icon to container */
+  height: 100%; /* Fit icon to container */
+  object-fit: fill; /* Maintain aspect ratio */
+  border-radius: 0; /* Remove circular border if present */
+  align-items: left;
+}
+
+.Gicon-container {
+  position: absolute;
+  top:25px; /* Move icon further left */
+  left:0px;
+  width: 55%; /* Increase size as needed */
+  height: 25%; /* Increase size as needed */
+   /* Background color for contrast */
+  border-radius: 8px 0px; /* Non-circular */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* 3D effect */
+  z-index: 10; /* Ensure it appears above card content */
+  overflow: visible; /* Allow the icon to extend outside the card */
+}
+
+.textL{
+  text-align: left;
+  align-items: left;
+  align-content: left;
+}
+
+

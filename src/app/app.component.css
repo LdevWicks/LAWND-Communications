@@ -1,3 +1,4 @@
+
 .body{
     background-color: #c0bdbd; /* Grey color */
     margin: 0; /* Optional: Remove default body margin */
@@ -69,7 +70,9 @@
     display: flex;
     align-items: right;
     padding: 10px;
+    
   }
+  
   
   .logo-container img {
     height: 70px; /* Adjust the size as needed */
@@ -88,5 +91,4 @@
     width: 100vw; 
   
   }
-  
   

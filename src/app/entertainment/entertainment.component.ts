@@ -4,8 +4,6 @@ import {MatMenuModule} from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatGridListModule} from '@angular/material/grid-list';
-import { DragDropModule } from '@angular/cdk/drag-drop';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { CommonModule } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -15,7 +13,7 @@ import { MovieDialogComponent} from '../movie-dialog/movie-dialog.component';
 @Component({
   selector: 'app-entertainment',
   standalone: true,
-  imports: [MatCardModule, MatDialogModule,CommonModule,DragDropModule,MatMenuModule,MatIconModule,MatExpansionModule,MatGridListModule],
+  imports: [ MatCardModule, MatDialogModule, CommonModule, MatMenuModule, MatIconModule, MatExpansionModule, MatGridListModule],
   templateUrl: './entertainment.component.html',
   styleUrls: ['./entertainment.component.css']
 })
@@ -65,19 +63,7 @@ export class EntertainmentComponent {
   }
 
   panelOpenState = false;
-
-  tiles = [
-    { cols: 2, rows: 1 },
-  ];
-
-  drop(event: CdkDragDrop<any[]>): void {
-    moveItemInArray(this.tiles, event.previousIndex, event.currentIndex);
-  }
-
-  navigateToDetail(image: string): void {
-    // Implement your navigation logic here
-    alert('Navigating to details for image: ' + image);
-  }
+ 
 
   openMovieDialog(movieTitle: string, movieDescription: string, imdbLink: string, movieCover: string, videoUrl: string, credits:string): void {
     this.dialog.open(MovieDialogComponent, {

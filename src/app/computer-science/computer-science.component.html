@@ -21,8 +21,8 @@
                 <p>{{ fact.fact }}</p>
                 <img *ngIf="fact.image" [src]="fact.image" alt="Fact Image for {{ fact.year }}" class="fact-image">
                 <div>
-                  <button class="button-primary" mat-button matStepperPrevious *ngIf="!isFirstStep(fact)">Back</button>
-                  <button class="button-primary" mat-button matStepperNext *ngIf="!isLastStep(fact)">Next</button>
+                  <button class="button-primary" mat-button matStepperPrevious *ngIf="!isFirstStep(fact)"><b>Back</b></button>
+               &nbsp;   <button class="button-primary" mat-button matStepperNext *ngIf="!isLastStep(fact)"><b>Next</b></button>
                 </div>
               </form>
             </mat-step>

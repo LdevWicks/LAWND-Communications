@@ -36,9 +36,7 @@ export class ComputerScienceComponent implements OnInit{
   openAggiePrideDialog(): void {
     const dialogRef = this.dialog.open(AggiePrideDialogComponent);
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('Dialog closed with result:', result);
-    });
+    dialogRef.afterClosed().subscribe(result => result);
   }
 
 

@@ -19,11 +19,22 @@ import { MovieDialogComponent} from '../movie-dialog/movie-dialog.component';
 })
 export class EntertainmentComponent {
 
+  movies = [
+    { title: 'CL', image: 'assets/CL2.jpg', route:'/nonprofit' },
+    { icon: '', title: 'BF', description: 'NC A&T 2006-2010', image: 'assets/BigFifty.jpg', route:'/computer-science' },
+    { icon: 'theaters', title: 'WC', description: 'Learn more about our past projects', image: 'assets/WeslyChristmas.jpg',route:'/entertainment' },
+    { icon: 'lightbulb', title: 'WC2', description: 'Learn more about my businesses', image: 'assets/WCW2.jpg',route:'/entrepreneurship' },
+    { icon: 'security', title: 'Hush', description: 'Deep dive into my path to CISO', image: 'assets/hush2.jpg',route:'/cybersecurity' },
+    { icon: 'lightbulb', title: 'Kismet', description: 'Learn more about my businesses', image: 'assets/kismet.png',route:'/entrepreneurship' },
+    { icon: 'security', title: 'CS', description: 'Deep dive into my path to CISO', image: 'assets/certs.png',route:'/cybersecurity' },
+  ];
+
   images: string[] = [
     'assets/big50.jpg',
     'assets/hush.jpg',
     'assets/WeslyCW.jpg',
     'assets/CL.png',
+    
     
   ];
 
@@ -31,7 +42,8 @@ export class EntertainmentComponent {
    "assets/LAWNDLOGO.png",
    "assets/CPRLogo.webp",
    "assets/OctetLogo.png",
-   "assets/SWLogo.webp"
+   "assets/SWLogo.webp",
+   'assets/GibsonLogo.webp',
   ];
   
 

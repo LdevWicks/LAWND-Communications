@@ -1,94 +1,117 @@
+.body {
+  background-color: #c0bdbd; /* Grey color */
+  margin: 0;
+  padding: 16px;
+  margin-bottom: 16px;
+}
 
-.body{
-    background-color: #c0bdbd; /* Grey color */
-    margin: 0; /* Optional: Remove default body margin */
-    padding: 0; /* Optional: Remove default body padding */
-    padding: 16px;
-    margin-bottom: 16px;
-  }
-
-.icon{
-    color: #bc7762
+.icon {
+  color: #bc7762;
 }
 
 .raised {
-    background-color:rgb(195, 80, 4);
-    padding: 16px;
-    margin-bottom: 16px;
-    max-width: 450px; 
-    margin: 10px;
-    color:white;  
-    outline: rgb(251, 248, 248);
-    border: 2px solid rgba(15, 15, 15, 0.12); /* Change the color and width as needed */
-    border-radius: 2px; /* Adjust the border radius if needed */
   
-  }
+  padding: 16px;
+  margin-bottom: 16px;
+  max-width: 450px;
+  margin: 10px;
+  color: rgb(195,80,4);
+  outline: none;
+  box-shadow: none; /* Remove shadow to ensure no outline effect */
+}
 
-  .mat-sidenav {
-    width: 250px;
-  }
+.raised:focus {
+  outline: none; /* Remove outline on focus */
+  box-shadow: none; /* Remove shadow on focus */
+}
 
-  html, body {
-    height: 100%;
-    margin: 0;
-  }
-  
-  .example-container {
-    height: 100%;
-  }
-    
-  mat-toolbar.mat-primary {
-    background: #c65e02;
-    color: white;
-  }
-  
-  .content {
-    padding: 16px;
-    background-color:rgb(224, 224, 234);
-  }
-  
-  /* Ensure the sidenav container fills the entire viewport */
+.entertainment-menu-button {
+  background-color: red; /* Red color for Entertainment page menu button */
+  color:white;
+}
+
+.entertainment-toolbar {
+  background-color: #000000; /* Black color for Entertainment page toolbar */
+  color: white;
+}
+
+.default-toolbar {
+  background-color: white; /* Same color as the menu button for other pages */
+  color: rgb(195, 80, 4);
+  outline:none;
+}
+
+.mat-sidenav {
+  width: 250px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.example-container {
+  height: 100%;
+}
+
+.content {
+  padding: 16px;
+  background-color: rgb(224, 224, 234);
+}
+
 .sidenav-container {
-    height: 100vh; /* Full viewport height */
-    display: flex;
-    
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column; /* Ensure vertical alignment */
 }
 
-/* Style for the side nav */
 .sidenav {
-    width: 250px; /* Set your desired width */
-    background-color: #f0f0f0; /* Example background color */
+  width: 250px; /* Set your desired width */
+  background-color: #f0f0f0; /* Example background color */
 }
 
-/* Style for the main content area */
 .main-content {
-    flex: 1; /* Take up remaining space */
-    padding: 20px; /* Example padding */
+  flex: 1; /* Take up remaining space */
+  padding: 20px; /* Example padding */
 }
-/* src/app/logo/logo.component.css */
+
 .logo-container {
-    display: flex;
-    align-items: right;
-    padding: 10px;
-    
-  }
-  
-  
-  .logo-container img {
-    height: 70px; /* Adjust the size as needed */
-    margin-left: 0px; /* Space between the menu button and the logo */
-  }
+  display: flex;
+  align-items: center;
+  color:rgb(195,80,4);
+  padding: 0; /* Remove padding to eliminate space */
+  background-color: white; /* Ensure background color matches toolbar */
+}
 
-  
-  .logox{
-    height: 90px; /* Adjust the size as needed */
-    margin-left: 0px; /* Space between the menu button and the logo */
-  }
+.toolbar-icon {
+  height: 70px; /* Adjust the size as needed */
+  margin-left: 10px; /* Space between the title and the icon */
+}
 
-  .container{
-    display: flex;
-    height: 100vh; /* Full viewport height */
-    width: 100vw; 
-  
-  }
-  
+.page-title {
+  font-size: 20px;
+  color: inherit; /* Ensure text color matches toolbar */
+  margin-left: 10px; /* Ensure there is a gap between the title and the button */
+}
+
+.entertainment-page .mat-sidenav-content {
+  background-color: #000000;
+  color: white;
+}
+
+.entertainment-page .logo-container {
+  background-color: #000000; /* Same color for the container on Entertainment page */
+}
+
+.entertainment-page .page-title {
+  color: white;
+}
+
+.mat-toolbar {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  display: flex; /* Ensure flex layout for alignment */
+  align-items: center; /* Align items vertically */
+}
+
+

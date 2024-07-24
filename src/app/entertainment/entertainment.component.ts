@@ -19,6 +19,34 @@ import { MovieDialogComponent} from '../movie-dialog/movie-dialog.component';
 })
 export class EntertainmentComponent {
 
+
+  experiences = [
+    {
+      title: 'Experience 1',
+      logo: 'assets/SWLogo.webp',
+      image: 'assets/.jpg',
+      description: 'Mock text describing entertainment experience 1.'
+    },
+    {
+      title: 'Experience 2',
+      logo: 'assets/logo2.png',
+      image: 'assets/image2.jpg',
+      description: 'Mock text describing entertainment experience 2.'
+    },
+    {
+      title: 'Experience 3',
+      logo: 'assets/logo3.png',
+      image: 'assets/image3.jpg',
+      description: 'Mock text describing entertainment experience 3.'
+    },
+    {
+      title: 'Experience 4',
+      logo: 'assets/logo4.png',
+      image: 'assets/image4.jpg',
+      description: 'Mock text describing entertainment experience 4.'
+    }
+  ];
+
   movies = [
     { title: 'CL', image: 'assets/CL2.jpg', route:'/nonprofit' },
     { icon: '', title: 'BF', description: 'NC A&T 2006-2010', image: 'assets/BigFifty.jpg', route:'/computer-science' },
@@ -34,8 +62,6 @@ export class EntertainmentComponent {
     'assets/hush.jpg',
     'assets/WeslyCW.jpg',
     'assets/CL.png',
-    
-    
   ];
 
   imageUrls: string[]=[

@@ -15,12 +15,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
   styleUrls: ['./entrepreneurship.component.css']
 })
 export class EntrepreneurshipComponent {
-  bannerItems: string[] = [
-    'Banner Item 1',
-    'Banner Item 2',
-    'Banner Item 3',
-    // Add more items as needed
-  ];
+  
   
   ceo$: Observable<any[]> = new Observable<any[]>();
 
@@ -37,9 +32,6 @@ export class EntrepreneurshipComponent {
     this.router.navigate(['/lawnd']);
   }
  
-  navigateToCW(): void {
-    this.router.navigate(['/cw']);
-  }
 
   navigateToPage(productId: string): void {
     switch (productId) {

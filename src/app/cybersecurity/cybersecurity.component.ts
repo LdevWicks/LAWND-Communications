@@ -28,6 +28,8 @@ import { DiscussionBoardComponent } from "../discussion-board/discussion-board.c
   styleUrls: ['./cybersecurity.component.css']
 })
 export class CybersecurityComponent implements OnInit {
+
+
   searchForm: FormGroup = new FormGroup({}); // Initialize FormGroup
   resources: any[] = [
     { title: 'Guide to Cybersecurity', url: 'assets/guide.pdf', type: 'resource' },
@@ -58,6 +60,7 @@ export class CybersecurityComponent implements OnInit {
     // Combine resources and documents
     this.combinedResources = [...this.resources, ...this.documents];
     this.filteredResources = this.combinedResources;
+
   }
 
   selectDocument(doc: any): void {
@@ -85,4 +88,9 @@ export class CybersecurityComponent implements OnInit {
       this.selectedDocument = null;
     }
 }
+
+
+
+
+
 }

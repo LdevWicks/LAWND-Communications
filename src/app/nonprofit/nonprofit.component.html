@@ -1,37 +1,24 @@
-<mat-card>
-  <div class="scrolling-banner">
-    <div class="banner-content">
-      <div class="banner-item" *ngFor="let imageUrl of images">
-        <img [src]="imageUrl" alt="Banner Image">
-      </div>
-    </div>
+<div class="welcome-banner">
+  <div class="welcome-image">
+    <img src="assets/certs.png" alt="Welcome Image">
   </div>
+  <div class="welcome-text">
+    <h1>Welcome to Our Site</h1>
+    <p>We are delighted to have you here. Explore our site to learn more about our offerings and services. Whether you are looking for information on our latest projects or seeking to get in touch, we are here to help. Feel free to navigate through and enjoy your visit!</p>
+  </div>
+</div>
+
 
 <div class="container">
-  <!--div class="sidebar">
-    <h2>Navigation</h2>
-    <ul>
-      <li *ngFor="let item of navigationItems" (click)="selectItem(item)">
-        {{ item }}
-      </li>
-    </ul>
-  </div-->
-
-  
   <div class="product-container">
-    <div class="product-card" *ngFor="let product of nonprofit$ | async">
-      <mat-card>
+    <div class="product-card" *ngFor="let product of nonprofit$ | async; let i = index" [class.center]="i < 3">
+      <mat-card class="full-card">
         <img (click)="navigateToPage(product.id)" mat-card-image [src]="product.imageUrl" alt="Product Image" class="product-image">
       </mat-card>
     </div>
   </div>
-  
-
-  
-  
-  
-
-
+</div> 
+ 
 
 
   

@@ -1,56 +1,9 @@
-.scrolling-banner {
-    overflow: hidden;
-    white-space: nowrap;
-    width: 100%;
-    margin-top: 20px; /* Adjust margin as needed */
-  }
-  
-  .banner-content {
-    display: inline-block;
-    animation: scroll-left 20s linear infinite;
-  }
-  
-  .banner-item {
-    display: inline-block;
-    margin-right: 20px; /* Adjust spacing between items */
-  }
-  
-  @keyframes scroll-left {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
 
   .container{
     display: flex;
     height: 100vh; /* Full viewport height */
     width: 100vw; 
   
-  }
-
-  .image{
-    height: 100px;
-    width: 100px;
-  }
-  
-  .tab-icon {
-    width: 50px; /* Adjust width as needed */
-    height: 50px; /* Adjust height as needed */
-    margin-right: 8px; /* Optional: Add space between icon and label */
-  }
-
-  .grey{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-    gap: 20px; /* Gap between items */
-    padding: 20px; /* Padding around the grid */
-    max-width: 1200px; /* Limit maximum width of the dashboard */
-    margin: 0 auto; 
-    height:300px;
-    width:300px;
   }
   
   
@@ -69,3 +22,89 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Shadow for 3D effect */
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition */
 }
+.product-card:hover {
+  transform: translateY(-4px); /* Lift on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+/* Container for the scrolling banner */
+.scrolling-banner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 300px; /* Adjust height as needed */
+  margin-top: 20px;
+}
+
+/* Scrolling content */
+.banner-content {
+  display: flex;
+  width: 200%; /* Double the width to allow continuous scrolling */
+  animation: scroll-left 20s linear infinite;
+}
+
+/* Individual banner item */
+.banner-item {
+  flex: 1 0 50%; /* Each item takes up half the width */
+  background-size: contain; /* Ensure full image is visible */
+  background-repeat: no-repeat; /* Prevent image repeating */
+  background-position: center; /* Center the image */
+  height: 300px; /* Match the height of the scrolling banner */
+}
+
+/* Animation for scrolling */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Banner Section */
+.Mbanner-section {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Adjust height as needed */
+  background: linear-gradient(145deg, #ff4500, #f98253, #c31f02); /* Sunset orange and red gradient */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Shadow for luxury effect */
+  border-radius: 15px; /* Rounded corners */
+  overflow: hidden; /* Hide overflow */
+}
+
+
+.Mbanner-section::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(1to right, #f51919, #f12711); /* Gold to red gradient for edge */
+  z-index: -1;
+  filter: blur(10px); /* Blur for glow effect */
+}
+
+/* Banner Content */
+.Mbanner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white; /* Text color */
+}
+
+.Mbanner-content h1 {
+  margin: 0;
+  font-size: 2.5rem; /* Adjust font size as needed */
+  font-weight: bold;
+}
+
+.Mbanner-content p {
+  margin: 10px 0 0;
+  font-size: 1.25rem; /* Adjust font size as needed */
+}
+
+

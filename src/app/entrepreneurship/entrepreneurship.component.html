@@ -1,14 +1,22 @@
+
 <div class="scrolling-banner">
-    <div class="banner-content">
-      <div class="banner-item" *ngFor="let item of bannerItems">
-        {{ item }}
-      </div>
-    </div>
+  <div class="banner-content">
+    <div class="banner-item" style="background-image: url('assets/flyer1.png');"></div>
+    <div class="banner-item" style="background-image: url('path-to-your-image2.jpg');"></div>
+    <div class="banner-item" style="background-image: url('path-to-your-image3.jpg');"></div>
+    <div class="banner-item" style="background-image: url('path-to-your-image4.jpg');"></div>
   </div>
+</div>
+<br/>
+<div class="Mbanner-section">
+  <div class="Mbanner-content">
+    <h1>Explore my Entrepreneurship Journey</h1>
+    <p>Experience the elegance and grandeur of our sunset-inspired design.</p>
+  </div>
+</div>
+
+
 <mat-card class="container">
-
-  brief bio journey to entrpreneurship
-
   <div class="product-container">
     <div class="product-card" *ngFor="let product of ceo$ | async">
       <mat-card>
@@ -16,6 +24,6 @@
       </mat-card>
     </div>
   </div>
-  
+</mat-card>  
 
  

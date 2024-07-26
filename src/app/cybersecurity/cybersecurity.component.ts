@@ -6,6 +6,9 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule, MatDialog } from '@angular/material/dialog';
+import { CertsDialogComponent} from "../certs-dialog/certs-dialog.component";
+import { MatDividerModule } from '@angular/material/divider';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatStepperModule } from '@angular/material/stepper';
 import { DiscussionBoardComponent } from "../discussion-board/discussion-board.component";
@@ -15,6 +18,8 @@ import { DiscussionBoardComponent } from "../discussion-board/discussion-board.c
   standalone: true,
   imports: [
     MatCardModule,
+    MatDialogModule,
+    MatDividerModule,
     MatIconModule,
     CommonModule,
     MatTabsModule,
@@ -50,7 +55,7 @@ export class CybersecurityComponent implements OnInit {
   selectedDocument: any;
   searchPerformed: boolean = false;
   
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, public dialog: MatDialog) { }
   
   ngOnInit(): void {
     this.searchForm = this.formBuilder.group({
@@ -89,7 +94,18 @@ export class CybersecurityComponent implements OnInit {
     }
 }
 
-
+openMovieDialog(movieTitle: string, movieDescription: string, imdbLink: string, movieCover: string, videoUrl: string, credits:string): void {
+  this.dialog.open(CertsDialogComponent, {
+    data: {
+      title: movieTitle,
+      description: movieDescription,
+      imdbLink: imdbLink,
+      image: movieCover,
+      videoUrl: videoUrl,
+      credits:credits
+    }
+  });
+}
 
 
 

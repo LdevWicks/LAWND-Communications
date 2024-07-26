@@ -22,101 +22,122 @@
 
 <!-- Certification Card -->
 <mat-tab-group class ="tabs">
-
+ 
           
       <mat-tab class= "mat-step-label" label="Certifications">
-        <section class="cybersecurity-page">
-              <div class="certifications-card">
-                <h3><b>Certifications</b></h3>
+        <div class="cybersecurity-banner">
+          <div class="banner-content">
+            <img src="/assets/CySec.jpg" alt="Cybersecurity" class="cybersecurity-image">
+            <div class="banner-text">
+              <h1>Explore My Cybersecurity Certification Journey</h1>
+              <p>Gain insights into my professional growth and expertise in cybersecurity through various certifications. Join me as I navigate through the challenges and achievements in this dynamic field.</p>
+            </div>
+          </div>
+          <div class="explore-section">
+            <div class="explore-text">
+              <h2>Explore My Certification Journey</h2>
+              <p>Discover the steps I've taken to secure my knowledge and skills in cybersecurity. From foundational certifications to advanced specializations, each step marks a significant milestone in my career.</p>
+            </div>
+            <div class="stepper-placeholder">
+              <!-- MatStepper -->
+              <mat-horizontal-stepper  class="SBg" [linear]="true">
+                <!-- Security+ Step -->
+                <mat-step [completed]="true">
+                  <ng-template matStepLabel> Security+
+                    <mat-icon class="step-icon">security</mat-icon>
+                  </ng-template>
+                  <p>
+                    <b> Security+ </b> certification provides a foundational understanding of network security and risk management. It covers topics such as threat identification, risk mitigation techniques, and network infrastructure security.
+                  </p>
+                  <div>
+                    <button class="SButton smoke-grey-button" mat-raised-button matStepperNext><mat-icon>arrow_forward</mat-icon></button>
+                  </div>
+                </mat-step>
+        
+                <!-- CISSP Step -->
+                <mat-step [completed]="true">
+                  <ng-template matStepLabel> CISSP
+                    <mat-icon class="step-icon">shield</mat-icon>
+                  </ng-template>
+                  <p>
+                    <b>Certified Information Systems Security Professional </b> (CISSP) certification validates expertise in information security governance, risk management, and access control. It covers domains such as security operations, architecture, and engineering.
+                  </p>
+                  <div>
+                    <button class="SButton smoke-grey-button" mat-button matStepperPrevious><mat-icon>arrow_back</mat-icon></button>
+                    <button class="SButton smoke-grey-button" mat-button matStepperNext><mat-icon>arrow_forward</mat-icon></button>
+                  </div>
+                </mat-step>
+        
+                <!-- SAFe Advanced Scrum Master Step -->
+                <mat-step [completed]="true">
+                  <ng-template matStepLabel> SAFe ASM
+                    <mat-icon class="step-icon">engineering</mat-icon>
+                  </ng-template>
+                  <p>
+                    <b> SAFe Advanced Scrum Master </b> certification focuses on scaling Agile practices across multiple teams and large enterprises. It covers advanced Scrum techniques, Agile framework implementation, and leadership skills.
+                  </p>
+                  <div>
+                    <button class="SButton smoke-grey-button" mat-button matStepperPrevious><mat-icon>arrow_back</mat-icon></button>
+                    <button class="SButton smoke-grey-button" mat-raised-button matStepperNext><mat-icon>arrow_forward</mat-icon></button>
+                  </div>
+                </mat-step>
+        
+                <!-- Cribl Level 2 Certified Admin Step -->
+                <mat-step [completed]="true">
+                  <ng-template matStepLabel>Cribl Admin
+                    <mat-icon class="step-icon">account_balance_wallet</mat-icon>
+                  </ng-template>
+                  <p>
+                    <b> Cribl Level 2 Certified Admin </b> certification demonstrates proficiency in managing Cribl LogStream deployments and optimizing data pipeline architectures. It focuses on advanced administration and troubleshooting techniques.
+                  </p>
+                  <div>
+                    <button class="SButton smoke-grey-button" mat-button matStepperPrevious><mat-icon>arrow_back</mat-icon></button>
+                    <button class="SButton smoke-grey-button" mat-button matStepperNext><mat-icon>arrow_forward</mat-icon></button>
+                  </div>
+                </mat-step>
+        
+                <!-- Associate Certified Chief Information Security Officer Step -->
+                <mat-step [completed]="true">
+                  <ng-template matStepLabel>
+                    <mat-icon class="step-icon">supervisor_account</mat-icon> A C|CISO
+                  </ng-template>
+                  <p>
+                    <b> Associate Certified Chief Information Security Officer </b> certification validates leadership skills in cybersecurity management, policy development, and strategic planning. It prepares professionals for executive roles in information security.
+                  </p>
+                  <div>
+                    <button class="SButton smoke-grey-button" mat-button matStepperPrevious><mat-icon>arrow_back</mat-icon></button>
+                    <button class="SButton smoke-grey-button" mat-button matStepperNext><mat-icon>arrow_forward</mat-icon></button>
+                  </div>
+                </mat-step>
+        
+                <!-- Certified Chief Information Security Officer Step -->
+                <mat-step>
+                  <ng-template matStepLabel [completed]="false">
+                    <mat-icon class="step-icon">supervisor_account</mat-icon> Certified Chief Information Security Officer
+                  </ng-template>
+                  <p>
+                    <b> Certified Chief Information Security Officer </b> certification validates leadership skills in cybersecurity management, policy development, and strategic planning. It prepares professionals for executive roles in information security.
+                  </p>
+                  <div>
+                    <button class="SButton smoke-grey-button" mat-button matStepperPrevious><mat-icon>arrow_back</mat-icon></button>
+                  </div>
+                </mat-step>
+              </mat-horizontal-stepper>
+            </div>
+          </div>
+        </div>
+        
+        <br/>
+        
+      
+                <h3><b> &nbsp; Active Certifications</b></h3>
                 
-                <p class="certifications-summary">
-                  Enhance your cybersecurity career with industry-recognized certifications. Each certification demonstrates expertise in key areas of information security and prepares you for advanced roles in cybersecurity management and leadership.
-                </p>
-        
-                <!-- Stepper for Certifications -->
-                <mat-horizontal-stepper class="certification-card" [linear]="true">
-                  <!-- Security+ Step -->
-                  <mat-step [completed]="true">
-                    <ng-template  class="white" matStepLabel> Security+
-                      <mat-icon class="step-icon">security</mat-icon> 
-                    </ng-template>
-                    <p>
-                     <b> Security+ </b> certification provides a foundational understanding of network security and risk management. It covers topics such as threat identification, risk mitigation techniques, and network infrastructure security.
-                    </p>
-                    <div>
-                      <button  class="mButton" mat-raised-button matStepperNext><mat-icon>arrow_forward</mat-icon></button>
-                    </div>
-                  </mat-step>
-        
-                  <!-- CISSP Step -->
-                  <mat-step class="white" [completed]="true">
-                    <ng-template matStepLabel> CISSP
-                      <mat-icon class="step-icon">shield</mat-icon> 
-                    </ng-template>
-                    <p>
-                      <b>Certified Information Systems Security Professional </b> (CISSP) certification validates expertise in information security governance, risk management, and access control. It covers domains such as security operations, architecture, and engineering.
-                    </p>
-                    <div>
-                      <button class="mButton" mat-button matStepperPrevious><mat-icon>arrow_back</mat-icon></button>
-                      <button class="mButton" mat-button matStepperNext><mat-icon>arrow_forward</mat-icon></button>
-                    </div>
-                  </mat-step>
-        
-                  <!-- SAFe Advanced Scrum Master Step -->
-                  <mat-step class="white" [completed]="true">
-                    <ng-template matStepLabel> SAFe ASM
-                      <mat-icon class="step-icon">engineering</mat-icon> 
-                    </ng-template>
-                    <p>
-                     <b> SAFe Advanced Scrum Master </b> certification focuses on scaling Agile practices across multiple teams and large enterprises. It covers advanced Scrum techniques, Agile framework implementation, and leadership skills.
-                    </p>
-                    <div>
-                      <button class="mButton" mat-button matStepperPrevious><mat-icon>arrow_back</mat-icon></button>
-                      <button class="mButton" mat-raised-button matStepperNext><mat-icon>arrow_forward</mat-icon></button>
-                    </div>
-                  </mat-step>
-        
-                  <!-- Cribl Level 2 Certified Admin Step -->
-                  <mat-step class="white" [completed]="true">
-                    <ng-template matStepLabel>Cribl Admin
-                      <mat-icon class="step-icon">account_balance_wallet</mat-icon> 
-                    </ng-template>
-                    <p>
-                     <b> Cribl Level 2 Certified Admin </b> certification demonstrates proficiency in managing Cribl LogStream deployments and optimizing data pipeline architectures. It focuses on advanced administration and troubleshooting techniques.
-                    </p>
-                    <div>
-                      <button class="mButton" mat-button matStepperPrevious><mat-icon>arrow_back</mat-icon></button>
-                      <button class="mButton" mat-button matStepperNext><mat-icon>arrow_forward</mat-icon></button>
-                    </div>
-                  </mat-step>
-        
-                  <!-- Associate Certified Chief Information Security Officer Step -->
-                  <mat-step class="white" [completed]="true">
-                    <ng-template matStepLabel> 
-                      <mat-icon class="step-icon">supervisor_account</mat-icon> A C|CISO
-                    </ng-template>
-                    <p>
-                    <b>  Associate Certified Chief Information Security Officer </b> certification validates leadership skills in cybersecurity management, policy development, and strategic planning. It prepares professionals for executive roles in information security.
-                    </p>
-                    <div>
-                      <button class="mButton" mat-button matStepperPrevious><mat-icon>arrow_back</mat-icon></button>
-                      <button class="mButton" mat-button matStepperNext><mat-icon>arrow_forward</mat-icon></button>
-                    </div>
-                  </mat-step>
-        
-                  <!-- Certified Chief Information Security Officer Step -->
-                  <mat-step>
-                    <ng-template class="white" matStepLabel [completed]="false">
-                      <mat-icon class="step-icon">supervisor_account</mat-icon> Certified Chief Information Security Officer
-                    </ng-template>
-                    <p>
-                    <b>  Certified Chief Information Security Officer </b> certification validates leadership skills in cybersecurity management, policy development, and strategic planning. It prepares professionals for executive roles in information security.
-                    </p>
-                    <div>
-                      <button class="mButton" mat-button matStepperPrevious><mat-icon>arrow_back</mat-icon></button>
-                    </div>
-                  </mat-step>
-                </mat-horizontal-stepper>
+                <mat-card-content>
+       &nbsp;   Each certification demonstrates expertise in key areas of information security.
+                </mat-card-content>
+       
+
+
 
         <!-- Individual Certification Cards -->        
                <div class="dashboard-container">
@@ -126,11 +147,8 @@
                     <mat-card-title>Security+</mat-card-title>
                   </mat-card-header>
                   <img class="image" mat-card-image src="assets/security+.png" alt="Security+">
-                  <mat-card-content>
-                    <p>Learn more about our nonprofit initiatives.</p>
-                  </mat-card-content>
                   <mat-card-actions>
-                    <button mat-raised-button class="mButton">View Details</button>
+                    <button mat-raised-button class="mButton" (click)="openMovieDialog('','6kjk','c','d','e','')"><b>EXPLORE</b></button>
                   </mat-card-actions>
                 </mat-card>
 
@@ -139,11 +157,8 @@
                     <mat-card-title>CISSP</mat-card-title>
                   </mat-card-header>
                   <img class="image" mat-card-image src="assets/cissp.png" alt="CISSP">
-                  <mat-card-content>
-                    <p>Learn more about our nonprofit initiatives.</p>
-                  </mat-card-content>
                   <mat-card-actions>
-                    <button mat-raised-button class="mButton">View Details</button>
+                    <button mat-raised-button class="mButton" (click)="openMovieDialog('','b','c','d','e','')"><b>EXPLORE</b></button>
                   </mat-card-actions>
                 </mat-card>
 
@@ -152,11 +167,8 @@
                     <mat-card-title>SAFe ASM</mat-card-title>
                   </mat-card-header>
                   <img class="image" mat-card-image src="assets/SAFe6.png" alt="SAFe Scrum Master">
-                  <mat-card-content>
-                    <p>Learn more about our nonprofit initiatives.</p>
-                  </mat-card-content>
                   <mat-card-actions>
-                    <button mat-raised-button class="mButton">View Details</button>
+                    <button mat-raised-button class="mButton" (click)="openMovieDialog('','b','c','d','e','')"><b>EXPLORE</b></button>
                   </mat-card-actions>
                 </mat-card>
 
@@ -165,11 +177,8 @@
                     <mat-card-title>Cribl Admin</mat-card-title>
                   </mat-card-header>
                   <img class="image" mat-card-image src="assets/Cribl.png" alt="Cribl Admin Certification">
-                  <mat-card-content>
-                    <p>Learn more about our nonprofit initiatives.</p>
-                  </mat-card-content>
                   <mat-card-actions>
-                    <button mat-raised-button class="mButton">View Details</button>
+                    <button mat-raised-button class="mButton" (click)="openMovieDialog('','b','c','d','e','')"><b>EXPLORE</b></button>
                   </mat-card-actions>
                 </mat-card>
 
@@ -178,11 +187,8 @@
                     <mat-card-title>Associate C|CISO</mat-card-title>
                   </mat-card-header>
                   <img class="image" mat-card-image src="assets/ACISO.jpg" alt="Asoociate Chieft Information Security Officer">
-                  <mat-card-content>
-                    <p>Learn more about our nonprofit initiatives.</p>
-                  </mat-card-content>
                   <mat-card-actions>
-                    <button mat-raised-button class="mButton">View Details</button>
+                    <button mat-raised-button class="mButton" (click)="openMovieDialog('uhi','9','c','9','e','')"><b>EXPLORE</b></button>
                   </mat-card-actions>
                 </mat-card>
 
@@ -190,33 +196,33 @@
                   <mat-card-header>
                     <mat-card-title>C|CISO</mat-card-title>
                   </mat-card-header>
-                  <img class="image" mat-card-image src="assets/nonprofit.jpg" alt="Nonprofit">
-                  <mat-card-content>
-                    <p>Learn more about our nonprofit initiatives.</p>
-                  </mat-card-content>
+                  <img class="image" mat-card-image src="assets/CISO.jpg" alt="CISO">
                   <mat-card-actions>
-                    <button mat-raised-button class="mButton">View Details</button>
+                    <button mat-raised (click)="openMovieDialog('','b','c','d','e','')"><b>EXPLORE</b></button>
                   </mat-card-actions>
                 </mat-card>
               </div>
-            </div>     
-            
-        </section>
     </mat-tab>
+ 
       <br/>
 
  <!-- Documentation Section -->
+  
 <mat-tab label="Documentation">
-    <header>
-      <h1>Documentation</h1>
-    </header>
-    
-        <mat-card class="Ddashboard-item">
+   
+    <!-- banner.component.html -->
+<div class="image-banner">
+  <div class="Ibanner-content">
+    <h1>Welcome to Donnie's Docs</h1>
+    <p>Explore documents used and created to obtain below security certifications.</p>
+  </div>
+</div>
+
+        <mat-card>
           <mat-card-content class="documentation-card">
-           
-            <h2>Documentation</h2>
-            <p>This documentation section includes documents I used to prepare for achieving the above certifications.</p>
-      
+           <h4>About Donnie's Doc's</h4>
+            <mat-card-title>This documentation section includes original as well as external resources.</mat-card-title>
+      <br/>
             <!-- Search Bar -->
             <form [formGroup]="searchForm" (ngSubmit)="searchResources()">
               <mat-form-field appearance="fill">
@@ -265,23 +271,55 @@
             <div *ngIf="searchPerformed && filteredResources.length === 0">
               <p>No resources found.</p>
             </div>
+            
+            <mat-divider></mat-divider>
+            <br/>
+            <h2>References</h2>
+            <p>Some content in this documentation is adapted from the following sources:</p>
+            <ul>
+              <li>
+                <a href="https://example.com/security-plus" target="_blank">Security+ Certification Guide</a> by Author Name. (Year). 
+                Content used with permission.
+              </li>
+              <li>
+                <a href="https://example.com/cissp" target="_blank">Certified Information Systems Security Professional (CISSP)</a> by Author Name. (Year). 
+                Content used with permission.
+              </li>
+              <li>
+                <a href="https://example.com/safe-asm" target="_blank">SAFe Advanced Scrum Master</a> by Author Name. (Year). 
+                Content used with permission.
+              </li>
+              <li>
+                <a href="https://example.com/cribl" target="_blank">Cribl Level 2 Certified Admin</a> by Author Name. (Year). 
+                Content used with permission.
+              </li>
+              <li>
+                <a href="https://example.com/cciso" target="_blank">Associate Certified Chief Information Security Officer (A C|CISO)</a> by Author Name. (Year). 
+                Content used with permission.
+              </li>
+              <li>
+                <a href="https://example.com/ciso" target="_blank">Certified Chief Information Security Officer (CCISO)</a> by Author Name. (Year). 
+                Content used with permission.
+              </li>
+            </ul>
           </mat-card-content>
         </mat-card>
-     
+        <header>
+          <h2> Cyber Security Documentation</h2>
+        </header>
    </mat-tab>   
-      
-
+  
       <br/>
 <mat-tab  label="Disscusion Board">
       <!-- Discussion Board Section -->
       <div class ="container">
-        <mat-card>
+      
         <header>
             <h1>Cybersecurity Discussion Board</h1>
         </header>
           <app-discussion-board></app-discussion-board>
           
-        </mat-card>
+        
      </div>
       </mat-tab>
     

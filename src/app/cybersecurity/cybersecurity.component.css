@@ -22,75 +22,120 @@
   }
 
  
-
 .mButton{
-  background-color: transparent;
+  background-color: linear-gradient(46, 46, 46,#470f0f);
+  color:#2e2e2e;
 }
 
+ 
+.SButton{
+  background-color: linear-gradient(#470f0f,#363636);
+}
 
-.certifications-card{
-   
-    background: linear-gradient(185deg, rgb(14, 14, 14), rgb(57, 19, 5), rgb(4, 4, 4));
-    color: rgb(252, 250, 250);
-    padding: 20px;
-    
-  }
-
-  .white{
+.white{
     color: rgb(252, 254, 255);
     width: auto !important; 
   }
   
-  .certification-card {
-    box-shadow: 8 6px 12px rgba(0, 0, 0, 0.1),rgb(57, 19, 5); /* Enhanced box shadow for 3D effect */
-    background: linear-gradient(#290b0b , #987777, #290b0b); 
-    border-radius: 5px;
-    outline-color: #dfdede;
+  ::ng-deep .mat-horizontal-stepper-header .mat-step-icon {
+    background-color: #b0b0b0; /* Smoke grey */
+    color: white; /* Change this to your desired text color */
+  }
+  
+  ::ng-deep .mat-horizontal-stepper-header .mat-step-icon .mat-icon {
+    display: none; /* Hide the pencil icon */
+  }
+  
+
+  .SBg{
+
+    background: transparent;
+
+  }
+
+  .cybersecurity-banner {
+    background: linear-gradient(135deg, #1a1a2e, #470f0f);
     color: white;
-  }
-  
-  .mat-step-header {
-    width: auto !important; /* Ensures full width for step labels */
-    color: white; 
-  }
-  
-  
-  
-  .mat-step-content {
     padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
   
-  .step-icon{
-   color:whitesmoke;
+  .banner-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
   }
   
+  .cybersecurity-image {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
   
+  .banner-text h1 {
+    font-size: 2.5em;
+    margin: 0;
+  }
   
-  .certifications-summary {
-    color: white;
+  .banner-text p {
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+  
+  .explore-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #0f3460, #470f0f);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  .explore-text {
     margin-bottom: 20px;
   }
   
-  .mat-step-label {
-    white-space: normal !important; /* Allows label text wrapping */
-    color: white; /* Ensures label text visibility on dark background */
+  .explore-text h2 {
+    font-size: 2em;
+    margin: 0;
   }
   
-  
-  
-  .mat-step-content {
-    padding: 20px;
-    color: white; /* Ensures content text visibility on dark background */
+  .explore-text p {
+    font-size: 1.2em;
+    margin-top: 10px;
   }
   
+  .stepper-placeholder {
+    background: rgba(255, 255, 255, 0.597);
+    border-radius: 10px;
+    padding: 10px;
+    color: #191919;
+    width: 100%;
+  }
   
-  /* Hide edit icon on number click */
-  .mat-step-header.clicked {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    color: black;
-    cursor: pointer;
+  ::ng-deep .mat-horizontal-stepper-header .mat-step-icon {
+    background-color: #2b2b2b; /* Smoke grey */
+    color: white; /* Change this to your desired text color */
+  }
+  
+  ::ng-deep .mat-horizontal-stepper-header .mat-step-icon .mat-icon {
+    display: none; /* Hide the pencil icon */
+    background-color: #2b2b2b;
+  }
+  
+  .smoke-grey-button {
+    background-color: #2f2f2f !important; /* Smoke grey */
+    color: white !important; /* Change this to your desired text color */
+  }
+  
+  .mat-horizontal-stepper {
+    width: 100%; /* Make sure stepper takes full width */
+  }
+  
+  .mat-stepper-horizontal-line {
+    border-top-width: 2px;
   }
   
   
@@ -99,10 +144,12 @@
   
 /* Header Styles */
 header {
-  background: #333;
-  color: #fff;
+  background: radial-gradient(circle, rgba(255, 69, 0, 0.3), rgba(255, 0, 0, 0.3));
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
   padding: 1rem;
   text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   width:100%;
 }
 
@@ -114,7 +161,7 @@ header {
   
   .side-panel {
     width: 30%;
-    border-right: 1px solid #262626;
+    border-right: 1px solid #000000;
     padding-right: 20px;
   }
   
@@ -133,7 +180,7 @@ header {
   
   .side-panel a {
     text-decoration: none;
-    color: #212c37;
+    color: #000000;
     cursor: pointer;
   }
   
@@ -161,22 +208,23 @@ header {
     gap: 20px; /* Gap between items */
     padding: 20px; /* Padding around the grid */
     max-width: 1200px; /* Limit maximum width of the dashboard */
-    margin: 0 auto; /* Center the dashboard horizontally */
-    
+    margin: 0 auto; /* Center the dashboard horizontally */    
   }
   
   .dashboard-item {
     border-radius: 8px; /* Rounded corners */
     box-shadow: 8 6px 12px rgba(0, 0, 0, 0.1),rgb(57, 19, 5); /* Enhanced box shadow for 3D effect */
-    background: linear-gradient(145deg, #290b0b, #dcdcdc); /* Grey gradient */
+    background: linear-gradient( #470f0f, #470f0f,#f5dcdc,#470f0f); /* Grey gradient */
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transform and shadow */
+    color:white;
   }
 
   .documentation-card {
     flex: 1;
     border-radius: 0; /* Remove rounded corners */
     box-shadow: 8px 6px 12px rgba(0, 0, 0, 0.1), rgb(57, 19, 5); /* Enhanced box shadow for 3D effect */
-    background: linear-gradient(145deg, #363636, #dcdcdc); /* Grey gradient */
+    background: linear-gradient(145deg, #edebeb00, #dcdcdc); /* Grey gradient */
+    color:black;
     margin: 0; /* Remove margin */
   }
   
@@ -196,6 +244,16 @@ header {
   position: relative;
   width: 100%;
   height: 300px; /* Adjust height as needed */
+  background: rgba(0, 0, 0, 0.8); /* More transparent black background */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white; /* Text color */
+}
+
+.Bcyber-banner {
+  position: relative;
   background: rgba(0, 0, 0, 0.8); /* More transparent black background */
   overflow: hidden;
   display: flex;
@@ -409,3 +467,39 @@ header {
 }
 
 
+/* banner.component.css */
+.image-banner {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Adjust the height as needed */
+  background: url('/assets/certB.jpg') no-repeat center center; /* Path to your image */
+  background-size: cover; 
+  color: white; /* Text color to ensure readability */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: -5;
+}
+
+.Ibanner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ 
+  padding: 20px;
+  bottom: -10%;
+  color:black; /* Optional: add a background color to make text more readable */
+  border-radius: 10px;
+}
+
+.Ibanner-content h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.Ibanner-content p {
+  font-size: 1.2em;
+  margin-top: 10px;
+}

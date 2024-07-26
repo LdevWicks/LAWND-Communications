@@ -29,7 +29,7 @@ export class DiscussionBoardComponent implements OnInit {
     this.firestoreService.getPosts().subscribe(posts => {
       this.posts = posts.map(post => {
         return {
-          ...post,
+          ...post, 
           liked: false,
           showReplyForm: false,
           replies: post.replies || []
@@ -41,6 +41,7 @@ export class DiscussionBoardComponent implements OnInit {
   addPost(postForm: NgForm): void {
     const postData = {
       ...postForm.value,
+      date: new Date().toISOString(),
       likes: 0,
       replies: []
     };
@@ -59,7 +60,11 @@ export class DiscussionBoardComponent implements OnInit {
 
   addReply(post: any, replyForm: NgForm): void {
     if (replyForm.valid) {
-      post.replies.push(replyForm.value.replyContent);
+      const replyData = {
+        content: replyForm.value.replyContent,
+        date: new Date().toISOString() // Add current date and time for reply
+      };
+      post.replies.push(replyData);
       this.firestoreService.updatePost(post.id, { replies: post.replies }).then(() => {
         post.showReplyForm = false;
         replyForm.reset();

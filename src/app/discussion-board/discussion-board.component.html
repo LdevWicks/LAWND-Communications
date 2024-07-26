@@ -1,58 +1,54 @@
-<mat-card class="card">
-  <br/>
-  <h4> &nbsp;<b> Cyber Security Discussion Board </b> </h4>
+<div class="card">
   <mat-card-content>
-  
-      <mat-card-title class="white">
-     What skills and certifications are most valuable in the current job market?
-      </mat-card-title>
-  
+    <mat-card-title class="white">
+     <b>What skills and certifications are most valuable in the current job market?</b>
+    </mat-card-title>
   </mat-card-content>
   <br/>
   <mat-card-content>
-    <mat-card-subtitle>Name</mat-card-subtitle>
+    <mat-card-subtitle> <b>Name</b></mat-card-subtitle>
     <form #postForm="ngForm" (ngSubmit)="addPost(postForm)">
       <input name="title" ngModel required>
-      <mat-card-subtitle>Post</mat-card-subtitle>
-      <textarea class="text-area" name="content" ngModel required></textarea> <br/>
+      <br/>
+      <mat-card-subtitle><b>Post</b></mat-card-subtitle>
+      <textarea class="text-area" name="content" ngModel required></textarea><br/>
       <button mat-raised-button type="submit" class="button">Post</button>
     </form>
     <br/>
     <div *ngFor="let post of posts" class="post">
       <br/>
-        <mat-card-content class="posts">
-          <mat-card-subtitle> <b>&#64;</b>{{ post.title }}</mat-card-subtitle>
-          <section>{{ post.content }}</section>
-        </mat-card-content>
-        <mat-card-actions>
-          <mat-icon class="heart-icon" (click)="toggleLike(post)" [ngClass]="{'liked': post.liked}">  favorite</mat-icon>
-          &nbsp; <span class="likes">{{ post.likes }}</span>
-          &nbsp; &nbsp; &nbsp;<button class="button" mat-raised-button (click)="post.showReplyForm = !post.showReplyForm">Reply</button>
-        </mat-card-actions>
-      
-
-        <div *ngIf="post.showReplyForm">
-          <form  #replyForm="ngForm" (ngSubmit)="addReply(post, replyForm)">
-            <mat-card-subtitle><mat-card-content>Reply</mat-card-content></mat-card-subtitle>
-            <mat-card-content><textarea class="reply-area" name="replyContent" ngModel required></textarea> <br/>
-            <button mat-raised-button label="Reply" type="submit" class="button">Reply</button></mat-card-content>
-          </form>
-        </div>
-        
-        
-        <div *ngFor="let reply of post.replies" class="reply">
-         <mat-card-content>
-            <mat-card class="reply-areas">
-           <mat-card-subtitle><mat-card-content> Reply: </mat-card-content> </mat-card-subtitle>
-             <section><mat-card-content>{{ reply }} </mat-card-content> </section>
+      <mat-card-content class="posts">
+        <mat-card-subtitle><b>&#64;</b>{{ post.title }}</mat-card-subtitle>
+        <section >{{ post.content }}</section>
+        <section class="post-date">{{ post.date | date:'short' }}</section> <!-- Display post date -->
+      </mat-card-content>
+      <mat-card-actions>
+        <mat-icon class="heart-icon" (click)="toggleLike(post)" [ngClass]="{'liked': post.liked}">favorite</mat-icon>
+        &nbsp;<span class="likes">{{ post.likes }}</span>
+        &nbsp;&nbsp;&nbsp;<button class="button" mat-raised-button (click)="post.showReplyForm = !post.showReplyForm">Reply</button>
+      </mat-card-actions>
+      <div *ngIf="post.showReplyForm" class="reply-form">
+        <form #replyForm="ngForm" (ngSubmit)="addReply(post, replyForm)">
+          <mat-card-subtitle><mat-card-content>Reply</mat-card-content></mat-card-subtitle>
+          <mat-card-content><textarea class="reply-area" name="replyContent" ngModel required></textarea><br/>
+          <button mat-raised-button label="Reply" type="submit" class="button">Reply</button></mat-card-content>
+        </form>
+      </div>
+      <div *ngFor="let reply of post.replies" class="reply">
+        <mat-card-content>
+          <mat-card class="reply-areas">
+            <mat-card-subtitle><mat-card-content>Reply:</mat-card-content></mat-card-subtitle>
+            <section><mat-card-content>{{ reply.content }}</mat-card-content></section>
+            <section class="reply-date">{{ reply.date | date:'short' }}</section> <!-- Display reply date -->
             <br/>
-            </mat-card>
-          </mat-card-content>
-        </div>
-    
+          </mat-card>
+        </mat-card-content>
+      </div>
     </div>
     <br/>
   </mat-card-content>
   <br/>
-</mat-card>
-<br/>
+  <br/>
+</div>
+
+

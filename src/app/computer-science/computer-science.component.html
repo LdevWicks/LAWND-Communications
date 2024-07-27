@@ -1,20 +1,25 @@
 <div class="container">
-    <div class="photo-banner">
-      <img src="assets/McNairHall.jpg" alt="McNair Hall">
-    </div>
+  <div class="photo-banner">
+    <img src="assets/McNairHall.jpg" alt="McNair Hall">
+  </div>
   <div>
-    <mat-tab-group class="test" >
+    <mat-tab-group class="test">
       <mat-tab class="test" label="Undergrad">
-        <mat-toolbar color="primary">North Carolina A&T State University 2006-2010</mat-toolbar>
-      
-  
-        
-        
-            <mat-card-content class="tabs">
-            My journey began in 2006 at North Carolina Agricultural and Technical State University. A freshman off to McNair Hall College of Engineering Computer Science Department.
-          </mat-card-content>
-       <mat-card class="tab">
-            <mat-horizontal-stepper [linear]="false" class="test">
+        <mat-toolbar class="bBanner" color="primary">
+          <b>North Carolina Agricultural & Technical State University</b> 2006-2010
+        </mat-toolbar>
+
+        <mat-card class="tab">
+
+          <mat-toolbar>
+            <div class="banner" [class.show]="isSectionVisible">
+              <h2>Facing trouble in cyber security?</h2>
+              <p></p>
+            </div>
+            <br/>
+          </mat-toolbar>
+
+          <mat-horizontal-stepper [linear]="false" class="test">
             <mat-step *ngFor="let fact of facts" [stepControl]="stepControl">
               <form [formGroup]="stepControl">
                 <ng-template matStepLabel>{{ fact.year }}</ng-template>
@@ -22,27 +27,21 @@
                 <img *ngIf="fact.image" [src]="fact.image" alt="Fact Image for {{ fact.year }}" class="fact-image">
                 <div>
                   <button class="button-primary" mat-button matStepperPrevious *ngIf="!isFirstStep(fact)"><b>Back</b></button>
-               &nbsp;   <button class="button-primary" mat-button matStepperNext *ngIf="!isLastStep(fact)"><b>Next</b></button>
+                  &nbsp; <button class="button-primary" mat-button matStepperNext *ngIf="!isLastStep(fact)"><b>Next</b></button>
                 </div>
               </form>
             </mat-step>
           </mat-horizontal-stepper>
-          </mat-card>    
+        </mat-card>
       </mat-tab>
-  
+
       <mat-tab label="Alumni" class="tab">
-        
-          <p class="tabs">Advocate for NC A&T College of Engineering</p>
-        jnijio
+        <p class="tabs">Advocate for NC A&T College of Engineering</p>
       </mat-tab>
-  
+
       <mat-tab label="AFS" class="tab">
-        
-          <p>Advocate for Aggie intern and recent graduate placement with AFS</p>
-        
+        <p>Advocate for Aggie intern and recent graduate placement with AFS</p>
       </mat-tab>
     </mat-tab-group>
-
   </div>
-
-  </div>
+</div>

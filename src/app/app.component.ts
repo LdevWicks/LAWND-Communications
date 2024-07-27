@@ -50,7 +50,7 @@ export class AppComponent implements OnInit {
     '/lawnd': 'LAW || ND Communications',
     '/difference': 'The Difference Society',
     '/cw': 'Charlotte\'s Web',
-    '/innovative': 'Innovative Concepts'
+    '/innovative-concepts': 'Innovative Concepts'
   }
 
   constructor(private router: Router) {}
@@ -67,7 +67,7 @@ export class AppComponent implements OnInit {
         this.isLAWNDPage = event.urlAfterRedirects.includes('/lawnd');
         this.isDifferencePage = event.urlAfterRedirects.includes('/difference');
         this.isCWPage = event.urlAfterRedirects.includes('/cw');
-        this.isInnovativePage = event.urlAfterRedirects.includes('/innovative');
+        this.isInnovativePage = event.urlAfterRedirects.includes('/innovative-concepts');
         
         // Update the page title based on the current route
         this.pageTitle = this.pageTitles[event.urlAfterRedirects] || '';

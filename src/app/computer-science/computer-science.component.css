@@ -1,71 +1,88 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    /* Full viewport height */
-    width: 100vw;  /* Full viewport width */
-    overflow-x: hidden;
-  }
- 
-.photo-banner {
-    width: 100%;
-    height: 300px; /* Adjust the height as needed */
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .photo-banner img {
-    width: 100%;
-    height: 100%;
-    object-position: fixed;
-    object-fit: cover; /* This ensures the image covers the entire banner area */
-  }
-  
-  
-  
-  
-.tabs {
-  background-color: #002147; ;
-  color:whitesmoke;
-
+.banner-container {
+  position: relative;
+  overflow: hidden;
 }
 
+.banner {
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  color: rgb(59, 59, 59);
+  text-align: center;
+  padding: 1em 0;
+  transition: left 1.5s ease-in-out; /* Adjusted transition property */
+}
+
+.banner.show {
+  left: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.photo-banner {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.photo-banner img {
+  width: 100%;
+  height: 100%;
+  object-position: fixed;
+  object-fit: cover;
+}
+
+.tabs {
+  background-color: #002147;
+  color: whitesmoke;
+}
 
 mat-toolbar {
-  background-color: #002147; ;
+  background-color: #002147;
   color: white;
 }
-
 
 mat-horizontal-stepper {
   background-color: white;
   padding: 20px;
-  border-radius: 8px;
+  
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 mat-step-header {
-  background-color:  #FDB813;;
-  color: #002147; ;
+  background-color: #FDB813;
+  color: #002147;
   font-weight: bold;
+}
+
+::ng-deep .mat-horizontal-stepper-header .mat-step-icon .mat-icon {
+  display: none;
+  background-color: #002147;
 }
 
 .mat-stepper-horizontal-line {
   border-top-width: 2px;
-  border-color: #002147; ;
+  border-color: #002147;
 }
 
 .fact-image {
   max-width: 100%;
   height: auto;
   margin: 20px 0;
-  border: 3px solid #002147; ;
+  border: 3px solid #002147;
   border-radius: 8px;
 }
 
-
-
 .footer {
-  background-color: #002147; ;
+  background-color: #002147;
   color: white;
   text-align: center;
   padding: 10px 0;
@@ -83,10 +100,17 @@ mat-step-header {
   transition: background-color 0.3s ease;
 }
 
-
-.test{
+.test {
   color: #002147;
   background-color: #FDB813;
 }
 
+.bBanner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.content {
+  position: relative;
+}

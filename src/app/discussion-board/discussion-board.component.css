@@ -11,6 +11,18 @@
   width: 100vw;
 }
 
+.Pcard {
+  box-shadow: 0px 10px 12px rgba(1, 1, 1, 0.1); /* Enhanced box shadow for 3D effect */
+  background: linear-gradient(190deg,#242424, #2e2e2e83, #242424da); /* Grey gradient */
+  overflow: hidden; 
+  color:white;
+  box-shadow: 0 6px 12px rgba(57, 57, 57, 0.1); /* Enhanced box shadow for 3D effect */
+  background-color: transparent;
+  align-content: space-around;
+  width: 50vw;
+}
+
+
 .post {
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced box shadow for 3D effect */
@@ -31,20 +43,30 @@
 }
 
 .button {
-  background-color: #2e2e2e;
+  background-color: #2e2e2ea2;
   color: white;
   margin-bottom: -2%;
-  border-radius: 5%;
+  border-radius: 10%;
+  height:30px;
+  width:55px;
 }
 
 .white {
   color: whitesmoke;
 }
 
+.name-area {
+  width: 200px; /* Adjust width as needed */
+  height: 10px; /* Let the height adjust based on content */
+  max-height: 40px;
+  min-height:40px; /* Set a minimum height to prevent it from shrinking */
+  resize: none; /* Disable resizing by user */
+}
+
 .text-area {
   width: 400px; /* Adjust width as needed */
-  height: 70px; /* Let the height adjust based on content */
-  min-height: 50px; /* Set a minimum height to prevent it from shrinking */
+  height: 90px; /* Let the height adjust based on content */
+  min-height: 70px; /* Set a minimum height to prevent it from shrinking */
   resize: none; /* Disable resizing by user */
 }
 
@@ -66,7 +88,7 @@
 .reply {
   margin-left: 20px;
   width: 75%;
-  height: auto;
+  height: 50vh;
 }
 
 .heart-icon {
@@ -96,3 +118,51 @@
   margin-left: 20px; /* Indent the reply form */
 }
 
+.thread-banner {
+  position: relative;
+  background: linear-gradient(145deg, #333, #555); /* Gradient background */
+  color: white;
+  text-align: left;
+  padding: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow for 3D effect */
+}
+
+.thread-title {
+  font-size: 2.5rem; /* Adjust font size as needed */
+  font-weight: bold;
+  margin: 0;
+  position: relative;
+  z-index: 1; /* Ensure title is above any background elements */
+}
+
+/* Optional: Add some dynamic background effect */
+.thread-banner::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  opacity: 0.5;
+  transform: translateY(-50%);
+  animation: moveBackground 10s linear infinite;
+}
+
+@keyframes moveBackground {
+  0% {
+    transform: translateX(-100%) translateY(-50%);
+  }
+  100% {
+    transform: translateX(100%) translateY(-50%);
+  }
+}
+
+.TFont{
+  font-size: 25px;
+}
+
+.white{
+  color:rgba(255, 255, 255, 0.595);
+}

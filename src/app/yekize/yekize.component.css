@@ -1,7 +1,11 @@
 .product-container {
+  max-width:97vw;
   display: flex;
   flex-wrap: nowrap;
   gap: 16px;
+  margin-left: 1%;
+  max-height: 55vh;
+  outline-color: transparent;
 }
 
 .product-item {
@@ -13,7 +17,7 @@
 
 .product-image {
   width: 100%;
-  height: auto;
+  height: 50%;
 }
 
 .product-details {
@@ -46,10 +50,11 @@
   right: 0;
   width: 300px;
   height: 100%;
-  background: white;
+  background: rgb(255, 255, 255);
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
   padding: 16px;
-  overflow-y: auto;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .confirmation-modal {
@@ -62,4 +67,45 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.button{
+  background-color:  rgb(250, 126, 24);
+  color:white;
+  background: rgb(250,126,24);
+}
+
+/* Container for the scrolling banner */
+.scrolling-banner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 300px; /* Adjust height as needed */
+  margin-top: 20px;
+}
+
+/* Scrolling content */
+.banner-content {
+  display: flex;
+  width: 200%; /* Double the width to allow continuous scrolling */
+  animation: scroll-left 20s linear infinite;
+}
+
+/* Individual banner item */
+.banner-item {
+  flex: 1 0 50%; /* Each item takes up half the width */
+  background-size: contain; /* Ensure full image is visible */
+  background-repeat: no-repeat; /* Prevent image repeating */
+  background-position: center; /* Center the image */
+  height: 300px; /* Match the height of the scrolling banner */
+}
+
+/* Animation for scrolling */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }

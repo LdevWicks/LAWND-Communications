@@ -1,25 +1,35 @@
 <div class="card">
-  <mat-card-content>
-    <mat-card-title class="white">
-     <b>What skills and certifications are most valuable in the current job market?</b>
-    </mat-card-title>
-  </mat-card-content>
+  <div class="thread-banner">
+    <h1 class="thread-title">Thread: <b class="TFont">What skills and certifications are most valuable in the current job market?</b></h1>
+  </div>
   <br/>
   <mat-card-content>
-    <mat-card-subtitle> <b>Name</b></mat-card-subtitle>
-    <form #postForm="ngForm" (ngSubmit)="addPost(postForm)">
-      <input name="title" ngModel required>
+    <mat-card class="Pcard">
       <br/>
-      <mat-card-subtitle><b>Post</b></mat-card-subtitle>
-      <textarea class="text-area" name="content" ngModel required></textarea><br/>
-      <button mat-raised-button type="submit" class="button">Post</button>
-    </form>
+      <mat-card-title>&nbsp;<b class="white">Name:</b></mat-card-title>
+      <form [formGroup]="postForm" (ngSubmit)="addPost()">
+        &nbsp;&nbsp;<input class="name-area" formControlName="title" required>
+        <br/>
+        <small *ngIf="postForm.controls['title'].invalid && postForm.controls['title'].touched" class="error">
+         &nbsp; Name is required and should not exceed 25 characters.
+        </small>
+        <br/>
+        <mat-card-title>&nbsp;<b class="white">Post:</b></mat-card-title>
+        &nbsp;&nbsp;<textarea class="text-area" formControlName="content" required></textarea><br/>
+        <small *ngIf="postForm.controls['content'].invalid && postForm.controls['content'].touched" class="error">
+          &nbsp; Post is required and should not exceed 300 words.
+        </small>
+        <br/>
+        &nbsp;&nbsp;<button mat-raised-button type="submit" class="button" [disabled]="postForm.invalid">POST</button>
+      </form>
+      <br/>
+    </mat-card>
     <br/>
     <div *ngFor="let post of posts" class="post">
       <br/>
       <mat-card-content class="posts">
         <mat-card-subtitle><b>&#64;</b>{{ post.title }}</mat-card-subtitle>
-        <section >{{ post.content }}</section>
+        <section>{{ post.content }}</section>
         <section class="post-date">{{ post.date | date:'short' }}</section> <!-- Display post date -->
       </mat-card-content>
       <mat-card-actions>
@@ -28,10 +38,12 @@
         &nbsp;&nbsp;&nbsp;<button class="button" mat-raised-button (click)="post.showReplyForm = !post.showReplyForm">Reply</button>
       </mat-card-actions>
       <div *ngIf="post.showReplyForm" class="reply-form">
-        <form #replyForm="ngForm" (ngSubmit)="addReply(post, replyForm)">
+        <form [formGroup]="replyForm" (ngSubmit)="addReply(post)">
           <mat-card-subtitle><mat-card-content>Reply</mat-card-content></mat-card-subtitle>
-          <mat-card-content><textarea class="reply-area" name="replyContent" ngModel required></textarea><br/>
-          <button mat-raised-button label="Reply" type="submit" class="button">Reply</button></mat-card-content>
+          <mat-card-content>
+            <textarea class="reply-area" formControlName="replyContent" required></textarea><br/>
+            <button mat-raised-button label="Reply" type="submit" class="button" [disabled]="replyForm.invalid">Reply</button>
+          </mat-card-content>
         </form>
       </div>
       <div *ngFor="let reply of post.replies" class="reply">
@@ -50,5 +62,3 @@
   <br/>
   <br/>
 </div>
-
-

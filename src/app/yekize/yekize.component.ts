@@ -46,6 +46,10 @@ export class YekizeComponent implements OnInit, OnDestroy {
     return this.cartItems.reduce((acc, item) => acc + item.price, 0);
   }
 
+  removeFromCart(product: any){
+    this.cartService.removeFromCart(product);
+  }
+
   checkout(): void {
     this.confirmingCheckout = true;
   }

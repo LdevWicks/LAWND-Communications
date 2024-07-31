@@ -21,9 +21,9 @@
 
 <mat-card class="dashboard-item">
     <mat-card-header>
-      <mat-card-title>Branding & Marketing </mat-card-title>
+      <mat-card-title><b>Branding & Marketing</b></mat-card-title>
     </mat-card-header>
-    <img mat-card-image src="assets/nonprofit.jpg" alt="Nonprofit">
+    <img mat-card-image src="assets/YEC.jpg" alt="Nonprofit">
     <mat-card-content>
       <p>Learn more about branding and marketing </p>
     </mat-card-content>
@@ -31,7 +31,7 @@
 
 <mat-card class="dashboard-item">
   <mat-card-header>
-    <mat-card-title>Event Production</mat-card-title>
+    <mat-card-title><b>Event Production</b></mat-card-title>
   </mat-card-header>
   <img mat-card-image src="assets/nonprofit.jpg" alt="Nonprofit">
   <mat-card-content>
@@ -41,7 +41,7 @@
 
 <mat-card class="dashboard-item">
   <mat-card-header>
-    <mat-card-title>Production Consulting</mat-card-title>
+    <mat-card-title><b>Production Consulting</b></mat-card-title>
   </mat-card-header>
   <img mat-card-image src="assets/nonprofit.jpg" alt="Nonprofit">
   <mat-card-content>
@@ -51,7 +51,7 @@
 
 <mat-card class="dashboard-item">
   <mat-card-header>
-    <mat-card-title>Crisis Management</mat-card-title>
+    <mat-card-title><b>Crisis Management</b></mat-card-title>
   </mat-card-header>
   <img mat-card-image src="assets/nonprofit.jpg" alt="Nonprofit">
   <mat-card-content>
@@ -60,7 +60,7 @@
 </mat-card>
 
 </div>
-
+<br/>
 <mat-card class="card">
 <mat-card-title> Previous Projects  </mat-card-title>
 <div class="slideshow-container">
@@ -69,7 +69,7 @@
   </div>
 
   <div class="image-container">
-    <div class="product-item" *ngFor="let product of teaProducts$ | async">
+    <div class="product-image" *ngFor="let product of teaProducts$ | async">
       <img [src]="product.imageUrl" alt="Product Image" class="product-image">
       </div>
   </div>
@@ -82,9 +82,11 @@
 
 </mat-card>
 
-<mat-divider></mat-divider>
+<br/>
+
 
 <div class="contact-us-container">
+  <h3 class="lAlign"><b>Interested in scheduling a consultation</b></h3>
     <h2>Contact Us</h2>
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
       <div>

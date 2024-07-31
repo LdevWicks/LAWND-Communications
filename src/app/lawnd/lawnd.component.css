@@ -72,10 +72,9 @@ html, body {
   
   .dashboard-item img {
     width: 100%;
-    height: 200px; /* Fixed height for consistency */
+    height: 300px; /* Fixed height for consistency */
     object-fit: cover; /* Ensure image covers the card */
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+   
   }
   
   .mat-card-header, .mat-card-content, .mat-card-actions {
@@ -294,10 +293,24 @@ color:#292828;
   }
   
   .card{
-    width: 50vw;
+    width: 100vw;
     height:50vh;
     align-items: center;
     align-content: center;
     justify-content: center;
     
+  }
+
+  .product-image{
+    max-width:50vw;
+    max-height:100vh;
+    min-height: 50vh;
+  }
+
+  .lAlign{
+    text-align: left;
+    margin-right: 0;
+    min-width:100vw;
+    max-width:100vw;
+   
   }

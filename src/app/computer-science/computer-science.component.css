@@ -9,9 +9,10 @@
   top: 0;
   width: 100%;
   background-color: #ffffff;
-  color: rgb(59, 59, 59);
+  color: rgb(41, 40, 40);
   text-align: center;
   padding: 1em 0;
+  text-align: left;
   transition: left 1.5s ease-in-out; /* Adjusted transition property */
 }
 
@@ -23,6 +24,7 @@
   display: flex;
   flex-direction: column;
   width: 100vw;
+  background-color: #002147;
   overflow-x: hidden;
 }
 
@@ -74,7 +76,9 @@ mat-step-header {
 }
 
 .fact-image {
-  max-width: 100%;
+ 
+  max-height:30vh;
+  max-width:50vw;
   height: auto;
   margin: 20px 0;
   border: 3px solid #002147;
@@ -114,3 +118,133 @@ mat-step-header {
 .content {
   position: relative;
 }
+
+.font{
+  font-size: 17px;
+  font-family: Cochin ;
+}
+
+/* NCAT Aggie Color Scheme */
+:root {
+  --aggie-blue: #00205b;
+  --aggie-gold: #ffb81c;
+  --aggie-light-gray: #f2f2f2;
+  --aggie-white: #ffffff;
+}
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--aggie-light-gray);
+  color: var(--aggie-blue);
+  margin: 0;
+  padding: 20px;
+}
+
+h2, h3 {
+  color: var(--aggie-blue);
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+ul {
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul li {
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+ul li::before {
+  content: '•';
+  color: var(--aggie-gold);
+  font-size: 1.5em;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+strong {
+  color: var(--aggie-gold);
+}
+
+/* Links */
+a {
+  color: var(--aggie-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--aggie-gold);
+}
+
+/* Buttons */
+button {
+  background-color: var(--aggie-gold);
+  color: var(--aggie-blue);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: var(--aggie-blue);
+  color: var(--aggie-gold);
+}
+
+/* Card Styles */
+.card {
+  background-color: rgba(255, 255, 255, 0.538);
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 100vw;
+  text-align: left;
+  margin: 20px auto;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card ul li {
+  margin-bottom: 15px;
+}
+
+/* Additional Styling */
+.text-highlight {
+  background-color: var(--aggie-gold);
+  color: var(--aggie-blue);
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+.intro-paragraph {
+  font-style: italic;
+  color: var(--aggie-blue);
+  border-radius: 0;
+  max-width: 100vw;
+}
+

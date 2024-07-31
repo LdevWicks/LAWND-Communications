@@ -503,3 +503,82 @@ header {
   font-size: 1.2em;
   margin-top: 10px;
 }
+
+
+.banner {
+  position: relative;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 2em 0;
+  overflow: hidden;
+}
+
+.icons-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Ensures icons don't interfere with user interactions */
+}
+
+.moving-icon {
+  position: absolute;
+  width: 30px; /* Icon size */
+  height: 30px;
+  opacity: 0.7; /* Slight transparency */
+  animation: moveIcons linear infinite;
+}
+
+/* Animation for continuous movement */
+@keyframes moveIcons {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100vw, 100vh);
+  }
+}
+
+/* Additional styles to create variations in animation duration and delay */
+.moving-icon:nth-child(1) {
+  top: 20%;
+  left: -30px; /* Start outside the left boundary */
+  animation-duration: 10s;
+}
+
+.moving-icon:nth-child(2) {
+  top: 40%;
+  left: -30px; /* Start outside the left boundary */
+  animation-duration: 15s;
+}
+
+.moving-icon:nth-child(3) {
+  top: 60%;
+  left: -30px; /* Start outside the left boundary */
+  animation-duration: 20s;
+}
+
+.moving-icon:nth-child(4) {
+  top: 80%;
+  right: -30px; /* Start outside the left boundary */
+  animation-duration: 25s;
+}
+
+.moving-icon:nth-child(5) {
+  top: 50%;
+  left: -30px; /* Start outside the left boundary */
+  animation-duration: 30s;
+}
+.moving-icon:nth-child(6) {
+  top: 50%;
+  left: -30px; /* Start outside the left boundary */
+  animation-duration: 30s;
+}
+
+.DisBanner{
+
+  max-height:5px;
+  min-height: auto;
+}

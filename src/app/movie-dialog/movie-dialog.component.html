@@ -1,13 +1,13 @@
-<h2 mat-dialog-title>{{ data.title }}</h2>
+<h2 mat-dialog-title><b>{{ data.title }}</b></h2>
 <mat-dialog-content class="dialog-content">
   <img *ngIf="data.image" [src]="data.image" alt="{{ data.title }} cover image" class="movie-cover">
-  <p><mat-card-subtitle><b>Description:</b></mat-card-subtitle>{{ data.description }}</p>
-  <p><mat-card-subtitle><b>Credits:</b></mat-card-subtitle>{{ data.credits }}</p>
+  <p><mat-card-subtitle><b>Description</b></mat-card-subtitle> {{ data.description }}</p>
+  <p><mat-card-subtitle><b>Credits</b></mat-card-subtitle> <b>LaDonia Wicks-</b> {{ data.credits }}</p>
   <video *ngIf="data.videoUrl" [src]="data.videoUrl" controls class="movie-trailer"></video>
 </mat-dialog-content>
 <br/>
 <mat-card-content>
-&nbsp; <button mat-raised-button><a mat-button color="primary" [href]="data.imdbLink" target="_blank">Watch</a></button>
+&nbsp; <a mat-raised-button  [href]="data.imdbLink" target="_blank">Watch</a>
 </mat-card-content>
 <mat-dialog-actions>
   <button mat-button (click)="onClose()">Close</button>

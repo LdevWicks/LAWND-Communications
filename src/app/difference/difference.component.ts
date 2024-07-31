@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, AfterViewInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatSelectModule } from '@angular/material/select';
@@ -16,6 +17,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatFormFieldModule,
     MatSelectModule,
     CommonModule,
+    MatToolbarModule,
     MatInputModule,
     FormsModule,
     ReactiveFormsModule, // Include ReactiveFormsModule here
@@ -23,7 +25,12 @@ import { MatSelectModule } from '@angular/material/select';
   templateUrl: './difference.component.html',
   styleUrls: ['./difference.component.css'] // Corrected spelling
 })
-export class DifferenceComponent implements OnInit {
+export class DifferenceComponent implements OnInit, AfterViewInit {
+
+  isSectionVisible = false;
+  triggerPoint = 199;
+
+
   images: string[] = [
     'assets/Diff1.png',
     'assets/Diff2.png',
@@ -66,7 +73,7 @@ export class DifferenceComponent implements OnInit {
   thirdFormGroup: FormGroup = this.formBuilder.group({ category: ['', Validators.required] });
   fourthFormGroup: FormGroup = this.formBuilder.group({ category: ['', Validators.required] });
   
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private cdr: ChangeDetectorRef) {
     this.categories = ["Education", "Community Outreach", "Workforce Development & College Prep"];
     this.message = '';
   }
@@ -93,6 +100,12 @@ export class DifferenceComponent implements OnInit {
       fourthCtrl: ['', Validators.required]
     });
   }
+
+  ngAfterViewInit(): void {
+   
+    this.onWindowScroll();
+  }
+
 
   onSubmit() {
     const year = this.yearFormGroup.value.year;
@@ -128,5 +141,23 @@ export class DifferenceComponent implements OnInit {
   }
     return 'No fact available for the selected year and category.';
   }
+
+  onWindowScroll(): void {
+    console.log('Scroll event detected'); // Ensure this is being logged
+
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 200;
+    console.log('Scroll position:', scrollPosition);
+
+    if (scrollPosition > this.triggerPoint) {
+      this.isSectionVisible = true;
+      console.log('Banner should be visible');
+    } else {
+      this.isSectionVisible = false;
+      console.log('Banner should be hidden');
+    }
+
+    this.cdr.detectChanges(); // Ensure Angular is aware of changes
+  }
+
 }
 

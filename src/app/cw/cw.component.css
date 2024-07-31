@@ -3,15 +3,6 @@
     height:100vh;
 }
 
-
-.scrolling-banner {
-    overflow: hidden; /* Hide the overflow */
-    width: 100vw; /* Full page width */
-    display: flex;
-    align-items: center;
-   /* Needed for absolute positioning of scrolling content */
-    /* Adjust height as needed */
-  }
   
   .banner-content {
     display: flex;
@@ -173,7 +164,8 @@
   .dashboard-item {
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced box shadow for 3D effect */
-    background: linear-gradient(145deg, #f0f0f0, #dcdcdc); /* Grey gradient */
+    background: linear-gradient(145deg, #f0f0f0, #74747479); /* Grey gradient */
+    color:rgb(42, 42, 42);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transform and shadow */
   }
   
@@ -184,8 +176,14 @@
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transform and shadow */
     height: 150px;
     width: 150px;
-    flex: 1 1 calc(33.33% - 16px); /* 3 cards per row with space between */
+    flex: 2 3 calc(30% - 40px);
+ 
     box-sizing: border-box;
+}
+
+.dashboard-img{
+  max-height:45vh;
+  min-height:45vh;
 }
 
   .mid-banner {
@@ -194,7 +192,7 @@
     justify-content: space-between;
     width: 97vw;
     height: 50vh; /* Adjust height as needed */
-    background: linear-gradient(145deg, #d9b9a3, #f87031);
+    background: linear-gradient(145deg, #d9b9a3, #f87031c7, white, white, white, white);
     border-radius: 12px;
     overflow: hidden;
     margin: 20px;
@@ -279,6 +277,7 @@ video {
 
 .playlist {
   width: 30%; /* Adjust as needed */
+  color:rgb(53, 53, 53);
   
 }
 
@@ -288,12 +287,14 @@ video {
 }
 
 .playlist ul li {
+  color:rgb(37, 37, 37);
   margin: 10px 0;
 }
 
 .playlist ul li a {
   text-decoration: none;
-  color: #e0e0e0;
+  
+  color:rgb(37, 37, 37);
   font-weight: bold;
 }
 

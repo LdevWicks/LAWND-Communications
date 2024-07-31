@@ -22,11 +22,11 @@ export class ComputerScienceComponent implements OnInit, AfterViewInit {
 
   stepControl: FormGroup;
   facts = [
-    { year: '2006', fact: '1st project Hello World 2006', image: 'assets/helloWorld.png' },
-    { year: '2007', fact: 'Freshman year: built a Lego robot to pick up objects' },
-    { year: '2008', fact: 'Fact for 2008' },
-    { year: '2009', fact: 'Fact for 2009' },
-    { year: '2010', fact: 'Made t-shirt website with logo, teacher hacked site password was admin admin' }
+    { year: '2006', title: '2006: The Beginning - Hello World', fact:'This introductory project was my gateway to understanding the basics of coding, setting the foundation for my future endeavors. It was a moment of realization that I was stepping into a field with endless possibilities.', image: 'assets/helloWorld.png' },
+    { year: '2007', title:'2007: Lego Bot', fact: 'Freshman year: built a Lego robot to pick up objects,This hands-on project not only enhanced my problem-solving skills but also introduced me to the principles of robotics and automation.' ,image: 'assets/lego.webp'},
+    { year: '2008', title:'2008: Advancing Skills- Java & C++', fact: 'Fact for 2008' },
+    { year: '2009', title:'2009: Data Structures & Algorithmsfact: ', fact:'Fact for 2009' },
+    { year: '2010', title:'2010: Capstone Project', fact: 'Made t-shirt website with logo, teacher hacked site password was admin admin' }
   ];
 
   constructor(private dialog: MatDialog, private formBuilder: FormBuilder, private cdr: ChangeDetectorRef) { 
@@ -50,11 +50,11 @@ export class ComputerScienceComponent implements OnInit, AfterViewInit {
     dialogRef.afterClosed().subscribe(result => result);
   }
 
-  isFirstStep(fact: { year: string, fact: string }): boolean {
+  isFirstStep(fact: { year: string, title:string,fact: string }): boolean {
     return this.facts.indexOf(fact) === 0;
   }
 
-  isLastStep(fact: { year: string, fact: string }): boolean {
+  isLastStep(fact: { year: string,title:string, fact: string }): boolean {
     return this.facts.indexOf(fact) === this.facts.length - 1;
   }
 

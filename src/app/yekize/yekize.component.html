@@ -1,10 +1,20 @@
+<div class="scrolling-banner">
+  <div class="banner-content">
+    <div class="banner-item" style="background-image: url('assets/VCap.jpeg');"></div>
+    <div class="banner-item" style="background-image: url('path-to-your-image2.jpg');"></div>
+    <div class="banner-item" style="background-image: url('path-to-your-image3.jpg');"></div>
+    <div class="banner-item" style="background-image: url('path-to-your-image4.jpg');"></div>
+  </div>
+</div>
+
+<h2><b> &nbsp; Shop Products</b></h2><br/>
 <div class="product-container">
   <div class="product-item" *ngFor="let product of teaProducts$ | async">
     <img [src]="product.imageUrl" alt="Product Image" class="product-image">
     <div class="product-details">
-      <h2>{{ product.name }}</h2>
+      <h4>{{ product.name }}</h4>
       <p>Price: {{ product.price | currency }}</p>
-      <button (click)="addToCart(product)">Add to Cart</button>
+      <button class="button"  mat-raised-button (click)="addToCart(product) ">ADD</button>
     </div>
   </div>
 </div>
@@ -21,11 +31,14 @@
   <ul>
     <li *ngFor="let item of cartItems">
       {{ item.name }} - {{ item.price | currency }}
+      <button mat-raised-button class="button" (click)="removeFromCart(item)">
+        <mat-icon>delete</mat-icon>
+      </button>
     </li>
   </ul>
   <div>
     <h4>Total: {{ getTotal() | currency }}</h4>
-    <button (click)="checkout()">Checkout</button>
+    <button mat-raised-button (click)="checkout()">CHECKOUT</button>
   </div>
 
   <!-- Confirmation Modal -->
@@ -38,10 +51,14 @@
     </ul>
     <p>Total: {{ getTotal() | currency }}</p>
     <p>Are you sure you want to place this order?</p>
-    <button (click)="placeOrder()">Place Order</button>
-    <button (click)="cancelCheckout()">Cancel</button>
+    <button mat-raised-button (click)="placeOrder()">ORDER</button>
+    <button mat-raised-button (click)="cancelCheckout()">CANCEL</button>
   </div>
 </div>
+
+
+<br/>
+
 
 
 

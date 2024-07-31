@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit{
   updates = [
     { title: 'Update 1', date: new Date(), description: 'Description of update 1' },
     { title: 'Update 2', date: new Date(), description: 'Description of update 2' },
-    { title: 'Update 3', date: new Date(), description: 'Description of update 3' },
+    { title: 'Advacned', date: new Date(), description: 'Description of update ' },
   ];
 
   features = [
@@ -33,6 +33,7 @@ export class HomeComponent implements OnInit{
     { icon: 'theaters', title: 'Entertainment', description: 'Learn more about our past projects', image: 'assets/entceo.png',route:'/entertainment' },
     { icon: 'lightbulb', title: 'Entrepreneurship', description: 'Learn more about my businesses', image: 'assets/mylogos.png',route:'/entrepreneurship' },
     { icon: 'security', title: 'Cyber Security', description: 'Deep dive into my path to CISO', image: 'assets/certs.png',route:'/cybersecurity' },
+    { icon: 'security', title: 'Advanced Features', description: 'lets get adavcned', image: 'assets/certs.png',route:'/cybersecurity' },
   ];
 
   constructor(private router: Router) { 

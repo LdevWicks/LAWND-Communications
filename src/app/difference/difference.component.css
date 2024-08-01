@@ -183,7 +183,13 @@ body {
   }
 
   .stepper{
-    background-color: #333333;
+    background-color: #252525f9;
     color:white;
+  }
+
+  .Wstepper{
+    
+    color:white;
+   
   }
   

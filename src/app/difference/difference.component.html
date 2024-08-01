@@ -76,52 +76,52 @@
 <br/>
     <mat-vertical-stepper class="stepper" #stepper>
       <mat-step>
-        <ng-template matStepLabel>Foundation Year</ng-template>
+        <ng-template matStepLabel><mat-card-title class="Wstepper">Foundation Year</mat-card-title></ng-template>
         <p>The Difference Society was founded in <strong>2021</strong> to bring positive change in the community.</p>
         <div>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-raised-button class="stepper" matStepperNext><mat-icon>arrow_forward</mat-icon></button>
         </div>
       </mat-step>
     
       <mat-step>
-        <ng-template matStepLabel>First Major Event</ng-template>
+        <ng-template matStepLabel><mat-card-title class="Wstepper">First Major Event</mat-card-title></ng-template>
         <p>Our first major event was <strong>EVENT NAME</strong> which gathered over <strong>NUMBER</strong> participants.</p>
         <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-raised-button class="stepper" matStepperPrevious><mat-icon>arrow_back</mat-icon></button>
+          <button mat-raised-button class="stepper" matStepperNext><mat-icon>arrow_forward</mat-icon></button>
         </div>
       </mat-step>
     
       <mat-step>
-        <ng-template matStepLabel>Key Projects</ng-template>
+        <ng-template matStepLabel><mat-card-title class="Wstepper">Key Projects</mat-card-title></ng-template>
         <p>We have successfully completed projects like <strong>PROJECT 1</strong>, <strong>PROJECT 2</strong>, etc.</p>
         <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-raised-button class="stepper" matStepperPrevious><mat-icon>arrow_back</mat-icon></button>
+          <button mat-raised-button class="stepper" matStepperNext><mat-icon>arrow_forward</mat-icon></button>
         </div>
       </mat-step>
     
       <mat-step>
-        <ng-template matStepLabel>Impact Statistics</ng-template>
+        <ng-template matStepLabel><mat-card-title class="Wstepper">Impact Statistics</mat-card-title></ng-template>
         <p>We have impacted over <strong>NUMBER</strong> lives through our initiatives.</p>
         <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-raised-button class="stepper" matStepperPrevious><mat-icon>arrow_back</mat-icon></button>
+          <button mat-raised-button class="stepper" matStepperNext><mat-icon>arrow_forward</mat-icon></button>
         </div>
       </mat-step>
     
       <mat-step>
-        <ng-template matStepLabel>Notable Members</ng-template>
+        <ng-template matStepLabel><mat-card-title class="Wstepper">Notable Members</mat-card-title></ng-template>
         <p>Meet some of our notable members who have made significant contributions to our cause.</p>
         <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button (click)="stepper.reset()">Reset</button>
+          <button mat-raised-button class="stepper" matStepperPrevious><mat-icon>arrow_back</mat-icon></button>
+          <button mat-raised-button class="stepper" (click)="stepper.reset()"><mat-icon>refresh</mat-icon></button>
         </div>
       </mat-step>
     </mat-vertical-stepper>
     
     
-    
+    <br/>
 
     <mat-card-title>The Difference Society Fun Facts</mat-card-title>
   <mat-horizontal-stepper linear>
@@ -135,7 +135,7 @@
           </mat-select>
         </mat-form-field>
         <div>
-          <button mat-raised-button class="button" matStepperNext>Next</button>
+          <button mat-raised-button class="stepper" matStepperNext>Next</button>
         </div>
       </form>
     </mat-step>
@@ -152,7 +152,7 @@
           </mat-select>
         </mat-form-field>
         <div>
-          <button mat-raised-button class="button" matStepperNext>Next</button>
+          <button mat-raised-button class="stepper" matStepperNext>Next</button>
         </div>
       </form>
     </mat-step>
@@ -162,8 +162,8 @@
       <p>You selected year: {{ yearFormGroup.value.year }} and category: {{ categoryFormGroup.value.category }}</p>
       <p>{{ message }}</p>
       <div>
-        <button mat-raised-button class="button" matStepperPrevious>Back</button> &nbsp;
-        <button mat-raised-button class="button" (click)="onSubmit()">Confirm</button>
+        <button mat-raised-button class="stepper" matStepperPrevious>Back</button> &nbsp;
+        <button mat-raised-button class="stepper" (click)="onSubmit()">Confirm</button>
       </div>
     </mat-step>
   </mat-horizontal-stepper>

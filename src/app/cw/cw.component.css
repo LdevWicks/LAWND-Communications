@@ -168,6 +168,24 @@
     color:rgb(42, 42, 42);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transform and shadow */
   }
+
+  .Pdashboard-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns per row */
+    gap: 20px; /* Gap between items */
+    padding: 20px; /* Padding around the grid */
+    max-width: 1200px; /* Limit maximum width of the dashboard */
+    margin: 0 auto; /* Center the dashboard horizontally */
+  }
+  
+  
+  .Pdashboard-item {
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced box shadow for 3D effect */
+    background: linear-gradient(145deg, #f0f0f0, #74747479); /* Grey gradient */
+    color:rgb(42, 42, 42);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transform and shadow */
+  }
   
   .dashboard{
     border-radius: 8px; /* Rounded corners */
@@ -179,6 +197,13 @@
     flex: 2 3 calc(30% - 40px);
  
     box-sizing: border-box;
+}
+
+.Pdashboard-img{
+  min-width:22vw;
+  max-width:40vw;
+  max-height:45vh;
+  min-height:45vh;
 }
 
 .dashboard-img{

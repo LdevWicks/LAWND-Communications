@@ -72,10 +72,12 @@
   
   .banner {
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 500px; /* Adjust height as needed */
     overflow: hidden;
+    overflow-x: hidden;
     background-color: black; /* Background color to fill any space around the image */
+    margin-left:1%;
   }
   
   .banner {
@@ -83,6 +85,7 @@
     width: 100vw; /* Full viewport width */
     height: 75vh; /* Full viewport height */
     overflow: hidden;
+  
   }
   
   .banner img {
@@ -191,8 +194,14 @@
   margin: 0;
   color: black;
   background-color: #fff;
+  max-width:100vw;
+  min-width:100vw;
   width:100vw;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
+
 
 
 .mat-card-header {
@@ -253,5 +262,6 @@
   align-items: left;
   align-content: left;
 }
+
 
 

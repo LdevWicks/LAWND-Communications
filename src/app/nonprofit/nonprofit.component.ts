@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
@@ -18,20 +18,25 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
     styleUrls: ['./nonprofit.component.css'],
     imports: [MatCardModule,RouterModule, MatDividerModule,MatGridListModule, CommonModule, MatListModule, EntertainmentComponent, MatTableModule, DiscussionBoardComponent]
 })
-export class NonprofitComponent {
+export class NonprofitComponent implements OnInit{
 
+  
   nonprofit$: Observable<any[]> = new Observable<any[]>();
 
   constructor(private router: Router, private firestore: AngularFirestore,) {}
+
   ngOnInit(): void {
     this.nonprofit$ = this.firestore.collection('nonprofit').valueChanges({ idField: 'id' });
+    
   }
+ 
+
  
 
   images: string[] = [
     'assets/CWLogo.png',
-    'assets/DifferenceSocietyLogo.webp',
-    'assets/ICLogo2.png',
+    'assets/tdsLogo.png',
+    'assets/ICTLogo.png',
     // Add more image URLs as needed
   ];
   currentImageIndex = 0;
@@ -91,6 +96,7 @@ export class NonprofitComponent {
         console.log('Unknown product ID:', productId);
     }
   }
-  
 
+
+  
 }

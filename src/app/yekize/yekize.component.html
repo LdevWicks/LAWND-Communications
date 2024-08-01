@@ -1,12 +1,15 @@
 <div class="scrolling-banner">
   <div class="banner-content">
     <div class="banner-item" style="background-image: url('assets/VCap.jpeg');"></div>
-    <div class="banner-item" style="background-image: url('path-to-your-image2.jpg');"></div>
+    <div class="banner-item" style="background-image: url('assets/honey.png');"></div>
     <div class="banner-item" style="background-image: url('path-to-your-image3.jpg');"></div>
     <div class="banner-item" style="background-image: url('path-to-your-image4.jpg');"></div>
   </div>
 </div>
-
+<br/>
+<mat-tab-group>
+  <mat-tab label="SHOP">
+    <br/>
 <h2><b> &nbsp; Shop Products</b></h2><br/>
 <div class="product-container">
   <div class="product-item" *ngFor="let product of teaProducts$ | async">
@@ -55,11 +58,12 @@
     <button mat-raised-button (click)="cancelCheckout()">CANCEL</button>
   </div>
 </div>
+</mat-tab>
 
 
-<br/>
+<mat-tab label="Media">Media</mat-tab>
 
-
+</mat-tab-group>
 
 
 

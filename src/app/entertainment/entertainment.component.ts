@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MovieDialogComponent} from '../movie-dialog/movie-dialog.component';
+import {EntCEOComponent} from './ent-ceo/ent-ceo.component';
 
 
 @Component({
@@ -18,34 +19,6 @@ import { MovieDialogComponent} from '../movie-dialog/movie-dialog.component';
   styleUrls: ['./entertainment.component.css']
 })
 export class EntertainmentComponent {
-
-
-  experiences = [
-    {
-      title: 'Experience 1',
-      logo: 'assets/SWLogo.webp',
-      image: 'assets/.jpg',
-      description: 'Mock text describing entertainment experience 1.'
-    },
-    {
-      title: 'Experience 2',
-      logo: 'assets/logo2.png',
-      image: 'assets/image2.jpg',
-      description: 'Mock text describing entertainment experience 2.'
-    },
-    {
-      title: 'Experience 3',
-      logo: 'assets/logo3.png',
-      image: 'assets/image3.jpg',
-      description: 'Mock text describing entertainment experience 3.'
-    },
-    {
-      title: 'Experience 4',
-      logo: 'assets/logo4.png',
-      image: 'assets/image4.jpg',
-      description: 'Mock text describing entertainment experience 4.'
-    }
-  ];
 
   movies = [
     { title: 'CL', image: 'assets/CL2.jpg', route:'/nonprofit' },
@@ -112,6 +85,17 @@ export class EntertainmentComponent {
         image: movieCover,
         videoUrl: videoUrl,
         credits:credits
+      }
+    });
+  }
+
+  openEntDialog(title: string, description: string, imdbLink: string, ): void {
+    this.dialog.open(EntCEOComponent, {
+      data: {
+        title: title,
+        description: description,
+        imdbLink: imdbLink,
+
       }
     });
   }

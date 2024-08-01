@@ -45,54 +45,246 @@
   display: block;
 }
 
-/* CSS */
-.welcome-banner {
+.banner {
+  position: relative;
+  width: 100%;
+  height: 59vh; /* Adjust height as needed */
   display: flex;
   align-items: center;
-  padding: 20px;
-  gap: 20px;
-  background-color: #434242;
-  background: linear-gradient(145deg, rgba(134, 133, 133, 0.5), rgba(52, 52, 52, 0.8));
-
+  justify-content: center;
+  overflow: hidden; /* Ensures no overflow outside the banner */
 }
 
-.welcome-image img {
-  object-fit: cover;
+.background-container {
+  position: absolute;
   width: 100%;
-  height:100%;
-  max-width: 500px; /* Adjust this as needed */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some shadow for a 3D effect */
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+
+
+.background, .texture-overlay, .shape-one, .shape-two {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    rgba(128, 0, 128, 0.8) 0%, 
+    rgba(255, 69, 0, 0.8) 33%, 
+    rgba(255, 165, 0, 0.8) 66%, 
+    rgba(0, 0, 255, 0.8) 100%);
+  background-blend-mode: multiply; /* Blend gradient colors */
+  z-index: 1;
+}
+
+
+
+.background-container::before, 
+.background-container::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 3;
+}
+
+/* Circle shapes */
+.background-container::before {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  left: 20%;
+  background: radial-gradient(circle, rgba(128, 0, 128, 0.5), rgba(0, 0, 255, 0.3));
+}
+
+.background-container::after {
+  width: 300px;
+  height: 300px;
+  bottom: 10%;
+  right: 20%;
+  background: radial-gradient(circle, rgba(255, 69, 0, 0.5), rgba(255, 165, 0, 0.3));
+}
+
+/* Additional shapes for more complexity */
+.shape-one {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  width: 150px;
+  height: 150px;
+  background: rgba(0, 0, 255, 0.4);
+  border-radius: 10%;
+  transform: rotate(30deg);
+  z-index: 4;
+}
+
+.shape-two {
+  position: absolute;
+  bottom: 20%;
+  right: 20%;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 165, 0, 0.4);
+  border-radius: 10%;
+  transform: rotate(-30deg);
+  z-index: 4;
+}
+
+
+
+.shape-three, .shape-four {
+  position: absolute;
+  border-radius: 50%; /* Example shapes */
+}
+
+.shape-three {
+  background: radial-gradient(circle at top left, #7b1fa2, #1976d2);
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  left: 10%;
+}
+
+.shape-four {
+  background: radial-gradient(circle at bottom right, #ff5722, #004d40);
+  width: 200px;
+  height: 200px;
+  bottom: 10%;
+  right: 10%;
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  max-width: 1200px; /* Optional: restrict max-width for larger screens */
+  margin: 0 auto; /* Centering the banner content */
+  color: white;
+  padding: 20px;
+}
+
+.welcome-image {
+  flex: 1;
+  max-width: 40%; /* Adjust as needed */
+}
+
+.background-video {
+  margin-right: 2%; 
+  opacity: 0.7; 
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px; /* Optional: to match the banner's aesthetics */
 }
 
 .welcome-text {
-  max-width: 600px; /* Adjust this as needed */
+  color:rgb(255, 255, 255);
+  flex: 2;
+  max-width: 60%; /* Adjust as needed */
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.686); /* Optional background for text readability */
+  border-radius: 8px; /* Optional: to match the banner's aesthetics */
 }
 
-.welcome-text h1 {
-  margin-top: 0;
-  font-size: 2rem; /* Adjust this as needed */
-  color: #333; /* Adjust color as needed */
+
+.icons-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Ensures icons don't interfere with user interactions */
 }
 
-.welcome-text p {
-  font-size: 1.2rem; /* Adjust this as needed */
-  color: #363636; /* Adjust color as needed */
-  line-height: 1.5;
+.moving-icon {
+  position: absolute;
+  width: 150px; /* Icon size */
+  height: 150px;
+  opacity: 0.7; /* Slight transparency */
+  animation: moveIcons linear infinite;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .welcome-banner {
-    flex-direction: column;
-    text-align: center;
+/* Animation for continuous movement */
+@keyframes moveIcons {
+  0% {
+    transform: translate(0, 0);
   }
-  
-  .welcome-text {
-    max-width: 100%;
+  100% {
+    transform: translate(100vw, 100vh);
   }
 }
 
+/* Additional styles to create variations in animation duration and delay */
+.moving-icon:nth-child(1) {
+  top: 20%;
+  left: -30px; /* Start outside the left boundary */
+  animation-duration: 10s;
+}
+
+.moving-icon:nth-child(2) {
+  top: 40%;
+  left: -30px; /* Start outside the left boundary */
+  animation-duration: 15s;
+}
+
+.moving-icon:nth-child(3) {
+  top: 60%;
+  left: -30px; /* Start outside the left boundary */
+  animation-duration: 20s;
+}
 
 
+.Smoving-icon {
+  position: absolute;
+  width: 150px; /* Icon size */
+  height: 150px;
+  opacity: 0.7; /* Slight transparency */
+  animation: SmoveIcons infinite linear; /* Infinite linear movement */
+}
+
+/* Animation for continuous movement from right to left */
+@keyframes SmoveIcons {
+  0% {
+    transform: translateX(100vh,0); /* Start outside the right boundary */
+  }
+
+  100% {
+    transform: translate(50vw, 50vh); /* End near the center */
+  }
+  100% {
+    transform: translate(-50vw, -50vh); /* Move across to the left */
+  }
+}
+
+/* Additional styles to create variations in animation duration and delay */
+.Smoving-icon:nth-child(1) {
+  top: 20%;
+  right: -30px; /* Adjusted starting position for right-to-left flow */
+  animation-duration: 10s;
+}
+
+.Smoving-icon:nth-child(2) {
+  top: 40%;
+  right: -30px;
+  animation-duration: 15s;
+}
+
+.Smoving-icon:nth-child(3) {
+  top: 60%;
+  right: -30px;
+  animation-duration: 20s;
+}

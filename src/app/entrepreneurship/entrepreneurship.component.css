@@ -30,7 +30,7 @@
 /* Container for the scrolling banner */
 .scrolling-banner {
   position: relative;
-  overflow: hidden;
+
   width: 100%;
   height: 300px; /* Adjust height as needed */
   margin-top: 20px;
@@ -39,7 +39,7 @@
 /* Scrolling content */
 .banner-content {
   display: flex;
-  width: 200%; /* Double the width to allow continuous scrolling */
+  width: auto; /* Double the width to allow continuous scrolling */
   animation: scroll-left 20s linear infinite;
 }
 
@@ -69,7 +69,7 @@
   height: 300px; /* Adjust height as needed */
   background: linear-gradient(145deg, #ff4500, #f98253, #c31f02); /* Sunset orange and red gradient */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Shadow for luxury effect */
-  border-radius: 15px; /* Rounded corners */
+   /* Rounded corners */
   overflow: hidden; /* Hide overflow */
 }
 
@@ -104,7 +104,11 @@
 
 .Mbanner-content p {
   margin: 10px 0 0;
-  font-size: 1.25rem; /* Adjust font size as needed */
+  font-size: .95rem; /* Adjust font size as needed */
+  color:rgba(50, 50, 50, 0.795);
+  
 }
 
-
+.fSize{
+  font-size:1px;
+}

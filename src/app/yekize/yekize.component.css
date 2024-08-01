@@ -87,7 +87,7 @@
 /* Scrolling content */
 .banner-content {
   display: flex;
-  width: 200%; /* Double the width to allow continuous scrolling */
+  width: 100%; /* Double the width to allow continuous scrolling */
   animation: scroll-left 20s linear infinite;
 }
 

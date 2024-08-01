@@ -19,71 +19,75 @@
 
 <div class="dashboard-container">
 
-<mat-card class="dashboard-item">
+<mat-card class="dashboard-item" (click)="openEntDialog('Branding & Marketing Service','At LAWND || Communication, we offer specialized branding and marketing services tailored to the nonprofit, entertainment, and corporate industries. For nonprofits, we focus on creating compelling brand identities, campaign strategies, and content that authentically tells your story. In the entertainment industry, we enhance talent branding, manage social media, and launch digital marketing campaigns to captivate audiences. For corporate clients, we develop strong brand identities, market positioning strategies, and content marketing solutions to elevate your business visibility and reputation. Our comprehensive services are designed to meet the unique needs of each industry, ensuring impactful and results-driven outcomes.')">
     <mat-card-header>
-      <mat-card-title><b>Branding & Marketing</b></mat-card-title>
+      <mat-card-title>Branding & Marketing</mat-card-title>
     </mat-card-header>
     <img mat-card-image src="assets/YEC.jpg" alt="Nonprofit">
     <mat-card-content>
-      <p>Learn more about branding and marketing </p>
+      <p>Learn more about Branding and Marketing Services </p>
     </mat-card-content>
 </mat-card>
 
-<mat-card class="dashboard-item">
+<mat-card class="dashboard-item" (click)="openEntDialog('Event Production','At LAWND || Communication, our event production services are tailored to create unforgettable experiences across various industries. We specialize in customizing events to match the unique needs of each client, whether its a glamorous red carpet affair, a meaningful fundraiser, or an elegant seated dinner. Our team ensures every detail is meticulously planned and executed, bringing your vision to life with precision and creativity.')">
   <mat-card-header>
-    <mat-card-title><b>Event Production</b></mat-card-title>
+    <mat-card-title>Event Production</mat-card-title>
   </mat-card-header>
-  <img mat-card-image src="assets/nonprofit.jpg" alt="Nonprofit">
+  <img mat-card-image src="assets/EPPI.png" alt="Nonprofit">
   <mat-card-content>
-    <p>Learn more about Event Production.</p>
+    <p>Learn more about Event Production Services.</p>
   </mat-card-content>
  </mat-card>
 
-<mat-card class="dashboard-item">
+<mat-card class="dashboard-item" (click)="openEntDialog('Production Consulting','LAWND || Communication offers comprehensive production consulting services designed to support your project from concept to completion. Our offerings include location management services, ensuring the perfect backdrop for your production; graphic and digital art to enhance visual appeal; and meticulous call sheet production coordination services to keep everything on track. We provide the expertise and resources needed to bring your creative vision to life with professionalism and flair.')">
   <mat-card-header>
-    <mat-card-title><b>Production Consulting</b></mat-card-title>
+    <mat-card-title>Production Consulting</mat-card-title>
   </mat-card-header>
-  <img mat-card-image src="assets/nonprofit.jpg" alt="Nonprofit">
+  <img mat-card-image src="assets/PCI.png" alt="Nonprofit">
   <mat-card-content>
-    <p>Learn more about production consulting.</p>
+    <p>Learn more about Production Consulting Services.</p>
   </mat-card-content>
 </mat-card>
 
-<mat-card class="dashboard-item">
+<mat-card class="dashboard-item" (click)="openEntDialog('Crisis Management','
+LAWND || Communication provides top-tier crisis management services, tailored to meet the unique challenges of each client. Whether you need one-time support to navigate a difficult issue or periodic and annual evaluations to ensure ongoing preparedness, we offer the expertise and strategic guidance to protect your reputation and assets. Our approach is designed to compete with the industrys leading crisis management firms, delivering solutions that safeguard your organizations future and help you emerge stronger from any challenge.')">
   <mat-card-header>
-    <mat-card-title><b>Crisis Management</b></mat-card-title>
+    <mat-card-title>Crisis Management</mat-card-title>
   </mat-card-header>
-  <img mat-card-image src="assets/nonprofit.jpg" alt="Nonprofit">
+  <img mat-card-image src="assets/CrMI.png" alt="Nonprofit">
   <mat-card-content>
-    <p>Learn more about crisis mangement.</p>
+    <p>Learn more about Crisis Mangement Services.</p>
   </mat-card-content>
 </mat-card>
 
 </div>
 <br/>
-<mat-card class="card">
-<mat-card-title> Previous Projects  </mat-card-title>
-<div class="slideshow-container">
-  <div class="arrow left" (click)="previousImage()">
-    <mat-icon>arrow_back</mat-icon>
-  </div>
 
-  <div class="image-container">
+
+<h2 class="center"><b >Previous Projects</b></h2>
+<div class="slideshow-container">
+ 
+  <div class="image-container" #scrollContainer>
     <div class="product-image" *ngFor="let product of teaProducts$ | async">
       <img [src]="product.imageUrl" alt="Product Image" class="product-image">
-      </div>
+    </div>
   </div>
 
-  <div class="arrow right" (click)="nextImage()">
-    <mat-icon>arrow_forward</mat-icon>
+ 
+</div>
+
+</mat-card>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="stats-container">
+  <div class="stat" *ngFor="let stat of stats" #statElement>
+    <div class="stat-value">0</div>
+    <div class="stat-label">{{ stat.label }}</div>
   </div>
 </div>
-</mat-card>
-
-</mat-card>
-
 <br/>
-
 
 <div class="contact-us-container">
   <h3 class="lAlign"><b>Interested in scheduling a consultation</b></h3>

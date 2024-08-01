@@ -1,0 +1,22 @@
+.container{
+    width:100vw;
+    height: 100vh;
+    border-radius: 0;
+
+}
+
+.g-card {
+    position: relative;
+    overflow: hidden; /* Ensure the content stays within the card */
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow effect */
+    background: linear-gradient(145deg, #011c44, #4c5564, #010e40); /* Gradient background */
+    color: #fff; /* Text color */
+    width: 40vw; /* Adjust width to fit the container */
+    max-width: 40vw; /* Set a maximum width for responsiveness */
+    height:50vh;
+    min-height:30vh;
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3), -10px -10px 10px rgba(255, 255, 255, 0.6);
+ 
+  }

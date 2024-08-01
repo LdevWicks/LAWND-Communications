@@ -5,11 +5,12 @@ import { Observable, Subscription } from 'rxjs';
 import { CartService } from '../cart.service';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @Component({
   selector: 'app-yekize',
   standalone: true,
-  imports: [CurrencyPipe, CommonModule, MatIconModule, MatButtonModule],
+  imports: [CurrencyPipe, MatTabsModule, CommonModule, MatIconModule, MatButtonModule],
   templateUrl: './yekize.component.html',
   styleUrls: ['./yekize.component.css']
 })

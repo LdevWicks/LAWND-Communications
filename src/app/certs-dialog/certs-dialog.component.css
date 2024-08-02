@@ -1,0 +1,9 @@
+.cert-cover {
+    width: 100%;
+    max-height: 20vh;
+    max-width: 200px; /* You can adjust the max-width as needed */
+    margin-bottom: 20px;
+    align-items: left;
+    align-content: left;
+    border-radius: 8px;
+  }

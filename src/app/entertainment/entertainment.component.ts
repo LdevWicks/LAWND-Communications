@@ -89,12 +89,12 @@ export class EntertainmentComponent {
     });
   }
 
-  openEntDialog(title: string, description: string, imdbLink: string, ): void {
+  openEntDialog(company: string, role: string, description: string, ): void {
     this.dialog.open(EntCEOComponent, {
       data: {
-        title: title,
+        company: company,
+        role: role,
         description: description,
-        imdbLink: imdbLink,
 
       }
     });

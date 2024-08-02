@@ -22,18 +22,18 @@ export class HomeComponent implements OnInit{
 
 
   updates = [
-    { title: 'Update 1', date: new Date(), description: 'Description of update 1' },
-    { title: 'Update 2', date: new Date(), description: 'Description of update 2' },
-    { title: 'Advacned', date: new Date(), description: 'Description of update ' },
+    { title: 'Update 001.21', date: new Date(), description: 'Multifactor Authentication enabled.' },
+    { title: 'Update 001.31', date: new Date(), description: 'Updated Dependencies' },
+    { title: 'Update 001.41', date: new Date(), description: 'Enabled Disscusion Board' },
   ];
 
   features = [
     { icon: 'volunteer_activism', title: 'Nonprofit', description: 'Learn more about our partnerships.', image: 'assets/npceo.png', route:'/nonprofit' },
     { icon: 'code', title: 'Computer Science', description: 'NC A&T 2006-2010', image: 'assets/AggiePride.jpg', route:'/computer-science' },
-    { icon: 'theaters', title: 'Entertainment', description: 'Learn more about our past projects', image: 'assets/entceo.png',route:'/entertainment' },
+    { icon: 'theaters', title: 'Entertainment', description: 'Learn more about our latest projects', image: 'assets/entceo.png',route:'/entertainment' },
     { icon: 'lightbulb', title: 'Entrepreneurship', description: 'Learn more about my businesses', image: 'assets/mylogos.png',route:'/entrepreneurship' },
     { icon: 'security', title: 'Cyber Security', description: 'Deep dive into my path to CISO', image: 'assets/certs.png',route:'/cybersecurity' },
-    { icon: 'security', title: 'Advanced Features', description: 'lets get adavcned', image: 'assets/certs.png',route:'/cybersecurity' },
+    { icon: 'security', title: 'Advanced Features', description: 'Unlock & Explore', image: 'assets/1.png',route:'/cybersecurity' },
   ];
 
   constructor(private router: Router) { 

@@ -1,8 +1,9 @@
-<h2 mat-dialog-title>{{ data.title }}</h2>
+<img *ngIf="data.image" [src]="data.image" alt="{{ data.title }} cover image" class="cert-cover">
+<h2 mat-dialog-title><b>{{ data.title }}</b></h2>
 <mat-dialog-content class="dialog-content">
-  <p><mat-card-subtitle><b>Certification:</b></mat-card-subtitle>{{ data.description }}</p>
-  <p><mat-card-subtitle><b>Description:</b></mat-card-subtitle>{{ data.credits }}</p>
-  date obtained  currrently active
+  <p><mat-card-subtitle><b>Completion Date:</b></mat-card-subtitle>{{ data.date }}</p>
+  <p><mat-card-subtitle><b>Certification Description:</b></mat-card-subtitle>{{ data.description }}</p>
+  <p><mat-card-subtitle><b>Status:</b></mat-card-subtitle>{{data.status}} 
 </mat-dialog-content>
 <br/>
 <mat-card-content>

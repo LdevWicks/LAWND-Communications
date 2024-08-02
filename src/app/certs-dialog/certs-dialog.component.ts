@@ -15,7 +15,7 @@ export class CertsDialogComponent {
 
   constructor(
     public dialogRef: MatDialogRef<CertsDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { title: string; description: string; imdbLink: string; image:string;  videoUrl:string; credits:string;} // Injecting data using MAT_DIALOG_DATA
+    @Inject(MAT_DIALOG_DATA) public data: { title: string; date: string; description: string;  status:string;  image:string;} // Injecting data using MAT_DIALOG_DATA
   ) {}
 
   onClose(): void {

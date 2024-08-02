@@ -34,10 +34,9 @@ export class NonprofitComponent implements OnInit{
  
 
   images: string[] = [
-    'assets/CWLogo.png',
-    'assets/tdsLogo.png',
     'assets/ICTLogo.png',
-    // Add more image URLs as needed
+    'assets/tdsLogo.png',
+    'assets/CWLogo.png',
   ];
   currentImageIndex = 0;
   interval: any;
@@ -83,14 +82,14 @@ export class NonprofitComponent implements OnInit{
 
   navigateToPage(productId: string): void {
     switch (productId) {
+      case 'Innovative Concepts':
+        this.navigateToIC();
+        break;
       case 'Difference':
         this.navigateToDifference();
         break;
       case 'Charlottes Web':
         this.navigateToCW();
-        break;
-      case 'Innovative Concepts':
-        this.navigateToIC();
         break;
       default:
         console.log('Unknown product ID:', productId);

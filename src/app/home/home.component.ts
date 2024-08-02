@@ -7,6 +7,7 @@ import { EntrepreneurshipComponent } from '../entrepreneurship/entrepreneurship.
 import { NonprofitComponent } from '../nonprofit/nonprofit.component';
 import { MatIconModule} from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
+import { MatStepperModule } from '@angular/material/stepper';
 import { Router, RouterModule } from '@angular/router';
 
 @Component({
@@ -14,7 +15,7 @@ import { Router, RouterModule } from '@angular/router';
     standalone: true,
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css',],
-    imports: [ MatCardModule, RouterModule, MatIconModule, CommonModule,NonprofitComponent, ComputerScienceComponent,CybersecurityComponent, EntertainmentComponent,EntrepreneurshipComponent]
+    imports: [ MatCardModule,MatStepperModule, RouterModule, MatIconModule, CommonModule,NonprofitComponent, ComputerScienceComponent,CybersecurityComponent, EntertainmentComponent,EntrepreneurshipComponent]
 })
 export class HomeComponent implements OnInit{
   categories: string[] = [];

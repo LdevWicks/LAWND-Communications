@@ -74,8 +74,9 @@ body {
   .dashboard-item {
     flex: 1 1 calc(20% - 20px); /* 20% width minus the gap */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    border-radius: 8px; /* Rounded corners */
-    background: linear-gradient(145deg, #000000c7, #434343); /* Black gradient */
+    background: linear-gradient(145deg, #1a1a1a, #333333); /* Black and smoke grey gradient */
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
     color: rgb(255, 255, 255); /* White text for contrast */
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transform and shadow */
     position: relative;
@@ -165,15 +166,12 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   }
   
-  mat-step-header {
-    background-color: #FDB813;
-    color: #212121;
-    font-weight: bold;
-  }
+
   
   ::ng-deep .mat-horizontal-stepper-header .mat-step-icon .mat-icon {
     display: none;
-    background-color: #002147;
+    background-color: #1a1a1b;
+   
   }
 
   ::ng-deep .mat-vertical-stepper-header .mat-step-icon .mat-icon {
@@ -193,3 +191,5 @@ body {
    
   }
   
+  
+

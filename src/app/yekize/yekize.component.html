@@ -61,7 +61,30 @@
 </mat-tab>
 
 
-<mat-tab label="Media">Media</mat-tab>
+<mat-tab label="Media">
+<mat-card-content class="center">
+  <br/>
+  <br/>
+  <div class="video-container center">
+    <!-- Video Player -->
+    <video #mainVideo controls>
+      <source [attr.src]="selectedVideoUrl" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  
+    <!-- Playlist -->
+    <div class="playlist center">
+      <ul>
+        <li *ngFor="let video of videos$ | async">
+          <a (click)="playVideo(video.url)" href="javascript:void(0);">{{ video.title }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <br/>
+  <br/>
+</mat-card-content>
+</mat-tab>
 
 </mat-tab-group>
 

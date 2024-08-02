@@ -94,15 +94,15 @@ export class CybersecurityComponent implements OnInit {
     }
 }
 
-openMovieDialog(movieTitle: string, movieDescription: string, imdbLink: string, movieCover: string, videoUrl: string, credits:string): void {
+openMovieDialog(title: string, description: string, date: string, status: string, image: string): void {
   this.dialog.open(CertsDialogComponent, {
     data: {
-      title: movieTitle,
-      description: movieDescription,
-      imdbLink: imdbLink,
-      image: movieCover,
-      videoUrl: videoUrl,
-      credits:credits
+      title: title,
+      date: date,
+      description: description,
+      status: status,
+      image: image,
+      
     }
   });
 }

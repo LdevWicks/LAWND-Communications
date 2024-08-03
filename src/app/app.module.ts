@@ -16,6 +16,10 @@ import { CybersecurityComponent } from './cybersecurity/cybersecurity.component'
 import { CommonModule } from '@angular/common';
 import { CurrencyPipe } from '@angular/common';
 import { InnovativeComponent } from './innovative/innovative.component';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { MFAComponent } from './mfa/mfa.component';
+import { AuthService } from './auth.service';
+
 
 
 
@@ -27,6 +31,8 @@ export const routes: Routes = [
   { path: 'entrepreneurship', component: EntrepreneurshipComponent },
   { path: 'cybersecurity', component: CybersecurityComponent },
   { path: 'innovative-concepts', component: InnovativeComponent },
+  { path: 'mfa-login', component: MFAComponent },
+  { path: '', redirectTo: '/mfa-login', pathMatch: 'full' },
   { path: '**', redirectTo: '' } // Redirect any other path to home
 ];
 
@@ -40,13 +46,14 @@ export const routes: Routes = [
     CommonModule,
     CurrencyPipe,
     BrowserAnimationsModule,
+    AngularFireAuthModule,
     AngularFirestoreModule,
     RouterModule.forRoot(routes, { anchorScrolling: 'enabled' }),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AppRoutingModule, // Import AppRoutingModule here
     // Other modules you might need
   ],
-  providers: [],
+  providers: [AuthService],
 })
 export class AppModule implements DoBootstrap {
   ngDoBootstrap(appRef: import('@angular/core').ApplicationRef): void {

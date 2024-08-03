@@ -7,6 +7,7 @@ import { auth } from './firebase.configs'; // Import the initialized Auth object
   providedIn: 'root'
 })
 export class AuthService {
+  
   private auth: Auth; // Ensure this is correctly typed
 
   constructor() {

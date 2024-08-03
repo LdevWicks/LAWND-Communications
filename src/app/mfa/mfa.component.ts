@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { EmailAuthProvider, reauthenticateWithCredential, signInWithEmailAndPassword, User, getAuth } from 'firebase/auth';
+import { signInWithEmailAndPassword, getAuth,  createUserWithEmailAndPassword } from 'firebase/auth';
 import { FirebaseError } from 'firebase/app';
 
 @Component({
@@ -13,84 +13,57 @@ import { FirebaseError } from 'firebase/app';
 })
 export class MFAComponent implements OnInit {
 
-  mfaEnabled: boolean = false;
   email: string = '';
   password: string = '';
-  verificationCode: string = '';
   error: string = '';
+  success: string = '';
 
   constructor() {}
 
-  ngOnInit(): void {
-    const currentUser = getAuth().currentUser;
-    if (currentUser) {
-      this.checkMFAStatus(currentUser);
-    }
-  }
+  ngOnInit(): void {}
 
-  private async checkMFAStatus(user: User) {
-    try {
-      
-      const idTokenResult = await user.getIdTokenResult(true); // Get the latest token
-      const claims = idTokenResult.claims;
-
-      // Firebase Auth does not directly expose MFA status in a straightforward way
-      // Typically, you'd check enrollment during login or MFA setup
-      this.mfaEnabled = !!claims['multiFactor']; // Adjust this based on actual claims structure
-    } catch (error) {
-      if (error instanceof FirebaseError) {
-        console.error('Error checking MFA status:', error.message);
-        this.error = error.message;
-      } else {
-        console.error('Unexpected error:', error);
-      }
-    }
-  }
-
-  async startMfaEnrollment() {
+  async login() {
     if (!this.email || !this.password) {
       this.error = 'Please enter your email and password.';
       return;
     }
 
     try {
-      const currentUser = getAuth().currentUser;
-      if (currentUser) {
-        const credential = EmailAuthProvider.credential(this.email, this.password);
-        await reauthenticateWithCredential(currentUser, credential);
-        this.mfaEnabled = true; // Update based on actual MFA enrollment status
-        alert('MFA enrollment initiated!');
-      }
+      const auth = getAuth();
+      await signInWithEmailAndPassword(auth, this.email, this.password);
+      this.success = 'Login successful!';
+      this.error = '';
     } catch (error) {
       if (error instanceof FirebaseError) {
-        console.error('Error during MFA enrollment:', error.message);
+        console.error('Error during login:', error.message);
         this.error = error.message;
       } else {
         console.error('Unexpected error:', error);
+        this.error = 'Unexpected error occurred.';
       }
     }
   }
 
-  async verifyMfaCode() {
-    if (!this.verificationCode) {
-      this.error = 'Please enter the verification code.';
+  async register() {
+    if (!this.email || !this.password) {
+      this.error = 'Please enter your email and password.';
       return;
     }
 
     try {
       const auth = getAuth();
-      const currentUser = auth.currentUser;
-      if (currentUser) {
-        await signInWithEmailAndPassword(auth, this.email, this.password);
-        alert('MFA verified successfully!');
-      }
+      await createUserWithEmailAndPassword(auth, this.email, this.password);
+      this.success = 'Registration successful! You can now log in.';
+      this.error = '';
     } catch (error) {
       if (error instanceof FirebaseError) {
-        console.error('Error during MFA verification:', error.message);
+        console.error('Error during registration:', error.message);
         this.error = error.message;
       } else {
         console.error('Unexpected error:', error);
+        this.error = 'Unexpected error occurred.';
       }
     }
   }
+
 }

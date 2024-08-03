@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit{
     { icon: 'theaters', title: 'Entertainment', description: 'Learn more about our latest projects', image: 'assets/entceo.png',route:'/entertainment' },
     { icon: 'lightbulb', title: 'Entrepreneurship', description: 'Learn more about my businesses', image: 'assets/mylogos.png',route:'/entrepreneurship' },
     { icon: 'security', title: 'Cyber Security', description: 'Deep dive into my path to CISO', image: 'assets/certs.png',route:'/cybersecurity' },
-    { icon: 'security', title: 'Advanced Features', description: 'Unlock & Explore', image: 'assets/1.png',route:'/cybersecurity' },
+    { icon: 'security', title: 'Advanced Features', description: 'Unlock & Explore', image: 'assets/1.png',route:'/mfa-login' },
   ];
 
   constructor(private router: Router) { 

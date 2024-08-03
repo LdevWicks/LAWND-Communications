@@ -1,0 +1,68 @@
+<!-- mfa.component.html -->
+<div class="mfa-container">
+  <h1>Multi-Factor Authentication</h1>
+
+  <div *ngIf="error" class="error-message">
+    <p>{{ error }}</p>
+  </div>
+
+  <div class="form-container">
+    <form (ngSubmit)="startMfaEnrollment()" #mfaForm="ngForm">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          [(ngModel)]="email"
+          name="email"
+          required
+          #emailInput="ngModel"
+        />
+        <div *ngIf="emailInput.invalid && emailInput.touched" class="error-message">
+          <p>Email is required and must be valid.</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          [(ngModel)]="password"
+          name="password"
+          required
+          #passwordInput="ngModel"
+        />
+        <div *ngIf="passwordInput.invalid && passwordInput.touched" class="error-message">
+          <p>Password is required.</p>
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="mfaForm.invalid">Start MFA Enrollment</button>
+    </form>
+
+    <form (ngSubmit)="verifyMfaCode()" #verifyForm="ngForm">
+      <div class="form-group">
+        <label for="verificationCode">Verification Code:</label>
+        <input
+          type="text"
+          id="verificationCode"
+          [(ngModel)]="verificationCode"
+          name="verificationCode"
+          required
+          #verificationCodeInput="ngModel"
+        />
+        <div *ngIf="verificationCodeInput.invalid && verificationCodeInput.touched" class="error-message">
+          <p>Verification code is required.</p>
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="verifyForm.invalid">Verify MFA Code</button>
+    </form>
+  </div>
+
+  <div *ngIf="mfaEnabled" class="success-message">
+    <p>MFA is enabled for your account.</p>
+  </div>
+</div>
+

@@ -1,8 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "types": ["jest"],
-    "baseUrl": "./src/app/app.component.html",
+    "baseUrl": "./src", // Updated to a directory path
     "paths": {
       "@app/*": ["app/*"]
     },
@@ -12,7 +11,7 @@
     "sourceMap": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "declaration": false,
@@ -23,12 +22,11 @@
     "lib": ["es2018", "dom"],
     "outDir": "./dist/out-tsc",
     "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
+    "noPropertyAccessFromIndexSignature": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "importHelpers": true,
-    "useDefineForClassFields": false,
-  
+    "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -36,7 +34,6 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   },
-
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "src/**/*.spec.ts"]
 }

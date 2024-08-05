@@ -1,5 +1,5 @@
 <div class="auth-container">
-  <h2>Login / Register</h2>
+  <h2>Login</h2>
 
   <form (submit)="login()">
     <label for="email">Email:</label>
@@ -11,17 +11,10 @@
     <button type="button" (click)="login()">Login</button>
   </form>
 
-  <p>Or</p>
 
-  <form (submit)="register()">
-    <label for="email">Email:</label>
-    <input id="email" type="email" [(ngModel)]="email" name="email" required>
+<p>Or</p>
 
-    <label for="password">Password:</label>
-    <input id="password" type="password" [(ngModel)]="password" name="password" required>
-
-    <button type="button" (click)="register()">Register</button>
-  </form>
+  <button mat-raised-button (click)="openRegistrationDialog()">Register</button>
 
   <div *ngIf="error" class="error-message">
     <p>Error: {{error}}</p>

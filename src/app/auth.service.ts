@@ -1,22 +1,27 @@
 import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
+import { tap } from 'rxjs';
+import { Router } from '@angular/router';
 import { Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider, UserCredential } from 'firebase/auth';
 import { auth } from './firebase.configs'; // Import the initialized Auth object
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  
-  private auth: Auth; // Ensure this is correctly typed
+  private auth: Auth;
 
-  constructor() {
+  constructor(private router: Router) {
     this.auth = auth; // Use the initialized auth instance
   }
 
   // Email/Password sign-in method
   signInWithEmail(email: string, password: string): Observable<UserCredential> {
-    return from(signInWithEmailAndPassword(this.auth, email, password));
+    return from(signInWithEmailAndPassword(this.auth, email, password)).pipe(
+      tap(() => localStorage.setItem('mfaCompleted', 'false')) // Or any other mechanism to track MFA status
+    );
   }
 
   // Email/Password registration method
@@ -32,15 +37,18 @@ export class AuthService {
 
   // Sign-out method
   signOut(): Observable<void> {
-    return from(signOut(this.auth));
+    return from(signOut(this.auth)).pipe(
+      tap(() => localStorage.removeItem('mfaCompleted')) // Clear MFA status on logout
+    );
+  }
+
+  isLoggedIn(): boolean {
+    return this.auth.currentUser !== null; // Check if there is a current user
+  }
+
+  logout() {
+    this.signOut().subscribe(() => {
+      this.router.navigate(['/login']);
+    });
   }
 }
-
-
-
-
-
-
-
-
-

@@ -19,6 +19,13 @@ import { InnovativeComponent } from './innovative/innovative.component';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { MFAComponent } from './mfa/mfa.component';
 import { AuthService } from './auth.service';
+import { YekizeComponent } from './yekize/yekize.component';
+import { DifferenceComponent } from './difference/difference.component';
+import { CwComponent } from './cw/cw.component';
+import { LAWNDComponent } from './lawnd/lawnd.component';
+import { AdvanceFeaturesComponent } from './advance-features/advance-features.component';
+import { AuthGuard } from './auth.guard';
+
 
 
 
@@ -30,9 +37,14 @@ export const routes: Routes = [
   { path: 'nonprofit', component: NonprofitComponent },
   { path: 'entrepreneurship', component: EntrepreneurshipComponent },
   { path: 'cybersecurity', component: CybersecurityComponent },
+  { path: 'yekize', component: YekizeComponent },
   { path: 'innovative-concepts', component: InnovativeComponent },
+  { path: 'difference', component: DifferenceComponent },
+  { path: 'cw', component: CwComponent },
+  { path: 'lawnd', component: LAWNDComponent },
   { path: 'mfa-login', component: MFAComponent },
-  { path: '', redirectTo: '/mfa-login', pathMatch: 'full' },
+  { path: 'advance-features', component: AdvanceFeaturesComponent, canActivate: [AuthGuard] },
+  { path: '', redirectTo: '/mfa-login', pathMatch: 'full' }, // Default to MFA login
   { path: '**', redirectTo: '' } // Redirect any other path to home
 ];
 

@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
-import { tap } from 'rxjs';
-import { Router } from '@angular/router';
-import { Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider, UserCredential } from 'firebase/auth';
+import { tap } from 'rxjs/operators';
+import { Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider, UserCredential, onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase.configs'; // Import the initialized Auth object
-
-
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +10,7 @@ import { auth } from './firebase.configs'; // Import the initialized Auth object
 export class AuthService {
   private auth: Auth;
 
-  constructor(private router: Router) {
+  constructor() {
     this.auth = auth; // Use the initialized auth instance
   }
 
@@ -42,13 +39,22 @@ export class AuthService {
     );
   }
 
-  isLoggedIn(): boolean {
-    return this.auth.currentUser !== null; // Check if there is a current user
-  }
-
-  logout() {
-    this.signOut().subscribe(() => {
-      this.router.navigate(['/login']);
+  // Observe the auth state and return true if logged in, otherwise false
+  isLoggedIn(): Observable<boolean> {
+    return new Observable<boolean>((observer) => {
+      onAuthStateChanged(this.auth, (user) => {
+        observer.next(!!user);
+        observer.complete();
+      });
     });
   }
+  
+  logout(): void {
+    this.signOut().subscribe(() => {
+      console.log('User has been logged out.');
+      // You can add any additional logic here, such as navigation or clearing other data
+    });
+  }
+
+  
 }

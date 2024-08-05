@@ -6,25 +6,12 @@
         <mat-icon class="icon">home</mat-icon> Home
       </a>
       <br/>
-      <a mat-list-item class="content" routerLink="/computer-science" routerLinkActive="active">
-        <mat-icon class="icon">laptop</mat-icon> Computer Science
-      </a>
-      <br/>
-      <a mat-list-item class="content" routerLink="/entertainment" routerLinkActive="active">
-        <mat-icon class="icon">movies</mat-icon> Entertainment
-      </a>
-      <br/>
-      <a mat-list-item class="content" routerLink="/nonprofit" routerLinkActive="active">
-        <mat-icon class="icon">volunteer_activism</mat-icon> Nonprofit
-      </a>
-      <br/>
-      <a mat-list-item class="content" routerLink="/entrepreneurship" routerLinkActive="active">
-        <mat-icon class="icon">emoji_events</mat-icon> Entrepreneurship
-      </a>
-      <br/>
-      <a mat-list-item class="content" routerLink="/cybersecurity" routerLinkActive="active">
-        <mat-icon class="icon">security</mat-icon> Cybersecurity
-      </a>
+      <ng-container *ngFor="let item of navItems">
+        <a mat-list-item class="content" [routerLink]="item.route" routerLinkActive="active">
+          <mat-icon class="icon">{{item.icon}}</mat-icon> {{item.title}}
+        </a>
+        <br/>
+      </ng-container>
     </mat-nav-list>
   </mat-sidenav>
 
@@ -32,9 +19,7 @@
   <mat-sidenav-content>
     <!-- Toggle button for sidenav -->
     <div class="logo-container">
-      
-        <mat-icon class="raised" mat-icon-button (click)="toggleSidenav()" [ngClass]="{'entertainment-menu-button': isEntertainmentPage}">menu</mat-icon>
-      
+      <mat-icon class="raised" mat-icon-button (click)="toggleSidenav()" [ngClass]="{'entertainment-menu-button': isEntertainmentPage}">menu</mat-icon>
       <mat-toolbar [ngClass]="{'entertainment-toolbar': isEntertainmentPage, 'default-toolbar': !isEntertainmentPage}">
         <span class="page-title"> <b>{{ pageTitle }} </b></span>
         <img *ngIf="isComputerSciencePage" src="assets/Logo.jpg" alt="McNair Hall" class="toolbar-icon">

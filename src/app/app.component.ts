@@ -7,6 +7,7 @@ import { MatSidenavModule, MatSidenav } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app.routes';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -33,11 +34,12 @@ export class AppComponent implements OnInit {
   isCybersecurityPage = false;
   isYekizePage = false;
   isLAWNDPage = false;
-  isDifferencePage= false;
-  isCWPage= false;
-  isInnovativePage= false;
+  isDifferencePage = false;
+  isCWPage = false;
+  isInnovativePage = false;
 
   pageTitle: string = '';
+  isLoggedIn = false;
 
   private readonly pageTitles: { [key: string]: string } = {
     '/': 'Home',
@@ -51,9 +53,17 @@ export class AppComponent implements OnInit {
     '/difference': 'The Difference Society',
     '/cw': 'Charlotte\'s Web',
     '/innovative-concepts': 'Innovative Concepts'
-  }
+  };
 
-  constructor(private router: Router) {}
+  navItems = [
+    { icon: 'laptop', title: 'Computer Science', route: '/computer-science' },
+    { icon: 'movies', title: 'Entertainment', route: '/entertainment' },
+    { icon: 'emoji_events', title: 'Entrepreneurship', route: '/entrepreneurship' },
+    { icon: 'volunteer_activism', title: 'Nonprofit', route: '/nonprofit' },
+    { icon: 'security', title: 'Cyber Security', route: '/cybersecurity' }
+  ];
+
+  constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit() {
     this.router.events.subscribe(event => {
@@ -73,10 +83,29 @@ export class AppComponent implements OnInit {
         this.pageTitle = this.pageTitles[event.urlAfterRedirects] || '';
       }
     });
+  
+    // Subscribe to the auth state and update isLoggedIn accordingly
+    this.authService.isLoggedIn().subscribe(isLoggedIn => {
+      this.isLoggedIn = isLoggedIn;
+      console.log(this.isLoggedIn, 'here'); // Debug log
+
+      if (this.isLoggedIn) {
+        this.navItems.push({
+          icon: 'settings',
+          title: 'Advanced Features',
+          route: '/advance-features'
+        });
+        console.log(this.navItems);
+      }
+    });
   }
 
   toggleSidenav() {
     this.sidenav.toggle();
   }
-}
 
+  navigateTo(route: string) {
+    this.router.navigate([route]);
+    this.sidenav.close(); // Optionally close the sidenav after navigation
+  }
+}

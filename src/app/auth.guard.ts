@@ -2,30 +2,41 @@ import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Observable } from 'rxjs';
-import { map, take, tap } from 'rxjs/operators';
+import { map, take } from 'rxjs/operators';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  constructor(private afAuth: AngularFireAuth, private router: Router) {}
+
+  constructor(
+    private afAuth: AngularFireAuth,
+    private router: Router,
+    private authService: AuthService
+  ) {}
 
   canActivate(): Observable<boolean> | Promise<boolean> | boolean {
     return this.afAuth.authState.pipe(
       take(1),
       map(user => !!user),
-      tap(isAuthenticated => {
-        if (!isAuthenticated) {
+      map(_isAuthenticated => {
+        if (this.authService.isLoggedIn()) {
+          if (this.isAuthenticated()) {
+            return true;
+          } else {
+            this.router.navigate(['/mfa-login']);
+            return false;
+          }
+        } else {
           this.router.navigate(['/mfa-login']);
-        } else if (!this.isTwoFactorAuthenticated()) {
-          this.router.navigate(['/mfa-login']);
+          return false;
         }
       })
     );
   }
 
-  private isTwoFactorAuthenticated(): boolean {
-    return !!localStorage.getItem('mfaCompleted');
+  private isAuthenticated(): boolean {
+    return localStorage.getItem('mfaCompleted') === 'true'; // Use local storage to check MFA status
   }
 }
-

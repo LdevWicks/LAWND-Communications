@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { signInWithEmailAndPassword, getAuth,  createUserWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, getAuth, UserCredential } from 'firebase/auth';
 import { FirebaseError } from 'firebase/app';
+import { RegistratonDialogComponent } from '../advance-features/registraton-dialog/registraton-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mfa',
@@ -18,11 +21,15 @@ export class MFAComponent implements OnInit {
   error: string = '';
   success: string = '';
 
-  constructor() {}
+  constructor(private dialog: MatDialog, private router: Router) {}
 
   ngOnInit(): void {}
 
+  
   async login() {
+    this.error = '';
+    this.success = '';
+
     if (!this.email || !this.password) {
       this.error = 'Please enter your email and password.';
       return;
@@ -30,9 +37,13 @@ export class MFAComponent implements OnInit {
 
     try {
       const auth = getAuth();
-      await signInWithEmailAndPassword(auth, this.email, this.password);
-      this.success = 'Login successful!';
-      this.error = '';
+      const userCredential: UserCredential = await signInWithEmailAndPassword(auth, this.email, this.password);
+
+      if (userCredential.user) {
+        this.success = 'Login successful!';
+        localStorage.setItem('mfaCompleted', 'true'); // Set MFA as completed
+        this.router.navigate(['/advance-features']);
+      }
     } catch (error) {
       if (error instanceof FirebaseError) {
         console.error('Error during login:', error.message);
@@ -44,26 +55,8 @@ export class MFAComponent implements OnInit {
     }
   }
 
-  async register() {
-    if (!this.email || !this.password) {
-      this.error = 'Please enter your email and password.';
-      return;
-    }
 
-    try {
-      const auth = getAuth();
-      await createUserWithEmailAndPassword(auth, this.email, this.password);
-      this.success = 'Registration successful! You can now log in.';
-      this.error = '';
-    } catch (error) {
-      if (error instanceof FirebaseError) {
-        console.error('Error during registration:', error.message);
-        this.error = error.message;
-      } else {
-        console.error('Unexpected error:', error);
-        this.error = 'Unexpected error occurred.';
-      }
-    }
+  openRegistrationDialog() {
+    this.dialog.open(RegistratonDialogComponent);
   }
-
 }

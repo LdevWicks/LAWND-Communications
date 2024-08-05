@@ -1,0 +1,15 @@
+
+  <div class="auth-container">
+    <h2>Register</h2>
+  
+    <form (submit)="register()">
+      <label for="email">Email:</label>
+      <input id="email" type="email" [(ngModel)]="email" name="email" required>
+  
+      <label for="password">Password:</label>
+      <input id="password" type="password" [(ngModel)]="password" name="password" required>
+  
+      <button type="button" (click)="register()">Register</button>
+      <button (click)="closeDialog()">Return to Login</button>
+    </form>
+  </div>

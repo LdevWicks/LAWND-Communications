@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
-import { YekizeComponent } from '../yekize/yekize.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { RouterModule, Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -10,7 +9,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 @Component({
   selector: 'app-entrepreneurship',
   standalone: true,
-  imports: [ MatCardModule,YekizeComponent,CommonModule,MatTabsModule, RouterModule],
+  imports: [MatCardModule, CommonModule, MatTabsModule, RouterModule],
   templateUrl: './entrepreneurship.component.html',
   styleUrls: ['./entrepreneurship.component.css']
 })

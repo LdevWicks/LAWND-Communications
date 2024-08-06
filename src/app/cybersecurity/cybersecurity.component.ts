@@ -7,11 +7,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule, MatDialog } from '@angular/material/dialog';
-import { CertsDialogComponent} from "../certs-dialog/certs-dialog.component";
+import { CertsDialogComponent} from "./certs-dialog/certs-dialog.component";
 import { MatDividerModule } from '@angular/material/divider';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatStepperModule } from '@angular/material/stepper';
-import { DiscussionBoardComponent } from "../discussion-board/discussion-board.component";
+import { DiscussionBoardComponent } from "./discussion-board/discussion-board.component";
 
 @Component({
   selector: 'app-cybersecurity',

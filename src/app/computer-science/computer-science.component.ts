@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/co
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDialog } from '@angular/material/dialog';
-import { AggiePrideDialogComponent } from '../aggie-pride-dialog/aggie-pride-dialog.component';
+import { AggiePrideDialogComponent } from './aggie-pride-dialog/aggie-pride-dialog.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatStepperModule } from '@angular/material/stepper';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';

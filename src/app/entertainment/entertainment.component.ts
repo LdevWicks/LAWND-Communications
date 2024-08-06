@@ -7,7 +7,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { CommonModule } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MovieDialogComponent} from '../movie-dialog/movie-dialog.component';
+import { MovieDialogComponent} from './movie-dialog/movie-dialog.component';
 import {EntCEOComponent} from './ent-ceo/ent-ceo.component';
 
 

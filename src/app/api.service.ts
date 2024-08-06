@@ -17,6 +17,21 @@ export class ApiService {
     return this.http.get(`${this.apiUrl}/incidents`);
   }
 
+  
+  addIncident(incident: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/incidents`, incident);
+  }
+
+  updateIncident(incident: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/incidents/${incident.id}`, incident);
+  }
+
+  deleteIncident(id: string): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/incidents/${id}`);
+  }
+
+
+
   getCompliance(): Observable<any> {
     return this.http.get(`${this.apiUrl}/compliance`);
   }
@@ -33,7 +48,20 @@ export class ApiService {
     return this.http.delete<any>(`${this.apiUrl}/compliance/${id}`);
   }
 
+
   getVulnerabilities(): Observable<any> {
     return this.http.get(`${this.apiUrl}/vulnerabilities`);
+  }
+
+  addVulnerability(vulnerability: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/vulnerabilities`, vulnerability);
+  }
+
+  updateVulnerability(vulnerability: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/vulnerabilities/${vulnerability.id}`, vulnerability);
+  }
+
+  deleteVulnerability(id: string): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/vulnerabilities/${id}`);
   }
 }

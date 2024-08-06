@@ -46,3 +46,8 @@ body {
     background-color: #494dd9;
   }
   
+  .rButton{
+    align-items: right;
+    align-content: right;
+    margin-left:70%;
+  }

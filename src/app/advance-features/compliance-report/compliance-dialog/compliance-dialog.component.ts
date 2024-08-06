@@ -12,7 +12,7 @@ import { MatInputModule } from '@angular/material/input';
   standalone: true,
   imports: [MatFormFieldModule, MatInputModule,ReactiveFormsModule, FormsModule, CommonModule],
   templateUrl: './compliance-dialog.component.html',
-  styleUrl: './compliance-dialog.component.css'
+  styleUrls:[ './compliance-dialog.component.css']
 })
 export class ComplianceDialogComponent {
 
@@ -24,7 +24,7 @@ export class ComplianceDialogComponent {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.form = this.fb.group({
-      id: [data?.id || '', Validators.required],
+      id: [data?.id || ''],
       category: [data?.category || '', Validators.required],
       description: [data?.description || '', Validators.required],
       severity: [data?.severity || '', Validators.required],

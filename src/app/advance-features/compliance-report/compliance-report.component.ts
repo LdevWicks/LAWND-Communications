@@ -48,26 +48,32 @@ export class ComplianceReportComponent implements OnInit {
     );
   }
 
+ 
   openDialog(item?: ComplianceItem): void {
     const dialogRef = this.dialog.open(ComplianceDialogComponent, {
-      data: item || {}
+      data: item || {} // If item exists, pass it to dialog; otherwise, pass an empty object
     });
-
+  
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        if (result.id) {
-          this.updateCompliance(result);
+        if (result.id && this.compliance.some(c => c.id === result.id)) {
+          this.updateCompliance(result); // Update if the item exists
         } else {
-          this.addCompliance(result);
+          result.id = this.generateUniqueId(); // Generate a new ID for new items
+          this.addCompliance(result); // Add if the item is new
         }
       }
     });
   }
-
+  
+  // Generate a unique ID (you can customize this function as needed)
+  generateUniqueId(): string {
+    return 'COMP-' + Math.random().toString(36).substr(2, 5).toUpperCase();
+  }
   
   addCompliance(compliance: any): void {
     console.log('Adding compliance:', compliance); // Debug
-    this.apiService.addCompliance(compliance).subscribe({
+    this.apiService.addCompliance([compliance]).subscribe({ // Wrap the compliance item in an array
       next: (data) => {
         console.log('Compliance added:', data);
         this.loadCompliance(); // Reload data to reflect the addition

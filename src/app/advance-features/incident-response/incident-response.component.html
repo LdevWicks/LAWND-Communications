@@ -1,0 +1,31 @@
+<div class="incident-response">
+    <h2>Incident Response</h2>
+    <p>To manage and respond to security incidents that occur within the organization.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Severity</th>
+          <th>Status</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let incident of incidents">
+          <td>{{ incident.id }}</td>
+          <td>{{ incident.name }}</td>
+          <td>{{ incident.description }}</td>
+          <td [ngClass]="getSeverityClass(incident.severity)">
+            {{ incident.severity }}
+          </td>
+          <td [ngClass]="getStatusClass(incident.status)">
+            {{ incident.status }}
+          </td>
+          <td>{{ incident.date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

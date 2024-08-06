@@ -52,7 +52,8 @@ export class AppComponent implements OnInit {
     '/lawnd': 'LAW || ND Communications',
     '/difference': 'The Difference Society',
     '/cw': 'Charlotte\'s Web',
-    '/innovative-concepts': 'Innovative Concepts'
+    '/innovative-concepts': 'Innovative Concepts',
+    '/advance-features': 'Advance Features',
   };
 
   navItems = [

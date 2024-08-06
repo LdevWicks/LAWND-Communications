@@ -15,16 +15,18 @@ import { EntrepreneurshipComponent } from './entrepreneurship/entrepreneurship.c
 import { CybersecurityComponent } from './cybersecurity/cybersecurity.component';
 import { CommonModule } from '@angular/common';
 import { CurrencyPipe } from '@angular/common';
-import { InnovativeComponent } from './innovative/innovative.component';
+import { InnovativeComponent } from './nonprofit/innovative/innovative.component';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { MFAComponent } from './mfa/mfa.component';
 import { AuthService } from './auth.service';
 import { YekizeComponent } from './yekize/yekize.component';
-import { DifferenceComponent } from './difference/difference.component';
-import { CwComponent } from './cw/cw.component';
-import { LAWNDComponent } from './lawnd/lawnd.component';
+import { DifferenceComponent } from './nonprofit/difference/difference.component';
+import { CwComponent } from './nonprofit/cw/cw.component';
+import { LAWNDComponent } from './entrepreneurship/lawnd/lawnd.component';
 import { AdvanceFeaturesComponent } from './advance-features/advance-features.component';
 import { AuthGuard } from './auth.guard';
+import {ApiService} from './api.service';
+import { provideHttpClient } from '@angular/common/http';
 
 
 
@@ -65,7 +67,7 @@ export const routes: Routes = [
     AppRoutingModule, // Import AppRoutingModule here
     // Other modules you might need
   ],
-  providers: [AuthService],
+  providers: [AuthService, ApiService, provideHttpClient()],
 })
 export class AppModule implements DoBootstrap {
   ngDoBootstrap(appRef: import('@angular/core').ApplicationRef): void {

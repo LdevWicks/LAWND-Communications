@@ -1,6 +1,27 @@
-<p>advance-features works!</p>
 <div>
-    <h2>Welcome to the Dashboard!</h2>
-    <button (click)="logout()">Logout</button>
+    <div class="dashboard">
+      <mat-toolbar color="primary">
+        <span>Secure DevOps Dashboard</span>
+        <span class="spacer"></span>
+        <button mat-button (click)="logout()">Logout</button>
+      </mat-toolbar>
+      <mat-tab-group>
+        
+        <mat-tab label="Vulnerability Scanning">
+          <app-vulnerability-report [vulnerabilities]="vulnerabilitiesData"></app-vulnerability-report>
+        </mat-tab>
+        <mat-tab label="Compliance">
+          <app-compliance-report></app-compliance-report>
+        </mat-tab>
+        <mat-tab label="Incident Response">
+          <app-incident-response></app-incident-response>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+    
+    
   </div>
+  
+
+
   

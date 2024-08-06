@@ -4,7 +4,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import { EntertainmentComponent } from "../entertainment/entertainment.component";
 import {MatTableModule} from '@angular/material/table';
-import { DiscussionBoardComponent } from '../discussion-board/discussion-board.component';
+import { DiscussionBoardComponent } from '../cybersecurity/discussion-board/discussion-board.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDividerModule} from '@angular/material/divider';
 import { RouterModule, Router } from '@angular/router';

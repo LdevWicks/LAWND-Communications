@@ -14,15 +14,10 @@ import {VulnerabilityReportComponent} from './vulnerability-report/vulnerability
   standalone: true,
   imports: [MatTabsModule, MatToolbarModule, MatCardModule, ComplianceReportComponent, IncidentResponseComponent, VulnerabilityReportComponent],
   templateUrl: './advance-features.component.html',
-  styleUrl: './advance-features.component.css'
+  styleUrls:[ './advance-features.component.css']
 })
 export class AdvanceFeaturesComponent {
-  vulnerabilitiesData = [
-    { id: 'VULN-001', severity: 'Critical', description: 'SQL Injection', status: 'Open' },
-    { id: 'VULN-002', severity: 'High', description: 'Cross-Site Scripting', status: 'In Progress' },
-    { id: 'VULN-003', severity: 'Medium', description: 'Sensitive Data Exposure', status: 'Resolved' },
-    { id: 'VULN-004', severity: 'Low', description: 'Security Misconfiguration', status: 'Resolved' }
-  ];
+  
   constructor(private authService: AuthService) {}
 
   logout() {

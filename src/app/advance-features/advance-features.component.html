@@ -3,12 +3,12 @@
       <mat-toolbar color="primary">
         <span>Secure DevOps Dashboard</span>
         <span class="spacer"></span>
-        <button mat-button (click)="logout()">Logout</button>
+        <button mat-button class="rButton" (click)="logout()">Logout</button>
       </mat-toolbar>
       <mat-tab-group>
         
         <mat-tab label="Vulnerability Scanning">
-          <app-vulnerability-report [vulnerabilities]="vulnerabilitiesData"></app-vulnerability-report>
+          <app-vulnerability-report></app-vulnerability-report>
         </mat-tab>
         <mat-tab label="Compliance">
           <app-compliance-report></app-compliance-report>

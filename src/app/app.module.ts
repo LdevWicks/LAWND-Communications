@@ -27,10 +27,10 @@ import { AdvanceFeaturesComponent } from './advance-features/advance-features.co
 import { AuthGuard } from './auth.guard';
 import {ApiService} from './api.service';
 import { provideHttpClient } from '@angular/common/http';
-
-
-
-
+import { VulnerabilityReportComponent } from './advance-features/vulnerability-report/vulnerability-report.component';
+import { ComplianceReportComponent } from './advance-features/compliance-report/compliance-report.component';
+import { IncidentResponseComponent } from './advance-features/incident-response/incident-response.component';
+import { DashboardComponent } from './advance-features/dashboard/dashboard.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -45,7 +45,18 @@ export const routes: Routes = [
   { path: 'cw', component: CwComponent },
   { path: 'lawnd', component: LAWNDComponent },
   { path: 'mfa-login', component: MFAComponent },
-  { path: 'advance-features', component: AdvanceFeaturesComponent, canActivate: [AuthGuard] },
+  {
+    path: 'advance-features',
+    component: AdvanceFeaturesComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: 'vulnerability-report', component: VulnerabilityReportComponent },
+      { path: 'compliance-report', component: ComplianceReportComponent },
+      { path: 'incident-response', component: IncidentResponseComponent },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' } // Default to vulnerability report
+    ]
+  },
   { path: '', redirectTo: '/mfa-login', pathMatch: 'full' }, // Default to MFA login
   { path: '**', redirectTo: '' } // Redirect any other path to home
 ];

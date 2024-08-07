@@ -1,27 +1,40 @@
-<div>
-    <div class="dashboard">
-      <mat-toolbar color="primary">
-        <span>Secure DevOps Dashboard</span>
-        <span class="spacer"></span>
-        <button mat-button class="rButton" (click)="logout()">Logout</button>
-      </mat-toolbar>
-      <mat-tab-group>
-        
-        <mat-tab label="Vulnerability Scanning">
-          <app-vulnerability-report></app-vulnerability-report>
-        </mat-tab>
-        <mat-tab label="Compliance">
-          <app-compliance-report></app-compliance-report>
-        </mat-tab>
-        <mat-tab label="Incident Response">
-          <app-incident-response></app-incident-response>
-        </mat-tab>
-      </mat-tab-group>
-    </div>
-    
-    
-  </div>
-  
+<mat-sidenav-container class="sidenav-container">
+  <!-- Side nav -->
+  <mat-sidenav #sidenav mode="side" [opened]="isSidenavOpen" class="sidenav">
+    <mat-nav-list>
+      <a mat-list-item routerLink="dashboard" routerLinkActive="active-link">
+        <mat-icon>home</mat-icon>
+        <span>Dashboard</span>
+      </a>
+      <a mat-list-item routerLink="vulnerability-report" routerLinkActive="active-link">
+        <mat-icon>security</mat-icon>
+        <span>Vulnerability Scanning</span>
+      </a>
+      <a mat-list-item routerLink="compliance-report" routerLinkActive="active-link">
+        <mat-icon>verified_user</mat-icon>
+        <span>Compliance</span>
+      </a>
+      <a mat-list-item routerLink="incident-response" routerLinkActive="active-link">
+        <mat-icon>report_problem</mat-icon>
+        <span>Incident Response</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
 
+  <!-- Main content area -->
+  <mat-sidenav-content class="content">
+    <!-- Toolbar -->
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="toggleSidenav()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Secure DevOps Dashboard</span>
+      <span class="spacer"></span>
+      <button mat-button class="rButton" (click)="logout()">Logout</button>
+    </mat-toolbar>
 
-  
+    <!-- Router outlet for dynamic content -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

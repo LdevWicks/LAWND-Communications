@@ -1,28 +1,45 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
-import {ComplianceReportComponent} from'./compliance-report/compliance-report.component';
-import {IncidentResponseComponent} from './incident-response/incident-response.component';
-import {VulnerabilityReportComponent} from './vulnerability-report/vulnerability-report.component';
-
-
+import { RouterModule } from '@angular/router';
+import { MatSidenavModule  } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 @Component({
-  selector: 'app-advance-features',
   standalone: true,
-  imports: [MatTabsModule, MatToolbarModule, MatCardModule, ComplianceReportComponent, IncidentResponseComponent, VulnerabilityReportComponent],
+  selector: 'app-advance-features',
   templateUrl: './advance-features.component.html',
-  styleUrls:[ './advance-features.component.css']
+  styleUrls: ['./advance-features.component.css'],
+  imports:[ 
+    MatCardModule, 
+    MatListModule, 
+    MatIconModule,
+    MatToolbarModule, 
+    MatSidenavModule,
+    RouterModule],
 })
-export class AdvanceFeaturesComponent {
-  
+
+export class AdvanceFeaturesComponent implements OnInit {
+  vulnerabilityMetrics: any;
+  complianceMetrics: any;
+  incidentMetrics: any;
+  isSidenavOpen = true; 
+
   constructor(private authService: AuthService) {}
+
+  ngOnInit(): void {
+
+  }
 
   logout() {
     this.authService.logout();
   }
 
+  toggleSidenav() {
+    this.isSidenavOpen = !this.isSidenavOpen;
+  }
 }
+
 

@@ -1,0 +1,55 @@
+/* Ensure the sidenav container takes full height */
+.sidenav-container {
+    height: 100vh;
+    display: flex;
+  }
+  
+  /* Side nav styles */
+  .sidenav {
+    width: 250px;
+    background-color: #2d2d2d; /* Dark grey background */
+    color: #f0f0f0; /* Light text color */
+  }
+  
+  /* Sidenav item styles */
+  .sidenav .mat-list-item {
+    color: #f0f0f0;
+  }
+  
+  .sidenav .mat-list-item.active-link {
+    background-color: #3c3c3c; /* Highlighted item color */
+  }
+  
+  /* Content area styles */
+  .content {
+    padding: 20px;
+    flex: 1;
+  }
+  
+  /* Toolbar styles */
+  .mat-toolbar {
+    background-color: #1e1e1e; /* Dark toolbar background */
+    color: #f0f0f0; /* Light text color */
+  }
+  
+  /* Dashboard metrics styles */
+  .dashboard-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .dashboard-card {
+    width: calc(33% - 20px);
+    background-color: #3c3c3c; /* Dark grey card background */
+    color: #f0f0f0; /* Light text color */
+    margin: 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .rButton {
+    margin-left: auto;
+  }
+  

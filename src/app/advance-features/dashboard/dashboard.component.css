@@ -53,3 +53,13 @@
     margin-left: auto;
   }
   
+
+  .trans{
+    background-color: transparent;
+  }
+
+  .container{
+    height:100h;
+    width:97vw;
+    overflow: hidden;
+  }

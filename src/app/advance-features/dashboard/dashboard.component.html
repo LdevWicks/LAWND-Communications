@@ -1,33 +1,68 @@
 <!-- Dashboard Metrics -->
 <br/>
+<div class="container">
 <p>The Secure DevOps Pipeline project is designed to enhance the security and compliance of software development and deployment processes. By integrating components for managing vulnerabilities, incidents, and compliance, the project aims to provide a comprehensive solution for tracking, addressing, and ensuring adherence to security standards and regulations throughout the development lifecycle.</p>
 <br/>
 <div class="dashboard-metrics">
-    <mat-card class="dashboard-card">
-      <mat-card-title>Vulnerability Metrics</mat-card-title>
-      <mat-card-content>
-        <p>Total Vulnerabilities: {{ vulnerabilityMetrics?.total }}</p>
-        <p>Critical Vulnerabilities: {{ vulnerabilityMetrics?.critical }}</p>
-        <p>High Vulnerabilities: {{ vulnerabilityMetrics?.high }}</p>
-      </mat-card-content>
-    </mat-card>
+  <mat-card class="dashboard-card">
+    <mat-card-title>Vulnerability Metrics</mat-card-title>
+    <br/>
+    <mat-card-content>
+      
+      <p>Total Vulnerabilities: {{ vulnerabilityMetrics?.total }}</p>
+      <p>Critical Vulnerabilities: {{ vulnerabilityMetrics?.critical }}</p>
+      <p>High Vulnerabilities: {{ vulnerabilityMetrics?.high }}</p>
+      <p>Medium Vulnerabilities: {{ vulnerabilityMetrics?.high }}</p>
+      <p>Low Vulnerabilities: {{ vulnerabilityMetrics?.high }}</p>
 
-    <mat-card class="dashboard-card">
-      <mat-card-title>Compliance Metrics</mat-card-title>
-      <mat-card-content>
-        <p>Compliance Rate: {{ complianceMetrics?.complianceRate }}%</p>
-        <p>Non-Compliant Items: {{ complianceMetrics?.nonCompliantItems }}</p>
-      </mat-card-content>
-    </mat-card>
+    </mat-card-content>
+    <br/>
+    
+    <ag-charts class="trans"
+    [options]="vulnerabilityChartOptions"
+    class="chart">
+     </ag-charts>
 
-    <mat-card class="dashboard-card">
-      <mat-card-title>Incident Response Metrics</mat-card-title>
-      <mat-card-content>
-        <p>Total Incidents: {{ incidentMetrics?.totalIncidents }}</p>
-        <p>Critical Incidents: {{ incidentMetrics?.criticalIncidents }}</p>
-        <p>High Severity Incidents: {{ incidentMetrics?.highSeverityIncidents }}</p>
-        <p>Resolved Incidents: {{ incidentMetrics?.resolvedIncidents }}</p>
-        <p>Open Incidents: {{ incidentMetrics?.openIncidents }}</p>
-      </mat-card-content>
-    </mat-card>
+</mat-card>
+
+  <mat-card class="dashboard-card">
+    <mat-card-title>Compliance Metrics</mat-card-title>
+    <mat-card-content>
+   
+      <p>Compliance Rate: {{ complianceMetrics?.complianceRate }}%</p>
+      <p>Non-Compliant Items: {{ complianceMetrics?.nonCompliantItems }}</p>
+      <p>In Progress Items: {{ complianceMetrics?.inProgressItems }}</p>
+      <p>Pending Items: {{ complianceMetrics?.pendingItems }}</p>
+      
+    </mat-card-content>
+
+    <br/>
+    
+    <ag-charts class="trans"
+    [options]="complianceChartOptions"
+    class="chart">
+     </ag-charts>
+  </mat-card>
+
+  <mat-card class="dashboard-card">
+    <mat-card-title>Incident Response Metrics</mat-card-title>
+    <mat-card-content>
+     
+      <p>Total Incidents: {{ incidentMetrics?.totalIncidents }}</p>
+      <p>Critical Incidents: {{ incidentMetrics?.criticalIncidents }}</p>
+      <p>High Severity Incidents: {{ incidentMetrics?.highSeverityIncidents }}</p>
+      <p>Medium Severity Incidents: {{ incidentMetrics?.mediumSeverityIncidents }}</p>
+      <p>Low Severity Incidents: {{ incidentMetrics?.lowSeverityIncidents }}</p>
+      <p>Resolved Incidents: {{ incidentMetrics?.resolvedIncidents }}</p>
+      <p>Open Incidents: {{ incidentMetrics?.openIncidents }}</p>
+
+    
+    </mat-card-content>
+    <ag-charts class="trans"
+      [options]="incidentChartOptions"
+      class="chart">
+       </ag-charts>
+  </mat-card>
+</div>
+<br/>
 </div>

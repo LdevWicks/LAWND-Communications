@@ -59,14 +59,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "path-to-ciso:build"
+            "buildTarget": "path-to-ciso:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "path-to-ciso:build:production"
+              "buildTarget": "path-to-ciso:build:production"
             },
             "development": {
-              "browserTarget": "path-to-ciso:build:development"
+              "buildTarget": "path-to-ciso:build:development"
             }
           },
           "defaultConfiguration": "development"

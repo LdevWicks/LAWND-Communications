@@ -31,6 +31,8 @@ import { VulnerabilityReportComponent } from './advance-features/vulnerability-r
 import { ComplianceReportComponent } from './advance-features/compliance-report/compliance-report.component';
 import { IncidentResponseComponent } from './advance-features/incident-response/incident-response.component';
 import { DashboardComponent } from './advance-features/dashboard/dashboard.component';
+import { AgChartsModule } from 'ag-charts-angular';
+
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -70,6 +72,7 @@ export const routes: Routes = [
     BrowserModule,
     CommonModule,
     CurrencyPipe,
+    AgChartsModule,
     BrowserAnimationsModule,
     AngularFireAuthModule,
     AngularFirestoreModule,

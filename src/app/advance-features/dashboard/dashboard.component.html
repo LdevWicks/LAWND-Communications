@@ -1,0 +1,31 @@
+<!-- Dashboard Metrics -->
+ <br/>
+<p>The Secure DevOps Pipeline project is designed to enhance the security and compliance of software development and deployment processes. By integrating components for managing vulnerabilities, incidents, and compliance, the project aims to provide a comprehensive solution for tracking, addressing, and ensuring adherence to security standards and regulations throughout the development lifecycle.</p>
+<br/>
+<div class="dashboard-metrics">
+    <mat-card class="dashboard-card">
+      <mat-card-title>Vulnerability Metrics</mat-card-title>
+      <mat-card-content>
+        <p>Total Vulnerabilities: {{ vulnerabilityMetrics?.total }}</p>
+        <p>Critical Vulnerabilities: {{ vulnerabilityMetrics?.critical }}</p>
+        <p>High Vulnerabilities: {{ vulnerabilityMetrics?.high }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="dashboard-card">
+      <mat-card-title>Compliance Metrics</mat-card-title>
+      <mat-card-content>
+        <p>Compliance Rate: {{ complianceMetrics?.complianceRate }}%</p>
+        <p>Non-Compliant Items: {{ complianceMetrics?.nonCompliantItems }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="dashboard-card">
+      <mat-card-title>Incident Response Metrics</mat-card-title>
+      <mat-card-content>
+        <p>Total Incidents: {{ incidentMetrics?.totalIncidents }}</p>
+        <p>Open Incidents: {{ incidentMetrics?.openIncidents }}</p>
+        <p>Resolved Incidents: {{ incidentMetrics?.resolvedIncidents }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>

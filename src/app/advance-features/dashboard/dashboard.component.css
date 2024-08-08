@@ -1,65 +1,56 @@
-/* Ensure the sidenav container takes full height */
-.sidenav-container {
-    height: 100vh;
-    display: flex;
-  }
-  
-  /* Side nav styles */
-  .sidenav {
-    width: 250px;
-    background-color: #2d2d2d; /* Dark grey background */
-    color: #f0f0f0; /* Light text color */
-  }
-  
-  /* Sidenav item styles */
-  .sidenav .mat-list-item {
-    color: #f0f0f0;
-  }
-  
-  .sidenav .mat-list-item.active-link {
-    background-color: #3c3c3c; /* Highlighted item color */
-  }
-  
-  /* Content area styles */
-  .content {
-    padding: 20px;
-    flex: 1;
-  }
-  
-  /* Toolbar styles */
-  .mat-toolbar {
-    background-color: #1e1e1e; /* Dark toolbar background */
-    color: #f0f0f0; /* Light text color */
-  }
-  
-  /* Dashboard metrics styles */
-  .dashboard-metrics {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .dashboard-card {
-    width: calc(33% - 20px);
-    background-color: #3c3c3c; /* Dark grey card background */
-    color: #f0f0f0; /* Light text color */
-    margin: 0;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  }
-  
-  .rButton {
-    margin-left: auto;
-  }
-  
+/* Container styles */
+.container {
+  max-height: 99%;
+  width: 97vw;
+  overflow: hidden; /* Hide overflow */
+  overflow-x: hidden;
 
-  .trans{
-    background-color: transparent;
-  }
+}
 
-  .container{
-    height:100h;
-    width:97vw;
-    overflow: hidden;
-  }
+/* Flex container for dashboard metrics */
+.dashboard-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  flex: 1;
+  overflow: hidden; /* Prevent overflow within this container */
+}
+
+/* Individual dashboard card styles */
+.dashboard-card {
+  flex: 1 1 calc(33.333% - 20px);
+  max-width: calc(33.333% - 20px);
+  background-color: #3c3c3c;
+  color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  overflow: hidden; /* Hide overflow within cards */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Chart container styles */
+.chart {
+  height: 200px; /* Fixed height */
+  width: 100%; /* Full width of parent container */
+}
+
+/* Ensure all text and elements do not exceed their container */
+.mat-card-content p,
+.mat-card-content b {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.mat-form-field {
+  width: 100%; /* Ensure the form field takes full width */
+}
+
+.fSize{
+  font-size: smaller;
+  color:rgb(129, 129, 129);
+}

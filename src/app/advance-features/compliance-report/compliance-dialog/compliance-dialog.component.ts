@@ -5,17 +5,25 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';  // Import ReactiveFormsModule
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @Component({
   selector: 'app-compliance-dialog',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule,ReactiveFormsModule, FormsModule, CommonModule],
+  imports: [ MatFormFieldModule,
+             MatSelectModule,
+             MatInputModule,
+             ReactiveFormsModule, 
+             FormsModule, 
+             CommonModule],
+             
   templateUrl: './compliance-dialog.component.html',
   styleUrls:[ './compliance-dialog.component.css']
 })
 export class ComplianceDialogComponent {
-
+  severityLevels: string[] = ['Critical', 'High', 'Medium', 'Low'];
+  statusLevels: string[] = ['Open', 'In Progress', 'Resolved'];
   form: FormGroup;
 
   constructor(

@@ -1,6 +1,6 @@
 .compliance-report {
     width: 100%;
-    max-width: 900px;
+    max-width: 97%;
     margin: 0 auto;
     background-color: #fff;
     border-radius: 8px;
@@ -46,16 +46,18 @@
   }
   
   table td.high {
-    color: #ff9100;
+    color: #ff8000;
     font-weight: bold;
   }
   
   table td.medium {
-    color: #ffea00;
+    color: #eaa903;
+    font-weight: bold;
   }
   
   table td.low {
     color: #00e676;
+    font-weight: bold;
   }
   
   table td.pending {

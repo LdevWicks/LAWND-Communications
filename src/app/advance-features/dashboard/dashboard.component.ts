@@ -58,10 +58,10 @@ export class DashboardComponent implements OnInit {
     // Vulnerability Chart
     this.vulnerabilityChartOptions = {
       data: [
-        { label: 'Critical', value: this.vulnerabilityMetrics?.critical || 0 },
-        { label: 'High', value: this.vulnerabilityMetrics?.high || 0 },
-        { label: 'Medium', value: this.vulnerabilityMetrics?.medium || 0 },
-        { label: 'Low', value: this.vulnerabilityMetrics?.low || 0 },
+        { label: 'Critical', category:'Critical', value: this.vulnerabilityMetrics?.critical || 0 },
+        { label: 'High',category:'High', value: this.vulnerabilityMetrics?.high || 0 },
+        { label: 'Medium', category:'Medium', value: this.vulnerabilityMetrics?.medium || 0 },
+        { label: 'Low', category:'Low', value: this.vulnerabilityMetrics?.low || 0 },
        // { label: 'Total', value: this.vulnerabilityMetrics ? (this.vulnerabilityMetrics.total - (this.vulnerabilityMetrics.critical + this.vulnerabilityMetrics.high)) : 0 }
       ],
       background: {
@@ -71,15 +71,14 @@ export class DashboardComponent implements OnInit {
         {
           type: 'pie',
           angleKey: 'value',
+          
           calloutLabelKey: 'label',
           calloutLabel: {
             enabled: true,
             color: '#FFFFFF'
           },
           fills: ['#710C05', '#FF5800', '#F8D568','#355E3B'], // Color for segments
-          tooltip: {
-            renderer: (params) => `${params.datum.label}: ${params.datum.value}`
-          }
+          
         }
       ],
       legend: {
@@ -103,16 +102,16 @@ this.complianceChartOptions = {
         { label:'Non-Compliant', category: 'Non-Compliant', value: this.complianceMetrics?.nonCompliantItems || 0 }
       ],
       type: 'donut',
-     sectorLabelKey: 'category',
+      sectorLabelKey: 'category',
       angleKey: 'value',
       outerRadiusRatio: 0.8,
       innerRadiusRatio: 0.6,
      // fillOpacity: 0.6,
       tooltip: {
+        
         renderer: ({ datum, angleKey, sectorLabelKey }) => ({
           content: `${datum[sectorLabelKey]}: ${datum[angleKey]}`,
-        }
-      ),
+        }),
       
       },
       showInLegend: false,
@@ -157,12 +156,12 @@ this.complianceChartOptions = {
     // Incident Chart
     this.incidentChartOptions = {
       data: [
-        { label: 'Critical', value: this.incidentMetrics?.criticalIncidents || 0 },
-        { label: 'High', value: this.incidentMetrics?.highSeverityIncidents || 0 },
-        { label: 'Medium', value: this.incidentMetrics?.mediumSeverityIncidents || 0 },
-        { label: 'Low', value: this.incidentMetrics?.lowSeverityIncidents || 0 },
-        { label: 'Resolved', value: this.incidentMetrics?.resolvedIncidents || 0 },
-        { label: 'Open', value: this.incidentMetrics?.openIncidents || 0 },
+        { label: 'Critical', category:'Critical', value: this.incidentMetrics?.criticalIncidents || 0 },
+        { label: 'High', category:'High',value: this.incidentMetrics?.highSeverityIncidents || 0 },
+        { label: 'Medium',category:'Medium', value: this.incidentMetrics?.mediumSeverityIncidents || 0 },
+        { label: 'Low', category:'Low',value: this.incidentMetrics?.lowSeverityIncidents || 0 },
+        { label: 'Resolved',category:'Resolved', value: this.incidentMetrics?.resolvedIncidents || 0 },
+        { label: 'Open', category:'Open', value: this.incidentMetrics?.openIncidents || 0 },
         // { label: 'Total Incidents', value: this.incidentMetrics?.totalIncidents || 0 }
       ],
       background: {
@@ -172,13 +171,14 @@ this.complianceChartOptions = {
         {
           type: 'donut',
           data: [
-            { label: 'Critical', value: this.incidentMetrics?.criticalIncidents || 0 },
-            { label: 'High', value: this.incidentMetrics?.highSeverityIncidents || 0 },
-            { label: 'Medium', value: this.incidentMetrics?.mediumSeverityIncidents || 0 },
-            { label: 'Low', value: this.incidentMetrics?.lowSeverityIncidents || 0 },
+            { label: 'Critical',category:'Critical', value: this.incidentMetrics?.criticalIncidents || 0 },
+            { label: 'High', category:'High',value: this.incidentMetrics?.highSeverityIncidents || 0 },
+            { label: 'Medium', category:'Medium',value: this.incidentMetrics?.mediumSeverityIncidents || 0 },
+            { label: 'Low', category:'Low',value: this.incidentMetrics?.lowSeverityIncidents || 0 },
           ],
           angleKey: 'value',
           calloutLabelKey: 'label',
+          sectorLabelKey:'category',
           innerRadiusRatio: 0.4,
           outerRadiusRatio: 0.6,
           fills: ['#710C05', '#FF5800', '#F8D568','#355E3B'],
@@ -187,7 +187,9 @@ this.complianceChartOptions = {
             color: '#FFFFFF'
           },
           tooltip: {
-            renderer: (params) => `${params.datum.label}: ${params.datum.value}`
+            renderer: ({ datum, angleKey, sectorLabelKey }) => ({
+              content: `${datum[sectorLabelKey]}: ${datum[angleKey]}`,
+            }),
           },
           showInLegend: true // Show this series in the legend
         },
@@ -198,11 +200,12 @@ this.complianceChartOptions = {
             showInLegend: false // Hide this series from the legend
           },
           data: [
-            { label: 'Resolved', value: this.incidentMetrics?.resolvedIncidents || 0 },
-            { label: 'Open', value: this.incidentMetrics?.openIncidents || 0 }
+            { label: 'Resolved', category:'Resolved', value: this.incidentMetrics?.resolvedIncidents || 0 },
+            { label: 'Open',category:'Open', value: this.incidentMetrics?.openIncidents || 0 }
           ],
           angleKey: 'value',
           calloutLabelKey: 'label',
+          sectorLabelKey:'category',
           innerRadiusRatio: 0.2,
           outerRadiusRatio: 0.4,
           fills: ['#292929', '#32CD32'],
@@ -211,7 +214,9 @@ this.complianceChartOptions = {
             color: '#FFFFFF'
           },
           tooltip: {
-            renderer: (params) => `${params.datum.label}: ${params.datum.value}`
+            renderer: ({ datum, angleKey, sectorLabelKey }) => ({
+              content: `${datum[sectorLabelKey]}: ${datum[angleKey]}`,
+            }),
           },
           showInLegend: false // Hide this series from the legend
         },
@@ -222,10 +227,11 @@ this.complianceChartOptions = {
             showInLegend: false // Hide this series from the legend
           },
           data: [
-            { label: 'Total Incidents', value: this.incidentMetrics?.totalIncidents || 0 }
+            { label: 'Total Incidents', category:'Total Incidents', value: this.incidentMetrics?.totalIncidents || 0 }
           ],
           angleKey: 'value',
           calloutLabelKey: 'label',
+          sectorLabelKey:'category',
           innerRadiusRatio: 0.0,
           outerRadiusRatio: 0.2,
           fills: ['#CCCCCC'],
@@ -234,7 +240,9 @@ this.complianceChartOptions = {
             color: '#FFFFFF'
           },
           tooltip: {
-            renderer: (params) => `${params.datum.label}: ${params.datum.value}`
+            renderer: ({ datum, angleKey, sectorLabelKey }) => ({
+              content: `${datum[sectorLabelKey]}: ${datum[angleKey]}`,
+            }),
           },
           showInLegend: false // Hide this series from the legend
         }

@@ -7,8 +7,9 @@
 /* Side nav styles */
 .sidenav {
   width: 250px;
-  background-color: #2d2d2d; /* Dark grey background */
+  background-color: aliceblue;; /* Transparent background */
   color: #f0f0f0; /* Light text color */
+  border-radius: 0;
 }
 
 /* Sidenav item styles */
@@ -28,8 +29,7 @@
 
 /* Toolbar styles */
 .mat-toolbar {
-  background-color: #1e1e1e; /* Dark toolbar background */
-  color: #f0f0f0; /* Light text color */
+  color: #101010; /* Light text color */
 }
 
 /* Dashboard metrics styles */
@@ -51,4 +51,14 @@
 
 .rButton {
   margin-left: auto;
+  background-color: #2d2d2d;
+  color:white;
+  border-radius: 10%;
+  height:30px;
+  width:70px;
+}
+
+.gButton{
+  background-color: #2d2d2d;
+  color:white;
 }

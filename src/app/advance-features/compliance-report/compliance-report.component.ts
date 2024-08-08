@@ -1,10 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../../api.service';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { ComplianceDialogComponent } from './compliance-dialog/compliance-dialog.component';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSortModule, MatSort } from '@angular/material/sort';
 
 interface ComplianceItem {
   id: string;
@@ -17,18 +21,32 @@ interface ComplianceItem {
 @Component({
   selector: 'app-compliance-report',
   standalone: true,
-  imports: [CommonModule, MatDialogModule, MatTableModule, MatButtonModule],
+  imports: [
+    CommonModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule,
+    MatTableModule,
+    MatButtonModule,
+  ],
   templateUrl: './compliance-report.component.html',
-  styleUrls: ['./compliance-report.component.css']
+  styleUrls: ['./compliance-report.component.css'],
 })
 export class ComplianceReportComponent implements OnInit {
-  compliance: ComplianceItem[] = [];
-  displayedColumns: string[] = ['id', 'category', 'description', 'severity', 'status', 'actions'];
+  displayedColumns: string[] = [
+    'id',
+    'category',
+    'description',
+    'severity',
+    'status',
+    'actions',
+  ];
+  dataSource = new MatTableDataSource<ComplianceItem>();
 
-  constructor(
-    private apiService: ApiService,
-    private dialog: MatDialog
-  ) {}
+  @ViewChild(MatSort) sort!: MatSort;
+
+  constructor(private apiService: ApiService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.loadCompliance();
@@ -36,27 +54,33 @@ export class ComplianceReportComponent implements OnInit {
 
   loadCompliance(): void {
     this.apiService.getCompliance().subscribe(
-      data => {
-        
+      (data: ComplianceItem[]) => {
         console.log('Fetched compliance data:', data);
-        this.compliance = data;
+        this.dataSource.data = data;
+        this.dataSource.sort = this.sort; // Set MatSort to dataSource
       },
-      error => {
+      (error) => {
         console.error('Error fetching compliance data', error);
-        
       }
     );
   }
 
- 
+  applyFilter(event: Event): void {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
   openDialog(item?: ComplianceItem): void {
     const dialogRef = this.dialog.open(ComplianceDialogComponent, {
-      data: item || {} // If item exists, pass it to dialog; otherwise, pass an empty object
+      data: item || {}, // If item exists, pass it to dialog; otherwise, pass an empty object
     });
-  
-    dialogRef.afterClosed().subscribe(result => {
+
+    dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        if (result.id && this.compliance.some(c => c.id === result.id)) {
+        if (
+          result.id &&
+          this.dataSource.data.some((c) => c.id === result.id)
+        ) {
           this.updateCompliance(result); // Update if the item exists
         } else {
           result.id = this.generateUniqueId(); // Generate a new ID for new items
@@ -65,48 +89,41 @@ export class ComplianceReportComponent implements OnInit {
       }
     });
   }
-  
-  // Generate a unique ID (you can customize this function as needed)
+
   generateUniqueId(): string {
     return 'COMP-' + Math.random().toString(36).substr(2, 5).toUpperCase();
   }
-  
-  addCompliance(compliance: any): void {
-    console.log('Adding compliance:', compliance); // Debug
-    this.apiService.addCompliance([compliance]).subscribe({ // Wrap the compliance item in an array
-      next: (data) => {
-        console.log('Compliance added:', data);
+
+  addCompliance(compliance: ComplianceItem): void {
+    this.apiService.addCompliance([compliance]).subscribe({
+      next: () => {
         this.loadCompliance(); // Reload data to reflect the addition
       },
       error: (err) => {
         console.error('Error adding compliance data:', err);
-      }
+      },
     });
   }
 
-  updateCompliance(compliance: any): void {
-    console.log('Updating compliance:', compliance); // Debug
+  updateCompliance(compliance: ComplianceItem): void {
     this.apiService.updateCompliance(compliance).subscribe({
-      next: (data) => {
-        console.log('Compliance updated:', data);
+      next: () => {
         this.loadCompliance(); // Reload data to reflect the update
       },
       error: (err) => {
         console.error('Error updating compliance data:', err);
-      }
+      },
     });
   }
 
   deleteCompliance(id: string): void {
-    console.log('Deleting compliance with ID:', id); // Debug
     this.apiService.deleteCompliance(id).subscribe({
-      next: (data) => {
-        console.log('Compliance deleted:', data);
+      next: () => {
         this.loadCompliance(); // Reload data to reflect the deletion
       },
       error: (err) => {
         console.error('Error deleting compliance data:', err);
-      }
+      },
     });
   }
 
@@ -138,4 +155,3 @@ export class ComplianceReportComponent implements OnInit {
     }
   }
 }
-

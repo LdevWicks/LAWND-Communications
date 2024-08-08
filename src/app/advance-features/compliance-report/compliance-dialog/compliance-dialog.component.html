@@ -1,30 +1,37 @@
-<h1 mat-dialog-title>{{ data?.id ? 'Edit Compliance' : 'Add Compliance' }}</h1>
-<div mat-dialog-content>
-  <form [formGroup]="form">
+<div class="container">
+  <h1 mat-dialog-title class="right">{{ data.id ? 'Edit Compliance' : 'New Compliance' }}</h1>
+  <div mat-dialog-content class="dialog-container">
+    <form [formGroup]="form" class="dialog-form">
+      
+      <mat-form-field appearance="fill">
+        <mat-label>Category</mat-label>
+        <input matInput formControlName="category">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="description">
+      </mat-form-field>
 
-
-    <mat-form-field appearance="fill">
-      <mat-label>Category</mat-label>
-      <input matInput formControlName="category">
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <mat-label>Description</mat-label>
-      <input matInput formControlName="description">
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <mat-label>Severity</mat-label>
-      <input matInput formControlName="severity">
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <mat-label>Status</mat-label>
-      <input matInput formControlName="status">
-    </mat-form-field>
-  </form>
-</div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onCancel()">Cancel</button>
-  <button mat-button color="primary" (click)="onSave()">Save</button>
-</div>
+      <mat-form-field>
+        <mat-label>Severity</mat-label>
+        <mat-select formControlName="severity">
+          <mat-option *ngFor="let severity of severityLevels" [value]="severity">{{ severity }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option *ngFor="let status of statusLevels" [value]="status">{{ status }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </div>
+  <div mat-dialog-actions class="dialog-form">
+    <button class="sButton" mat-button color="warn" (click)="onCancel()">Cancel</button> &nbsp;
+    <button class="sButton" mat-raised-button (click)="onSave()">Save</button>
+    <br/>
+    <br/>
+  </div>
+  </div>

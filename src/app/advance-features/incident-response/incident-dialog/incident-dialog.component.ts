@@ -5,16 +5,20 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';  // Import ReactiveFormsModule
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-incident-dialog',
   standalone: true,
-  imports: [CommonModule, MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, MatSelectModule, MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule],
   templateUrl: './incident-dialog.component.html',
   styleUrls:[ './incident-dialog.component.css']
 })
 export class IncidentDialogComponent {
   incidentForm: FormGroup;
+  severityLevels: string[] = ['Critical', 'High', 'Medium', 'Low'];
+  statusLevels: string[] = ['Investigating', 'Resolved', 'Ongoing', 'Mitgiated'];
+  typeLevels: string[] = ['Internal', 'External'];
 
   constructor(
     private fb: FormBuilder,

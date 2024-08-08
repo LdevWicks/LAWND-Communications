@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../../api.service';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { MatTableModule } from '@angular/material/table';
+import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
-import {IncidentDialogComponent} from './incident-dialog/incident-dialog.component';
+import { IncidentDialogComponent } from './incident-dialog/incident-dialog.component';
+import { MatSortModule, MatSort } from '@angular/material/sort';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 interface Incident {
   id: string;
-  name: string;
+  type: string;
   description: string;
   severity: string;
   status: string;
@@ -18,14 +21,17 @@ interface Incident {
 @Component({
   selector: 'app-incident-response',
   standalone: true,
-  imports: [CommonModule, MatTableModule, MatButtonModule, MatDialogModule],
+  imports: [CommonModule, MatTableModule, MatButtonModule, MatDialogModule, MatSortModule, MatFormFieldModule, MatInputModule],
   templateUrl: './incident-response.component.html',
   styleUrls: ['./incident-response.component.css']
 })
 export class IncidentResponseComponent implements OnInit {
   
   incidents: Incident[] = [];
-  displayedColumns: string[] = ['id', 'type', 'description', 'severity', 'status', 'actions'];
+  displayedColumns: string[] = ['id', 'description', 'severity', 'status', 'actions'];
+  dataSource = new MatTableDataSource<Incident>();
+
+  @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
     private apiService: ApiService,
@@ -41,6 +47,8 @@ export class IncidentResponseComponent implements OnInit {
       data => {
         console.log('Fetched incident data:', data);
         this.incidents = data;
+        this.dataSource.data = this.incidents;
+        this.dataSource.sort = this.sort; // Assign the sort property after the data is loaded
       },
       error => {
         console.error('Error fetching incident data', error);
@@ -133,4 +141,8 @@ export class IncidentResponseComponent implements OnInit {
     }
   }
 
+  applyFilter(event: Event): void {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 }

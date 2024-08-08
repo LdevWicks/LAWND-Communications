@@ -1,6 +1,6 @@
 .incident-response {
     width: 100%;
-    max-width: 900px;
+    max-width: 97%;
     margin: 0 auto;
     background-color: #fff;
     border-radius: 8px;
@@ -46,32 +46,36 @@
   }
   
   table td.high {
-    color: #f57c00;
+    color: #d06603;
     font-weight: bold;
   }
   
   table td.medium {
-    color: #ffa000;
+    color: #fbbf56;
+    font-weight: bold;
   }
   
   table td.low {
     color: #388e3c;
+    font-weight: bold;
   }
   
   table td.investigating {
-    color: #d32f2f;
+    color: #252525;
     font-weight: bold;
   }
+  
   
   table td.resolved {
     color: #388e3c;
     font-weight: bold;
   }
-  
+
   table td.ongoing {
-    color: #f57c00;
+    color: #2500b7;
     font-weight: bold;
   }
+
   
   table td.mitigated {
     color: #0288d1;

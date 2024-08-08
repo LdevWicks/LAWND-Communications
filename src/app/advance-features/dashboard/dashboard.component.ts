@@ -2,12 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { AgCharts } from 'ag-charts-angular';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
 import { AgChartOptions } from 'ag-charts-community';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [MatCardModule, AgCharts],
+  imports: [MatCardModule, MatFormFieldModule, MatOptionModule, MatSelectModule, AgCharts],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
@@ -59,7 +62,7 @@ export class DashboardComponent implements OnInit {
         { label: 'High', value: this.vulnerabilityMetrics?.high || 0 },
         { label: 'Medium', value: this.vulnerabilityMetrics?.medium || 0 },
         { label: 'Low', value: this.vulnerabilityMetrics?.low || 0 },
-        { label: 'Total', value: this.vulnerabilityMetrics ? (this.vulnerabilityMetrics.total - (this.vulnerabilityMetrics.critical + this.vulnerabilityMetrics.high)) : 0 }
+       // { label: 'Total', value: this.vulnerabilityMetrics ? (this.vulnerabilityMetrics.total - (this.vulnerabilityMetrics.critical + this.vulnerabilityMetrics.high)) : 0 }
       ],
       background: {
         fill: 'transparent'
@@ -73,7 +76,7 @@ export class DashboardComponent implements OnInit {
             enabled: true,
             color: '#FFFFFF'
           },
-          fills: ['#FF0000', '#FFA500', '#00FF00'], // Color for segments
+          fills: ['#710C05', '#FF5800', '#F8D568','#355E3B'], // Color for segments
           tooltip: {
             renderer: (params) => `${params.datum.label}: ${params.datum.value}`
           }
@@ -89,39 +92,67 @@ export class DashboardComponent implements OnInit {
     };
 
     // Compliance Chart
-    this.complianceChartOptions = {
+    // Compliance Chart
+this.complianceChartOptions = {
+  container: document.getElementById("complianceChart"),
+  
+  series: [
+    {
       data: [
-        { label: 'Compliant', value: this.complianceMetrics?.complianceRate || 0 },
-        { label: 'Non-Compliant', value: this.complianceMetrics?.nonCompliantItems || 0 },
-        { label: 'In Progress', value: this.complianceMetrics?.inProgressItems || 0 },
-        { label: 'Pending', value: this.complianceMetrics?.pendingItems || 0 }
+        { label:'Compliant', category: 'Compliant', value: this.complianceMetrics?.complianceRate || 0 },
+        { label:'Non-Compliant', category: 'Non-Compliant', value: this.complianceMetrics?.nonCompliantItems || 0 }
       ],
-      background: {
-        fill: 'transparent'
+      type: 'donut',
+     sectorLabelKey: 'category',
+      angleKey: 'value',
+      outerRadiusRatio: 0.8,
+      innerRadiusRatio: 0.6,
+     // fillOpacity: 0.6,
+      tooltip: {
+        renderer: ({ datum, angleKey, sectorLabelKey }) => ({
+          content: `${datum[sectorLabelKey]}: ${datum[angleKey]}`,
+        }
+      ),
+      
       },
-      series: [
-        {
-          type: 'pie',
-          angleKey: 'value',
-          calloutLabelKey: 'label',
-          calloutLabel: {
-            enabled: true,
-            color: '#FFFFFF'
-          },
-          fills: ['#00FF00', '#FF0000'], // Color for segments
-          tooltip: {
-            renderer: (params) => `${params.datum.label}: ${params.datum.value}`
-          }
-        }
+      showInLegend: false,
+      fills: ['#FFFFFF', '#FF5800'],
+    },
+    
+    {
+      data: [
+        { label:'Completed', category: 'Completed', value: this.complianceMetrics?.completedItems || 0 },
+        { label:'In Progress', category: 'In Progress', value: this.complianceMetrics?.inProgressItems || 0 },
+        { label: 'Pending', category: 'Pending', value: this.complianceMetrics?.pendingItems || 0 }
       ],
-      legend: {
-        item: {
-          label: {
-            color: '#FFFFFF'
-          }
-        }
+      type: 'donut',
+      sectorLabelKey: 'category',
+      angleKey: 'value',
+      outerRadiusRatio: 0.6,
+      innerRadiusRatio: 0.4,
+      fillOpacity: 0.6,
+      tooltip: {
+        renderer: ({ datum, angleKey, sectorLabelKey }) => ({
+          content: `${datum[sectorLabelKey]}: ${datum[angleKey]}`,
+        }),
+      
+      },
+      fills:['#30AD23','#191970','#FFFC00',]
+    }
+  ],
+  legend: {
+    enabled: true,
+    item: {
+      label: {
+        color: '#FFFFFF'
       }
-    };
+    }
+  },
+  background: {
+    fill: 'transparent'
+  }
+};
+
 
     // Incident Chart
     this.incidentChartOptions = {
@@ -131,24 +162,81 @@ export class DashboardComponent implements OnInit {
         { label: 'Medium', value: this.incidentMetrics?.mediumSeverityIncidents || 0 },
         { label: 'Low', value: this.incidentMetrics?.lowSeverityIncidents || 0 },
         { label: 'Resolved', value: this.incidentMetrics?.resolvedIncidents || 0 },
-        { label: 'Open', value: this.incidentMetrics?.openIncidents || 0 }
+        { label: 'Open', value: this.incidentMetrics?.openIncidents || 0 },
+        // { label: 'Total Incidents', value: this.incidentMetrics?.totalIncidents || 0 }
       ],
       background: {
         fill: 'transparent'
       },
       series: [
         {
-          type: 'pie',
+          type: 'donut',
+          data: [
+            { label: 'Critical', value: this.incidentMetrics?.criticalIncidents || 0 },
+            { label: 'High', value: this.incidentMetrics?.highSeverityIncidents || 0 },
+            { label: 'Medium', value: this.incidentMetrics?.mediumSeverityIncidents || 0 },
+            { label: 'Low', value: this.incidentMetrics?.lowSeverityIncidents || 0 },
+          ],
           angleKey: 'value',
           calloutLabelKey: 'label',
+          innerRadiusRatio: 0.4,
+          outerRadiusRatio: 0.6,
+          fills: ['#710C05', '#FF5800', '#F8D568','#355E3B'],
           calloutLabel: {
             enabled: true,
             color: '#FFFFFF'
           },
-          fills: ['#FF0000', '#FFA500', '#00FF00', '#FFFFFF'], // Color for segments
           tooltip: {
             renderer: (params) => `${params.datum.label}: ${params.datum.value}`
-          }
+          },
+          showInLegend: true // Show this series in the legend
+        },
+        {
+          type: 'donut',
+          title: {
+            text: "Status",
+            showInLegend: false // Hide this series from the legend
+          },
+          data: [
+            { label: 'Resolved', value: this.incidentMetrics?.resolvedIncidents || 0 },
+            { label: 'Open', value: this.incidentMetrics?.openIncidents || 0 }
+          ],
+          angleKey: 'value',
+          calloutLabelKey: 'label',
+          innerRadiusRatio: 0.2,
+          outerRadiusRatio: 0.4,
+          fills: ['#292929', '#32CD32'],
+          calloutLabel: {
+            enabled: true,
+            color: '#FFFFFF'
+          },
+          tooltip: {
+            renderer: (params) => `${params.datum.label}: ${params.datum.value}`
+          },
+          showInLegend: false // Hide this series from the legend
+        },
+        {
+          type: 'donut',
+          title: {
+            text: "Total Incidents",
+            showInLegend: false // Hide this series from the legend
+          },
+          data: [
+            { label: 'Total Incidents', value: this.incidentMetrics?.totalIncidents || 0 }
+          ],
+          angleKey: 'value',
+          calloutLabelKey: 'label',
+          innerRadiusRatio: 0.0,
+          outerRadiusRatio: 0.2,
+          fills: ['#CCCCCC'],
+          calloutLabel: {
+            enabled: true,
+            color: '#FFFFFF'
+          },
+          tooltip: {
+            renderer: (params) => `${params.datum.label}: ${params.datum.value}`
+          },
+          showInLegend: false // Hide this series from the legend
         }
       ],
       legend: {
@@ -156,9 +244,15 @@ export class DashboardComponent implements OnInit {
           label: {
             color: '#FFFFFF'
           }
-        }
+        },
+        position: 'bottom',
+        spacing: 10,
+        maxWidth: 300,
       }
     };
+    
+    
+    
 }
 
   vulnerabilityChartOptions: AgChartOptions = {};

@@ -5,15 +5,15 @@
 <br/>
 <div class="dashboard-metrics">
   <mat-card class="dashboard-card">
-    <mat-card-title>Vulnerability Metrics</mat-card-title>
+    <mat-card-title><b>Vulnerability Metrics</b></mat-card-title>
     <br/>
-    <mat-card-content>
+    <mat-card-content class="fSize">
       
-      <p>Total Vulnerabilities: {{ vulnerabilityMetrics?.total }}</p>
-      <p>Critical Vulnerabilities: {{ vulnerabilityMetrics?.critical }}</p>
-      <p>High Vulnerabilities: {{ vulnerabilityMetrics?.high }}</p>
-      <p>Medium Vulnerabilities: {{ vulnerabilityMetrics?.high }}</p>
-      <p>Low Vulnerabilities: {{ vulnerabilityMetrics?.high }}</p>
+    <h6><mat-card-subtitle><b>Total Vulnerabilities: {{ vulnerabilityMetrics?.total }}</b></mat-card-subtitle></h6>
+      <p><b>Critical Vulnerabilities: {{ vulnerabilityMetrics?.critical }}</b></p>
+      <p><b>High Vulnerabilities: {{ vulnerabilityMetrics?.high }}</b></p>
+      <p><b>Medium Vulnerabilities: {{ vulnerabilityMetrics?.high }}</b></p>
+      <p><b>Low Vulnerabilities: {{ vulnerabilityMetrics?.high }}</b></p>
 
     </mat-card-content>
     <br/>
@@ -26,13 +26,14 @@
 </mat-card>
 
   <mat-card class="dashboard-card">
-    <mat-card-title>Compliance Metrics</mat-card-title>
-    <mat-card-content>
-   
-      <p>Compliance Rate: {{ complianceMetrics?.complianceRate }}%</p>
-      <p>Non-Compliant Items: {{ complianceMetrics?.nonCompliantItems }}</p>
-      <p>In Progress Items: {{ complianceMetrics?.inProgressItems }}</p>
-      <p>Pending Items: {{ complianceMetrics?.pendingItems }}</p>
+    <mat-card-title><b>Compliance Metrics</b></mat-card-title>
+    <mat-card-content class=" fSize">
+   <br/>
+      <h6><mat-card-subtitle><b>Compliance Rate: {{ complianceMetrics?.complianceRate }}%</b></mat-card-subtitle></h6>
+      <p><b>Non-Compliant Items: {{ complianceMetrics?.nonCompliantItems }}</b></p>
+      <p><b>Completed Items: {{ complianceMetrics?.completedItems }}</b></p>
+      <p><b>In Progress Items: {{ complianceMetrics?.inProgressItems }}</b></p>
+      <p><b>Pending Items: {{ complianceMetrics?.pendingItems }}</b></p>
       
     </mat-card-content>
 
@@ -45,24 +46,28 @@
   </mat-card>
 
   <mat-card class="dashboard-card">
-    <mat-card-title>Incident Response Metrics</mat-card-title>
-    <mat-card-content>
-     
-      <p>Total Incidents: {{ incidentMetrics?.totalIncidents }}</p>
-      <p>Critical Incidents: {{ incidentMetrics?.criticalIncidents }}</p>
-      <p>High Severity Incidents: {{ incidentMetrics?.highSeverityIncidents }}</p>
-      <p>Medium Severity Incidents: {{ incidentMetrics?.mediumSeverityIncidents }}</p>
-      <p>Low Severity Incidents: {{ incidentMetrics?.lowSeverityIncidents }}</p>
-      <p>Resolved Incidents: {{ incidentMetrics?.resolvedIncidents }}</p>
-      <p>Open Incidents: {{ incidentMetrics?.openIncidents }}</p>
-
-    
+    <mat-card-title><b>Incident Response Metrics</b></mat-card-title>
+    <br/>
+    <mat-card-content class="fSize">
+   <h6><mat-card-subtitle><b>Total Incidents: {{ incidentMetrics?.totalIncidents }}</b></mat-card-subtitle></h6>
+      <p><b>Resolved Incidents: {{ incidentMetrics?.resolvedIncidents }}</b></p>
+      <p><b>Open Incidents: {{ incidentMetrics?.openIncidents }}</b></p>
+      
+      <!-- Severity Levels Dropdown -->
+      <mat-form-field appearance="outline">
+        <mat-label>Severity Levels</mat-label>
+        <mat-select>
+          <mat-option value="critical"><b>Critical: {{ incidentMetrics?.criticalIncidents }}</b></mat-option>
+          <mat-option value="high"><b>High: {{ incidentMetrics?.highSeverityIncidents }}</b></mat-option>
+          <mat-option value="medium"><b>Medium: {{ incidentMetrics?.mediumSeverityIncidents }}</b></mat-option>
+          <mat-option value="low"><b>Low: {{ incidentMetrics?.lowSeverityIncidents }}</b></mat-option>
+        </mat-select>
+      </mat-form-field>
     </mat-card-content>
-    <ag-charts class="trans"
-      [options]="incidentChartOptions"
-      class="chart">
-       </ag-charts>
+  
+    <ag-charts class="trans" [options]="incidentChartOptions" class="chart"></ag-charts>
   </mat-card>
+  
 </div>
 <br/>
 </div>

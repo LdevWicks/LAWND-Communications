@@ -63,24 +63,20 @@ LAWND || Communication provides top-tier crisis management services, tailored to
 </div>
 <br/>
 
-
-<h2 class="center"><b >Previous Projects</b></h2>
+<h2 class="center"><b>Previous Projects</b></h2>
 <div class="slideshow-container">
- 
   <div class="image-container" #scrollContainer>
     <div class="product-image" *ngFor="let product of teaProducts$ | async">
       <img [src]="product.imageUrl" alt="Product Image" class="product-image">
     </div>
   </div>
-
- 
 </div>
 
-</mat-card>
 <br/>
 <br/>
 <br/>
 <br/>
+
 <div class="stats-container">
   <div class="stat" *ngFor="let stat of stats" #statElement>
     <div class="stat-value">0</div>
@@ -89,8 +85,18 @@ LAWND || Communication provides top-tier crisis management services, tailored to
 </div>
 <br/>
 
+
 <div class="contact-us-container">
-  <h3 class="lAlign"><b>Interested in scheduling a consultation</b></h3>
+  <div class="header-container">
+    <h3 class="lAlign">
+      <b>Interested in scheduling a consultation</b>
+    </h3>
+    <button class="arrow-btn" (click)="toggleForm()">
+      <br/><mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+  </div>
+
+  <div class="form-container" [class.show]="isFormVisible">
     <h2>Contact Us</h2>
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
       <div>
@@ -121,7 +127,7 @@ LAWND || Communication provides top-tier crisis management services, tailored to
       <p>Thank you for your inquiry! We will get back to you soon.</p>
     </div>
   </div>
-  </div>
-  
+</div>
+
   
   

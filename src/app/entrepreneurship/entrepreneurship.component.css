@@ -68,7 +68,7 @@
   width: 100%;
   height: 300px; /* Adjust height as needed */
   background: linear-gradient(145deg, #ff4500, #f98253, #c31f02); /* Sunset orange and red gradient */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Shadow for luxury effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.425); /* Shadow for luxury effect */
    /* Rounded corners */
   overflow: hidden; /* Hide overflow */
 }
@@ -111,4 +111,6 @@
 
 .fSize{
   font-size:1px;
+  width:75vw;
+  text-align: left;
 }

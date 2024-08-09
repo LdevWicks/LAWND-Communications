@@ -22,6 +22,8 @@ export class LAWNDComponent implements OnInit {
   formSubmitted: boolean = false;
   images: any[] = [];
   currentIndex: number = 0;
+  isFormVisible = false;
+
 
   @ViewChildren('scrollContainer') scrollContainer!: ElementRef;
   @ViewChildren('statElement') statElements!: QueryList<ElementRef>;
@@ -122,5 +124,14 @@ export class LAWNDComponent implements OnInit {
       }
     });
   }
+
+  toggleForm(): void {
+    this.isFormVisible = !this.isFormVisible;
+    const arrowBtn = document.querySelector('.arrow-btn');
+    if (arrowBtn) {
+      arrowBtn.classList.toggle('rotate', this.isFormVisible);
+    }
+  }
+  
 
 }

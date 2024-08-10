@@ -46,10 +46,34 @@ export class ComplianceReportComponent implements OnInit {
 
   @ViewChild(MatSort) sort!: MatSort;
 
+  private severityOrder: { [key: string]: number } = {
+    'Critical': 1,
+    'High': 2,
+    'Medium': 3,
+    'Low': 4
+  };
+
+  private statusOrder: { [key: string]: number } = {
+    'Pending': 1,
+    'In Progress': 2,
+    'Completed': 3
+  };
+
   constructor(private apiService: ApiService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.loadCompliance();
+    this.dataSource.sortingDataAccessor = (item, property) => {
+      switch (property) {
+        case 'severity':
+          return this.severityOrder[item.severity]; // Use 99 for unknown severity
+        case 'status':
+          return this.statusOrder[item.status]; // Use 99 for unknown status
+        default:
+          return item[property as keyof ComplianceItem];
+      }
+    };
+    this.dataSource.sort = this.sort;
   }
 
   loadCompliance(): void {

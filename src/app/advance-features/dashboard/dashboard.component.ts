@@ -77,7 +77,7 @@ export class DashboardComponent implements OnInit {
             enabled: true,
             color: '#FFFFFF'
           },
-          fills: ['#710C05', '#FF5800', '#F8D568','#355E3B'], // Color for segments
+          fills: ['#C44601', '#F57600', '#F8D568','#00BF7D'], // Color for segments
           
         }
       ],
@@ -115,7 +115,7 @@ this.complianceChartOptions = {
       
       },
       showInLegend: false,
-      fills: ['#FFFFFF', '#FF5800'],
+      fills: ['#52f287', '#ed4245'],
     },
     
     {
@@ -129,14 +129,14 @@ this.complianceChartOptions = {
       angleKey: 'value',
       outerRadiusRatio: 0.6,
       innerRadiusRatio: 0.4,
-      fillOpacity: 0.6,
+      fillOpacity: 0.9,
       tooltip: {
         renderer: ({ datum, angleKey, sectorLabelKey }) => ({
           content: `${datum[sectorLabelKey]}: ${datum[angleKey]}`,
         }),
       
       },
-      fills:['#30AD23','#191970','#FFFC00',]
+      fills:['#054FB9','#8BABF1','#dcf0ff',]
     }
   ],
   legend: {
@@ -181,7 +181,7 @@ this.complianceChartOptions = {
           sectorLabelKey:'category',
           innerRadiusRatio: 0.4,
           outerRadiusRatio: 0.6,
-          fills: ['#710C05', '#FF5800', '#F8D568','#355E3B'],
+          fills: ['#C44601', '#F57600', '#F8D568','#00BF7D'],
           calloutLabel: {
             enabled: true,
             color: '#FFFFFF'
@@ -208,7 +208,7 @@ this.complianceChartOptions = {
           sectorLabelKey:'category',
           innerRadiusRatio: 0.2,
           outerRadiusRatio: 0.4,
-          fills: ['#292929', '#32CD32'],
+          fills: ['#054FB9', '#8BABF1'],
           calloutLabel: {
             enabled: true,
             color: '#FFFFFF'

@@ -1,12 +1,12 @@
 <div class="card">
   <div class="thread-banner">
-    <h1 class="thread-title">Thread: <b class="TFont">What skills and certifications are most valuable in the current job market?</b></h1>
+    <h1 class="thread-title">Thread: <strong class="TFont">What skills and certifications are most valuable in the current job market?</strong></h1>
   </div>
   <br/>
   <mat-card-content>
-    <mat-card class="Pcard">
+    
       <br/>
-      <mat-card-title>&nbsp;<b class="white">Name:</b></mat-card-title>
+      <mat-card-subtitle>&nbsp;<strong class="white">&nbsp;Name:</strong></mat-card-subtitle>
       <form [formGroup]="postForm" (ngSubmit)="addPost()">
         &nbsp;&nbsp;<input class="name-area" formControlName="title" required>
         <br/>
@@ -14,7 +14,7 @@
          &nbsp; Name is required and should not exceed 25 characters.
         </small>
         <br/>
-        <mat-card-title>&nbsp;<b class="white">Post:</b></mat-card-title>
+        <mat-card-subtitle>&nbsp;<strong class="white">&nbsp;Post:</strong></mat-card-subtitle>
         &nbsp;&nbsp;<textarea class="text-area" formControlName="content" required></textarea><br/>
         <small *ngIf="postForm.controls['content'].invalid && postForm.controls['content'].touched" class="error">
           &nbsp; Post is required and should not exceed 300 words.
@@ -23,7 +23,7 @@
         &nbsp;&nbsp;<button mat-raised-button type="submit" class="button" [disabled]="postForm.invalid">POST</button>
       </form>
       <br/>
-    </mat-card>
+  
     <br/>
     <div *ngFor="let post of posts" class="post">
       <br/>
@@ -46,15 +46,16 @@
           </mat-card-content>
         </form>
       </div>
-      <div *ngFor="let reply of post.replies" class="reply">
-        <mat-card-content>
-          <mat-card class="reply-areas">
+      <br/>
+      <div *ngFor="let reply of post.replies" class="post">
+        
+          <mat-card class="posts">
             <mat-card-subtitle><mat-card-content>Reply:</mat-card-content></mat-card-subtitle>
             <section><mat-card-content>{{ reply.content }}</mat-card-content></section>
             <section class="reply-date">{{ reply.date | date:'short' }}</section> <!-- Display reply date -->
             <br/>
           </mat-card>
-        </mat-card-content>
+        
       </div>
     </div>
     <br/>

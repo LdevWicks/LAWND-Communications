@@ -4,7 +4,7 @@
 
 .card {
   box-shadow: 0px 10px 12px rgba(1, 1, 1, 0.1); /* Enhanced box shadow for 3D effect */
-  background: linear-gradient(190deg,#242424, #2e2e2e83, #242424da); /* Grey gradient */
+  background: linear-gradient(190deg,#171717, #2e2e2eda, #242424da); /* Grey gradient */
   overflow: hidden; 
   box-shadow: 0 6px 12px rgba(57, 57, 57, 0.1); /* Enhanced box shadow for 3D effect */
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transform and shadow */
@@ -13,7 +13,7 @@
 
 .Pcard {
   box-shadow: 0px 10px 12px rgba(1, 1, 1, 0.1); /* Enhanced box shadow for 3D effect */
-  background: linear-gradient(190deg,#242424, #2e2e2e83, #242424da); /* Grey gradient */
+  background: linear-gradient(190deg,#242424, #2e2e2e83, #242424); /* Grey gradient */
   overflow: hidden; 
   color:white;
   box-shadow: 0 6px 12px rgba(57, 57, 57, 0.1); /* Enhanced box shadow for 3D effect */
@@ -24,26 +24,27 @@
 
 
 .post {
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced box shadow for 3D effect */
-  background-color: ( #303030); /* Grey gradient */
+  border-radius: 2px; /* Rounded corners */
+  background-color: #282828;
+  box-shadow: 0 2px 6px rgba(123, 123, 123, 0.566); /* Enhanced box shadow for 3D effect */
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transform and shadow */
   width: 85%;
-  height: auto;
+  border-radius: 0%;
   outline-color: #ffffff;
   outline-width: 15px;
   overflow: hidden;
+  margin-left: 1%; 
   padding: 10px; /* Added padding for better spacing */
 }
 
 .posts {
   background-color: #939393; /* Light grey for post section */
   border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);  
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.855);  
 }
 
 .button {
-  background-color: #2e2e2ea2;
+  background-color: #0c0c0ca2;
   color: white;
   margin-bottom: -2%;
   border-radius: 10%;
@@ -79,16 +80,19 @@
 
 .likes {
   margin-bottom: -2%;
+  color:white;
 }
 
 .reply-areas {
   background: rgb(206, 205, 205);
+  height:auto;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.855);  
 }
 
 .reply {
   margin-left: 20px;
   width: 75%;
-  height: 50vh;
+
 }
 
 .heart-icon {
@@ -103,7 +107,7 @@
 
 .dashboard-item {
   border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced box shadow for 3D effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.914); /* Enhanced box shadow for 3D effect */
   background: linear-gradient(145deg, #050505, #dcdcdc); /* Grey gradient */
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transform and shadow */
 }
@@ -116,6 +120,10 @@
 
 .reply-form {
   margin-left: 20px; /* Indent the reply form */
+}
+
+.reply1{
+  margin-bottom: 10%;
 }
 
 .thread-banner {
@@ -144,7 +152,7 @@
   left: -100%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1),rgba(42, 41, 41, 0.789)  70%, transparent 70%);
   opacity: 0.5;
   transform: translateY(-50%);
   animation: moveBackground 10s linear infinite;
@@ -161,8 +169,10 @@
 
 .TFont{
   font-size: 25px;
+  font-weight: normal;
 }
 
 .white{
   color:rgba(255, 255, 255, 0.595);
+  font-size:larger;
 }

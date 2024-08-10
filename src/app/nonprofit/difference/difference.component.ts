@@ -118,17 +118,29 @@ export class DifferenceComponent implements OnInit, AfterViewInit {
 
   getMessage(year: number, category: string): string {
     if (category === 'Community Outreach') {
-      if (year === 2006) {
-        return 'Fact for Computer Science in 2006';
-      } else if (year === 2007) {
-        return 'Fact for Computer Science in 2007';
-      }
+      if (year === 2021) {
+        return 'The Difference Society hosted its first community food drive';
+      } else if (year === 2022) {
+        return 'The Difference Society held its first annual community brunch';
+      }else if (year === 2023) {
+        return 'The Difference Society donated over 500 supllies for back to school drive';
+      }}  else if (year === 2024) {
+        return 'The Difference Society held its first summer camp with DCPS';
       // Add more years as needed
     } else if (category === 'Workforce & College Prep') {
       if (year === 2022) {
         return 'The difference Society created workforce and delopment program';
       } else if (year === 2023) {
         return 'The Difference Society held its first carre fair';
+      }
+      else if (year === 2023) {
+        return 'The Difference Society held its first investment class segment';
+      }
+      else if (year === 2024) {
+        return 'The Difference Society expanded into prince georges county maryland';
+      }
+      else if (year === 2021) {
+        return 'The Difference Society expanded into prince georges county maryland';
       }
       // Add more years as needed
     } else if (category === 'Education') {
@@ -137,6 +149,8 @@ export class DifferenceComponent implements OnInit, AfterViewInit {
       } else if (year === 2023) {
         return 'The Difference Society held it first Career Fair';
       }  else if (year === 2024) {
+        return 'The Difference Society held its first summer camp with DCPS';
+      }  else if (year === 2021) {
         return 'The Difference Society held its first summer camp with DCPS';
       // Add more years as needed
     }

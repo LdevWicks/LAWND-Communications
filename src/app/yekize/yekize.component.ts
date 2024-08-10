@@ -19,6 +19,7 @@ export class YekizeComponent implements OnInit, OnDestroy {
   
   videos$!: Observable<any[]>; // Observable for video data
   selectedVideoUrl!: string; // URL of the currently selected video
+  isOpen = true; 
 
   @ViewChild('mainVideo') mainVideo!: ElementRef<HTMLVideoElement>;
 
@@ -36,13 +37,15 @@ export class YekizeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.teaProducts$ = this.firestore.collection('teaProducts').valueChanges();
-    this.videos$ = this.firestore.collection('videos').valueChanges(); // Get videos from Firestore
+    this.videos$ = this.firestore.collection('YVideos').valueChanges(); // Get videos from Firestore
     this.selectedVideoUrl = ''; // Initialize with an empty string
   }
 
   ngOnDestroy(): void {
     this.cartSubscription.unsubscribe();
   }
+
+
 
   addToCart(product: any) {
     this.cartService.addToCart(product);
@@ -85,6 +88,8 @@ export class YekizeComponent implements OnInit, OnDestroy {
       }
     }, 0); // Delay to ensure the video source is updated before playing
   }
+
+  
 
 }
 

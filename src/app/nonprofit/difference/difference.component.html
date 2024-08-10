@@ -1,7 +1,6 @@
 <div class="container">
 
-  <!-- Hero section -->
-  <div class="hero-section">
+  <div class="intro">
     <h1>Welcome to The Difference Society</h1>
     <p>Join us in making a positive impact in the community!</p>
   </div>
@@ -9,7 +8,7 @@
   <!-- Main content -->
   <div class="main-content">
     
-    <div class="section">
+    <div>
       <h2 class="section-title"> <b>Our Mission</b></h2>
       <mat-card-content class="section-description">Our mission is to empower individuals and communities with the knowledge, skills, and resources they need to achieve financial stability and independence. 
         We believe that financial literacy is a fundamental right, and we are committed to providing accessible and engaging educational programs and resources that enable people of all backgrounds to make informed financial decisions, build wealth, and secure a brighter financial future. 
@@ -21,110 +20,67 @@
 
     <br/>
 
-    <div class="section">
+    <div>
       
       <h2 class="section-title"><b>Programs & Workshops</b></h2>
       <div class="dashboard-container">
     
         <mat-card class="dashboard-item">
           <mat-card-header>
-            <mat-card-title>Education</mat-card-title>
+            <mat-card-title><strong>Education</strong></mat-card-title>
           </mat-card-header>
           <img class="dashboard-img"  src="assets/edu.png" alt="Education">
           <br/>
           <mat-card-content>
-            <p>The Difference Society Provides After School Programming for ages 6-18 within the District of Columbia teaching Financial Literacy & Entrepreneurship.</p>
+            <strong class="grey">The Difference Society Provides After School Programming for ages 6-18 within the District of Columbia teaching Financial Literacy & Entrepreneurship.</strong>
           </mat-card-content>
         </mat-card>
       
         <mat-card class="dashboard-item">
           <mat-card-header>
-            <mat-card-title>Community Outreach</mat-card-title>
+            <mat-card-title><strong>Community Outreach</strong></mat-card-title>
           </mat-card-header>
           <img class="dashboard-img" mat-card-image src="assets/commOut.webp" alt="Community Outreach">
           <br/>
           <mat-card-content>
-            <p>The Difference Society collaborates with other local organizations, businesses, government agencies, and community leaders to better address community needs.</p>
+            <strong class="grey">The Difference Society collaborates with other local organizations, businesses, government agencies, and community leaders to better address community needs.</strong>
           </mat-card-content>
         </mat-card>
       
         <mat-card class="dashboard-item">
           <mat-card-header>
-            <mat-card-title>Workforce & College Prep</mat-card-title>
+            <mat-card-title><strong>Workforce & College Prep</strong></mat-card-title>
           </mat-card-header>
           <img class="dashboard-img" mat-card-image src="assets/workPrep.jpg" alt="Workforce PRep">
           <br/>
           <mat-card-content>
-            <p>The Difference Society helps the youth acquire the skills, knowledge, and resources needed to succeed in their chosen careers.</p>
+            <strong class="grey">The Difference Society helps the youth acquire the skills, knowledge, and resources needed to succeed in their chosen careers.</strong>
           </mat-card-content>
         </mat-card>
      
       </div>
 <br/>
-      <mat-toolbar>
-        <div class="Sbanner" [class.show]="isSectionVisible">
-          <br/>
-          <mat-card-title class="section-description">Volunteer, donate, or participate in our events.</mat-card-title>
-          <br/>
-          </div>
-      </mat-toolbar>
+<mat-toolbar>
+  <div class="Sbanner" [class.show]="isSectionVisible">
+    <br/>
+  
+    <mat-card-title class="center"><a class="link" href="https://www.thedifferencesociety.org" target="_blank">
+      <mat-icon>website</mat-icon>
+    </a>
+     <strong> Visit The Difference Society's official website to learn more on how to volunteer, donate, or participate.
+    </strong>
+    </mat-card-title>
+    <br/>
+  </div>
+</mat-toolbar>
+
      
 
-<div>
+<div class>
 <br/>
-
 <br/>
-    <mat-vertical-stepper class="stepper" #stepper>
-      <mat-step>
-        <ng-template matStepLabel><mat-card-title class="Wstepper">Foundation Year</mat-card-title></ng-template>
-        <p>The Difference Society was founded in <strong>2021</strong> to bring positive change in the community.</p>
-        <div>
-          <button mat-raised-button class="stepper" matStepperNext><mat-icon>arrow_forward</mat-icon></button>
-        </div>
-      </mat-step>
-    
-      <mat-step>
-        <ng-template matStepLabel><mat-card-title class="Wstepper">First Major Event</mat-card-title></ng-template>
-        <p>Our first major event was <strong>EVENT NAME</strong> which gathered over <strong>NUMBER</strong> participants.</p>
-        <div>
-          <button mat-raised-button class="stepper" matStepperPrevious><mat-icon>arrow_back</mat-icon></button>
-          <button mat-raised-button class="stepper" matStepperNext><mat-icon>arrow_forward</mat-icon></button>
-        </div>
-      </mat-step>
-    
-      <mat-step>
-        <ng-template matStepLabel><mat-card-title class="Wstepper">Key Projects</mat-card-title></ng-template>
-        <p>We have successfully completed projects like <strong>PROJECT 1</strong>, <strong>PROJECT 2</strong>, etc.</p>
-        <div>
-          <button mat-raised-button class="stepper" matStepperPrevious><mat-icon>arrow_back</mat-icon></button>
-          <button mat-raised-button class="stepper" matStepperNext><mat-icon>arrow_forward</mat-icon></button>
-        </div>
-      </mat-step>
-    
-      <mat-step>
-        <ng-template matStepLabel><mat-card-title class="Wstepper">Impact Statistics</mat-card-title></ng-template>
-        <p>We have impacted over <strong>NUMBER</strong> lives through our initiatives.</p>
-        <div>
-          <button mat-raised-button class="stepper" matStepperPrevious><mat-icon>arrow_back</mat-icon></button>
-          <button mat-raised-button class="stepper" matStepperNext><mat-icon>arrow_forward</mat-icon></button>
-        </div>
-      </mat-step>
-    
-      <mat-step>
-        <ng-template matStepLabel><mat-card-title class="Wstepper">Notable Members</mat-card-title></ng-template>
-        <p>Meet some of our notable members who have made significant contributions to our cause.</p>
-        <div>
-          <button mat-raised-button class="stepper" matStepperPrevious><mat-icon>arrow_back</mat-icon></button>
-          <button mat-raised-button class="stepper" (click)="stepper.reset()"><mat-icon>refresh</mat-icon></button>
-        </div>
-      </mat-step>
-    </mat-vertical-stepper>
-    
-    
-    <br/>
-
     <mat-card-title>The Difference Society Fun Facts</mat-card-title>
-  <mat-horizontal-stepper linear>
+  <mat-horizontal-stepper linear #stepper>
     <mat-step [stepControl]="yearFormGroup">
       <form [formGroup]="yearFormGroup">
         <ng-template matStepLabel>Select Year</ng-template>
@@ -159,12 +115,15 @@
 
     <mat-step>
       <ng-template matStepLabel>Fun Fact</ng-template>
-      <p>You selected year: {{ yearFormGroup.value.year }} and category: {{ categoryFormGroup.value.category }}</p>
-      <p>{{ message }}</p>
+      <mat-card-subtitle>You selected year: {{ yearFormGroup.value.year }} and category: {{ categoryFormGroup.value.category }}</mat-card-subtitle>
+      <br/><strong>{{ message }} </strong>
       <div>
+        <br/>
         <button mat-raised-button class="stepper" matStepperPrevious>Back</button> &nbsp;
-        <button mat-raised-button class="stepper" (click)="onSubmit()">Confirm</button>
+        <button mat-raised-button class="stepper" (click)="onSubmit()">Confirm </button>
+        <br/><br/><button mat-raised-button class="stepper" (click)="stepper.reset()"><mat-icon>refresh</mat-icon></button>
       </div>
+
     </mat-step>
   </mat-horizontal-stepper>
   

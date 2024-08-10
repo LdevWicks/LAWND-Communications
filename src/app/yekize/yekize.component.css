@@ -156,3 +156,28 @@ video {
   align-content:center;
   margin-left: 20%;
 }
+
+.wBanner{
+  width: 100%;
+  height: 500px; /* Adjust height based on your design */
+  overflow: hidden; /* Hide the overflow to prevent scrollbar */
+  position: relative;
+  
+}
+
+.wBannerI{
+  height: 100%;
+  width:100vw;
+  object-fit: fit; 
+}
+
+.custom-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ec560c; /* Change to desired color */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+

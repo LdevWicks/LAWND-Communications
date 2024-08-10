@@ -1,3 +1,9 @@
+
+<div class="wBanner">
+  <img class="wBannerI" src="assets/Welcome.png">
+</div>
+
+
 <div class="scrolling-banner">
   <div class="banner-content">
     <div class="banner-item" style="background-image: url('assets/VCap.jpeg');"></div>
@@ -23,14 +29,14 @@
 </div>
 
 <!-- Shopping Cart Icon with Badge -->
-<div class="shopping-cart-icon" (click)="toggleCart()">
+<div class="shopping-cart-icon"  (click)="toggleCart()">
   <mat-icon>shopping_cart</mat-icon>
   <span class="cart-count">{{ cartItems.length }}</span>
 </div>
 
 <!-- Checkout Panel Overlay -->
 <div class="checkout-panel" *ngIf="isCartOpen">
-  <h4>Shopping Cart</h4>
+  <h4> <mat-icon class="close-panel-button" (click)="toggleCart()">arrow_back</mat-icon> Shopping Cart </h4>
   <ul>
     <li *ngFor="let item of cartItems">
       {{ item.name }} - {{ item.price | currency }}
@@ -54,10 +60,18 @@
     </ul>
     <p>Total: {{ getTotal() | currency }}</p>
     <p>Are you sure you want to place this order?</p>
-    <button mat-raised-button (click)="placeOrder()">ORDER</button>
+    <button mat-raised-button (click)="placeOrder()">ORDER</button> &nbsp;
     <button mat-raised-button (click)="cancelCheckout()">CANCEL</button>
   </div>
 </div>
+
+<br/>
+<mat-card-title><a href="https://www.yekizeessentials.com" target="_blank" rel="noopener noreferrer" class="custom-link">
+ &nbsp; &nbsp; <strong> Visit Yekize Essentials offical website</strong>
+</a>
+</mat-card-title>
+<br/>
+<br/>
 </mat-tab>
 
 

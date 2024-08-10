@@ -21,16 +21,20 @@
 .dashboard-card {
   flex: 1 1 calc(33.333% - 20px);
   max-width: calc(33.333% - 20px);
-  background-color: #3c3c3c;
+  background-color: #282828;
   color: #f0f0f0;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
   box-sizing: border-box;
   overflow: hidden; /* Hide overflow within cards */
   display: flex;
+  border: 2px solid ; 
   flex-direction: column;
+  position: relative; /* Ensure the card's position context for the glow */
+  z-index: 1; /* Ensure the card is on top of other elements */
 }
+
+
 
 /* Chart container styles */
 .chart {
@@ -52,5 +56,15 @@
 
 .fSize{
   font-size: smaller;
-  color:rgb(129, 129, 129);
+  color:#ffffff70;
+  
 }
+
+.white{
+  color:white;
+}
+
+.grey{
+  color:#ffffff70;
+}
+

@@ -3,12 +3,12 @@
   <mat-sidenav #sidenav class="body" mode="side">
     <mat-nav-list>
       <a mat-list-item class="content" routerLink="/" routerLinkActive="active">
-        <mat-icon class="icon">home</mat-icon> Home
+        <mat-icon class="icon">home</mat-icon><strong class="icon">&nbsp;Home</strong>
       </a>
       <br/>
       <ng-container *ngFor="let item of navItems">
         <a mat-list-item class="content" [routerLink]="item.route" routerLinkActive="active">
-          <mat-icon class="icon">{{item.icon}}</mat-icon> {{item.title}}
+          <mat-icon class="icon">{{item.icon}}</mat-icon><strong class="icon">&nbsp; {{item.title}}</strong>
         </a>
         <br/>
       </ng-container>

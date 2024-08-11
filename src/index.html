@@ -5,12 +5,35 @@
   <title>PathToCiso</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="LAWNDLOGO.png">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="assets/LAWNDLOGO.png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&amp;display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="manifest" href="/manifest.webmanifest">
+
+  <meta name="theme-color" content="#1976d2">
+  <link rel="stylesheet" href="styles.1ee060c113a398fb.css">
+
+
 </head>
 <body class="mat-typography">
   <app-root></app-root>
   <script src="assets/js/scripts.js"></script>
+  <script src="runtime.6840cae81978ebe8.js"></script>
+  <script src="polyfills.6998a2c5c58d7e78.js"></script>
+  <script src="main.b8213f622dd78bf4.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/ngsw-worker.js')
+          .then(registration => {
+            console.log('Service Worker registered with scope:', registration.scope);
+          })
+          .catch(error => {
+            console.log('Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
 </body>
 </html>

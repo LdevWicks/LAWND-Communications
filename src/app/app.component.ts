@@ -64,6 +64,8 @@ export class AppComponent implements OnInit {
     { icon: 'security', title: 'Cyber Security', route: '/cybersecurity' }
   ];
 
+
+
   constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit() {
@@ -99,8 +101,9 @@ export class AppComponent implements OnInit {
         console.log(this.navItems);
       }
     });
-  }
 
+  }
+  
   toggleSidenav() {
     this.sidenav.toggle();
   }

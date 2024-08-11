@@ -19,6 +19,7 @@
     "ag-charts-community": "^10.0.2",
     "chart.js": "^4.4.3",
     "core-js": "^3.37.1",
+    "dotenv": "^16.4.5",
     "firebase": "^10.12.5",
     "zone.js": "^0.14.10"
   },
@@ -33,11 +34,11 @@
     "jsdom": "^24.1.0",
     "typescript": "^5.4.2"
   },
-
   "scripts": {
+    "prestart:frontend": "node ./scripts/setEnv.js",
     "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
-    "start:frontend": "cd ../path-to-ciso && ng serve",
-    "start:backend": "cd secure-devops-backend && npm start"
+    "start:frontend": "ng serve",
+    "start:backend": "cd secure-devops-backend && npm run start"
   }
 
 

@@ -1,3 +1,3 @@
-[submodule "secure-devops-backend"]
-	path = secure-devops-backend
-	url = https://github.com/LdevWicks/SecureBackend/
+[submodule "secure-devops"]
+    path = secure-devops
+    url = https://github.com/LdevWicks/SecureBackend

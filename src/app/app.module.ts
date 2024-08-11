@@ -1,4 +1,4 @@
-import { NgModule, DoBootstrap } from '@angular/core';
+import { NgModule, DoBootstrap, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -32,6 +32,7 @@ import { ComplianceReportComponent } from './advance-features/compliance-report/
 import { IncidentResponseComponent } from './advance-features/incident-response/incident-response.component';
 import { DashboardComponent } from './advance-features/dashboard/dashboard.component';
 import { AgChartsModule } from 'ag-charts-angular';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 export const routes: Routes = [
@@ -78,7 +79,13 @@ export const routes: Routes = [
     AngularFirestoreModule,
     RouterModule.forRoot(routes, { anchorScrolling: 'enabled' }),
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AppRoutingModule, // Import AppRoutingModule here
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }), // Import AppRoutingModule here
     // Other modules you might need
   ],
   providers: [AuthService, ApiService, provideHttpClient()],

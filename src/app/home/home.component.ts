@@ -37,6 +37,7 @@ export class HomeComponent implements OnInit{
     { icon: 'security', title: 'Advanced Features', description: 'Unlock & Explore', image: 'assets/1.png',route:'/mfa-login' },
   ];
 
+
   constructor(private router: Router) { 
      this.categories = ["Computer Science", "Entertainment", "Nonprofit", "Entrepreneurship", "Cybersecurity"];
   
@@ -48,10 +49,9 @@ export class HomeComponent implements OnInit{
   }
   ngOnInit() {
     
+    
   }
-
- 
-
 }
+
 
 

@@ -41,8 +41,6 @@ testem.log
 .DS_Store
 Thumbs.db
 
-.env
-/app/env
+
 env.tsc
 
-enviornment.prod.ts

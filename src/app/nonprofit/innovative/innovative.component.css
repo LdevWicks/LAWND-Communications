@@ -125,9 +125,14 @@ main {
 }
 
 .responsive-img {
-  max-width: 100%;
-  height: auto;
+  width: 100vw; /* Ensure the image spans the full width of the viewport */
+  height: 90vh; /* Set the height to fill the viewport height */
+  object-fit: contain; /* Ensures the image covers the entire container while maintaining its aspect ratio */
+  overflow: hidden; /* Hide any overflow content */
+  border-radius: 15px;
+  display: block; /* Remove any inline spacing */
 }
+
 
 /* Services list styling */
 /* Services list styling */
@@ -144,7 +149,7 @@ main {
   display: flex;
   flex-direction: column; /* Stack icon above text */
   align-items: center; /* Center-align icon and text horizontally */
-  margin: 10px;
+  margin: 20px;
   font-size: 16px;
   line-height: 1.5;
   text-align: center; /* Center-align text */
@@ -168,8 +173,8 @@ footer {
 }
 
 .icon{
-  max-height:20px;
-  max-width:60px;
+  max-height:150px;
+  max-width:120px;
 }
 
 
@@ -202,6 +207,7 @@ footer {
 .responsive-video {
   max-width: 40%; /* Adjust width as needed */
   height: auto;
+  object-fit: cover;
   border-radius: 15px; /* Optional: for rounded corners */
 }
 
@@ -210,6 +216,8 @@ footer {
   flex: 1; /* Allows the text content to take up the remaining space */
   display: flex;
   flex-direction: column;
+  align-content: center;
+  align-items: flex-start; /* Aligns items to the start of the container */
 }
 
 .bullet-list {
@@ -221,5 +229,14 @@ footer {
 
 .bullet-list li {
   margin: 10px 0; /* Space between list items */
+  line-height: 1.5; /* Ensures proper spacing between lines of text */
+  text-align: left; /* Ensures text is aligned to the left */
 }
 
+.bullet-list li::marker {
+  color: #fffdfd; /* Optional: Customize the bullet color */
+}
+
+.aLeft{
+  text-align: left;
+}

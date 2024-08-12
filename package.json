@@ -33,16 +33,15 @@
     "jsdom": "^24.1.0",
     "typescript": "^5.4.2"
   },
-  "scripts": {
-    "build": "npx ng build --configuration production",
-    "prestart": "node Scripts/setEnv.js",
-    "start": "npm run start:frontend & npm run start:backend",
-    "start:frontend": "npx ng serve --port $PORT",
-    "start:backend": "cd secure-dev-new && npm run start",
-    "start:prod": "npm run build && npx serve -s dist",
-    "heroku-postbuild": "npx ng build --configuration production"
-
-  },
+"scripts": {
+  "build": "npx ng build --configuration production",
+  "prestart": "node Scripts/setEnv.js",
+  "start": "npm run start:frontend & npm run start:backend",
+  "start:frontend": "npx ng serve --port $PORT",
+  "start:backend": "cd secure-dev-new && npm run start",
+  "start:prod": "npm run build && npx serve -s dist",
+  "heroku-postbuild": "npx ng build --configuration production"
+},
   "engines": {
     "node": "20.x",
     "npm": "10.x"

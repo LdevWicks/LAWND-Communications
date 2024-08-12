@@ -34,15 +34,14 @@
     "typescript": "^5.4.2"
   },
   "scripts": {
-  "build": "./node_modules/.bin/ng build --configuration production",
-  "prestart": "node Scripts/setEnv.js",
-  "start": "npm run start:frontend & npm run start:backend",
-  "start:frontend": "./node_modules/.bin/ng serve --port $PORT",
-  "start:backend": "cd secure-dev-new && npm run start",
-  "start:prod": "npm run build && npx serve -s dist",
-  "heroku-postbuild": "npm run build"
-}
-,
+    "build": "npx ng build --configuration production",
+    "prestart": "node Scripts/setEnv.js",
+    "start": "npm run start:frontend & npm run start:backend",
+    "start:frontend": "./node_modules/.bin/ng serve --port $PORT",
+    "start:backend": "cd secure-dev-new && npm run start",
+    "start:prod": "npm run build && npx serve -s dist",
+    "heroku-postbuild": "npm run build"
+  },
   "engines": {
     "node": "20.x",
     "npm": "10.x"

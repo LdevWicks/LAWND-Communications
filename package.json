@@ -33,12 +33,17 @@
     "jsdom": "^24.1.0",
     "typescript": "^5.4.2"
   },
-  "scripts": {
-    "prestart": "node Scripts/setEnv.js",
-    "start": "ng serve --port $PORT",
-    "start:frontend": "ng serve --port $PORT",
-    "start:backend": "cd secure-dev-new && npm run start"
-  },
+"scripts": {
+  "build": "ng build --prod",
+  "prestart": "node Scripts/setEnv.js",
+  "start": "npm run start:frontend & npm run start:backend",
+  "start:frontend": "ng serve --port $PORT",
+  "start:backend": "cd secure-dev-new && npm run start", 
+  "start:prod": "npm run build && serve -s dist",
+  "heroku-postbuild": "npm run build"
+}
+,
+
   "engines": {
     "node": "20.x",
     "npm": "10.x"

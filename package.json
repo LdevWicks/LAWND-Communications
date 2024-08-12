@@ -40,7 +40,8 @@
     "start:frontend": "./node_modules/.bin/ng serve --port $PORT",
     "start:backend": "cd secure-dev-new && npm run start",
     "start:prod": "npm run build && npx serve -s dist",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "./node_modules/.bin/ng build --configuration production"
+
   },
   "engines": {
     "node": "20.x",

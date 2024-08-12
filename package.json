@@ -20,6 +20,7 @@
     "core-js": "^3.37.1",
     "dotenv": "^16.4.5",
     "firebase": "^10.12.5",
+    "serve": "^14.2.3",
     "zone.js": "^0.14.10"
   },
   "devDependencies": {

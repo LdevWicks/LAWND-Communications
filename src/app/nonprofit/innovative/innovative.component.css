@@ -125,7 +125,7 @@ main {
 }
 
 .responsive-img {
-  width: 100vw; /* Ensure the image spans the full width of the viewport */
+  width: 97vw; /* Ensure the image spans the full width of the viewport */
   height: 90vh; /* Set the height to fill the viewport height */
   object-fit: contain; /* Ensures the image covers the entire container while maintaining its aspect ratio */
   overflow: hidden; /* Hide any overflow content */

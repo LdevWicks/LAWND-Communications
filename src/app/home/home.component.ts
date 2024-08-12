@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Component  } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { ComputerScienceComponent } from '../computer-science/computer-science.component';
 import { CybersecurityComponent } from '../cybersecurity/cybersecurity.component';
@@ -28,15 +28,15 @@ import { Router, RouterModule } from '@angular/router';
     EntrepreneurshipComponent,
   ],
 })
-export class HomeComponent implements AfterViewInit , OnInit{
+export class HomeComponent  {
 
   categories: string[] = [];
-  @ViewChild('videoPlayer') videoPlayer: ElementRef<HTMLVideoElement>;
+ 
 
   updates = [
-    { title: 'Update 001.21', date: new Date(), description: 'Multifactor Authentication enabled.' },
-    { title: 'Update 001.31', date: new Date(), description: 'Updated Dependencies' },
-    { title: 'Update 001.41', date: new Date(), description: 'Enabled Disscusion Board' },
+    { title: 'Update 001.21', date: new Date(), description: 'Authentication enabled.' },
+    { title: 'Update 001.31', date: new Date(), description: 'PWA enabled' },
+    { title: 'Update 001.41', date: new Date(), description: 'Enabled Push Notifications' },
   ];
 
   features = [
@@ -57,23 +57,7 @@ export class HomeComponent implements AfterViewInit , OnInit{
  navigateTo(route: string) {
    this.router.navigate([route]);
  }
- ngOnInit(): void {
-  // Initialization logic here if needed
-}
-  ngAfterViewInit(): void {
-    this.playVideo();
-  }
+ 
 
-  playVideo(): void {
-    const videoElement = this.videoPlayer?.nativeElement;
-  
-    if (videoElement) {
-      videoElement.load(); // Ensure the video is loaded
-      videoElement.play().catch(error => {
-        console.error('Error attempting to play video:', error);
-        // Additional handling if needed
-      });
-    }
-  }
   
 }

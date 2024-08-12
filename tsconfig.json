@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./src", // Updated to a directory path
+    "baseUrl": "./src",
     "paths": {
       "@app/*": ["app/*"]
     },
@@ -35,5 +35,5 @@
     "strictTemplates": true
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "src/**/*.spec.ts"]
+  "exclude": ["node_modules", "src/**/*.spec.ts", "src/main.server.ts"]
 }

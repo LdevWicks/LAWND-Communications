@@ -12,7 +12,7 @@
     </header>
 
     <div class="banner">
-      <h1>Welcome to the Innovative Page</h1>
+      <h1>Welcome to the Innovative Concepts <img  class ="icon" src="assets/ICTLogo.png"> </h1>
       
     </div>
 
@@ -20,26 +20,31 @@
       <section id="innovative-section1" class="section">
         <div class="section-content">
           <h2>About Us</h2>
-          <img src="assets/section1-image.jpg" alt="Section 1 Image" class="responsive-img">
+          <img src="assets/icS.png" alt="Section 1 Image" class="responsive-img">
           <p>Innovative Concepts is a dedicated 501(c)(3) nonprofit organization established in 2008, committed to enhancing the quality of life for disabled adults in the District of Columbia.
-            We proudly partner with the Department on Disability Services (DDS) to provide vital residential support services, ensuring that our community members receive the care and assistance they need to lead fulfilling and independent lives.</p>
+            We proudly partner with the Department on Disability Services (DDS) to provide community based housing, eliminating employment barriers
+            rn hance employability skills, and provide person centered planning and develop neccesary supports to maintain individual career and personal goals.</p>
         </div>
       </section>
 
       <section id="innovative-section2" class="section">
         <div class="section-content">
           <h2>Our Services</h2>
-          <img src="assets/section2-image.jpg" alt="Section 2 Image" class="responsive-img">
-          <p>Details about Section 2...</p>
+          <div class="services-list">
+            <p *ngFor="let service of services">
+              <mat-icon>{{ service.icon }}</mat-icon> 
+              {{ service.name }}
+            </p>
+          </div>
         </div>
       </section>
+      
 
       <section id="innovative-section3" class="section">
         <div class="section-content">
           <h2>Work History</h2>
-          <img src="assets/section3-image.jpg" alt="Section 3 Image" class="responsive-img">
-             
-      <p>Program Director</p>
+             My first expience with compliance we must stay compiant every year for various services
+      <p>QIDP</p>
       <p>pcr ppr department of healthcare finance Department on Disability Services Developmental Disability Administration</p>
       <p>hrc human Rights Committee The DC Coalition of Providers for Persons with Intellectual and other Disabilities.</p>    
     </div>
@@ -48,10 +53,24 @@
       <section id="innovative-section4" class="section">
         <div class="section-content">
           <h2>Security and Compliance</h2>
-          <img src="assets/section4-image.jpg" alt="Section 4 Image" class="responsive-img">
-          <p>Security Aspect: Regulatory Compliance, Different departments work with, annual certification</p>
+          <div class="section-inner">
+            <video class="responsive-video" autoplay muted loop playsinline>
+              <source src="assets/icSec.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="text-content">
+              <ul class="bullet-list">
+                <li>Security Aspect: Regulatory Compliance</li>
+                <li>Different departments work with</li>
+                <li>Annual certification</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
+      
+      
+      
     </main>
 
     <footer>

@@ -102,6 +102,7 @@ main {
 }
 
 /* Section styling */
+/* Section styling */
 .section {
   display: flex;
   flex-direction: column;
@@ -120,16 +121,40 @@ main {
 /* Section content styling */
 .section-content {
   text-align: center;
-  max-width: 800px;
+  padding: 20px;
 }
 
-/* Responsive image styling */
 .responsive-img {
   max-width: 100%;
   height: auto;
-  border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
+
+/* Services list styling */
+/* Services list styling */
+.services-list {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping of items to the next line if needed */
+  justify-content: center; /* Center-align items horizontally */
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.services-list p {
+  display: flex;
+  flex-direction: column; /* Stack icon above text */
+  align-items: center; /* Center-align icon and text horizontally */
+  margin: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center; /* Center-align text */
+}
+
+.services-list mat-icon {
+  margin-bottom: 8px; /* Space between icon and text */
+  font-size: 24px; /* Size of the icon */
+}
+
 
 /* Footer styling */
 footer {
@@ -141,3 +166,60 @@ footer {
   padding: 10px 0;
   box-sizing: border-box; /* Ensures padding is included in the width */
 }
+
+.icon{
+  max-height:20px;
+  max-width:60px;
+}
+
+
+
+/* Section styling */
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #4a1d7e, #3c1f9f); /* Lighter gradient */
+  margin: 10px 0;
+  color: whitesmoke;
+  border-radius: 15px;
+  box-shadow: 0 0px 4px rgba(255, 255, 255, 0.4);
+  width: calc(100% - 40px); /* Adjust for padding and margins */
+  box-sizing: border-box;
+}
+
+/* Section inner container */
+.section-inner {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px; /* Space between video and text */
+}
+
+/* Video styling */
+.responsive-video {
+  max-width: 40%; /* Adjust width as needed */
+  height: auto;
+  border-radius: 15px; /* Optional: for rounded corners */
+}
+
+/* Text content styling */
+.text-content {
+  flex: 1; /* Allows the text content to take up the remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+.bullet-list {
+  list-style-type: disc;
+  padding-left: 20px; /* Indent bullets */
+  margin: 0;
+  font-size: 16px;
+}
+
+.bullet-list li {
+  margin: 10px 0; /* Space between list items */
+}
+

@@ -35,11 +35,12 @@
     "typescript": "^5.4.2"
   },
   "scripts": {
-    "prestart:frontend": "node ./scripts/setEnv.js",
-    "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
-    "start:frontend": "ng serve",
-    "start:backend": "cd secure-devops-backend && npm run start"
-  }
+  "prestart:frontend": "node Scripts/setEnv.js",
+  "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
+  "start:frontend": "ng serve",
+  "start:backend": "cd secure-dev-new && npm run start"
+}
+
 
 
 }

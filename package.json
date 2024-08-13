@@ -23,6 +23,7 @@
     "chart.js": "^4.4.3",
     "core-js": "^3.37.1",
     "dotenv": "^16.4.5",
+    "express": "^4.19.2",
     "firebase": "^10.12.5",
     "graceful-fs": "^4.2.11",
     "jest": "^29.7.0",
@@ -42,14 +43,15 @@
     "typescript": "^5.4.2"
   },
   "scripts": {
-    "build": "npx ng build --configuration production",
+    "build": "npm run build:frontend",
     "prestart": "node Scripts/setEnv.js",
     "start": "npm run start:frontend & npm run start:backend",
-    "start:frontend": "npx ng serve --host 0.0.0.0 --port $PORT",
+    "start:frontend": "node server.js",
     "start:backend": "cd secure-dev-new && npm run start",
-    "start:prod": "npm run build && serve -s dist/path-to-ciso",
-    "postinstall": "npx ng build --configuration production",
-    "heroku-postbuild": "npx ng build --configuration production"
+    "start:prod": "npm run build && node server.js",
+    "build:frontend": "npm run postinstall",
+    "postinstall": "node src/angilar-build.js",
+    "heroku-postbuild": "node src/angular-build.js"
   },
   "engines": {
     "node": "20.x",

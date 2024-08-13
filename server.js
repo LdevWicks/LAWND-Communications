@@ -1,13 +1,14 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
 // Serve static files
-app.use(express.static('dist/path-to-ciso'));
+app.use(express.static(path.join(__dirname, 'dist/path-to-ciso')));
 
-// Define routes
+// Serve Angular index.html
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/dist/path-to-ciso/index.html');
+  res.sendFile(path.join(__dirname, 'dist/path-to-ciso/index.html'));
 });
 
 // Example API route

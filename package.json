@@ -48,10 +48,9 @@
     "start": "npm run start:frontend & npm run start:backend",
     "start:frontend": "node server.js",
     "start:backend": "cd secure-dev-new && npm run start",
-    "start:prod": "npm run build && node server.js",
-    "build:frontend": "npm run postinstall",
-    "postinstall": "npm install && npm install @angular/cli@18.1.4 && npx ng build --configuration production",
-    "heroku-postbuild": "npm install && npm install @angular/cli@18.1.4 && npx ng build --configuration production"
+    "start:prod": "npm run build && serve -s dist/path-to-ciso",
+    "postinstall": "npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "engines": {
     "node": "20.x",

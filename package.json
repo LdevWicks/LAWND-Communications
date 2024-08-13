@@ -47,14 +47,15 @@
     "webpack-cli": "^5.1.4"
   },
   "scripts": {
-    "build": "npm run build:frontend",
-    "prestart": "node Scripts/setEnv.js",
-    "start": "npm run start:prod",
-    "start:prod": "http-server dist/path-to-ciso -p $PORT",
-    "build:frontend": "ng build --configuration production",
-    "postinstall": "npm run build",
-    "heroku-postbuild": "npm run build"
-  },
+  "build": "npm run build:frontend",
+  "prestart": "node Scripts/setEnv.js",
+  "start": "node server.js",
+  "start:prod": "node server.js",
+  "build:frontend": "ng build --configuration production",
+  "postinstall": "npm run build",
+  "heroku-postbuild": "npm run build"
+}
+,
   "engines": {
     "node": "20.x",
     "npm": "10.x"

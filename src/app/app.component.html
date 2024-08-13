@@ -2,6 +2,7 @@
   <!-- Side nav -->
   <mat-sidenav #sidenav class="body" mode="side">
     <mat-nav-list>
+      
       <a mat-list-item class="content" routerLink="/" routerLinkActive="active">
         <mat-icon class="icon">home</mat-icon><strong class="icon">&nbsp;Home</strong>
       </a>
@@ -23,7 +24,9 @@
       <mat-toolbar [ngClass]="{'entertainment-toolbar': isEntertainmentPage, 'default-toolbar': !isEntertainmentPage}">
         <span class="page-title"> <b>{{ pageTitle }} </b></span>
         <img *ngIf="isComputerSciencePage" src="assets/Logo.jpg" alt="McNair Hall" class="toolbar-icon">
-        <!--button id="installButton" mat-raised-button color="primary" class="install-button">Install App</button-->
+        <button class="install-button" *ngIf="showInstallButton" mat-icon-button (click)="installApp()">
+          <mat-icon>get_app</mat-icon>
+        </button>
       </mat-toolbar>
     </div>
 

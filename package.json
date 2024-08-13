@@ -47,8 +47,10 @@
   "scripts": {
     "build": "npm run build:frontend",
     "prestart": "node Scripts/setEnv.js",
-    "start": "npm run start:prod",
-    "start:prod": "http-server dist/path-to-ciso -p $PORT",
+    "start": "npm run start:frontend",  
+    "start:prod": "http-server dist/path-to-ciso -p $PORT",   
+    "start:frontend": "ng serve --port 4200",  
+    "start:backend": "cd secure-dev-new npm run start",  
     "build:frontend": "ng build --configuration production",
     "postinstall": "npm run build",
     "heroku-postbuild": "npm run build"

@@ -126,4 +126,6 @@ html, body {
 
 .install-button {
   margin-left: auto; /* Pushes the button to the right end of the toolbar */
+  color:white;
+  background-color:rgb(195,80,4);
 }

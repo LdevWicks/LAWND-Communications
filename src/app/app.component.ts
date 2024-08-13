@@ -37,9 +37,10 @@ export class AppComponent implements OnInit {
   isDifferencePage = false;
   isCWPage = false;
   isInnovativePage = false;
-
+  deferredPrompt: any;
   pageTitle: string = '';
   isLoggedIn = false;
+  showInstallButton = false;
 
   private readonly pageTitles: { [key: string]: string } = {
     '/': 'Home',
@@ -102,6 +103,20 @@ export class AppComponent implements OnInit {
       }
     });
 
+    window.addEventListener('beforeinstallprompt', (event) => {
+      // Prevent the mini-infobar from appearing on mobile
+      event.preventDefault();
+      // Stash the event so it can be triggered later
+      this.deferredPrompt = event;
+      // Show the install button
+      this.showInstallButton = true;
+    });
+
+    window.addEventListener('appinstalled', () => {
+      // Hide the install button when the app is installed
+      this.showInstallButton = false;
+    });
+
   }
   
   toggleSidenav() {
@@ -112,4 +127,24 @@ export class AppComponent implements OnInit {
     this.router.navigate([route]);
     this.sidenav.close(); // Optionally close the sidenav after navigation
   }
+
+  installApp(): void {
+    if (this.deferredPrompt) {
+      // Show the install prompt
+      this.deferredPrompt.prompt();
+      // Wait for the user's response
+      this.deferredPrompt.userChoice.then((choiceResult: any) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the install prompt');
+        } else {
+          console.log('User dismissed the install prompt');
+        }
+        // Clear the deferredPrompt variable, it can only be used once.
+        this.deferredPrompt = null;
+        // Hide the install button
+        this.showInstallButton = false;
+      });
+    }
+  }
+
 }

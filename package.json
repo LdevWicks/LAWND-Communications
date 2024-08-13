@@ -2,10 +2,9 @@
   "dependencies": {
     "@angular/animations": "^18.1.4",
     "@angular/cdk": "^18.1.4",
-    "@angular/cli": "^18.1.4",
     "@angular/common": "^18.1.4",
-    "@angular/compiler-cli": "^18.1.4",
     "@angular/compiler": "^18.1.4",
+    "@angular/compiler-cli": "^18.1.4",
     "@angular/core": "^18.1.4",
     "@angular/fire": "^18.0.1",
     "@angular/forms": "^18.1.4",
@@ -34,16 +33,15 @@
     "jsdom": "^24.1.0",
     "typescript": "^5.4.2"
   },
-"scripts": {
-  "build": "ng build --configuration production",
-  "prestart": "node Scripts/setEnv.js",
-  "start": "npm run start:frontend & npm run start:backend",
-  "start:frontend": "ng serve --port $PORT",
-  "start:backend": "cd secure-dev-new && npm run start",
-  "start:prod": "npm run build && serve -s dist",
-  "heroku-postbuild": "ng build --configuration production"
-}
-,
+  "scripts": {
+    "build": "ng build --configuration production",
+    "prestart": "node Scripts/setEnv.js",
+    "start": "npm run start:frontend & npm run start:backend",
+    "start:frontend": "ng serve --port $PORT",
+    "start:backend": "cd secure-dev-new && npm run start",
+    "start:prod": "npm run build && serve -s dist",
+    "heroku-postbuild": "npx ng build --configuration production"
+  },
   "engines": {
     "node": "20.x",
     "npm": "10.x"

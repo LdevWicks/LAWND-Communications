@@ -37,7 +37,7 @@
     "build": "ng build --configuration production",
     "prestart": "node Scripts/setEnv.js",
     "start": "npm run start:frontend & npm run start:backend",
-    "start:frontend": "ng serve --port $PORT",
+    "start:frontend": "ng serve --host 0.0.0.0 --port $PORT",
     "start:backend": "cd secure-dev-new && npm run start",
     "start:prod": "npm run build && serve -s dist",
     "heroku-postbuild": "npx ng build --configuration production"
@@ -47,3 +47,4 @@
     "npm": "10.x"
   }
 }
+

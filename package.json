@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^18.1.4",
-    "@angular/cli": "^15.0.0",
+    "@angular/cli": "^18.1.4",
     "@types/chart.js": "^2.9.41",
     "@types/jest": "^29.5.12",
     "@types/jsdom": "^21.1.7",
@@ -50,8 +50,8 @@
     "start:backend": "cd secure-dev-new && npm run start",
     "start:prod": "npm run build && node server.js",
     "build:frontend": "npm run postinstall",
-    "postinstall": "node src/build-angular.js",
-    "heroku-postbuild": "node src/build-angular.js"
+    "postinstall": "npm install @angular/cli && node src/build-angular.js",
+    "heroku-postbuild": "npm install @angular/cli && node src/build-angular.js"
   },
   "engines": {
     "node": "20.x",

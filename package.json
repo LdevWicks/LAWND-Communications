@@ -51,7 +51,7 @@
     "start:prod": "npm run build && node server.js",
     "build:frontend": "npm run postinstall",
     "postinstall": "npm install @angular/cli && node src/build-angular.js",
-    "heroku-postbuild": "npm install @angular/cli && node src/build-angular.js"
+    "heroku-postbuild": "node src/build-angular.js"
   },
   "engines": {
     "node": "20.x",

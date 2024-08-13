@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@angular-devkit/build-angular": "^18.1.4",
     "@angular/animations": "^18.1.4",
     "@angular/cdk": "^18.1.4",
     "@angular/cli": "^18.1.4",
@@ -36,12 +37,13 @@
   },
   "scripts": {
     "build": "ng build --configuration production",
+    "heroku-postbuild": "cd frontend && npm install",
     "prestart": "node Scripts/setEnv.js",
     "start": "npm run start:frontend & npm run start:backend",
     "start:frontend": "ng serve --host 0.0.0.0 --port $PORT",
     "start:backend": "cd secure-dev-new && npm run start",
     "start:prod": "npm run build && serve -s dist",
-    "heroku-postbuild": "npx ng build --configuration production"
+    "postInstall": "npx ng build --aot --configuration production"
   },
   "engines": {
     "node": "20.x",

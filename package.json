@@ -50,7 +50,7 @@
     "start:backend": "cd secure-dev-new && npm run start",
     "start:prod": "npm run build && node server.js",
     "build:frontend": "npm run postinstall",
-    "postinstall": "node src/angilar-build.js",
+    "postinstall": "node src/angular-build.js",
     "heroku-postbuild": "node src/angular-build.js"
   },
   "engines": {

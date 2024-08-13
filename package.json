@@ -42,14 +42,14 @@
     "typescript": "^5.4.2"
   },
   "scripts": {
-"build": "node build-angular.js",
+"build": "node src/build-angular.js",
   "prestart": "node Scripts/setEnv.js",
   "start": "npm run start:frontend & npm run start:backend",
   "start:frontend": "ng serve --host 0.0.0.0 --port $PORT",
   "start:backend": "cd secure-dev-new && npm run start",
   "start:prod": "npm run build && serve -s dist",
-  "postinstall": "node build-angular.js",
-  "heroku-postbuild": "node build-angular.js"
+  "postinstall": "node src/build-angular.js",
+  "heroku-postbuild": "node src/build-angular.js"
   },
   "engines": {
     "node": "20.x",

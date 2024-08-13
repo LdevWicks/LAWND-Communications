@@ -40,9 +40,10 @@
   "start": "npm run start:frontend & npm run start:backend",
   "start:frontend": "ng serve --port $PORT",
   "start:backend": "cd secure-dev-new && npm run start",
-  "start:prod": "npm run build && npx serve -s dist",
+  "start:prod": "npm run build && serve -s dist",
   "heroku-postbuild": "ng build --configuration production"
-},
+}
+,
   "engines": {
     "node": "20.x",
     "npm": "10.x"

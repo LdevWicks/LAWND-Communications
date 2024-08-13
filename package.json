@@ -43,7 +43,7 @@
   "start:backend": "cd secure-dev-new && npm run start",
   "start:prod": "npm run build && serve -s dist",
   "postinstall": "ng build --aot --configuration production",
-  "heroku-postbuild": "ng build --aot --configuration production"
+  "heroku-postbuild": "ng build --prod"
   },
   "engines": {
     "node": "20.x",

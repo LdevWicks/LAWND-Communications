@@ -118,14 +118,21 @@ html, body {
 }
 
 .mat-toolbar {
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-  display: flex; /* Ensure flex layout for alignment */
-  align-items: center; /* Align items vertically */
+  margin: 0; 
+  padding: 0; 
+  display: flex; 
+  align-items: center; 
 }
 
 .install-button {
-  margin-left: auto; /* Pushes the button to the right end of the toolbar */
-  color:white;
-  background-color:rgb(195,80,4);
+  margin-left: auto; 
+  color: white;
+  background-color: rgb(195, 80, 4);
+  margin-right: 1%;
+  border: none; 
+  outline: none; 
+  font-size: 14px; 
+  padding: 6px 12px; 
+  border-radius: 4px; 
+  cursor: pointer; 
 }

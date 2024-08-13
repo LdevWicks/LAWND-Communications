@@ -51,7 +51,7 @@
     "prestart": "node Scripts/setEnv.js",
     "start": "npm run start:prod",
     "start:prod": "http-server dist/path-to-ciso -p $PORT",
-    "build:frontend": "webpack --config webpack.prod.js",
+    
     "postinstall": "npm run build",
     "heroku-postbuild": "npm run build"
   },

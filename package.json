@@ -45,13 +45,11 @@
     "typescript": "^5.4.2"
   },
   "scripts": {
-    "build": "npm run build:frontend",
+   "build": "npm run build:frontend",
     "prestart": "node Scripts/setEnv.js",
     "start": "npm run start:prod",
-    "start:prod": "npm run start:frontend && npm run start:backend",
-    "start:frontend": "http-server dist/path-to-ciso -p $PORT",
-    "start:backend": "node server.js",  
-    "build:frontend": "npm build --configuration production",
+    "start:prod": "http-server dist/path-to-ciso -p $PORT",
+    "build:frontend": "ng build --configuration production",
     "postinstall": "npm run build",
     "heroku-postbuild": "npm run build"
   },

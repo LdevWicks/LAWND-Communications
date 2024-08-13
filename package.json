@@ -51,7 +51,7 @@
     "start:prod": "npm run start:frontend && npm run start:backend",
     "start:frontend": "http-server dist/path-to-ciso -p $PORT",
     "start:backend": "node server.js",  
-    "build:frontend": "ng build --configuration production",
+    "build:frontend": "npm build --configuration production",
     "postinstall": "npm run build",
     "heroku-postbuild": "npm run build"
   },

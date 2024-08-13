@@ -1,4 +1,4 @@
-import { environment } from './env'; // Ensure this path is correct
+import { environment } from '../env'; // Ensure this path is correct
 
 import { initializeApp, getApps, getApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';

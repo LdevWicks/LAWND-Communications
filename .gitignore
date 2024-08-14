@@ -54,3 +54,5 @@ src/app/firebase.configs.ts
 secure-new-dev/config/db.js
 
 secure-new-dev/.env
+
+src/environment.prod.ts

@@ -45,14 +45,12 @@ Thumbs.db
 /app/env
 env.tsc
 
-src/app/env.ts
-
-src/app/environment.prod.ts
+src/env.ts
 
 src/app/firebase.configs.ts
 
-secure-new-dev/config/db.js
+secure-dev-new/config/db.js
 
-secure-new-dev/.env
+secure-dev-new/.env
 
 src/environment.prod.ts

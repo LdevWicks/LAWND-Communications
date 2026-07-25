@@ -55,9 +55,10 @@
     "start": "npm run start:frontend & npm run start:backend",
     "start:prod": "http-server dist/path-to-ciso -p $PORT",
     "build:frontend": "ng build --configuration production",
+    "test": "ng test --watch=false --browsers=ChromeHeadless",
     "postinstall": "npm run build",
     "heroku-postbuild": "npm run build"
-    
+
   },
   "engines": {
     "node": "20.x",

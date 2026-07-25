@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
 
 import { DifferenceComponent } from './difference.component';
 
@@ -9,6 +10,7 @@ describe('DifferenceComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [DifferenceComponent]
+      ,providers: [provideNoopAnimations()]
     })
     .compileComponents();
 

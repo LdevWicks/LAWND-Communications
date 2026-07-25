@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { MovieDialogComponent } from './movie-dialog.component';
 
@@ -9,6 +10,7 @@ describe('MovieDialogComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [MovieDialogComponent]
+      ,providers: [{ provide: MatDialogRef, useValue: { close: () => {} } }, { provide: MAT_DIALOG_DATA, useValue: {} }]
     })
     .compileComponents();
 

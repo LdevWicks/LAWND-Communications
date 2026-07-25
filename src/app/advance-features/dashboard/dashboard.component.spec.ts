@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 import { DashboardComponent } from './dashboard.component';
 
@@ -9,6 +12,7 @@ describe('DashboardComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [DashboardComponent]
+      ,providers: [provideNoopAnimations(), provideHttpClient(), provideHttpClientTesting()]
     })
     .compileComponents();
 

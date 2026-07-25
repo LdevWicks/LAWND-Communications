@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { of } from 'rxjs';
 
 import { DiscussionBoardComponent } from './discussion-board.component';
 import { CommonModule } from '@angular/common';
@@ -10,6 +12,7 @@ describe('DiscussionBoardComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [DiscussionBoardComponent,CommonModule]
+      ,providers: [{ provide: AngularFirestore, useValue: { collection: () => ({ valueChanges: () => of([]) }) } }]
     })
     .compileComponents();
 

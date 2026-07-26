@@ -1,6 +1,6 @@
 export const environment = {
     production: true,
-    apiUrl: '/api',
+    apiUrl: 'https://secure-0o2n.onrender.com/api',
     firebaseConfig: {
         apiKey: "AIzaSyBnIoSPK49Z3hWCvmGxmEImcCQX-OghJcQ",
         authDomain: "pwa5-89c3b.firebaseapp.com",

@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { AgChartOptions } from 'ag-charts-community';
+import { environment } from '../../../env';
 
 @Component({
   selector: 'app-dashboard',
@@ -29,21 +30,21 @@ export class DashboardComponent implements OnInit {
   }
 
   getVulnerabilityMetrics() {
-    this.http.get('http://localhost:3000/api/vulnerabilities/metrics').subscribe((data) => {
+    this.http.get(`${environment.apiUrl}/vulnerabilities/metrics`).subscribe((data) => {
       this.vulnerabilityMetrics = data;
       this.updateCharts();
     });
   }
 
   getComplianceMetrics() {
-    this.http.get('http://localhost:3000/api/compliance/metrics').subscribe((data) => {
+    this.http.get(`${environment.apiUrl}/compliance/metrics`).subscribe((data) => {
       this.complianceMetrics = data;
       this.updateCharts();
     });
   }
 
   getIncidentMetrics() {
-    this.http.get('http://localhost:3000/api/incidents/metrics').subscribe(
+    this.http.get(`${environment.apiUrl}/incidents/metrics`).subscribe(
       (data) => {
         this.incidentMetrics = data;
         this.updateCharts();

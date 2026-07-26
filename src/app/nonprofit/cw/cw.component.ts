@@ -16,11 +16,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./cw.component.css']
 })
 export class CwComponent implements OnInit{
-  
-  images: string[] = [
-    'assets/CWLogo.png',
-  ];
-  
+
   videos$!: Observable<any[]>; // Observable for video data
   selectedVideoUrl!: string; // URL of the currently selected video
 
